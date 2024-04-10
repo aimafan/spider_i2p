@@ -1,0 +1,259 @@
+<html lang="en-US"><!-- Mirrored from cyberpunked.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Mar 2024 21:56:51 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+<title>cyberpunked.org</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+
+<div>
+
+<h1><a href="index.html">cyberpunked.org</a></h1>
+
+<h3>What is Cyberpunk?</h3>
+
+<ul>
+<li><a href="http://www.cyberpunkforums.com/viewtopic.php?id=361" target="_blank">http://www.cyberpunkforums.com/viewtopic.php?id=361</a></li>
+<li><a href="https://www.neondystopia.com/what-is-cyberpunk/" target="_blank">https://www.neondystopia.com/what-is-cyberpunk/</a></li>
+<li><a href="https://wiki.installgentoo.com/index.php?title=Cyberpunk" target="_blank">https://wiki.installgentoo.com/index.php?title=Cyberpunk</a></li>
+<li><a href="http://www.cypunk.com/whatis.php" target="_blank">http://www.cypunk.com/whatis.php</a></li>
+</ul>
+
+<h3>Cyberpunk Communities</h3>
+
+<ul>
+<li><a href="http://www.cyberpunkforums.com/" target="_blank">http://www.cyberpunkforums.com/</a></li>
+<li><a href="https://8ch.net/cyber/" id="8chan" target="_blank">https://8ch.net/cyber/</a></li>
+<li><a href="https://lainchan.org/" target="_blank">https://lainchan.org/</a></li>
+<li><a href="https://new.systemspace.network/" target="_blank">https://new.systemspace.network/</a> (mirror)</li>
+<li><a href="irc://irc.freenode.net:6697/cyberpunk">irc://irc.freenode.net/cyberpunk</a></li>
+<li><a href="irc://irc.rizon.net:6697/" id="4chan">irc://irc.rizon.net/</a> join #/g/punk</li>
+</ul>
+
+<h3>Cyberpunk Media</h3>
+
+<ul>
+<li><a href="https://www.2600.com/" target="_blank">https://www.2600.com/</a></li>
+<li><a href="https://www.exolymph.news/" target="_blank">https://www.exolymph.news/</a></li>
+<li><a href="https://lainzine.neocities.org/" target="_blank">https://lainzine.neocities.org/</a></li>
+<li><a href="https://blackfogzine.org/" target="_blank">https://blackfogzine.org/</a></li>
+<li><a href="https://www.neondystopia.com/" target="_blank">https://www.neondystopia.com/</a></li>
+<li><a href="http://www.planetdamage.com/" target="_blank">http://www.planetdamage.com/</a></li>
+</ul>
+
+<h3>Cyberpunk Resources</h3>
+
+<ul>
+<li><a href="http://project.cyberpunk.ru/idb/" target="_blank">http://project.cyberpunk.ru/idb/</a></li>
+<li><a href="http://project.cyberpunk.ru/lib/" target="_blank">http://project.cyberpunk.ru/lib/</a></li>
+</ul>
+
+<a name="essentials"></a>
+
+<h3>Cybersecurity Essentials</h3>
+
+<ul>
+<li>use audited cryptography. do not roll your own. do not trust others that do (e.g., telegram).</li>
+
+<li>harden your OS.
+<br><a href="https://wiki.archlinux.org/index.php/Security" target="_blank">https://wiki.archlinux.org/index.php/Security</a>
+<br><a href="https://wiki.centos.org/HowTos/OS_Protection" target="_blank">https://wiki.centos.org/HowTos/OS_Protection</a>
+<br><a href="https://wiki.debian.org/Hardening" target="_blank">https://wiki.debian.org/Hardening</a>
+<br><a href="https://wiki.gentoo.org/wiki/Hardened_Gentoo" target="_blank">https://wiki.gentoo.org/wiki/Hardened_Gentoo</a>
+<br><a href="https://docs.fedoraproject.org/en-US/Fedora/17/html/Security_Guide/chap-Security_Guide-Basic_Hardening.html" target="_blank">https://docs.fedoraproject.org/en-US/Fedora/17/html/Security_Guide/chap-Security_Guide-Basic_Hardening.html</a>
+<br><a href="https://help.ubuntu.com/community/Security" target="_blank">https://help.ubuntu.com/community/Security</a></li>
+
+<li>encrypt your hard drive (full disk encryption, or FDE for short).
+<br>standard LVM encryption is the best option and should be available when installing your linux distro.
+<br><small>for a disk that is not part of your operating system, a portable drive for example, dmcrypt/LUKS is the best option but veracrypt is available on all platforms. keep in mind your installer may or may not encrypt your GRUB and there are several ways of dealing with that issue which are discussed in the Paranoid #! security guide linked in the introductory resources below. keep in mind disk encryption means nothing to an experienced attacker with physical access if you have not completely shut down your computer and wiped the RAM.</small></li>
+
+<li>encrypt your emails.
+<br>PGP is pretty much all we have, but it is all we need.
+<br><a href="https://www.enigmail.net/" target="_blank">https://www.enigmail.net/</a>
+<br><small>your metadata may still be collected. if you care about metadata, use a disposable email account or a trusted provider. suggestions include protonmail or cock.li.</small>
+</li>
+
+<li>encrypt your instant messages.
+<br>for better or worse XMPP+OTR is still our best bet.
+<br><a href="https://otr.cypherpunks.ca/" target="_blank">https://otr.cypherpunks.ca/</a>
+<br><small>i would not depend on anything else. even if the crypto in other apps is theoretically sound, the implementation fails or the distribution method is inherently flawed. cryptocat is an unpopular, but good option. telegram, tox, and wickr are fucked. do not even bother. you might as well use skype.</small>
+</li>
+
+<li>use a local password manager (no cloud bullshit).
+<br>any. it is better than what you are doing now.</li>
+
+<li>use strong passwords. make sure they are long and unique.
+<br><a href="https://www.xkcd.com/936/" target="_blank">https://www.xkcd.com/936/</a></li>
+
+<li>do not reuse passwords. seriously.
+<br>if you do, consider your password public knowledge.
+<br><small>bypassing a login wall? sure. fuck it. who cares if someone else uses it.
+<br>anything you care about? no. absolutely not.</small></li>
+
+<li>better yet, use randomly generated passwords. the best password is one you cannot remember.
+<br><a href="https://www.grc.com/passwords.htm" target="_blank">https://www.grc.com/passwords.htm</a></li>
+
+<li>your new search engine is duckduckgo or searx.
+<br><a href="https://duckduckgo.com/" target="_blank">https://duckduckgo.com/</a>
+<br><a href="https://searx.me/" target="_blank">https://searx.me/</a></li>
+
+<li>your new browser is firefox.
+<br><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">https://www.mozilla.org/en-US/firefox/new/</a></li>
+
+<li>modify some settings
+<br>enter <a href="about:config" target="_blank">about:config</a> into your url bar and apply the following modifications. do not bitch about there being too many options. that is the fucking point. you cannot even configure many of these settings in other browsers without modifying its source or building addons.
+<br><a href="https://pastebin.com/raw/T8TeepZP" target="_blank">https://pastebin.com/raw/T8TeepZP</a>
+<small>the changes listed above are unambiguous and unopinionated. you can go a much further than this at the expense of comfort and convenience. consider modifying some of the settings listed on <a href="https://github.com/pyllyukko/user.js/blob/master/user.js" target="_blank">https://github.com/pyllyukko/user.js/blob/master/user.js</a> depending on the sacrifices you are willing to make for privacy and security.</small></li>
+
+<li>now install your addons.
+<br>required: ublock origin, https everywhere, noscript, blender.
+<br><a href="https://addons.mozilla.org/en-US/firefox/" target="_blank">https://addons.mozilla.org/en-US/firefox/</a></li>
+
+<li>apply your filters.
+<br>required: easylist, easyprivacy.
+<br><a href="https://easylist.to/" target="_blank">https://easylist.to/</a></li>
+
+<li>and test your results.
+<br><a href="https://panopticlick.eff.org/" target="_blank">https://panopticlick.eff.org/</a></li>
+
+<li>do not use chrome. chrome is a closed source browser by a for profit corporation. firefox is an open source browser by a non-profit organization. use your head.</li>
+
+<li>do not use chromium either. it may be open source, but it still phones home.</li>
+
+<li>block malicious sites in your hosts file.
+<br><a href="https://github.com/StevenBlack/hosts" target="_blank">https://github.com/StevenBlack/hosts</a></li>
+
+<li>use an anonymous VPN. a paid one. without traffic logs.
+<br>do torrent over VPN.</li>
+
+<li>use TOR.
+<br>do not torrent over TOR.
+<br><a href="https://www.torproject.org/" target="_blank">https://www.torproject.org/</a></li>
+
+<li>understand the difference between anonymity, privacy, and security.
+<br>read the resources below to get started.</li>
+</ul>
+
+<h3>Cybersecurity News</h3>
+<ul>
+<li><a href="https://www.schneier.com/" target="_blank">https://www.schneier.com/</a></li>
+<li><a href="https://grsecurity.net/blog.php" target="_blank">https://grsecurity.net/blog.php</a></li>
+<li><a href="https://isc.sans.edu/" target="_blank">https://isc.sans.edu/</a></li>
+<li><a href="https://blog.torproject.org/category/tags/security-fixes" target="_blank">https://blog.torproject.org/category/tags/security-fixes</a></li>
+<li><a href="http://resources.infosecinstitute.com/" target="_blank">http://resources.infosecinstitute.com/</a></li>
+<li><a href="http://www.windowsecurity.com/articles-tutorials/" target="_blank">http://www.windowsecurity.com/articles-tutorials/</a></li>
+<li><a href="https://www.sans.org/reading-room/" target="_blank">https://www.sans.org/reading-room/</a></li>
+<li><a href="https://threatpost.com/" target="_blank">https://threatpost.com/</a></li>
+<li><a href="https://packetstormsecurity.com/" target="_blank">https://packetstormsecurity.com/</a></li>
+</ul>
+
+<h3>Introduction to Cybersecurity</h3>
+
+<ul>
+<li><a href="https://ssd.eff.org/" target="_blank">https://ssd.eff.org/</a>
+<br><i>your first steps.</i></li>
+<li><a href="https://trailofbits.github.io/ctf/index.html" target="_blank">https://trailofbits.github.io/ctf/index.html</a>
+<br><i>introduction to CTFs. even if you never do one, this is a good read.</i></li>
+<li><a href="https://wiki.installgentoo.com/index.php/Anonymizing_yourself" target="_blank">https://wiki.installgentoo.com/index.php/Anonymizing_yourself</a>
+<br><i>quick and dirty guide to anonymizing yourself.</i></li>
+<li><a href="https://pastebin.com/aPr5R1pj" target="_blank">https://pastebin.com/aPr5R1pj</a>
+<br><i>this is the old, fabled, Paranoid #! security guide. not all of it is up to date, but it is very thorough.</i></li>
+<li><a href="https://samsymons.com/blog/reverse-engineering-with-radare2-part-1/" target="_blank">https://samsymons.com/blog/reverse-engineering-with-radare2-part-1/</a></li>
+</ul>
+
+<h3>Learning Resources</h3>
+
+<ul>
+<li><a href="https://www.offensive-security.com/metasploit-unleashed/" target="_blank">https://www.offensive-security.com/metasploit-unleashed/</a></li>
+<li><a href="http://www.allitebooks.com/" target="_blank">http://www.allitebooks.com/</a></li>
+<li><a href="https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md" target="_blank">https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md</a></li>
+<li><a href="http://opensecuritytraining.info/Training.html" target="_blank">http://opensecuritytraining.info/Training.html</a></li>
+<li><a href="http://www.und.edu/org/crypto/crypto/lanaki.crypt.class/" target="_blank">http://www.und.edu/org/crypto/crypto/lanaki.crypt.class/</a></li>
+</ul>
+
+<h3>ctf/wargames</h3>
+
+<ul>
+<li><a href="https://www.hackthebox.eu/" target="_blank">https://www.hackthebox.eu/</a></li>
+<li><a href="https://www.pentesterlab.com/" target="_blank">https://www.pentesterlab.com/</a></li>
+<li><a href="https://www.mavensecurity.com/resources/web-security-dojo/" target="_blank">https://www.mavensecurity.com/resources/web-security-dojo/</a></li>
+<li><a href="https://exploit-exercises.com/" target="_blank">https://exploit-exercises.com/</a></li>
+<li><a href="http://www.itsecgames.com/" target="_blank">http://www.itsecgames.com/</a></li>
+<li><a href="http://forensicscontest.com/puzzles" target="_blank">http://forensicscontest.com/puzzles</a></li>
+<li><a href="https://pwnable.tw/" target="_blank">https://pwnable.tw/</a></li>
+<li><a href="https://io.netgarage.org/" target="_blank">https://io.netgarage.org/</a></li>
+<li><a href="https://ctftime.org/" target="_blank">https://ctftime.org/</a></li>
+<li><a href="https://www.vulnhub.com/" target="_blank">https://www.vulnhub.com/</a></li>
+<li><a href="https://w3challs.com/challenges/hacking" target="_blank">https://w3challs.com/challenges/hacking</a></li>
+<li><a href="https://xss-game.appspot.com/" target="_blank">https://xss-game.appspot.com/</a></li>
+<li><a href="http://smashthestack.org/" target="_blank">http://smashthestack.org/</a></li>
+<li><a href="http://www.hackertest.net/" target="_blank">http://www.hackertest.net/</a></li>
+<li><a href="https://www.hackthissite.org/" target="_blank">https://www.hackthissite.org/</a></li>
+<li><a href="https://overthewire.org/wargames/" target="_blank">https://overthewire.org/wargames/</a></li>
+<li><a href="https://0x0539.net/" target="_blank">https://0x0539.net/</a></li>
+<li><a href="http://3564020356.org/" target="_blank">http://3564020356.org/</a></li>
+<li><a href="http://pwnable.kr/" target="_blank">http://pwnable.kr/</a></li>
+</ul>
+
+
+<h3>Vulnerability Management</h3>
+
+<ul>
+<li><a href="https://www.cvedetails.com/" target="_blank">https://www.cvedetails.com/</a></li>
+<li><a href="https://www.exploit-db.com/" target="_blank">https://www.exploit-db.com/</a></li>
+<li><a href="https://www.rapid7.com/db/" target="_blank">https://www.rapid7.com/db/</a></li>
+<li><a href="http://mvfjfugdwgc5uwho.onion/" target="_blank">http://mvfjfugdwgc5uwho.onion/</a></li>
+<li><a href="https://cve.mitre.org/cve/cve.html" target="_blank">https://cve.mitre.org/cve/cve.html</a>
+<br><i>this site lets you download their CVE list in formats easier to work with.</i></li>
+</ul>
+
+<h3>Cryptography</h3>
+
+<ul>
+<li><a href="https://pqcrypto.org/" target="_blank">https://pqcrypto.org/</a></li>
+<li><a href="http://www.tandfonline.com/toc/ucry20/current" target="_blank">http://www.tandfonline.com/toc/ucry20/current</a></li>
+</ul>
+
+<h3>Penetration Testing</h3>
+
+<ul>
+<li><a href="http://ytxmrc3pcbv5464e.onion/files/" target="_blank">http://ytxmrc3pcbv5464e.onion/files/</a>
+<br><i>collection of various ebooks mostly focused on pentesting.</i></li>
+</ul>
+
+<h3>Reverse Engineering</h3>
+
+<ul>
+<li><a href="https://beginners.re/" target="_blank">https://beginners.re/</a></li>
+<li><a href="https://github.com/rpisec/mbe" target="_blank">https://github.com/rpisec/mbe</a></li>
+<li><a href="http://blog.ijun.org/2009/12/understanding-elf-using-readelf-and.html" target="_blank">http://blog.ijun.org/2009/12/understanding-elf-using-readelf-and.html</a></li>
+<li><a href="http://ref.x86asm.net/index.html" target="_blank">http://ref.x86asm.net/index.html</a>
+<br><i>easily-searchable opcode and instruction reference.</i></li>
+</ul>
+
+<br>
+<span>if you have any questions, feel free to ask in #/g/punk or #/g/sec of irc.rizon.net</span>
+<br>
+
+<br>
+<span>to request additions, removals, or modifications, email <b>cyberpunked@caramail.com</b> and put /g/ in the subject line
+<br>
+
+</span></div>
+
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49412120-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</body><!-- Mirrored from cyberpunked.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Mar 2024 21:56:51 GMT --></html>

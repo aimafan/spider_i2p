@@ -1,0 +1,113 @@
+<html><!--
+#
+# If you have a 'split' directory installation, with configuration
+# files in ~/.i2p (Linux), %APPDATA%\I2P (Windows),
+# or /Users/(user)/Library/Application Support/i2p (Mac), be sure to
+# edit the file in the configuration directory, NOT the install directory.
+# When running as a Linux daemon, the configuration directory is /var/lib/i2p
+# and the install directory is /usr/share/i2p .
+# When running as a Windows service, the configuration directory is \ProgramData\i2p
+# and the install directory is \Program Files\i2p .
+#
+--><head>
+<!--
+  *  Remove the following three lines to stop redirecting to the help page.
+  *  If it continues to redirect:
+  *    1) Make sure you edited the correct file (see above)
+  *    2) Clear your browser's cache.
+ -->
+<title>Run Javascript Client Code on the I2P Network Without Risking Anonymity</title>
+<link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="help/lib/eepsite.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<h2>Run Javascript Client Code on the I2P Network without Risking Anonymity</h2>
+<p>
+by maxkoda
+</p><p>
+</p><h2>Introduction</h2>
+<p>
+Most I2P users disable Javascript in their browsers due to the risks of preserving anonymity.  As a result most web applications on the I2P network do not make use of the Javascript language. This has resulted in a severe lack of web applications with rich client user interfaces and I2P web applications looking like web pages developed in the 1990s.
+</p><p>
+There are many excellent Javascript frameworks that enable building rich-client user interfaces that help to raise the bar for the user experience. However, these improved user experience web applications are missing on the I2P network because of the risks to anonymity mentioned earlier.
+</p><p>
+I have been looking for a way to bring rich-client web application user interfaces to I2P, using popular javascript frameworks without risking anonymity and I believe I found a way to do this. </p><p>That is the topic for this site.
+</p><p>
+</p><h2>Architecture</h2>
+<p>
+I2P Web developers can use popular javascript frameworks for rich-client user interfaces and avoid risking client anonymity.
+
+The architecture requires no changes on the server side because the client is in control when it comes to preserving anonymity.
+</p><p>
+On the client side, a virtual machine that has no connectivity to the Internet is used to browse the I2P network. The virtual machine is configured such that it can’t even contact the host machine (the computer running the virtual machine). If the virtual machine attempts to ping the IP of the host machine it receives a message that “the network is not reachable”.
+</p><p>
+This effectively isolates the virtual machine to a private network address. This network isolation effectively hides the true network location of the browser from any javascript client code running in the virtual machine.
+</p><p>
+On the host machine, the user can ssh into the virtual machine and interact with the operating system. The host machine runs an I2P router, and to allow the virtual machine to access the I2P network, the user will ssh to the virtual machine and provide remote port forwarding of I2P ports from the host machine.
+</p><p>
+The client configures the browser proxy in the virtual machine the same as the browser proxy is configured on the host machine (127.0.0.1:4444).
+</p><p>
+Once successfully configured, the user can browse to any I2P web application that’s running javascript and if the javascript code attempts to ascertain the network location of the user, it will always just see a private network address. Therefore the user’s actual network location is hidden from the javascript client code.
+</p><p>
+This will allow for rich client user interfaces for I2P web apps using javascript frameworks without exposing the user's network location.</p><p> 
+</p><h2>Build Your Own</h2>
+<p>
+I prefer to use Linux for both my host machine and the virtual machine. I use Virtualbox to manage my virtual machines. You can use whatever operating system you prefer as long as you can run ssh, I2P, and VirtualBox on your host machine. Typically this means Linux, OS/X, or Windows.
+You can use a virtual machine with any operating system type supported by VirtualBox.
+</p><p>
+You will need to create a Host-only network adapter for the virtual machine.
+</p><p>
+<b>Paper Describing Setup and Configuration:</b>
+</p><p>
+magnet:?xt=urn:btih:8ef7125fe37e2d25960706328102f5d0300836fe
+</p><p>
+</p><h2>Download I2P Javascript Virtual Machine</h2>
+<p>
+The I2P Javascript Virtual Machine is available for download via I2PSnark. The virtual machine is a Debian 10 Desktop OS configured and ready for use.
+</p><p>The virtual machine is configured with 2GB RAM and a host-only network adapter.
+</p><p>
+<b>I2P Javascript Virtual Machine ova (2.17 GiB):</b>
+</p><p>
+magnet:?xt=urn:btih:e551b83eea117cf6406f3ec5d2eccf67b6d72d28
+</p><p>
+<i>SHA256 File Checksum: b5168d305d8fe534e7b35b681ba6feee7342aee5b7b50c1d8ee16f4dc644a737</i></p><p>
+The login credential for the virtual machine Debian OS:
+</p><p>
+<b>username:</b>user
+</p><p>
+<b>password:</b>password
+</p><p>
+<i>The virtual machine will need the VirtualBox Extension Pack installed.</i>
+</p><p>
+<a href="http://javascript.i2p/videos.html">Instructional Videos</a>
+</p><h2>Javascript Examples:</h2>
+<p>
+<i>These are meant to be run in the I2P javascript virtual machine:</i></p><p>
+<a href="http://ewkfnvsg6s4wkhhgjpxgnyirpj7c4zgsvi6yfmkap6z4i3ou7cka.b32.i2p">Rich Client User Interface</a>
+</p><p>
+<a href=" http://kan4ccme27fsuppqkdzjh5x22zohigbu4evwhfmgbp6o6a2zzt3a.b32.i2p/solitaire.html">Solitaire</a>
+</p><p>
+<a href="http://kan4ccme27fsuppqkdzjh5x22zohigbu4evwhfmgbp6o6a2zzt3a.b32.i2p">Graphical maze game</a>
+
+</p><h2>Reward</h2>
+<p>
+If anyone can prove that network anonymity can be compromised using this virtual machine model, I will pay a reward of 1.0 Monero (1.0 XMR) to the individual that provides documented proof.
+</p><p><i>Tips sent to the Monero address below will be added to this Reward bounty with the reward balance updated periodically.</i></p><p> 
+</p><h2>Questions and comments can be sent to:</h2>
+<p><b>I2P-Bote:</b> 8l-cwUo-7~S1NUl6DHCjODn0uDTnfCh6YQEOyJdHUXH5LauttaFPNkICXpL4tso16BrtX00IxnyNAqorAaESL6
+</p><p>
+or</p><p>
+<b>susimail:</b> maxkoda@mail.i2p
+</p><p>
+</p><h2>Tip Me</h2>
+<p><b>Monero tips are appreciated.</b> Tips will be added to the security reward bounty.</p><p> Monero tip address:
+</p><p>
+434giFftULPAE4rc8miqMiFSQCPbUkcgJ91JBiXSjpvC8wKZWreJh6MPGi7mQ8nYkXfDzQovSezG2iKgyNx3qmcJKtLvgBg
+</p><hr><div class="footnote">	
+Page last edited: November 2019.</div>
+
+
+
+</body></html>

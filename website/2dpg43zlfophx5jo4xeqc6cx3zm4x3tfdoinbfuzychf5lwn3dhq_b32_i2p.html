@@ -1,0 +1,117 @@
+<html><head>
+		<meta name="desription" content="Instructions for clients for xmpp ilita">
+		<meta name="keywords" content="xmpp, ejabberd, federation, gajim, converse"> 
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>XMPP ILITA</title>
+			<link rel="preload" href="/css/style.css" as="style">
+			<link rel="preload" href="/img/xmppilitai2p.svg" as="image">
+			<style>
+				@media screen and (max-width: 920px) {
+					.main-menu {transform: translateX(-100%);}
+				}
+			</style>
+			<link rel="stylesheet" href="/css/style.css">
+			</head>
+	<body>
+		<header class="header">
+			<div class="header__top">
+				<div class="logo header__logo">
+					<a href="/" class="logo__link">
+						<img class="svg" src="/img/xmppilitai2p.svg" height="120">
+					</a>
+				</div>
+			</div>
+			
+		</header>
+		<main id="content">
+			    <div class="container container_main">
+        <p class="important title" align="center">
+            xmpp client setup instructions<br>
+        </p>
+
+        <p>
+        <b>Converse.js XMPP browser client:</b><br>
+        </p><ul>
+		<!--		<li><b>Allow</b> secure BOSH access by accepting our certificate at: <a href="https://xmpp.ilita.i2p:5443/bosh">xmpp.ilita.i2p:5443/bosh</a> [https]</li>-->
+		<li><b>Client access</b> is now available at: <a href="https://xmpp.ilita.i2p">xmpp.ilita.i2p</a> [https]</li>
+        </ul>
+	It is <b>very important</b> to add certificate exception when presented by browser.<br>
+        <p></p>
+
+	<p>
+	 <b>ConverseI2P XMPP desktop client:</b><br>
+	 </p><ul>
+		 <li><b>Client sources and build instructions </b> are now available at: <a href="http://git.apophis.i2p/apophis/ConverseDesktop-I2P">git.apophis.i2p/apophis/ConverseDesktop-I2P</a></li>
+	 </ul>
+	 ConverseI2P <b>requires no</b> certificates and is fully compatible with all XMPP options.<br>
+	  <p></p>
+
+
+        <p>
+
+        <b>Desktop Gajim client:</b><br>
+	We suggest using the latest Gajim (v1.8.4) installed with Flatpak software distribution system.<br>
+	Windows users can skip this section and proceed directly to <b><i>https://gajim.org/download/</i></b>
+        </p><ul>
+		<li><b>Install</b> Flatpak distribution system:
+		<ul style="list-style-type:circle;">
+	    	<li>sudo apt install flatpak</li>
+		<li>flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</li>
+		<li>Restart</li>
+		</ul>
+	    </li>
+	    <li><b>Install</b> Gajim and required plugins:
+	    	<ul style="list-style-type:circle;">
+		<li>flatpak install org.gajim.Gajim</li>
+		<li>*flatpak install org.gajim.Gajim.Plugin.omemo (Gajim older versions)</li>
+		<li>*flatpak install org.gajim.Gajim.Plugin.url_image_preview (Gajim older versions)</li>
+		</ul>
+	    </li>
+	    <li><b>Configure</b> Gajim for I2P compatibility:
+		<ul style="list-style-type:circle;">
+			<li>Accounts|Connection|Proxy ==&gt; Create new proxy entry: I2P/SOCKS5/127.0.0.1/4447. Use this proxy for your I2P accounts</li>
+			<li>*Plugins ==&gt; Enable OMEMO and URL Image Preview plugins (Gajim older versions)</li>
+		</ul>
+	    </li>
+	    <li><b>Configure</b> certificates mandatory for HTTP upload/preview plugin to work correctly (this is Gajim's requirement and is NOT needed for other xmpp clients):
+		<ul style="list-style-type:circle;">
+			<li><b>Add</b> authority/server certificates to your system. Download it from <b><i>http://ca.i2pd.i2p/rootca.crt</i></b>. It is signed by PurpleI2P CA and is as "trustworthy" as any other product they support</li>
+			<li><b>Example</b> for Debian/Ubuntu:<pre>		sudo mkdir /usr/local/share/ca-certificates/xmpp.ilita.i2p
+		sudo cp ./rootca.crt /usr/local/share/ca=certificates/xmpp.ilita.i2p/
+		sudo update-ca-certificates</pre>
+			</li>
+		</ul>
+	    </li>		
+        </ul>
+	We have tested various features of Gajim quite extensively and can confirm they are fully operational at this time.
+        <p></p>
+
+        <p>
+        <b>Mobile Conversations client:</b><br>
+        PurpleI2P team has just recently released Conversations-I2P app that provides complete i2p interoperability.<br>
+        </p><ul>
+		<li><b>Install</b> official distribution of F-Droid app from <b><i>f-droid.org</i></b></li>
+		<li><b>Add</b> PurpleI2P repository as directed on <b><i>https://fdroid.i2pd.xyz</i></b> [repo ==&gt;  <b><i>https://fdroid.i2pd.xyz/fdroid/repo</i></b>]</li>
+		<li><b>Install</b> Conversations-I2P app using F-Droid</li>
+        </ul>
+        Conversations-I2P app and its many features are fully operational. Tested on Android versions: 5/8/10
+        <p></p>
+
+                <p>
+        <b>Client Interoperability:</b><br>
+        Table of client interoperability combinations is coming soon.
+        </p>
+        
+                <p>
+        <b>Notes:</b><br>
+	Compatibility of different unmodified clients with I2P is an open issue. We are doing our best to test as many clents/features as possible. However, your feedback, suggestions and comments are very important to us. We can be reached at <b><i>support@conference.xmpp.ilita.i2p</i></b>
+        </p>
+        
+    </div>
+		</main>
+		<footer style="color: #c3b2dc" class="footer" id="footer">
+			Powered by evil and dangerous people together with PurpleI2P team, 2021
+		</footer>
+	
+
+</body></html>

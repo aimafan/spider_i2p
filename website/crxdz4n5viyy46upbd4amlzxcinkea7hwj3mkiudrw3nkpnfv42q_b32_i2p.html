@@ -1,0 +1,423 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=" svg svgfilters svgclippaths svgforeignobject smil inlinesvg svgasimg"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stand up for the right to privacy. Donate to the Tor Project | Donate">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@torproject">
+  <meta name="twitter:creator" content="@torproject">
+  <meta name="twitter:image" content="http://donate.torproject.i2p/static/images/donate/yec-metacard.png?h=cc522419">
+  <meta property="og:url" content="http://donate.torproject.i2p/">
+  <meta property="og:title" content="Donate to the Tor Project">
+  <meta property="og:description" content="If you value privacy, support Tor">
+  <meta property="og:image" content="http://donate.torproject.i2p/static/images/donate/yec-metacard.png?h=cc522419">
+  <link rel="stylesheet" href="static/css/bootstrap.css?h=2122cf07">
+  <link rel="stylesheet" href="static/fonts/fontawesome/css/all.min.css?h=9d272f6a">
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/x-icon" href="http://torproject.i2p/static/images/favicon/favicon.ico">
+  <!-- Recommended favicon format -->
+  <link rel="icon" type="image/png" href="http://torproject.i2p/static/images/favicon/favicon.png">
+  <title>Tor Project | Donate</title>
+  
+  <!-- adding this as part of the YEC '22 campaign, delete when finished-->
+  <style>
+   .banner-close, #yec-donate-button-container {
+     display: none !important;
+   }
+   .donate-form .donate-options button.selected, .donate-form .donate-options button:hover, .donate-form .donation-selection-area .donate-buttons .price-btn.selected, .donate-form .info-area #donate-submit-button button, .donate-form .payment-method-area button.selected, #campaign-totals-area .characters .character.covered .cover {
+     background-color: var(--abouttor-yec-button-bg-color) !important;
+   }
+   #campaign-totals-area .characters .character.resolved, .donate-form .donate-main-color {
+     color: var(--abouttor-yec-button-bg-color) !important;
+   }
+   .payment-method-question span.donate-main-color {
+     color: initial !important;
+   }
+   header > div.bg-primary, header nav.bg-primary {
+     background-color: var(--abouttor-yec-page-bg-color) !important;
+   }
+   @media (min-width: 768px) {
+     .donate-form .donation-selection-area .perks .selected {
+       box-shadow: 8px 8px var(--abouttor-yec-button-bg-color);
+     }
+   }
+  </style>
+  <!-- -->
+  
+</head>
+<body><header>
+  
+<div class="container-fluid bg-primary">
+  <nav class="navbar no-background navbar-expand-lg navbar-dark bg-primary p-2">
+
+  <div>
+    <div class="row">
+      <a class="navbar-brand" href="http://torproject.i2p">
+        <img alt="The Tor Project" src="static/images/tor-logo@2x.png?h=16ad42bc">
+        <span class="sr-only">Tor Logo</span>
+      </a>
+
+      
+      
+        <h4 class="pl-2 pr-2 pt-3"><a href="http://donate.torproject.i2p" title="Donate"><span class="badge badge-warning p-2">Donate Now</span></a></h4>
+      
+    </div>
+  </div>
+    
+    
+
+  </nav>
+</div>
+</header>
+
+
+  <div class="page pt-0">
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        
+        <main role="main" class="mx-auto col-12 order-last text-left">
+          
+            
+<div>
+  
+<p class="text-center mt-3 py-3 border alert alert-warning">PayPal cannot process donations made via the Tor Network. We apologize for the inconvenience.</p>
+
+  <noscript>
+    <div class="text-center mt-3 py-3 border alert alert-danger">
+      <h2 class="h4 alert-danger"><strong>JavaScript is blocked, deactivated, or not supported by this browser</strong></h2>
+      <p class="alert-danger">
+        The services we use to process online donations (Stripe, PayPal, and BTCPay Server) all require JavaScript. If you’d like to support the Tor Project without JavaScript you can <a href="http://donate.torproject.i2p/cryptocurrency/">donate cryptocurrency</a> directly to Tor's wallet addresses, <a href="http://donate.torproject.i2p/donor-faq/#can-i-donate-with-a-check-cash-or-money-order">send checks, cash, and money orders</a> by mail, or donate more than $1,000 by <a href="http://donate.torproject.i2p/donor-faq/#can-i-make-a-donation-via-bank-transfer">bank transfer (US only)</a>.
+      </p>
+      <p class="alert-danger">
+        Alternatively, you can whitelist donate.torproject.org or temporarily enable JavaScript. Tor Browser users on the Safest security level can do so by temporarily downgrading to Safer in about:preferences#privacy
+      </p>
+      <p class="alert-danger">
+        <a href="http://donate.torproject.i2p/donor-faq/">View the Donor FAQ</a>
+      </p>
+    </div>
+  </noscript>
+  
+
+  
+    
+      <p class="text-center mt-3 py-3 border"><a href="cryptocurrency" title="Cryptocurrency">Want to donate cryptocurrency?</a></p>
+    
+  
+
+</div>
+<div class="donate-form">
+  <div id="campaign-totals-area"></div>
+  <div id="giving-form"></div>
+  
+<p class="text-center mt-3 py-3 border alert alert-warning">PayPal cannot process donations made via the Tor Network. We apologize for the inconvenience.</p>
+
+</div>
+<script type="text/javascript" src="https://js.stripe.com/v3/" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://www.paypal.com/sdk/js?client-id=AbzwWJgUgwGMvTupfvigx1yAj75jNnCj4mFGC_VbiROUi2TfVwPS9IZ5MfqLsSUnXJFSMwaSaTR4FY_A&amp;vault=true"></script>
+<script type="text/javascript">
+  window.reactComponents = [
+    {
+      id: 'giving-form',
+      name: 'GivingForm',
+      props: {
+        'maintenanceMode': false,
+        'stripePublishableKey': `pk_live_5103xJK2XQl7nllXtcjoYUY3cr3x7LIkOAG0EBCjE0scAdYz94aOccEBfRk7QalJ9dOqqkTb1Ye0b7avOAxa7b7Eh00rmcfxjsK`,
+        'paymentMethods': ['paypal'],
+        'frequencyOptions': `both`,
+        'pricesOnButtons': {
+          'single': [
+            parseInt(`2500`),
+            parseInt(`7500`),
+            parseInt(`12500`),
+            parseInt(`25000`),
+            parseInt(`50000`)
+          ],
+          'monthly': [
+            parseInt(`500`),
+            parseInt(`1500`),
+            parseInt(`2500`),
+            parseInt(`5000`),
+            parseInt(`10000`)
+          ]
+        },
+        'perks': [
+          {
+            'name': 'stickers',
+            'friendly_name': {
+              'single': `Sticker Pack`,
+              'monthly': `Sticker Pack`
+            },
+            'image': {
+              'single': `static/images/donate/stickerpack-1.png?h=0cb94ad2`,
+              'monthly': `static/images/donate/stickerpack-1.png?h=0cb94ad2`
+            },
+            'description': {
+              'single': `A collection of our favorite logo stickers for decorating your stuff and covering your cams.`,
+              'monthly': `A collection of our favorite logo stickers for decorating your stuff (Monthly).`,
+            },
+            'price': {
+              'single': parseInt(`2500`),
+              'monthly': parseInt(`1500`),
+            },
+            'options': null,
+            'requiredFields': [],
+          },
+          {
+            'name': 't-shirt',
+            'friendly_name': {
+            'single': `T-Shirt`,
+            'monthly': `T-Shirt`
+            },
+            'image': {
+            'single': `static/images/donate/yec-tee-web.png?h=68c6ee6c`,
+            'monthly': `static/images/donate/yec-tee-web.png?h=68c6ee6c`
+            },
+            'description': {
+            'single': `Get this year&#39;s Tor Onions t-shirt.`,
+            'monthly': `Get this year&#39;s Tor Onions t-shirt.`,
+            },
+            'price': {
+            'single': parseInt(`7500`),
+            'monthly': parseInt(`2500`),
+            },
+            'options': null,
+            'requiredFields': ['shirt1Fit', 'shirt1Size'],
+          },
+          {
+            'name': 't-shirt-pack',
+            'friendly_name': {
+            'single': `T-Shirt Pack`,
+            'monthly': `T-Shirt Pack`
+            },
+            'image': {
+            'single': `static/images/donate/yec-combo-tee-web.png?h=b3974819`,
+            'monthly': `static/images/donate/yec-combo-tee-web.png?h=b3974819`
+            },
+            'description': {
+            'single': `Get this year&#39;s Tor Onions and Powered by Privacy t-shirts.`,
+            'monthly': `Get this year&#39;s Tor Onions and Powered by Privacy t-shirts.`,
+            },
+            'price': {
+            'single': parseInt(`12500`),
+            'monthly': parseInt(`5000`),
+            },
+            'options': [
+              {
+            'name': 'powered-by-privacy',
+            'friendlyName': 'Powered by Privacy',
+            'image': {
+            'single': `static/images/donate/yec-combo-tee-web.png?h=b3974819`,
+            'monthly': `static/images/donate/yec-combo-tee-web.png?h=b3974819`
+                }
+              },
+            ],
+            'requiredFields': ['shirt1Fit', 'shirt1Size', 'shirt2Fit', 'shirt2Size'],
+          },
+          {
+            'name': 'sweatshirt',
+            'friendly_name': {
+            'single': `Hoodie`,
+            'monthly': `Hoodie`
+            },
+            'image': {
+            'single': `static/images/donate/forever-hoodie.png?h=2e2f24fd`,
+            'monthly': `static/images/donate/forever-hoodie.png?h=2e2f24fd`
+            },
+            'description': {
+            'single': `Your generous support of Tor gets you this high-quality zip hoodie.`,
+            'monthly': `Your generous support of Tor gets you this high-quality zip hoodie.`,
+            },
+            'price': {
+            'single': parseInt(`50000`),
+            'monthly': parseInt(`10000`),
+            },
+            'options': null,
+            'requiredFields': ['sweatshirtSize'],
+          },
+        ],
+        'shirtFits': {
+          'tor-onions': {
+            'friendly-name': `Tor Onions Tee`,
+            'fits': {
+              'classic': {
+                'friendly-name': 'Classic',
+                'sizes': ['s', 'm', 'l', 'xl', 'xxl', '3xl', '4xl']
+              },
+            }
+          },
+          'powered-by-privacy': {
+            'friendly-name': `Powered by Privacy`,
+            'fits': {
+              'slim': {
+                'friendly-name': 'Slim',
+                'sizes': ['s', 'm']
+              },
+              'classic': {
+                'friendly-name': 'Classic',
+                'sizes': ['s', 'm', 'l', 'xl', 'xxl', '3xl', '4xl']
+              }
+            }
+          },
+        },
+        'defaultFrequencyForBoth': `single`,
+        'initialSelectedPrices': {
+          'single': parseInt(`12500`),
+          'monthly': parseInt(`2500`),
+        },
+        'donateProccessorFallbackUrl': `http://donate.torproject.i2p/donate-api`,
+        'successRedirectUrl': ``,
+        'assetBaseUrl': `./?h=6a425d19`,
+        'showGifts': `True`,
+      },
+    }
+  ];
+  if (`False` == 'True'){
+    window.reactComponents.push(
+      {
+        id: 'campaign-totals-area',
+        name: 'CampaignTotals',
+        props: {
+          'donateProccessorFallbackUrl': `http://donate.torproject.i2p/donate-api`,
+          'counters': [
+            {
+              'cssClass': 'supporters',
+              'field': 'totalDonations',
+              'label': `Number of Donations`,
+            },
+            {
+              'cssClass': 'total-donated',
+              'field': 'totalAmount',
+              'label': `Total Donated`,
+            },
+            {
+              'cssClass': 'total-matched',
+              'field': 'amountWithMozilla',
+              'label': `Total Raised with Friends of Tor's Match`,
+            }
+          ],
+        },
+      }
+    );
+  }
+
+  if ((window.location.protocol == "https:") || (`prod` == 'dev')) {
+    window.reactComponents[0].props.paymentMethods.push('credit-card');
+  }
+  </script>
+  <script type="text/javascript" src="static/gen/donate.js?h=f2eda865"></script>
+
+          
+        </main>
+      </div>
+    </div>
+  </div>
+  
+    
+
+<div class="container-fluid bg-dark footer order-last text-left">
+
+  
+
+  <div class="row">
+      <div class="col-4 d-flex onion-pattern">
+          <img src="static/images/circle-pattern.svg?h=9a4040e4" class="img-svg">
+    </div>
+    <div class="col-sm-8 d-flex download-section mt-auto">
+      <div class="container pb-2 justify-content-right">
+         <h2 class="text-white text-bold">Download Tor Browser</h2>
+         <p class="text-white">Download Tor Browser to experience real private browsing without tracking, surveillance, or censorship.</p><a class="btn text-primary bg-white btn-light pull-right mt-2" href="http://torproject.i2p/download/">
+          Download Tor Browser<i class="ml-2 pt-1 fas fa-arrow-down-png-purple"></i>
+         </a>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <div class="col-sm-6 offset-lx-1 offset-sm-0 mt-5">
+	        <h5 class="font-weight-bold mt-5 text-white">Our mission:</h5>
+          <p class="text-white mb-5">To advance human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.</p>
+      </div>
+      <div class="col-sm-2 mt-5 d-none d-sm-block">
+        <ul class="nav flex-column mt-sm-5">
+          
+          
+          <li class="nav-item">
+          
+          
+            <a class="nav-link text-light" href="donor-faq/">
+          
+              Donor FAQ
+              
+            </a>
+          </li>
+          
+          <li class="nav-item">
+          
+          
+            <a class="nav-link text-light" href="privacy-policy/">
+          
+              Donor Privacy Policy
+              
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <div class="col-sm-6 offset-lx-1 offset-sm-0 mt-5">
+        <p class="text-primary-light">SUBSCRIBE TO OUR NEWSLETTER</p>
+        <p class="text-light">Get monthly updates and opportunities from the Tor Project:</p>
+        <p class="w"><a class="btn btn-small btn-dark mt-2 text-white active" role="button" aria-pressed="true" href="https://newsletter.torproject.org/">SIGN UP</a></p>
+      </div>
+      <div class="col-sm-2 mt-5 d-none d-sm-block">
+        <div class="row">
+          <h4><a class="text-white px-3" target="_blank" href="https://forum.torproject.org"><i class="fab fa-discourse"></i></a></h4>
+          <h4><a class="text-white px-3" target="_blank" href="https://www.facebook.com/TorProject/"><i class="fab fa-facebook"></i></a></h4>
+          <h4><a class="mastodon text-white px-3" target="_blank" href="https://mastodon.social/@torproject" rel="me"><i class="fab fa-mastodon"></i></a></h4>
+        </div>
+        <div class="row">
+          <h4><a class="instagram text-white px-3" target="_blank" href="https://www.instagram.com/torproject"><i class="fab fa-instagram"></i></a></h4>
+          <h4><a class="twitter text-white px-3" target="_blank" href="https://twitter.com/torproject"><i class="fab fa-twitter"></i></a></h4>
+          <h4><a class="linkedin text-white px-3" target="_blank" href="https://www.linkedin.com/company/tor-project"><i class="fab fa-linkedin"></i></a></h4>
+        </div>
+        <div class="row">
+          <h4><a class="github text-white px-3" target="_blank" href="https://github.com/torproject"><i class="fab fa-github"></i></a></h4>
+          <h4><a class="telegram text-white px-3" target="_blank" href="https://t.me/torproject"><i class="fab fa-telegram"></i></a></h4>
+          <h4><a class="gitlab text-white px-3" target="_blank" href="https://gitlab.torproject.org/"><i class="fab fa-gitlab"></i></a></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <div class="col-8 mt-5">
+        
+        <p class="text-primary text-light">Trademark, copyright notices, and rules for use by third parties can be found in our 
+  <a href="http://torproject.i2p/about/trademark/" target="_blank" class="text-primary text-light"><u>FAQ</u></a>
+.</p>
+      </div>
+      
+    </div>
+  </div>
+  <script src="static/js/jquery-3.2.1.min.js?h=1055018c"></script>
+  <script src="static/js/popper.min.js?h=a4336719"></script>
+  <script src="static/js/bootstrap.bundle.min.js?h=46d1f82f"></script>
+  <script src="static/js/scrollspy.min.js?h=02674132"></script>
+  <script src="static/js/modernizr.js?h=9a7f0609"></script>
+  <script src="static/js/download.js?h=caaadf8f"></script>
+  <script src="static/js/fallback.js?h=8a716acd"></script>
+  </div>
+
+  
+
+
+</body></html>

@@ -1,0 +1,46 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<title>CAKE.I2P | TRANSIENT ENCRYPTED FILESHARING &amp; PASTEBIN</title>
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="icon" href="/favicon.svg">
+<style>body{opacity:0}</style>
+</head>
+<body id="fileupload">
+<div id="container">
+<div class="menubar">
+<span id="sitename">cake.i2p</span>
+<a class="menulink" href="/">File Upload</a>
+<a class="menulink" href="/pastebin/">Pastebin</a>
+<a class="menulink" id="faq" href="/faq/">FAQ</a>
+</div>
+<div id="main">
+<div id="box">
+<form action="/" method="post" enctype="multipart/form-data">
+<h2>Upload File</h2>
+<div id="filesize">Maximum size: 20MB</div>
+<input type="file" name="fileupload" class="fileuploadbutton" id="fileSelect">
+<div id="options">
+<label>Expires in:</label>
+<select name="TTL">
+<option value="60">1 hour</option>
+<option value="120">2 hours</option>
+<option value="240">4 hours</option>
+<option value="480">8 hours</option>
+<option value="720">12 hours</option>
+<option value="1440">24 hours</option>
+</select>
+<div id="sendit"><input type="submit" name="submit" class="uploadbutton button" value="Upload"></div>
+<hr>
+<label>Max downloads:</label>
+<input type="text" id="sendLimit" name="download_limit" value="10" pattern="[0-9]{1-3}" title="Set to 0 for unlimited downloads (max is 999)">
+<label id="metadata"><input type="checkbox" id="REMOVEMETADATA" class="optbox" name="REMOVEMETADATA" value="true" title="remove image metadata">Remove image metadata</label>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div id="footer">Cake &nbsp;•&nbsp; Transient Encrypted Filesharing &amp; Pastebin &nbsp;•&nbsp; © 2021 Itsjustme &nbsp;•&nbsp; Design © dr|z3d</div>
+<style>body{opacity:1}</style>
+
+
+</body></html>

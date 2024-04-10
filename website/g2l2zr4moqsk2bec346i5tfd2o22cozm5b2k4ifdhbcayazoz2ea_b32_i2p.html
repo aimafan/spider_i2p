@@ -1,0 +1,166 @@
+<html lang="None"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>LibreTranslate - Free and Open Source Machine Translation API</title>
+	<link rel="shortcut icon" href="/static/favicon.ico">
+	<meta name="description" content="Free and Open Source Machine Translation API. Self-hosted, offline capable and easy to setup. Run your own API server in just a few minutes.">
+	<meta name="keywords" content="translation,api">
+
+	<link rel="preload" href="/static/icon.svg" as="image">
+	<link rel="preload" href="/static/js/vue%402.js" as="script">
+	<link rel="preload" href="/static/js/materialize.min.js" as="script">
+	<link rel="preload" href="/static/js/prism.min.js" as="script">
+	<link rel="preload" href="js/app.js?v=1.3.9" as="script">
+
+	<link rel="preload" href="/static/css/materialize.min.css" as="style">
+	<link rel="preload" href="/static/css/material-icons.css" as="style">
+	<link rel="preload" href="/static/css/prism.min.css" as="style">
+	<link rel="preload" href="/static/css/main.css?v=1.3.9" as="style">
+	<link rel="preload" href="/static/css/dark-theme.css" as="style">
+	
+	<meta property="og:title" content="LibreTranslate - Free and Open Source Machine Translation API">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://libretranslate.com">
+	<meta property="og:image" content="https://user-images.githubusercontent.com/1951843/102724116-32a6df00-42db-11eb-8cc0-129ab39cdfb5.png">
+	<meta property="og:description" name="description" class="swiftype" content="Free and Open Source Machine Translation API. Self-hosted, offline capable and easy to setup. Run your own API server in just a few minutes.">
+
+	<script src="/static/js/vue%402.js"></script>
+
+
+	
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="/static/css/materialize.min.css">
+	<link rel="stylesheet" href="/static/css/material-icons.css">
+	<link rel="stylesheet" href="/static/css/prism.min.css">
+	<link rel="stylesheet" href="/static/css/main.css?v=1.3.9">
+	<link rel="stylesheet" href="/static/css/dark-theme.css">	
+</head>
+
+<body class="white">
+	<header>
+		<nav class="blue darken-3" role="navigation">
+			<div class="nav-wrapper container">
+				<button data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></button>
+				<a id="logo-container" href="/" class="brand-logo">
+					<img src="/static/icon.svg" alt="" class="logo">
+					<span>LibreTranslate</span>
+				</a>
+				<ul id="nav" class="right hide-on-med-and-down top-nav position-relative">
+					
+					
+					<li><a href="/docs">API Docs</a></li>
+					
+					<li><a href="https://github.com/LibreTranslate/LibreTranslate" rel="noopener noreferrer">GitHub</a></li>
+					
+					<li class="change-language"><a class="noline" href="javascript:void(0)" title="Change language"><i class="material-icons">language</i></a>
+					</li>
+					<li class="locale-panel blue darken-3">
+						<select id="locales" onchange="changeLocale(this)">
+							<option value="en">English</option><option value="it">Italian</option>
+						</select>
+						<a href="https://hosted.weblate.org/projects/libretranslate/app/None/">Edit<i class="material-icons">create</i></a>
+					</li>
+					
+				</ul>
+				<ul id="nav-mobile" class="sidenav blue darken-3">
+					
+					<li><a href="/docs">API Docs</a></li>
+					
+					<li><a href="https://github.com/LibreTranslate/LibreTranslate" rel="noopener noreferrer">GitHub</a></li>
+					
+					<li class="change-language"><a class="noline" href="javascript:void(0)" title="Change language"><i class="material-icons">language</i></a>
+					</li>
+					<li class="locale-panel blue darken-3">
+						<select id="locales" onchange="changeLocale(this)">
+							<option value="en">English</option><option value="it">Italian</option>
+						</select>
+						<a href="https://hosted.weblate.org/projects/libretranslate/app/None/">Edit<i class="material-icons">create</i></a>
+					</li>
+					
+				</ul>
+				<script>
+					var localeLinks = {
+						
+					};
+	
+					function changeLocale(slt){
+						var lang = slt.value;
+						if (localeLinks[lang]) location.href = localeLinks[lang];
+						else location.href = '?lang=' + slt.value;
+					}
+	
+					var btnChangeLangs = document.getElementsByClassName("change-language");
+					var localePanels = document.getElementsByClassName("locale-panel");
+
+					for (var i = 0; i < btnChangeLangs.length; i++){
+						(function(btn){
+							btn.addEventListener('click', function(e){
+								e.stopPropagation();
+								btn.classList.toggle('clicked');
+							});
+						})(btnChangeLangs[i]);
+					}
+					for (var i = 0; i < localePanels.length; i++){
+						localePanels[i].addEventListener('click', function(e){
+							e.stopPropagation();
+						});
+					}
+					document.addEventListener('click', function(){
+						for (var i = 0; i < btnChangeLangs.length; i++){
+							btnChangeLangs[i].classList.remove('clicked');
+						}
+					});
+				</script>
+			</div>
+		</nav>
+	</header>
+
+	<main id="app"><div><div class="section no-pad-bot"><div class="container"><div class="row"><h3 class="header center">Translation API</h3> <div id="translation-type-btns" class="s12 center"><button type="button" class="btn btn-switch-type active"><i aria-hidden="true" class="material-icons">title</i> <span class="btn-text">Translate Text</span></button> <button type="button" class="btn btn-switch-type"><i aria-hidden="true" class="material-icons">description</i> <span class="btn-text">Translate Files</span></button></div> <form id="translation-form" class="col s12"><div class="row mb-0"><div class="col s6 language-select"><span id="sourceLangLabel">Translate from</span> <!----> <select aria-labelledby="sourceLangLabel" class="browser-default" style="width: 82px;"><option value="en" selected="">English</option><option value="ar">Arabic</option><option value="az">Azerbaijani</option><option value="ca">Catalan</option><option value="zh">Chinese</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="eo">Esperanto</option><option value="fi">Finnish</option><option value="fr">French</option><option value="de">German</option><option value="el">Greek</option><option value="he">Hebrew</option><option value="hi">Hindi</option><option value="hu">Hungarian</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="ru">Russian</option><option value="sk">Slovak</option><option value="es">Spanish</option><option value="sv">Swedish</option><option value="tr">Turkish</option><option value="uk">Ukranian</option><option value="auto">Auto Detect</option></select></div> <div class="col s6 language-select"><a href="javascript:void(0)" aria-label="Swap source and target languages" class="btn-switch-language"><i class="material-icons">swap_horiz</i></a> <span id="targetLangLabel">Translate into</span> <select aria-labelledby="targetLangLabel" class="browser-default" style="width: 87px;"><option value="ar">Arabic</option><option value="az">Azerbaijani</option><option value="ca">Catalan</option><option value="cs">Czech</option><option value="da">Danish</option><option value="de">German</option><option value="el">Greek</option><option value="en">English</option><option value="eo">Esperanto</option><option value="es" selected="">Spanish</option><option value="fa">Persian</option><option value="fi">Finnish</option><option value="fr">French</option><option value="ga">Irish</option><option value="he">Hebrew</option><option value="hi">Hindi</option><option value="hu">Hungarian</option><option value="id">Indonesian</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="nl">Dutch</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="ru">Russian</option><option value="sk">Slovak</option><option value="sv">Swedish</option><option value="tr">Turkish</option><option value="uk">Ukranian</option><option value="zh">Chinese</option></select></div></div> <div class="row"><div class="input-field textarea-container col s6"><label for="textarea1" class="sr-only active">
+									Text to translate
+								</label> <textarea id="textarea1" dir="auto" style="height: 250px;"></textarea> <button title="Delete text" aria-label="Delete text" class="btn-delete-text"><i class="material-icons">close</i></button> <!----></div> <div class="input-field textarea-container col s6"><label for="textarea2" class="sr-only">
+									Translated text
+								</label> <textarea id="textarea2" dir="auto" style="height: 250px;"></textarea> <div class="actions"><!----> <!----> <!----> <button class="btn-action btn-copy-translated"><span>Copy text</span> <i aria-hidden="true" class="material-icons">content_copy</i></button></div> <div class="position-relative"><!----></div></div></div> <!----></form></div></div></div> <div class="section no-pad-bot"><div class="container"><div class="row center"><div class="col s12 m12"><div class="row center"><div class="col s12 m12 l6 left-align"><p class="mb-0">Request</p> <pre class="code mt-0"><code class="language-javascript"><span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://g2l2zr4moqsk2bec346i5tfd2o22cozm5b2k4ifdhbcayazoz2ea.b32.i2p/translate"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	method<span class="token operator">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+	body<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		q<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+		source<span class="token operator">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span>
+		target<span class="token operator">:</span> <span class="token string">"es"</span><span class="token punctuation">,</span>
+		format<span class="token operator">:</span> <span class="token string">"text"</span><span class="token punctuation">,</span>
+		api_key<span class="token operator">:</span> <span class="token string">""</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">await</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div> <div class="col s12 m12 l6 left-align"><p class="mb-0">Response</p> <pre class="code mt-0"><code class="language-javascript"></code></pre></div></div></div></div></div></div></div></main>
+
+	<footer class="page-footer blue darken-3">
+		<div class="container">
+			<div class="row">
+				<div class="col l12 s12">
+					<h5 class="white-text">LibreTranslate</h5>
+					<p class="grey-text text-lighten-4">Free and Open Source Machine Translation API</p>
+					<p>License: <a class="grey-text text-lighten-4" href="https://www.gnu.org/licenses/agpl-3.0.en.html" rel="noopener noreferrer">AGPLv3</a></p>
+					
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright center">
+			<p class="white-text">
+				Made with ❤ by <a class="white-text" href="https://github.com/LibreTranslate/LibreTranslate/graphs/contributors" rel="noopener noreferrer">LibreTranslate Contributors</a> and powered by <a class="white-text text-lighten-3" href="https://github.com/argosopentech/argos-translate/" rel="noopener noreferrer">Argos Translate</a>
+			</p>
+		</div>
+	</footer>
+
+	<script src="/static/js/materialize.min.js"></script>
+	<script>
+	// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-3.0
+	window.Prism = window.Prism || {};
+	window.Prism.manual = true;
+	// @license-end
+	</script>
+	<script src="/static/js/prism.min.js"></script>
+	<script src="js/app.js?v=1.3.9"></script>
+
+<div class="sidenav-overlay"></div><div class="drag-target"></div></body></html>

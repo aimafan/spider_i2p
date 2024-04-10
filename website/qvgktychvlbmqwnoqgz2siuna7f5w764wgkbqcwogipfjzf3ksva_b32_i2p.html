@@ -1,0 +1,145 @@
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="57x57" href="/static/img/cowyo/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/static/img/cowyo/img/cowyo/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/static/img/cowyo/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/static/img/cowyo/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/static/img/cowyo/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/static/img/cowyo/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/static/img/cowyo/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/img/cowyo/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/cowyo/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/static/img/cowyo/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/img/cowyo/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/static/img/cowyo/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/img/cowyo/favicon-16x16.png">
+        <link rel="manifest" href="/static/img/cowyo/manifest.json">
+        <meta name="msapplication-TileColor" content="#fff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#fff">
+
+        
+            <link rel="stylesheet" href="/static/css/dropzone.css">
+            <link rel="stylesheet" type="text/css" href="/static/css/github-markdown.css">
+            <link rel="stylesheet" type="text/css" href="/static/css/menus-min.css">
+            <link rel="stylesheet" type="text/css" href="/static/css/base-min.css">
+            <link rel="stylesheet" type="text/css" href="/static/css/highlight.css">
+            <link rel="stylesheet" type="text/css" href="/static/css/default.css">
+            <script type="text/javascript" src="/static/js/jquery-1.8.3.js"></script>
+            <script src="/static/js/highlight.min.js"></script>
+            <script type="text/javascript" src="/static/js/highlight.pack.js"></script>
+            <script src="/static/js/dropzone.js"></script>
+        
+
+        <title>SinningSeal</title>
+
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+            window.cowyo = {
+                debounceMS:  500 ,
+                lastFetch:  1712662905 ,
+                pageName: "SinningSeal",
+            }
+        </script>
+        <script type="text/javascript" src="/static/js/cowyo.js"></script>
+    </head>
+    <body id="pad" class="
+         EditPage 
+        
+        
+        
+        
+        
+        
+        
+    ">
+        <article class="markdown-body">
+
+            
+                <div class="pure-menu pure-menu-horizontal" id="menu">
+                    <ul class="pure-menu-list">
+                        <li></li>
+                        
+                        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                            <a href="#" id="menuLink1" class="pure-menu-link">SinningSeal</a>
+                            <ul class="pure-menu-children">
+                                
+                                <li class="pure-menu-item"><a href="/" class="pure-menu-link">New</a></li>
+                                
+                                <li class="pure-menu-item"><a href="https://github.com/schollz/cowyo" class="pure-menu-link">Source</a></li>
+                                
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link" id="publishPage">Publish</a></li>
+                                
+                                <hr>
+                                
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link" id="encryptPage">Encrypt</a></li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link" id="lockPage">Lock</a></li>
+                                <li class="pure-menu-item"><a href="/SinningSeal/history" class="pure-menu-link">History</a></li>
+                                <hr>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link" id="selfDestructPage">Self-destruct</a></li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link" id="erasePage">Erase</a></li>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover  ">
+                            <a href="/SinningSeal/view" class="pure-menu-link">View</a>
+                            <ul class="pure-menu-children">
+                            <li class="pure-menu-item">
+                        <a href="/SinningSeal/read" class="pure-menu-link">Current</a>
+                            </li>
+                            
+                            </ul>
+                        </li>
+
+                        
+                        
+                        <li class="pure-menu-item "><a href="/SinningSeal/list" class="pure-menu-link">List</a></li>
+                        
+                        <li class="pure-menu-item pure-menu-selected"><a href="/SinningSeal/edit" class="pure-menu-link"><span id="saveEditButton">Edit</span></a></li>
+                        
+                    </ul>
+                </div>
+            
+
+            <div id="wrap">
+                
+
+                    <div id="pad">
+
+                        <script>
+                            Dropzone.options.userInputForm = {
+                                clickable: false,
+                                maxFilesize:   10  , 
+                                init: function initDropzone() {
+                                    this.on("complete", onUploadFinished);
+                                }
+                            };
+                        </script>
+
+                        <form id="userInputForm" action="/uploads" class="dropzone">
+                            <textarea autofocus="" placeholder="Use markdown to write your note! New: you can publish your note when you are done (SinningSeal -> Publish)." id="userInput"></textarea>
+                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
+                    </div>
+                
+
+                <div id="rendered">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </div>
+                
+            </div>
+        </article>
+    
+
+</body></html>

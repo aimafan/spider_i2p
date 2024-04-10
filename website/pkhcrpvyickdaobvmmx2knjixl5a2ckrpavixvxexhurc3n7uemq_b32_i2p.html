@@ -1,0 +1,93 @@
+<html><head>
+		<title>i2pcraft</title>
+		<style>
+			#header {
+				text-align: center;
+				border-bottom: solid black 2px;
+			}
+			#footer {
+				text-align: center;
+				border-top: solid black 2px;
+				margin-top: 3em;
+				margin-bottom: 1em;
+			}
+			#body {
+
+			}
+			#status {
+				position: absolute;
+				right: 2em;
+				top: 2em;
+				border: 0;
+				padding: 0.3em;
+				border-bottom: 2px;
+				border-left: 2px;
+				border-color: black;
+				border-style: solid;
+			}
+			.code {
+				background-color: rgba(0, 0, 0, 0.1);
+				border-radius: 5px;
+			}
+			body {
+				max-width: 50em;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="status">
+			Players Online: 0 / 10<br>Last Player Online: 16h50m ago
+			<br>Last Skin Update:<br>2024-03-01 04:22 UTC
+		</div>
+		<div id="header">
+			<a href="/" style="color:inherit"><h1>i2pcraft</h1></a>
+			<h4>It's <del>just as bad</del> not as bad as you'd expect...</h4>
+		</div>
+		<div id="body">
+			<h2 id="introduction">Introduction</h2>
+			In case you didn't figure it out from the name, this is a Minecraft server (version 1.19.2, non-premium aka cracked) on I2P. It's running on a potato so don't expect much performance. Get ready to timeout every now and then and, if you are brave enough, try some fighting with monsters.
+			<h2 id="rules">Rules</h2>
+			Basically the same as on 2B2T: no generally illegal stuff in any form and no lagging the server on purpose.
+			<h2 id="irc">IRC</h2>
+			You can join it on Irc2P. Instructions for setting up a tunnel and some client suggestions can be found at <a href="http://i2p-projekt.i2p/en/docs/applications/irc#clients">i2p-projekt.i2p</a>. The channel name is #i2pcraft.
+			<h2 id="instructions">How to join?</h2>
+			<h3 id="software">Software</h3>
+			You'll need a "cracked" client or a hacked client with an alt manager. Anything that lets you connect to non-premium servers is fine. My recommendation is MultiMC or a fork of it (except for PolyMC) with some open source hacked client.
+			<h3 id="telemetry">Telemetry</h3>
+			This version of Minecraft has forced telemetry, which includes the following:
+			<ul>
+				<li>launcher identifier</li>
+				<li>user identifier/XUID</li>
+				<li>client session id</li>
+				<li>world session id</li>
+				<li>game version</li>
+				<li>operating system name and version</li>
+				<li>Java runtime version</li>
+				<li>client and server modded status</li>
+				<li>server type (single player, Realms, custom server...)</li>
+				<li>game mode</li>
+			</ul>
+			I don't know how much this affects privacy since we're not using a premium account or server, but it's better to disable it just in case. Some options that I know of are this <a href="https://github.com/kb-1000/no-telemetry">mod</a> for <a href="https://fabricmc.net/">fabric</a> and some hacked clients. I haven't created either of those, but don't just blindly trust me.<br><br>Alternatively you can use something like <a href="https://github.com/evilsocket/opensnitch">OpenSnitch</a> to prevent Minecraft and its launcher from connecting anywhere. If you use it, make sure to not accidentally block your java I2P router ;)
+			<h3 id="tunnels">Tunnels</h3>
+			Create a client tunnel and set the destination as <span class="code">abnrfgqqsoy6d3dlc7dzq64c5uir5vd7hxy7s7weo6qvmzigf34a.b32.i2p</span>. <ul>
+				<li><a href="example/i2pdtunnel.html">Here</a> is an example configuration file for i2pd.</li>
+				<li><a href="example/i2ptunnel.html">Here</a> is an example tunnel configuration file for java I2P.</li>
+				<li><a href="img/config.png">Here</a> is an example tunnel configuration in a gui. Every field visible is important!</li></ul>I don't know how much changing tunnel count will change anything, but adding one or two extra might save you from getting kicked. Decreasing tunnel lengths will reduce lag, but it will also weaken your anonymity. The example configuration files are using a tunnel length of 1, which seems to work <i>fine</i>. It could be a good idea to make tunnels close automatically when they're unused to not create unnecessary strain to the network.
+			<h3 id="ingame">In game</h3>
+			Add a new server and set the address as <span class="code">localhost:25565</span> (replace the port if you set it to something else in your configuration). The server's render- and simulation distance is set to 6, but you can lower them for less lag.
+			<h3 id="skins">Skins</h3>
+			Skins are optional. More information <a href="skin/">here</a>.
+			<h2 id="why">Why?</h2>
+			Because I can and I wanted to serve I2P with some <i>value</i>. Since the server will probably be really inactive, I might try check on it on every Saturday I can at around [20:00 / 08:00 PM] UTC. Happy gaming!
+			<h2 id="observations">Observations</h2>
+			<a href="observations/">Hyperlink</a>
+			<h4 id="donate" style="margin-bottom:0.1em">Donate</h4>
+			<h5 style="margin-top:0.1em"><a href="donate/">Hyperlink 2</a></h5>
+		</div>
+		<div id="footer">
+			Questions? Thoughts? Love letters? Mail will be checked if or when I remember at profe<span style="display:none;">plsnoscrapeme &lt;3</span>tikla<span>@mail.i2p</span> <a href="/profetikla.pgp">[PGP]</a>
+		</div>
+	
+
+</body></html>

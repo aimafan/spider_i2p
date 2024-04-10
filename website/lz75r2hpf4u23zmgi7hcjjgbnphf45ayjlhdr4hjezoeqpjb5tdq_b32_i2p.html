@@ -1,0 +1,56 @@
+<html data-theme="dark"><head>
+        <title>AnonymousOverflow - Private frontend for StackOverflow</title>
+        <link rel="stylesheet" href="/static/home.css">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'none'; img-src 'self';">
+        <link rel="icon" href="/static/codecircles.webp">
+        <meta name="description" content="View StackOverflow threads in privacy and without the clutter.">
+        <meta name="theme-color" content="#8CFFC1">
+<meta name="og:image" content="/static/codecircles.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/globals.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <img class="logo" src="/static/codecircles.webp" alt="4 circles with alternating colors between green and white">
+                <h1>AnonymousOverflow</h1>
+            </div>
+            <h2>Get programming help without compromising your privacy.</h2>
+            <p>
+                AnonymousOverflow allows you to view StackOverflow threads
+                without the cluttered interface and exposing your IP address,
+                browsing habits and other browser fingerprint data to
+                StackOverflow.
+            </p>
+              
+            <form method="POST" action="/">
+                <div class="view-form">
+                    <input class="view-input" type="text" name="url" placeholder="https://stackoverflow.com/questions/123456/example-url">
+                    <button class="view-button" type="submit">View</button>
+                </div>
+            </form>
+            <div class="options">
+                <div class="icon">
+                    <a href="/options/images">
+                        <img src="/static/icons/image.svg" alt="Toggle theme">
+                    </a>
+                </div>
+                <div class="icon">
+    <a href="/options/theme?redirect_url=">
+        <img src="/static/icons/sun.svg" alt="Toggle theme">
+    </a>
+</div>
+
+            </div>
+            <p class="footer">
+                Brought to you by
+                <a href="https://github.com/WhateverLabs" target="_blank" rel="noopener noreferrer">Whatever Labs</a>
+                •
+                <a href="https://github.com/httpjamesm/AnonymousOverflow" target="_blank" rel="noopener noreferrer">Source</a>
+                • Version 1.11.0
+            </p>
+        </div>
+    
+
+</body></html>

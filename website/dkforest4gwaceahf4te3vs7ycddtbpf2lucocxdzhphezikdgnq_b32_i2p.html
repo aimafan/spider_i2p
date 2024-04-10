@@ -1,0 +1,116 @@
+<html lang="en"><head>
+    
+    <!-- VERSION: 0.0.0-2488-g8cd24c4c -->
+    <!-- SHA:  -->
+    <link href="/public/img/favicon.ico" rel="icon" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="author" content="n0tr1v">
+    <meta name="keywords" content="">
+    <meta name="subject" content="">
+    <meta name="description" content="">
+    <meta name="classification" content="">
+    <meta name="distribution" content="">
+    <meta name="robots" content="all">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="1 days">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <title>DarkForest</title>
+    
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css?v=0.0.0-2488-g8cd24c4c">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=0.0.0-2488-g8cd24c4c">
+
+    <style>
+        body, html {
+            height: 100%;
+            display:table;
+            width:100%;
+        }
+        body {
+            display:table-cell;
+            vertical-align:middle;
+        }
+        .bg {
+             
+            background-image: url(/public/img/login_bg.jpg);
+
+             
+            height: 100%;
+
+             
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #parent {
+            display: table;
+            width: 100%;
+        }
+        #form_login {
+            display:table; 
+            margin:auto;
+        }
+        .captcha-img { transition: transform .2s; }
+        .captcha-img:hover { transform: scale(2.5); }
+    </style>
+    
+</head>
+<body class="bg">
+
+
+
+<div id="parent">
+    <div class="container" id="form_login">
+        <div class="row">
+            <div class="col-8 offset-2 col-md-8 offset-md-2 col-sm-8 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                <form autocomplete="on" method="post">
+                    <input type="hidden" name="csrf" value="KUUCwhLm9wvVdtsvruZ4lTUaSjJ1oH5R">
+                    
+                    <fieldset>
+                        <div class="row">
+                            <div class="center-block">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-10 offset-md-1 ">
+                                
+                                <div class="form-group">
+                                    <input class="transparent-input form-control" placeholder="Username" name="username" type="text" value="" autocorrect="off" autocapitalize="none" autofocus="" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="transparent-input form-control" placeholder="Password" name="password" type="password" value="" required="">
+                                </div>
+                                <div class="form-group">
+                                    <select name="session_duration" class="transparent-input form-control">
+
+                                        <option value="3600">Stay logged in for 1 hour</option>
+                                        <option value="21600">Stay logged in for 6 hours</option>
+                                        <option value="43200">Stay logged in for 12 hours</option>
+                                        <option value="86400">Stay logged in for 24 hours</option>
+                                        <option value="259200">Stay logged in for 3 days</option>
+                                        <option value="604800" selected="">Stay logged in for 7 days</option>
+                                        <option value="2592000">Stay logged in for 30 days</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="submit" class="transparent-input btn btn-lg btn-primary btn-block" value="Sign in">
+                                </div>
+                                <div class="form-group">
+                                    <a href="/signup" class="bg-label link">Register</a>
+                                    <a href="/forgot-password" class="bg-label link ml-2">I forgot my password</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body></html>

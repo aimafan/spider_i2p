@@ -1,0 +1,46 @@
+<html lang="en"><head>
+	<!-- META -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="SVR">
+        <meta name="description" content="Send your request">
+        <meta name="referrer" content="no-referrer">
+        <meta name="robots" content="noindex">
+        <meta name="googlebot" content="noindex">
+	<!-- LINK -->
+	<link rel="icon" type="image/svg+xml" href="back.svg" sizes="48x48">
+	<link rel="preload" as="style" href="style.css">
+ 	<link rel="stylesheet" href="style.css">
+	<!-- TITLE -->
+	<title>Contact</title>
+	</head>
+	<body>
+	<div class="container">
+		  <form id="contact" method="POST">
+			  <fieldset>
+				  <input placeholder="От кого" name="sender" type="text" tabindex="1" required="" autofocus="">
+			  </fieldset>
+			  <fieldset>
+				  <input placeholder="Email адрес (необязательно)" name="email" type="email" tabindex="2">
+			  </fieldset>
+			  <fieldset>
+				  <input placeholder="Номер телефона (необязательно)" name="phone" type="tel" tabindex="3">
+			  </fieldset>
+			  <fieldset>
+				  <textarea placeholder="Сообщение" name="message" tabindex="5" required=""></textarea>
+			  </fieldset>
+				  <p class="captcha"><img src="captcha.php" alt="Капча"><sp>
+			  </sp></p><fieldset>
+				  <input placeholder="6 цифр с изображения" name="captcha" type="text" tabindex="6" required="">
+			  </fieldset>
+			  <fieldset>
+				  <button name="submit" type="submit" id="contact-submit" data-submit="...Отправка">Отправить</button>
+			  </fieldset>
+			  <p>*будет отправлено зашифрованное личное письмо</p>
+			  <p>**односторонняя связь</p><p>
+		</p></form>
+	</div>
+	
+	
+
+</body></html>

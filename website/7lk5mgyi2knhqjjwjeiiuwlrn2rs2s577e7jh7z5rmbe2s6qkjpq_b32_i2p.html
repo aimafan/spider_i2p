@@ -1,0 +1,167 @@
+<html><head>
+        <meta charset="UTF-8">
+        
+        <title>LibreSpeed</title>
+        
+        <meta name="title" content="LibreSpeed">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        
+        <link rel="icon" type="image/png" href="./favicon.png">
+        <link rel="shortcut icon" type="image/png" href="./favicon.png">
+        
+        <script src="speedtest.js"></script>
+        
+        <script>
+            var s = new Speedtest();
+            
+            function speedtest_can_run_again() {
+                document.getElementById("start_button").disabled = false;
+                document.getElementById("stop_button").disabled = true;
+            }
+            
+            function start_speedtest() {
+                document.getElementById("start_button").disabled = true;
+                document.getElementById("stop_button").disabled = false;
+                s.start();
+            }
+            
+            function stop_speedtest() {
+                speedtest_can_run_again();
+                s.abort();
+            }
+        </script>
+        
+        <style>
+            #download_mbit::after, #upload_mbit::after {
+                content: " MBit/s";
+            }
+            #download_mb::after, #upload_mb::after {
+                content: " MB/s";
+            }
+            #download_mib::after, #upload_mib::after {
+                content: " MiB/s";
+            }
+            #ping::before {
+                content: "Ping: ";
+            }
+            #jitter::before {
+                content: "Jitter: ";
+            }
+            #ping::after, #jitter::after {
+                content: " ms";
+            }
+            #state::before {
+                content: "State: ";
+            }
+            #ip::before {
+                content: "IP: ";
+            }
+            #ip_section {
+                margin-left: 10px;
+            }
+            p {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>LibreSpeed</h1>
+            <noscript>
+                <div>
+                    <b>This speed test requires JavaScript. It does not collect any data or records.</b>
+                </div>
+                <br>
+            </noscript>
+        </header>
+        <main>
+            <p>This server uses 2 hops to connect to the I2P network.</p><br>
+            
+            <p id="state">Not started</p>
+            
+            <details>
+                <summary>Expert information</summary>
+                <div id="ip_section">
+                    <p id="ip"></p>
+                    <p>This is not your IP address. It is an internal IP address of our server.</p>
+                </div>
+            </details>
+
+            <div>
+                <h4>Download</h4>
+                <p id="download_mbit"></p>
+                <p id="download_mb"></p>
+                <p id="download_mib"></p>
+            </div>
+
+            <div>
+                <h4>Upload</h4>
+                <p id="upload_mbit"></p>
+                <p id="upload_mb"></p>
+                <p id="upload_mib"></p>
+            </div>
+
+            <div>
+                <h4>Latency</h4>
+                <p id="ping"></p>
+                <p id="jitter"></p>
+            </div>
+            
+            <div>
+                <button onclick="javascript:start_speedtest();" id="start_button">Start</button>
+                <button onclick="javascript:stop_speedtest();" id="stop_button" disabled="">Abort</button>
+                <button onclick="javascript:location.reload();" id="reload_button">Reload speedtest</button>
+            </div>
+        </main>
+
+        <footer>
+            <ul>
+                <li><a href="https://github.com/librespeed/speedtest" target="_blank">LibreSpeed</a> by Federico Dossena v5.2.4</li>
+                <li>Operated by <a href="http://bandura.i2p/" target="_blank">Bandura</a></li>
+            </ul>
+        </footer>
+
+        <script>
+            s.onupdate = function (data) {
+                var dl_mbit = data.dlStatus * 1.0;
+                var dl_mb = dl_mbit / 8.0;
+                var dl_mib = dl_mb * 1000000 /* 1000^2 */ / 1048576 /* 1024^2 */;
+                document.getElementById('download_mbit').textContent = dl_mbit.toFixed(3);
+                document.getElementById('download_mb').textContent = dl_mb.toFixed(3);
+                document.getElementById('download_mib').textContent = dl_mib.toFixed(3);
+                
+                var ul_mbit = data.ulStatus * 1.0;
+                var ul_mb = ul_mbit / 8.0;
+                var ul_mib = ul_mb * 1000000 /* 1000^2 */ / 1048576 /* 1024^2 */;
+                document.getElementById('upload_mbit').textContent = ul_mbit.toFixed(3);
+                document.getElementById('upload_mb').textContent = ul_mb.toFixed(3);
+                document.getElementById('upload_mib').textContent = ul_mib.toFixed(3);
+                
+                document.getElementById('ping').textContent = data.pingStatus;
+                document.getElementById('jitter').textContent = data.jitterStatus;
+                document.getElementById('ip').textContent = data.clientIp;
+                
+                if (data.testState == -1) {
+                    document.getElementById('state').textContent = "Not started";
+                } else if (data.testState == 0) {
+                    document.getElementById('state').textContent = "Starting";
+                } else if (data.testState == 1) {
+                    document.getElementById('state').textContent = "Download test";
+                } else if (data.testState == 2) {
+                    document.getElementById('state').textContent = "Ping + Jitter test";
+                } else if (data.testState == 3) {
+                    document.getElementById('state').textContent = "Upload test";
+                } else if (data.testState == 4) {
+                    document.getElementById('state').textContent = "Finished";
+                    speedtest_can_run_again();
+                } else if (data.testState == 5) {
+                    document.getElementById('state').textContent = "Aborted";
+                    speedtest_can_run_again();
+                }
+            }
+        </script>
+    
+
+</body></html>

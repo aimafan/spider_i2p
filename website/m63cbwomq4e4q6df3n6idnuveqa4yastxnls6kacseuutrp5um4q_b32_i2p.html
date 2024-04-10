@@ -1,0 +1,65 @@
+<html><head>
+        <title>Cobalt Calibur Beta</title>
+        <script src="/assets/scripts/jquery-2.1.0.js"></script>
+        <script src="/assets/scripts/jquery.tipsy.js"></script>
+        <script src="/assets/scripts/underscore.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/assets/scripts/engine.js"></script>
+        <link rel="stylesheet" href="/assets/styles/main.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="/assets/styles/tipsy.css" type="text/css" media="screen">
+    </head>
+    <body>
+        <div id="page" style="width: 800px; height: 576px;">
+            <div id="gamefield">
+                <div id="nametags" style="width: 800px; height: 576px; display: block;"><div class="name" style="left: 288px; top: 160px;"><span class="monster">Reaper</span></div><div class="name" style="left: 352px; top: 320px;"><span>Anon6862</span></div></div>
+                <div id="clock">18:00</div>
+            <canvas id="map" width="800" height="576"></canvas></div>
+            <div id="hearts">
+                <div class="holder"><div class="heart"></div><div class="heart"></div><div class="heart"></div><div class="heart"></div><div class="heart"></div></div>
+            </div>
+            <div id="messagefield">
+                <div id="message-box">
+                    <form>
+                        <div id="messages"><div class="message help"><span class="username">About: </span><span class="content">Cobalt Calibur, by Thomas Hunter (@tlhunter).</span></div><div class="message client"><span class="username">Client: </span><span class="content">Tileset Descriptors done.</span></div><div class="message client"><span class="username">Client: </span><span class="content">Map data done.</span></div><div class="message client"><span class="username">Client: </span><span class="content">Creating a character for the first time</span></div><div class="message help"><span class="username">Help: </span><span class="content">Type /help for some help</span></div><div class="message help"><span class="username">Help: </span><span class="content">Use the WASD keys to move around</span></div><div class="message server"><span class="username">Server: </span><span class="content">Socket Established</span></div></div>
+                        <input id="message-input" placeholder="Message <Enter>" maxlength="100">
+                        <input id="message-send" type="submit" value="Speak">
+                    </form>
+                </div>
+            </div>
+            <div id="inventoryfield">
+                <h5>Inventory</h5>
+                <div class="inventory">
+                    <div class="inventory-display" id="inventory-0" title="Stone">Stone: <span>0</span></div>
+                    <div class="inventory-display" id="inventory-1" title="Wood">Wood: <span>0</span></div>
+                    <div class="inventory-display" id="inventory-2" title="Sand">Sand: <span>0</span></div>
+                    <div class="inventory-display" id="inventory-3" title="Copper Ore">Copper: <span>0</span></div>
+                    <div class="inventory-display" id="inventory-4" title="Iron Sore">Iron: <span>0</span></div>
+                    <div class="inventory-display" id="inventory-5" title="Silver Ore">Silver: <span>0</span></div>
+                    <div class="inventory-display" id="inventory-6" title="Gold Ore">Gold: <span>0</span></div>
+                    <div class="inventory-display" id="inventory-7" title="Cobalt Ore">Cobalt: <span>0</span></div>
+                </div>
+            </div>
+            <div id="controls">
+                <div class="holder">
+                    <div class="button wood-wall" original-title="Press 1 to place a wooden wall<br /><strong>Cost: 4 x Wood</strong>"><span>1</span></div>
+                    <div class="button wood-floor" original-title="Press 2 to place a wooden floor<br /><strong>Cost: 2 x Wood</strong>"><span>2</span></div>
+                    <div class="button stone-wall" original-title="Press 3 to place a stone wall<br /><strong>Cost: 4 x Stone</strong>"><span>3</span></div>
+                    <div class="button stone-floor" original-title="Press 4 to place a stone floor<br /><strong>Cost: 2 x Stone</strong>"><span>4</span></div>
+                    <div class="button door" original-title="Press 5 to place a door<br /><strong>Cost: 12 x Wood</strong>"><span>5</span></div>
+                    <div class="button glass" original-title="Press 6 to place a glass window<br /><strong>Cost: 4 x Sand</strong>"><span>6</span></div>
+                    <div class="button collect" original-title="Press F to mine / chop / collect / harvest"><span>F</span></div>
+                </div>
+            </div>
+        </div>
+        <audio id="sound-mine" src="/assets/sound/mine.wav" preload="auto"></audio>
+        <audio id="sound-mine-fail" src="/assets/sound/mine-fail.wav" preload="auto"></audio>
+        <audio id="sound-build" src="/assets/sound/build.wav" preload="auto"></audio>
+        <audio id="sound-build-fail" src="/assets/sound/build-fail.wav" preload="auto"></audio>
+        <audio id="sound-walk" src="/assets/sound/walk.wav" preload="auto"></audio>
+        <audio id="sound-walk-fail" src="/assets/sound/walk-fail.wav" preload="auto"></audio>
+        <audio id="sound-death" src="/assets/sound/death.wav" preload="auto"></audio>
+        <audio id="sound-earthquake" src="/assets/sound/earthquake.wav" preload="auto"></audio>
+        <audio id="sound-chat" src="/assets/sound/chat.wav" preload="auto"></audio>
+    
+
+</body></html>

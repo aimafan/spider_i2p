@@ -1,0 +1,32 @@
+<html><head>
+        <title>SimpleerTube - Search</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="SimpleerTube">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <center>
+            <h2>SimpleerTube</h2>
+            <h5>A simple frontend for PeerTube</h5>
+
+            <form action="/search" method="POST">
+                <input size="45" style="max-width: 100%" type="text" name="query" id="query" placeholder="SepiaSearch">
+                <button type="submit">Search</button>
+            </form>
+
+            <br>
+
+            <form action="/instance" method="POST">
+                <label for="domain">Go to a specific instance:</label>
+                <br>
+                <input size="45" style="max-width: 100%" type="text" name="domain" id="domain" placeholder="Domain name">
+                <button type="submit">Go!</button>
+            </form>
+
+            <br>
+
+
+            
+        </center>
+    
+</body></html>

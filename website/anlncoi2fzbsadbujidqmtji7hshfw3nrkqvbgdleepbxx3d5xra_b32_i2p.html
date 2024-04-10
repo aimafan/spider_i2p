@@ -1,0 +1,266 @@
+<html style="background: #000; background-size: 270px;"><head>
+			<title>NVSPC</title>
+			<meta name="keywords" content="nvspc, анонимная биржа даркнет, аналог hydra, альтернатива гидры">
+			<meta name="description" content="NVSPC - анонимная торговая площадка для покупки или продажи товаров. ">
+			<link href="/Content/css/style.css?2.2.8864.32745" rel="stylesheet" type="text/css">
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="description" content="">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+			<script type="text/javascript" src="/Content/js/jquery-3.6.0.min.js"></script>
+			<script type="text/javascript" src="/Content/js/howler.core.min.js"></script>
+			<script type="text/javascript" src="/Content/js/ex.js?2.2.8864.32745"></script>
+			<script type="text/javascript" src="/Content/js/jQueryEmoji.min.js"></script>
+			<script type="text/javascript" src="/Content/js/jquery.autosize-min.js"></script>
+			<script type="text/javascript" src="/Content/js/jquery-ui.min.js"></script>
+			<script type="text/javascript" src="/Content/js/jquery.touch.min.js"></script>
+			
+			<script type="text/javascript" src="/js/jquery.svg.min.js"></script>
+			
+			<style type="text/css">
+				h1, h2 {
+					margin: 0;
+					padding: 0;
+				}
+
+				h1 {
+					font-size: 200%;
+				}
+
+				h2 {
+					text-align: left;
+				}
+
+				.info, .info p {
+					color: #444;
+					font-size: 10px;
+				}
+
+					.info a {
+						color: #000;
+					}
+
+				span.tobuy {
+					display: inline-block;
+					font-size: 30pt;
+					padding: 5px;
+					margin: 0px;
+					cursor: pointer;
+					height: 37pt;
+					position: relative;
+				}
+
+					span.tobuy:hover, span.tobuy.active {
+						background: #383838;
+						color: #5bc515;
+					}
+
+				span.tosell {
+					display: inline-block;
+					font-size: 30pt;
+					padding: 5px;
+					margin: 0px;
+					cursor: pointer;
+					height: 37pt;
+					position: relative;
+				}
+
+					span.tosell:hover, span.tosell.active {
+						background: #383838;
+						color: #f74545;
+					}
+
+				div.anicapcont {
+					position: relative;
+					width: 268px;
+					height: 70px;
+				}
+
+				div.turnjs {
+					position: absolute;
+					left: 30%;
+					top: 40%;
+					color: #fff;
+				}
+
+				div.anicap {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 268px;
+					height: 70px;
+					display: none;
+				}
+
+					div.anicap.i0 {
+						background-position: 0 0;
+					}
+
+					div.anicap.i1 {
+						background-position: 0 -70px;
+					}
+
+					div.anicap.i2 {
+						background-position: 0 -140px;
+					}
+
+					div.anicap.i3 {
+						background-position: 0 -210px;
+					}
+
+					div.anicap.i4 {
+						background-position: 0 -280px;
+					}
+
+					div.anicap.i5 {
+						background-position: 0 -350px;
+						height: 20px;
+						display: block;
+						position: relative;
+					}
+
+				html,
+				body {
+					height: 100%;
+				}
+
+				.tobuy span.cost, .tosell span.cost {
+					position: absolute;
+				}
+
+				.tobuy span.cost {
+					right: -25px;
+					top: 5px;
+					z-index: 10;
+				}
+
+				.tosell span.cost {
+					left: -30px;
+					bottom: 0px;
+				}
+
+				span.IMiniGlassRes {
+					text-align: right;
+				}
+			</style>
+		</head>
+		<body id="b0" style="margin: 0; background: none;text-align:center;">
+			<div class="headmenu">
+				<div class="d0"></div>
+				<div class="d1">
+					<h2>&nbsp;</h2>
+				</div>
+				<div class="d2">
+					<a class="mpa" href="/auth/login">Вход</a><a class="mpa" href="/R">Регистрация</a>
+					<a class="mpa" href="/Home/ChangeCulture?lang=en&amp;R=/">ENG</a><a class="mpa" href="/Home/ChangeCulture?lang=ru&amp;R=/">РУС</a>
+				</div>
+			</div>
+			<div style="margin-top: 49px; margin-bottom: 10px; min-height: 125px;">
+				<div class="Logo onl" style="position: relative; margin: auto; width: 315px; height: 120px;"><span class="LP R7 C1 Lbgred" data-c="2" data-i="1" data-j="7" style="width: 11px; height: 11px; left: 13px; top: 85px;"></span><span class="LP R7 C14 Lbggreen" data-c="4" data-i="14" data-j="7" style="width: 11px; height: 11px; left: 169px; top: 85px;"></span><span class="LP R0 C11 Lbg0" data-c="0" data-i="11" data-j="0" style="width: 11px; height: 11px; left: 133px; top: 1px;"></span><span class="LP R6 C13 Lbg0" data-c="0" data-i="13" data-j="6" style="width: 11px; height: 11px; left: 157px; top: 73px;"></span><span class="LP R0 C16 Lbg0" data-c="0" data-i="16" data-j="0" style="width: 11px; height: 11px; left: 193px; top: 1px;"></span><span class="LP R2 C20 Lbg0" data-c="0" data-i="20" data-j="2" style="width: 11px; height: 11px; left: 241px; top: 25px;"></span><span class="LP R4 C18 Lbg0" data-c="0" data-i="18" data-j="4" style="width: 11px; height: 11px; left: 217px; top: 49px;"></span><span class="LP R3 C24 Lbg0" data-c="0" data-i="24" data-j="3" style="width: 11px; height: 11px; left: 289px; top: 37px;"></span><span class="LP R5 C4 Lbgred" data-c="2" data-i="4" data-j="5" style="width: 11px; height: 11px; left: 49px; top: 61px;"></span><span class="LP R9 C0 Lbg0" data-c="0" data-i="0" data-j="9" style="width: 11px; height: 11px; left: 1px; top: 109px;"></span><span class="LP R4 C23 Lbg0" data-c="0" data-i="23" data-j="4" style="width: 11px; height: 11px; left: 277px; top: 49px;"></span><span class="LP R8 C18 Lbg0" data-c="0" data-i="18" data-j="8" style="width: 11px; height: 11px; left: 217px; top: 97px;"></span><span class="LP R3 C5 Lbg0" data-c="0" data-i="5" data-j="3" style="width: 11px; height: 11px; left: 61px; top: 37px;"></span><span class="LP R8 C24 Lbgmagenta" data-c="6" data-i="24" data-j="8" style="width: 11px; height: 11px; left: 289px; top: 97px;"></span><span class="LP R8 C21 Lbgmagenta" data-c="6" data-i="21" data-j="8" style="width: 11px; height: 11px; left: 253px; top: 97px;"></span><span class="LP R5 C25 Lbg0" data-c="0" data-i="25" data-j="5" style="width: 11px; height: 11px; left: 301px; top: 61px;"></span><span class="LP R0 C5 Lbg0" data-c="0" data-i="5" data-j="0" style="width: 11px; height: 11px; left: 61px; top: 1px;"></span><span class="LP R7 C11 Lbg0" data-c="0" data-i="11" data-j="7" style="width: 11px; height: 11px; left: 133px; top: 85px;"></span><span class="LP R9 C22 Lbg0" data-c="0" data-i="22" data-j="9" style="width: 11px; height: 11px; left: 265px; top: 109px;"></span><span class="LP R8 C14 Lbggreen" data-c="4" data-i="14" data-j="8" style="width: 11px; height: 11px; left: 169px; top: 97px;"></span><span class="LP R2 C3 Lbg0" data-c="0" data-i="3" data-j="2" style="width: 11px; height: 11px; left: 37px; top: 25px;"></span><span class="LP R7 C5 Lbg0" data-c="0" data-i="5" data-j="7" style="width: 11px; height: 11px; left: 61px; top: 85px;"></span><span class="LP R5 C0 Lbg0" data-c="0" data-i="0" data-j="5" style="width: 11px; height: 11px; left: 1px; top: 61px;"></span><span class="LP R8 C3 Lbg0" data-c="0" data-i="3" data-j="8" style="width: 11px; height: 11px; left: 37px; top: 97px;"></span><span class="LP R0 C21 Lbg0" data-c="0" data-i="21" data-j="0" style="width: 11px; height: 11px; left: 253px; top: 1px;"></span><span class="LP R3 C14 Lbggreen" data-c="4" data-i="14" data-j="3" style="width: 11px; height: 11px; left: 169px; top: 37px;"></span><span class="LP R4 C15 Lbg0" data-c="0" data-i="15" data-j="4" style="width: 11px; height: 11px; left: 181px; top: 49px;"></span><span class="LP R9 C20 Lbg0" data-c="0" data-i="20" data-j="9" style="width: 11px; height: 11px; left: 241px; top: 109px;"></span><span class="LP R0 C23 Lbgmagenta" data-c="6" data-i="23" data-j="0" style="width: 11px; height: 11px; left: 277px; top: 1px;"></span><span class="LP R1 C0 Lbg0" data-c="0" data-i="0" data-j="1" style="width: 11px; height: 11px; left: 1px; top: 13px;"></span><span class="LP R5 C10 Lbg0" data-c="0" data-i="10" data-j="5" style="width: 11px; height: 11px; left: 121px; top: 61px;"></span><span class="LP R8 C22 Lbgmagenta" data-c="6" data-i="22" data-j="8" style="width: 11px; height: 11px; left: 265px; top: 97px;"></span><span class="LP R3 C3 Lbg0" data-c="0" data-i="3" data-j="3" style="width: 11px; height: 11px; left: 37px; top: 37px;"></span><span class="LP R7 C20 Lbg0" data-c="0" data-i="20" data-j="7" style="width: 11px; height: 11px; left: 241px; top: 85px;"></span><span class="LP R2 C14 Lbggreen" data-c="4" data-i="14" data-j="2" style="width: 11px; height: 11px; left: 169px; top: 25px;"></span><span class="LP R8 C0 Lbg0" data-c="0" data-i="0" data-j="8" style="width: 11px; height: 11px; left: 1px; top: 97px;"></span><span class="LP R2 C12 Lbg0" data-c="0" data-i="12" data-j="2" style="width: 11px; height: 11px; left: 145px; top: 25px;"></span><span class="LP R6 C5 Lbg0" data-c="0" data-i="5" data-j="6" style="width: 11px; height: 11px; left: 61px; top: 73px;"></span><span class="LP R6 C1 Lbgred" data-c="2" data-i="1" data-j="6" style="width: 11px; height: 11px; left: 13px; top: 73px;"></span><span class="LP R5 C21 Lbgmagenta" data-c="6" data-i="21" data-j="5" style="width: 11px; height: 11px; left: 253px; top: 61px;"></span><span class="LP R6 C22 Lbg0" data-c="0" data-i="22" data-j="6" style="width: 11px; height: 11px; left: 265px; top: 73px;"></span><span class="LP R0 C2 Lbgred" data-c="2" data-i="2" data-j="0" style="width: 11px; height: 11px; left: 25px; top: 1px;"></span><span class="LP R6 C0 Lbg0" data-c="0" data-i="0" data-j="6" style="width: 11px; height: 11px; left: 1px; top: 73px;"></span><span class="LP R4 C10 Lbg0" data-c="0" data-i="10" data-j="4" style="width: 11px; height: 11px; left: 121px; top: 49px;"></span><span class="LP R7 C19 Lbgblue" data-c="5" data-i="19" data-j="7" style="width: 11px; height: 11px; left: 229px; top: 85px;"></span><span class="LP R0 C12 Lbg0" data-c="0" data-i="12" data-j="0" style="width: 11px; height: 11px; left: 145px; top: 1px;"></span><span class="LP R1 C20 Lbg0" data-c="0" data-i="20" data-j="1" style="width: 11px; height: 11px; left: 241px; top: 13px;"></span><span class="LP R6 C18 Lbg0" data-c="0" data-i="18" data-j="6" style="width: 11px; height: 11px; left: 217px; top: 73px;"></span><span class="LP R5 C9 Lbgyellow" data-c="3" data-i="9" data-j="5" style="width: 11px; height: 11px; left: 109px; top: 61px;"></span><span class="LP R6 C12 Lbg0" data-c="0" data-i="12" data-j="6" style="width: 11px; height: 11px; left: 145px; top: 73px;"></span><span class="LP R6 C6 Lbgyellow" data-c="3" data-i="6" data-j="6" style="width: 11px; height: 11px; left: 73px; top: 73px;"></span><span class="LP R5 C23 Lbgmagenta" data-c="6" data-i="23" data-j="5" style="width: 11px; height: 11px; left: 277px; top: 61px;"></span><span class="LP R5 C3 Lbg0" data-c="0" data-i="3" data-j="5" style="width: 11px; height: 11px; left: 37px; top: 61px;"></span><span class="LP R9 C9 Lbg0" data-c="0" data-i="9" data-j="9" style="width: 11px; height: 11px; left: 109px; top: 109px;"></span><span class="LP R8 C8 Lbgyellow" data-c="3" data-i="8" data-j="8" style="width: 11px; height: 11px; left: 97px; top: 97px;"></span><span class="LP R8 C16 Lbgblue" data-c="5" data-i="16" data-j="8" style="width: 11px; height: 11px; left: 193px; top: 97px;"></span><span class="LP R8 C7 Lbgyellow" data-c="3" data-i="7" data-j="8" style="width: 11px; height: 11px; left: 85px; top: 97px;"></span><span class="LP R0 C19 Lbgblue" data-c="5" data-i="19" data-j="0" style="width: 11px; height: 11px; left: 229px; top: 1px;"></span><span class="LP R3 C1 Lbg0" data-c="0" data-i="1" data-j="3" style="width: 11px; height: 11px; left: 13px; top: 37px;"></span><span class="LP R5 C13 Lbggreen" data-c="4" data-i="13" data-j="5" style="width: 11px; height: 11px; left: 157px; top: 61px;"></span><span class="LP R7 C8 Lbg0" data-c="0" data-i="8" data-j="7" style="width: 11px; height: 11px; left: 97px; top: 85px;"></span><span class="LP R7 C0 Lbg0" data-c="0" data-i="0" data-j="7" style="width: 11px; height: 11px; left: 1px; top: 85px;"></span><span class="LP R5 C7 Lbg0" data-c="0" data-i="7" data-j="5" style="width: 11px; height: 11px; left: 85px; top: 61px;"></span><span class="LP R9 C17 Lbg0" data-c="0" data-i="17" data-j="9" style="width: 11px; height: 11px; left: 205px; top: 109px;"></span><span class="LP R3 C17 Lbg0" data-c="0" data-i="17" data-j="3" style="width: 11px; height: 11px; left: 205px; top: 37px;"></span><span class="LP R8 C6 Lbg0" data-c="0" data-i="6" data-j="8" style="width: 11px; height: 11px; left: 73px; top: 97px;"></span><span class="LP R2 C7 Lbg0" data-c="0" data-i="7" data-j="2" style="width: 11px; height: 11px; left: 85px; top: 25px;"></span><span class="LP R5 C18 Lbgblue" data-c="5" data-i="18" data-j="5" style="width: 11px; height: 11px; left: 217px; top: 61px;"></span><span class="LP R1 C13 Lbggreen" data-c="4" data-i="13" data-j="1" style="width: 11px; height: 11px; left: 157px; top: 13px;"></span><span class="LP R8 C15 Lbg0" data-c="0" data-i="15" data-j="8" style="width: 11px; height: 11px; left: 181px; top: 97px;"></span><span class="LP R0 C7 Lbg0" data-c="0" data-i="7" data-j="0" style="width: 11px; height: 11px; left: 85px; top: 1px;"></span><span class="LP R3 C10 Lbg0" data-c="0" data-i="10" data-j="3" style="width: 11px; height: 11px; left: 121px; top: 37px;"></span><span class="LP R8 C1 Lbgred" data-c="2" data-i="1" data-j="8" style="width: 11px; height: 11px; left: 13px; top: 97px;"></span><span class="LP R1 C9 Lbgyellow" data-c="3" data-i="9" data-j="1" style="width: 11px; height: 11px; left: 109px; top: 13px;"></span><span class="LP R2 C17 Lbg0" data-c="0" data-i="17" data-j="2" style="width: 11px; height: 11px; left: 205px; top: 25px;"></span><span class="LP R4 C20 Lbg0" data-c="0" data-i="20" data-j="4" style="width: 11px; height: 11px; left: 241px; top: 49px;"></span><span class="LP R6 C23 Lbg0" data-c="0" data-i="23" data-j="6" style="width: 11px; height: 11px; left: 277px; top: 73px;"></span><span class="LP R1 C2 Lbgred" data-c="2" data-i="2" data-j="1" style="width: 11px; height: 11px; left: 25px; top: 13px;"></span><span class="LP R8 C9 Lbg0" data-c="0" data-i="9" data-j="8" style="width: 11px; height: 11px; left: 109px; top: 97px;"></span><span class="LP R9 C2 Lbg0" data-c="0" data-i="2" data-j="9" style="width: 11px; height: 11px; left: 25px; top: 109px;"></span><span class="LP R4 C21 Lbg0" data-c="0" data-i="21" data-j="4" style="width: 11px; height: 11px; left: 253px; top: 49px;"></span><span class="LP R1 C4 Lbg0" data-c="0" data-i="4" data-j="1" style="width: 11px; height: 11px; left: 49px; top: 13px;"></span><span class="LP R7 C10 Lbg0" data-c="0" data-i="10" data-j="7" style="width: 11px; height: 11px; left: 121px; top: 85px;"></span><span class="LP R3 C2 Lbgred" data-c="2" data-i="2" data-j="3" style="width: 11px; height: 11px; left: 25px; top: 37px;"></span><span class="LP R7 C6 Lbgyellow" data-c="3" data-i="6" data-j="7" style="width: 11px; height: 11px; left: 73px; top: 85px;"></span><span class="LP R9 C15 Lbg0" data-c="0" data-i="15" data-j="9" style="width: 11px; height: 11px; left: 181px; top: 109px;"></span><span class="LP R9 C8 Lbg0" data-c="0" data-i="8" data-j="9" style="width: 11px; height: 11px; left: 97px; top: 109px;"></span><span class="LP R7 C17 Lbgblue" data-c="5" data-i="17" data-j="7" style="width: 11px; height: 11px; left: 205px; top: 85px;"></span><span class="LP R6 C4 Lbgred" data-c="2" data-i="4" data-j="6" style="width: 11px; height: 11px; left: 49px; top: 73px;"></span><span class="LP R8 C19 Lbg0" data-c="0" data-i="19" data-j="8" style="width: 11px; height: 11px; left: 229px; top: 97px;"></span><span class="LP R3 C18 Lbg0" data-c="0" data-i="18" data-j="3" style="width: 11px; height: 11px; left: 217px; top: 37px;"></span><span class="LP R3 C15 Lbg0" data-c="0" data-i="15" data-j="3" style="width: 11px; height: 11px; left: 181px; top: 37px;"></span><span class="LP R2 C9 Lbgyellow" data-c="3" data-i="9" data-j="2" style="width: 11px; height: 11px; left: 109px; top: 25px;"></span><span class="LP R1 C24 Lbg0" data-c="0" data-i="24" data-j="1" style="width: 11px; height: 11px; left: 289px; top: 13px;"></span><span class="LP R4 C14 Lbg0" data-c="0" data-i="14" data-j="4" style="width: 11px; height: 11px; left: 169px; top: 49px;"></span><span class="LP R7 C21 Lbgmagenta" data-c="6" data-i="21" data-j="7" style="width: 11px; height: 11px; left: 253px; top: 85px;"></span><span class="LP R5 C20 Lbg0" data-c="0" data-i="20" data-j="5" style="width: 11px; height: 11px; left: 241px; top: 61px;"></span><span class="LP R2 C19 Lbgblue" data-c="5" data-i="19" data-j="2" style="width: 11px; height: 11px; left: 229px; top: 25px;"></span><span class="LP R8 C12 Lbggreen" data-c="4" data-i="12" data-j="8" style="width: 11px; height: 11px; left: 145px; top: 97px;"></span><span class="LP R0 C1 Lbg0" data-c="0" data-i="1" data-j="0" style="width: 11px; height: 11px; left: 13px; top: 1px;"></span><span class="LP R2 C5 Lbg0" data-c="0" data-i="5" data-j="2" style="width: 11px; height: 11px; left: 61px; top: 25px;"></span><span class="LP R1 C25 Lbg0" data-c="0" data-i="25" data-j="1" style="width: 11px; height: 11px; left: 301px; top: 13px;"></span><span class="LP R4 C19 Lbg0" data-c="0" data-i="19" data-j="4" style="width: 11px; height: 11px; left: 229px; top: 49px;"></span><span class="LP R5 C11 Lbggreen" data-c="4" data-i="11" data-j="5" style="width: 11px; height: 11px; left: 133px; top: 61px;"></span><span class="LP R6 C14 Lbg0" data-c="0" data-i="14" data-j="6" style="width: 11px; height: 11px; left: 169px; top: 73px;"></span><span class="LP R9 C21 Lbg0" data-c="0" data-i="21" data-j="9" style="width: 11px; height: 11px; left: 253px; top: 109px;"></span><span class="LP R3 C6 Lbgyellow" data-c="3" data-i="6" data-j="3" style="width: 11px; height: 11px; left: 73px; top: 37px;"></span><span class="LP R4 C5 Lbg0" data-c="0" data-i="5" data-j="4" style="width: 11px; height: 11px; left: 61px; top: 49px;"></span><span class="LP R5 C2 Lbg0" data-c="0" data-i="2" data-j="5" style="width: 11px; height: 11px; left: 25px; top: 61px;"></span><span class="LP R3 C22 Lbg0" data-c="0" data-i="22" data-j="3" style="width: 11px; height: 11px; left: 265px; top: 37px;"></span><span class="LP R7 C15 Lbg0" data-c="0" data-i="15" data-j="7" style="width: 11px; height: 11px; left: 181px; top: 85px;"></span><span class="LP R9 C11 Lbg0" data-c="0" data-i="11" data-j="9" style="width: 11px; height: 11px; left: 133px; top: 109px;"></span><span class="LP R1 C18 Lbg0" data-c="0" data-i="18" data-j="1" style="width: 11px; height: 11px; left: 217px; top: 13px;"></span><span class="LP R3 C11 Lbg0" data-c="0" data-i="11" data-j="3" style="width: 11px; height: 11px; left: 133px; top: 37px;"></span><span class="LP R9 C25 Lbg0" data-c="0" data-i="25" data-j="9" style="width: 11px; height: 11px; left: 301px; top: 109px;"></span><span class="LP R4 C0 Lbg0" data-c="0" data-i="0" data-j="4" style="width: 11px; height: 11px; left: 1px; top: 49px;"></span><span class="LP R9 C10 Lbg0" data-c="0" data-i="10" data-j="9" style="width: 11px; height: 11px; left: 121px; top: 109px;"></span><span class="LP R9 C3 Lbg0" data-c="0" data-i="3" data-j="9" style="width: 11px; height: 11px; left: 37px; top: 109px;"></span><span class="LP R3 C16 Lbg0" data-c="0" data-i="16" data-j="3" style="width: 11px; height: 11px; left: 193px; top: 37px;"></span><span class="LP R9 C16 Lbg0" data-c="0" data-i="16" data-j="9" style="width: 11px; height: 11px; left: 193px; top: 109px;"></span><span class="LP R8 C11 Lbggreen" data-c="4" data-i="11" data-j="8" style="width: 11px; height: 11px; left: 133px; top: 97px;"></span><span class="LP R5 C22 Lbgmagenta" data-c="6" data-i="22" data-j="5" style="width: 11px; height: 11px; left: 265px; top: 61px;"></span><span class="LP R6 C25 Lbg0" data-c="0" data-i="25" data-j="6" style="width: 11px; height: 11px; left: 301px; top: 73px;"></span><span class="LP R6 C10 Lbg0" data-c="0" data-i="10" data-j="6" style="width: 11px; height: 11px; left: 121px; top: 73px;"></span><span class="LP R6 C15 Lbg0" data-c="0" data-i="15" data-j="6" style="width: 11px; height: 11px; left: 181px; top: 73px;"></span><span class="LP R2 C2 Lbgred" data-c="2" data-i="2" data-j="2" style="width: 11px; height: 11px; left: 25px; top: 25px;"></span><span class="LP R3 C8 Lbgyellow" data-c="3" data-i="8" data-j="3" style="width: 11px; height: 11px; left: 97px; top: 37px;"></span><span class="LP R4 C8 Lbg0" data-c="0" data-i="8" data-j="4" style="width: 11px; height: 11px; left: 97px; top: 49px;"></span><span class="LP R3 C7 Lbg0" data-c="0" data-i="7" data-j="3" style="width: 11px; height: 11px; left: 85px; top: 37px;"></span><span class="LP R2 C24 Lbg0" data-c="0" data-i="24" data-j="2" style="width: 11px; height: 11px; left: 289px; top: 25px;"></span><span class="LP R8 C20 Lbg0" data-c="0" data-i="20" data-j="8" style="width: 11px; height: 11px; left: 241px; top: 97px;"></span><span class="LP R6 C17 Lbg0" data-c="0" data-i="17" data-j="6" style="width: 11px; height: 11px; left: 205px; top: 73px;"></span><span class="LP R1 C19 Lbgblue" data-c="5" data-i="19" data-j="1" style="width: 11px; height: 11px; left: 229px; top: 13px;"></span><span class="LP R4 C22 Lbg0" data-c="0" data-i="22" data-j="4" style="width: 11px; height: 11px; left: 265px; top: 49px;"></span><span class="LP R2 C8 Lbgyellow" data-c="3" data-i="8" data-j="2" style="width: 11px; height: 11px; left: 97px; top: 25px;"></span><span class="LP R4 C3 Lbg0" data-c="0" data-i="3" data-j="4" style="width: 11px; height: 11px; left: 37px; top: 49px;"></span><span class="LP R6 C20 Lbg0" data-c="0" data-i="20" data-j="6" style="width: 11px; height: 11px; left: 241px; top: 73px;"></span><span class="LP R3 C0 Lbg0" data-c="0" data-i="0" data-j="3" style="width: 11px; height: 11px; left: 1px; top: 37px;"></span><span class="LP R9 C6 Lbg0" data-c="0" data-i="6" data-j="9" style="width: 11px; height: 11px; left: 73px; top: 109px;"></span><span class="LP R9 C24 Lbg0" data-c="0" data-i="24" data-j="9" style="width: 11px; height: 11px; left: 289px; top: 109px;"></span><span class="LP R5 C24 Lbgmagenta" data-c="6" data-i="24" data-j="5" style="width: 11px; height: 11px; left: 289px; top: 61px;"></span><span class="LP R7 C12 Lbggreen" data-c="4" data-i="12" data-j="7" style="width: 11px; height: 11px; left: 145px; top: 85px;"></span><span class="LP R8 C5 Lbg0" data-c="0" data-i="5" data-j="8" style="width: 11px; height: 11px; left: 61px; top: 97px;"></span><span class="LP R6 C21 Lbgmagenta" data-c="6" data-i="21" data-j="6" style="width: 11px; height: 11px; left: 253px; top: 73px;"></span><span class="LP R1 C1 Lbg0" data-c="0" data-i="1" data-j="1" style="width: 11px; height: 11px; left: 13px; top: 13px;"></span><span class="LP R4 C12 Lbg0" data-c="0" data-i="12" data-j="4" style="width: 11px; height: 11px; left: 145px; top: 49px;"></span><span class="LP R1 C22 Lbg0" data-c="0" data-i="22" data-j="1" style="width: 11px; height: 11px; left: 265px; top: 13px;"></span><span class="LP R9 C1 Lbg0" data-c="0" data-i="1" data-j="9" style="width: 11px; height: 11px; left: 13px; top: 109px;"></span><span class="LP R1 C6 Lbgyellow" data-c="3" data-i="6" data-j="1" style="width: 11px; height: 11px; left: 73px; top: 13px;"></span><span class="LP R0 C17 Lbg0" data-c="0" data-i="17" data-j="0" style="width: 11px; height: 11px; left: 205px; top: 1px;"></span><span class="LP R2 C13 Lbggreen" data-c="4" data-i="13" data-j="2" style="width: 11px; height: 11px; left: 157px; top: 25px;"></span><span class="LP R0 C0 Lbg0" data-c="0" data-i="0" data-j="0" style="width: 11px; height: 11px; left: 1px; top: 1px;"></span><span class="LP R9 C7 Lbg0" data-c="0" data-i="7" data-j="9" style="width: 11px; height: 11px; left: 85px; top: 109px;"></span><span class="LP R0 C24 Lbg0" data-c="0" data-i="24" data-j="0" style="width: 11px; height: 11px; left: 289px; top: 1px;"></span><span class="LP R1 C10 Lbg0" data-c="0" data-i="10" data-j="1" style="width: 11px; height: 11px; left: 121px; top: 13px;"></span><span class="LP R7 C2 Lbg0" data-c="0" data-i="2" data-j="7" style="width: 11px; height: 11px; left: 25px; top: 85px;"></span><span class="LP R3 C25 Lbg0" data-c="0" data-i="25" data-j="3" style="width: 11px; height: 11px; left: 301px; top: 37px;"></span><span class="LP R0 C10 Lbg0" data-c="0" data-i="10" data-j="0" style="width: 11px; height: 11px; left: 121px; top: 1px;"></span><span class="LP R5 C19 Lbgblue" data-c="5" data-i="19" data-j="5" style="width: 11px; height: 11px; left: 229px; top: 61px;"></span><span class="LP R4 C6 Lbg0" data-c="0" data-i="6" data-j="4" style="width: 11px; height: 11px; left: 73px; top: 49px;"></span><span class="LP R3 C4 Lbg0" data-c="0" data-i="4" data-j="3" style="width: 11px; height: 11px; left: 49px; top: 37px;"></span><span class="LP R7 C25 Lbg0" data-c="0" data-i="25" data-j="7" style="width: 11px; height: 11px; left: 301px; top: 85px;"></span><span class="LP R4 C24 Lbg0" data-c="0" data-i="24" data-j="4" style="width: 11px; height: 11px; left: 289px; top: 49px;"></span><span class="LP R9 C13 Lbg0" data-c="0" data-i="13" data-j="9" style="width: 11px; height: 11px; left: 157px; top: 109px;"></span><span class="LP R9 C18 Lbg0" data-c="0" data-i="18" data-j="9" style="width: 11px; height: 11px; left: 217px; top: 109px;"></span><span class="LP R2 C6 Lbgyellow" data-c="3" data-i="6" data-j="2" style="width: 11px; height: 11px; left: 73px; top: 25px;"></span><span class="LP R8 C4 Lbgred" data-c="2" data-i="4" data-j="8" style="width: 11px; height: 11px; left: 49px; top: 97px;"></span><span class="LP R6 C11 Lbggreen" data-c="4" data-i="11" data-j="6" style="width: 11px; height: 11px; left: 133px; top: 73px;"></span><span class="LP R5 C8 Lbg0" data-c="0" data-i="8" data-j="5" style="width: 11px; height: 11px; left: 97px; top: 61px;"></span><span class="LP R7 C3 Lbgred" data-c="2" data-i="3" data-j="7" style="width: 11px; height: 11px; left: 37px; top: 85px;"></span><span class="LP R2 C1 Lbg0" data-c="0" data-i="1" data-j="2" style="width: 11px; height: 11px; left: 13px; top: 25px;"></span><span class="LP R1 C5 Lbg0" data-c="0" data-i="5" data-j="1" style="width: 11px; height: 11px; left: 61px; top: 13px;"></span><span class="LP R7 C4 Lbgred" data-c="2" data-i="4" data-j="7" style="width: 11px; height: 11px; left: 49px; top: 85px;"></span><span class="LP R2 C11 Lbg0" data-c="0" data-i="11" data-j="2" style="width: 11px; height: 11px; left: 133px; top: 25px;"></span><span class="LP R0 C15 Lbg0" data-c="0" data-i="15" data-j="0" style="width: 11px; height: 11px; left: 181px; top: 1px;"></span><span class="LP R7 C23 Lbg0" data-c="0" data-i="23" data-j="7" style="width: 11px; height: 11px; left: 277px; top: 85px;"></span><span class="LP R6 C19 Lbgblue" data-c="5" data-i="19" data-j="6" style="width: 11px; height: 11px; left: 229px; top: 73px;"></span><span class="LP R0 C6 Lbgyellow" data-c="3" data-i="6" data-j="0" style="width: 11px; height: 11px; left: 73px; top: 1px;"></span><span class="LP R3 C9 Lbgyellow" data-c="3" data-i="9" data-j="3" style="width: 11px; height: 11px; left: 109px; top: 37px;"></span><span class="LP R8 C2 Lbg0" data-c="0" data-i="2" data-j="8" style="width: 11px; height: 11px; left: 25px; top: 97px;"></span><span class="LP R0 C14 Lbggreen" data-c="4" data-i="14" data-j="0" style="width: 11px; height: 11px; left: 169px; top: 1px;"></span><span class="LP R4 C11 Lbg0" data-c="0" data-i="11" data-j="4" style="width: 11px; height: 11px; left: 133px; top: 49px;"></span><span class="LP R9 C19 Lbg0" data-c="0" data-i="19" data-j="9" style="width: 11px; height: 11px; left: 229px; top: 109px;"></span><span class="LP R0 C8 Lbgyellow" data-c="3" data-i="8" data-j="0" style="width: 11px; height: 11px; left: 97px; top: 1px;"></span><span class="LP R4 C25 Lbg0" data-c="0" data-i="25" data-j="4" style="width: 11px; height: 11px; left: 301px; top: 49px;"></span><span class="LP R3 C19 Lbgblue" data-c="5" data-i="19" data-j="3" style="width: 11px; height: 11px; left: 229px; top: 37px;"></span><span class="LP R5 C15 Lbg0" data-c="0" data-i="15" data-j="5" style="width: 11px; height: 11px; left: 181px; top: 61px;"></span><span class="LP R0 C18 Lbg0" data-c="0" data-i="18" data-j="0" style="width: 11px; height: 11px; left: 217px; top: 1px;"></span><span class="LP R6 C7 Lbg0" data-c="0" data-i="7" data-j="6" style="width: 11px; height: 11px; left: 85px; top: 73px;"></span><span class="LP R1 C15 Lbg0" data-c="0" data-i="15" data-j="1" style="width: 11px; height: 11px; left: 181px; top: 13px;"></span><span class="LP R4 C2 Lbg0" data-c="0" data-i="2" data-j="4" style="width: 11px; height: 11px; left: 25px; top: 49px;"></span><span class="LP R0 C22 Lbg0" data-c="0" data-i="22" data-j="0" style="width: 11px; height: 11px; left: 265px; top: 1px;"></span><span class="LP R1 C17 Lbg0" data-c="0" data-i="17" data-j="1" style="width: 11px; height: 11px; left: 205px; top: 13px;"></span><span class="LP R9 C5 Lbg0" data-c="0" data-i="5" data-j="9" style="width: 11px; height: 11px; left: 61px; top: 109px;"></span><span class="LP R4 C7 Lbg0" data-c="0" data-i="7" data-j="4" style="width: 11px; height: 11px; left: 85px; top: 49px;"></span><span class="LP R3 C20 Lbg0" data-c="0" data-i="20" data-j="3" style="width: 11px; height: 11px; left: 241px; top: 37px;"></span><span class="LP R7 C24 Lbg0" data-c="0" data-i="24" data-j="7" style="width: 11px; height: 11px; left: 289px; top: 85px;"></span><span class="LP R1 C3 Lbg0" data-c="0" data-i="3" data-j="1" style="width: 11px; height: 11px; left: 37px; top: 13px;"></span><span class="LP R2 C22 Lbg0" data-c="0" data-i="22" data-j="2" style="width: 11px; height: 11px; left: 265px; top: 25px;"></span><span class="LP R2 C16 Lbg0" data-c="0" data-i="16" data-j="2" style="width: 11px; height: 11px; left: 193px; top: 25px; opacity: 0.999445;"></span><span class="LP R7 C18 Lbgblue" data-c="5" data-i="18" data-j="7" style="width: 11px; height: 11px; left: 217px; top: 85px; opacity: 0.99698;"></span><span class="LP R1 C12 Lbg0" data-c="0" data-i="12" data-j="1" style="width: 11px; height: 11px; left: 145px; top: 13px; opacity: 0.991627;"></span><span class="LP R4 C9 Lbg0" data-c="0" data-i="9" data-j="4" style="width: 11px; height: 11px; left: 109px; top: 49px; opacity: 0.984292;"></span><span class="LP R9 C14 Lbg0" data-c="0" data-i="14" data-j="9" style="width: 11px; height: 11px; left: 169px; top: 109px; opacity: 0.976331;"></span><span class="LP R2 C4 Lbg0" data-c="0" data-i="4" data-j="2" style="width: 11px; height: 11px; left: 49px; top: 25px; opacity: 0.965846;"></span><span class="LP R8 C13 Lbggreen" data-c="4" data-i="13" data-j="8" style="width: 11px; height: 11px; left: 157px; top: 97px; opacity: 0.952414;"></span><span class="LP R9 C12 Lbg0" data-c="0" data-i="12" data-j="9" style="width: 11px; height: 11px; left: 145px; top: 109px; opacity: 0.939409;"></span><span class="LP R5 C6 Lbgyellow" data-c="3" data-i="6" data-j="5" style="width: 11px; height: 11px; left: 73px; top: 61px; opacity: 0.920755;"></span><span class="LP R1 C14 Lbggreen" data-c="4" data-i="14" data-j="1" style="width: 11px; height: 11px; left: 169px; top: 13px; opacity: 0.902964;"></span><span class="LP R5 C12 Lbggreen" data-c="4" data-i="12" data-j="5" style="width: 11px; height: 11px; left: 145px; top: 61px; opacity: 0.880203;"></span><span class="LP R6 C8 Lbg0" data-c="0" data-i="8" data-j="6" style="width: 11px; height: 11px; left: 97px; top: 73px; opacity: 0.859063;"></span><span class="LP R2 C23 Lbgmagenta" data-c="6" data-i="23" data-j="2" style="width: 11px; height: 11px; left: 277px; top: 25px; opacity: 0.836506;"></span><span class="LP R1 C23 Lbgmagenta" data-c="6" data-i="23" data-j="1" style="width: 11px; height: 11px; left: 277px; top: 13px; opacity: 0.81466;"></span><span class="LP R2 C10 Lbg0" data-c="0" data-i="10" data-j="2" style="width: 11px; height: 11px; left: 121px; top: 25px; opacity: 0.783203;"></span><span class="LP R0 C9 Lbgyellow" data-c="3" data-i="9" data-j="0" style="width: 11px; height: 11px; left: 109px; top: 1px; opacity: 0.756771;"></span><span class="LP R2 C25 Lbg0" data-c="0" data-i="25" data-j="2" style="width: 11px; height: 11px; left: 301px; top: 25px; opacity: 0.729325;"></span><span class="LP R6 C3 Lbg0" data-c="0" data-i="3" data-j="6" style="width: 11px; height: 11px; left: 37px; top: 73px; opacity: 0.703368;"></span><span class="LP R7 C22 Lbg0" data-c="0" data-i="22" data-j="7" style="width: 11px; height: 11px; left: 265px; top: 85px; opacity: 0.674286;"></span><span class="LP R3 C21 Lbg0" data-c="0" data-i="21" data-j="3" style="width: 11px; height: 11px; left: 253px; top: 37px; opacity: 0.644516;"></span><span class="LP R8 C25 Lbg0" data-c="0" data-i="25" data-j="8" style="width: 11px; height: 11px; left: 301px; top: 97px; opacity: 0.616723;"></span><span class="LP R2 C21 Lbg0" data-c="0" data-i="21" data-j="2" style="width: 11px; height: 11px; left: 253px; top: 25px; opacity: 0.578217;"></span><span class="LP R4 C4 Lbg0" data-c="0" data-i="4" data-j="4" style="width: 11px; height: 11px; left: 49px; top: 49px; opacity: 0.528782;"></span><span class="LP R6 C9 Lbgyellow" data-c="3" data-i="9" data-j="6" style="width: 11px; height: 11px; left: 109px; top: 73px; opacity: 0.497382;"></span><span class="LP R8 C17 Lbg0" data-c="0" data-i="17" data-j="8" style="width: 11px; height: 11px; left: 205px; top: 97px; opacity: 0.463381;"></span><span class="LP R2 C18 Lbg0" data-c="0" data-i="18" data-j="2" style="width: 11px; height: 11px; left: 217px; top: 25px; opacity: 0.434737;"></span><span class="LP R5 C17 Lbgblue" data-c="5" data-i="17" data-j="5" style="width: 11px; height: 11px; left: 205px; top: 61px; opacity: 0.403739;"></span><span class="LP R6 C24 Lbg0" data-c="0" data-i="24" data-j="6" style="width: 11px; height: 11px; left: 289px; top: 73px; opacity: 0.368063;"></span><span class="LP R3 C13 Lbggreen" data-c="4" data-i="13" data-j="3" style="width: 11px; height: 11px; left: 157px; top: 37px; opacity: 0.338041;"></span><span class="LP R5 C16 Lbgblue" data-c="5" data-i="16" data-j="5" style="width: 11px; height: 11px; left: 193px; top: 61px; opacity: 0.31108;"></span><span class="LP R6 C2 Lbgred" data-c="2" data-i="2" data-j="6" style="width: 11px; height: 11px; left: 25px; top: 73px; opacity: 0.284744;"></span><span class="LP R2 C15 Lbg0" data-c="0" data-i="15" data-j="2" style="width: 11px; height: 11px; left: 181px; top: 25px; opacity: 0.254548;"></span><span class="LP R1 C8 Lbgyellow" data-c="3" data-i="8" data-j="1" style="width: 11px; height: 11px; left: 97px; top: 13px; opacity: 0.22988;"></span><span class="LP R4 C13 Lbg0" data-c="0" data-i="13" data-j="4" style="width: 11px; height: 11px; left: 157px; top: 49px; opacity: 0.206107;"></span><span class="LP R0 C20 Lbg0" data-c="0" data-i="20" data-j="0" style="width: 11px; height: 11px; left: 241px; top: 1px; opacity: 0.175276;"></span><span class="LP R5 C5 Lbg0" data-c="0" data-i="5" data-j="5" style="width: 11px; height: 11px; left: 61px; top: 61px; opacity: 0.152044;"></span><span class="LP R8 C10 Lbg0" data-c="0" data-i="10" data-j="8" style="width: 11px; height: 11px; left: 121px; top: 97px; opacity: 0.130184;"></span><span class="LP R0 C4 Lbg0" data-c="0" data-i="4" data-j="0" style="width: 11px; height: 11px; left: 49px; top: 1px; opacity: 0.111427;"></span><span class="LP R4 C16 Lbg0" data-c="0" data-i="16" data-j="4" style="width: 11px; height: 11px; left: 193px; top: 49px; opacity: 0.0879369;"></span><span class="LP R2 C0 Lbg0" data-c="0" data-i="0" data-j="2" style="width: 11px; height: 11px; left: 1px; top: 25px; opacity: 0.0709675;"></span><span class="LP R7 C13 Lbggreen" data-c="4" data-i="13" data-j="7" style="width: 11px; height: 11px; left: 157px; top: 85px; opacity: 0.0568982;"></span><span class="LP R8 C23 Lbgmagenta" data-c="6" data-i="23" data-j="8" style="width: 11px; height: 11px; left: 277px; top: 97px; opacity: 0.0442984;"></span><span class="LP R9 C23 Lbg0" data-c="0" data-i="23" data-j="9" style="width: 11px; height: 11px; left: 277px; top: 109px; opacity: 0.0286793;"></span><span class="LP R0 C13 Lbggreen" data-c="4" data-i="13" data-j="0" style="width: 11px; height: 11px; left: 157px; top: 1px; opacity: 0.0184187;"></span><span class="LP R0 C25 Lbg0" data-c="0" data-i="25" data-j="0" style="width: 11px; height: 11px; left: 301px; top: 1px; opacity: 0.0109262;"></span><span class="LP R0 C3 Lbg0" data-c="0" data-i="3" data-j="0" style="width: 11px; height: 11px; left: 37px; top: 1px; opacity: 0.00575306;"></span><span class="LP R1 C16 Lbg0" data-c="0" data-i="16" data-j="1" style="width: 11px; height: 11px; left: 193px; top: 13px; opacity: 0.00154133;"></span><span class="LP R1 C21 Lbg0" data-c="0" data-i="21" data-j="1" style="width: 11px; height: 11px; left: 253px; top: 13px; opacity: 2.74153e-05;"></span></div>
+			</div>
+			<script>
+				$(function () {
+					if (location.hostname.indexOf(".onion") < 0 && location.hostname.indexOf(".i2p") < 0 && location.hostname.indexOf("127.0.0.1") < 0 && location.hostname.indexOf("localhost") < 0) {
+						var rediring = false;
+						function ping(addr) {
+							$.ajax({
+								url: 'http://'+addr+'/api/dummy/test?r=' + new Date().getTime(),
+								//data: {},
+								timeout: 15000,
+								type: 'GET',
+
+								cache: false,
+								//dataType: "json",
+								//async: true,
+								crossDomain: true,
+								//headers: {
+								//	"Accept": "application/json",
+								//	"Access-Control-Allow-Origin": "*",
+								//},
+
+								success: function (data) {
+									if (data && data.ok === 1 && !rediring) {
+										rediring = true;
+										window.location.replace('http://'+addr+'');
+									}
+								}
+							});
+						}
+						
+						var onion_addrs = [
+							'nvspc3nz5zjtoidc6pas2sjwuce5av27s3raujyg7plh6tfebgdrzjad.onion',
+							'nvspct6csx5p3gypygm3hxkca6cmdr4nqd7o2zuyyezgxshtzpz47pad.onion',
+							'nvspc3opkvrhxd43tqsk3i3xpu35zuvrhbu35rcgmhsq76sbqpkup3yd.onion',
+							'nvspc3qkv6546t6axp4hhcvrdinadbcud7eitg4jebukyhqiicae3hqd.onion',
+							'nvspcyskhgusskqlsi4sjotx4dhicwu62izyjq3qb4k2p7vlnyg46pad.onion',
+							'nvspcuq7vhbxxbizo743zcgku7uyjrww2uwflz75mpzx7zervqruc6qd.onion',
+						]
+						for (var i = 0; i < onion_addrs.length; i++) {
+							ping(onion_addrs[i]);
+						}
+					}
+				});
+			</script>
+			<div style="min-height: 100px; color: #a0a0a0; text-align: center; padding-top: 10px; padding-bottom: 50px;border-top: 1px solid #111111;background:#000;position:relative;z-index:10;">
+				
+				
+				<div id="BTCRUR_chart" data-name="BTC/RUR" data-id="1" data-dark="1" style="display:block;margin:auto;" class="tradeGrap_canvas"><canvas width="300" height="160" style="">NO</canvas></div>
+				<div id="GSTRUR_chart" data-name="GST/RUR" data-id="2" data-dark="1" style="display:block;margin:auto;" class="tradeGrap_canvas"><canvas width="300" height="160" style="">NO</canvas></div>
+				<div id="CRMRUR_chart" data-name="CRM/RUR" data-id="178" data-dark="1" style="display:block;margin:auto;" class="tradeGrap_canvas"><canvas width="300" height="160" style="">NO</canvas></div>
+			</div>
+			<br>
+			<div class="info" style="z-index: 5; text-align: left; position: fixed; left: 10px; bottom: 10px;min-height:30px;">
+				<p class="copyright">
+
+					<script>
+						$(function () {
+                                    
+							var logoarr = [
+								"00200030330004400005000600",
+								"00200030330004400005000600",
+								"00200030330004400005000600",
+								"00200030330004400005000600",
+								"00000000000000000000000000",
+								"02002030030444405555066660",
+								"02202030030400005005060000",
+								"02022030030044405555060000",
+								"02002003300444405000066660",
+								"00000000000000000000000000"
+							];
+							
+							function iniLogo(logoarr) {
+								var i = 0;
+								var j = 0;
+								var stackarr = [];
+								var stackarr_cleaning = [];
+								for (i = 0; i < 26; i++) {
+									for (j = 0; j < logoarr.length; j++) {
+										stackarr.push({ i: i, j: j, c: parseInt(logoarr[j][i]) });
+										//stackarr_cleaning.push({ i: i, j: j, c: parseInt(logoarr[j][i]) });
+									}
+								}
+								shuffle(stackarr);
+
+								setTimeout(putPix, 1000, 3, stackarr, $("div.Logo"), logoarr, stackarr_cleaning)
+							}
+
+							setTimeout(iniLogo, 1000, logoarr);
+							function changePixel(e, oc, nc) {
+								e.switchClass(oc, nc, 500, "easeInOutQuad");
+							}
+
+							var w = new Singletone();
+							var BTCRUR_chart = new w.C_smp_chart($('#BTCRUR_chart'));
+							var GSTRUR_chart = new w.C_smp_chart($('#GSTRUR_chart'));
+							var CRMRUR_chart = new w.C_smp_chart($('#CRMRUR_chart'));
+						});
+					</script>
+				</p>
+				
+				Анонимно купить или продать - быстро, надёжно и безопасно. BTC-LN.<a href="https://nvxxx.ru">копия силкроад</a>  
+			</div>
+			
+		
+	</body></html>

@@ -1,0 +1,86 @@
+<html><head>
+    <!-- should we do this, and make sure it always updates? -->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>BieHDC's Site</title>
+<style>
+body,html {
+    background:#000;
+    color:#fff;
+    max-width:900px;
+    margin:1em auto;
+    padding:0 0.5em;
+    font-family:monospace;
+    font-size:large;
+}
+
+a {
+    color:#fff;
+}
+
+a:visited {
+    color:#555;
+}
+
+p {
+    margin:0;
+    padding:0
+}
+</style></head>
+
+<body>
+    <h1>BieHDC's I2P Home</h1>
+    <p>No Warrenty.</p>
+    <br>
+
+    <h1>Projects</h1>
+    <h2>Dendrite Pinecone I2P Port</h2>
+    <h2>NOT MAINTAINED ANYMORE - NO PUBLIC INTEREST</h2>
+    <p>I am keeping everything around and will reactivate it once there is interest.</p>
+    <p>
+        TL;DR: <br>
+        - Make sure "SAM application bride" is enabled and started in your <a href="http://127.0.0.1:7657/configclients">I2P Router Config</a>. <br>
+        - Download a <a href="./files/">Dendrite Build</a> and a run-file. <br>
+        - Run it. <br>
+        - Point your matrix client (Nheko, Element, ...) at "http://localhost:8008" and register. <br>
+        - It should connect and discover other peers through the default bootstrap b32.i2p. <br>
+        - To add new peers, open the run-file and add it to the list comma separated. <br>
+        - for example "-peer aaa.b32.i2p,bbb.b32.i2p,ccc.b32.i2p"
+    </p>
+    <br>
+    <p>
+        Development happens over on <a target="_blank" href="https://github.com/BieHDC/dendrite"> Github</a>. <br>
+        Unlike the default monolyth deployment, this utilises dendrites made-for-it pinecone router. I have made some changes to pinecone to allow a custom dialer and adapted the pinecone-demo code to use <a target="_blank" href="https://github.com/eyedeekay/onramp">onramp</a> for setting up the connection over sam. Every peer has a b32.i2p address and it can be used as static peer. You can add multiple of these delimited by comma(,) in the run-file. This also means you can make your secret network of peers, but you should not rely on that for safety, make invite-only e2ee encrypted rooms instead. <br>
+        The status of this project is Maintained! See the <a target="_blank" href="https://github.com/BieHDC/dendrite/blob/main/cmd/dendrite-demo-pinecone-i2p/README.md">Readme</a> on Github for more information. <br>
+        <br>
+        Current public list of 24/7 Nodes: <br>
+        - NONE <br>
+
+        <br>
+        If you want join the list, contact me on Matrix (userid and room in the Readme above) or E-Mail me at biehdc@mail.i2p.
+    </p>
+
+    <br>
+    <h1>Content</h1>
+    <h3>Files</h3>
+    <a href="./files/">List</a>
+    <br>
+    <br>
+
+
+    <h2>About Me</h2>
+    <p>There is nothing really. I am just interested in a better internet.</p>
+    <br>
+
+
+    <h3>Contact</h3>
+    <p>You can email me at biehdc@mail.i2p</p>
+    <br>
+
+    <h3>Donations</h3>
+    <p>Monero: 8BGDujc6Dz8DoR4dSS1SRciMoZfSUY2EdP81rxeT39G7Ud4UJsKHcZ6U7acCdhyNcBKY1o62GrBS5abrtNqZ18g2TNjNFHu</p>
+    <img src="./monero.png" alt="Monero Donation QR-Code">
+    <br>
+
+
+</body></html>

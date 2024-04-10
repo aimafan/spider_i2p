@@ -1,0 +1,1181 @@
+<html lang="en-US" class="theme-doom-one"><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Explore - ~vern Git</title>
+	<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoifnZlcm4gR2l0Iiwic2hvcnRfbmFtZSI6In52ZXJuIEdpdCIsInN0YXJ0X3VybCI6Imh0dHBzOi8vZ2l0LnZlcm4uY2MvIiwiaWNvbnMiOlt7InNyYyI6Imh0dHBzOi8vZ2l0LnZlcm4uY2MvYXNzZXRzL2ltZy9sb2dvLnBuZyIsInR5cGUiOiJpbWFnZS9wbmciLCJzaXplcyI6IjUxMng1MTIifSx7InNyYyI6Imh0dHBzOi8vZ2l0LnZlcm4uY2MvYXNzZXRzL2ltZy9sb2dvLnN2ZyIsInR5cGUiOiJpbWFnZS9zdmcreG1sIiwic2l6ZXMiOiI1MTJ4NTEyIn1dfQ==">
+	<meta name="author" content="Forgejo – Beyond coding. We forge.">
+	<meta name="description" content="Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.">
+	<meta name="keywords" content="git,forge,forgejo">
+	<meta name="referrer" content="no-referrer">
+
+
+	<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/assets/img/favicon.png" type="image/png">
+	
+<script>
+	
+	window.addEventListener('error', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.addEventListener('unhandledrejection', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.config = {
+		appUrl: 'https:\/\/git.vern.cc\/',
+		appSubUrl: '',
+		assetVersionEncoded: encodeURIComponent('1.21.2~0'), 
+		assetUrlPrefix: '\/assets',
+		runModeIsProd:  true ,
+		customEmojis: {"codeberg":":codeberg:","forgejo":":forgejo:","git":":git:","gitea":":gitea:","github":":github:","gitlab":":gitlab:","gogs":":gogs:"},
+		csrfToken: '4Xw45EHx6kyh13y0bR26p1pjvZg6MTcxMjY0Mzg4NDU2MjQ3NDc5MA',
+		pageData: {},
+		notificationSettings: {"EventSourceUpdateTime":10000,"MaxTimeout":60000,"MinTimeout":10000,"TimeoutStep":10000}, 
+		enableTimeTracking:  true ,
+		
+		mermaidMaxSourceCharacters:  5000 ,
+		
+		i18n: {
+			copy_success: "Copied!",
+			copy_error: "Copy failed",
+			error_occurred: "An error occurred",
+			network_error: "Network error",
+			remove_label_str: "Remove item \"%s\"",
+			modal_confirm: "Confirm",
+			modal_cancel: "Cancel",
+		},
+	};
+	
+	window.config.pageData = window.config.pageData || {};
+</script>
+<script src="/assets/js/webcomponents.js?v=1.21.2~0"></script>
+
+	<noscript>
+		<style>
+			.dropdown:hover > .menu { display: block; }
+			.ui.secondary.menu .dropdown.item > .menu { margin-top: 0; }
+		</style>
+	</noscript>
+	
+	<meta property="og:title" content="~vern Git">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="/assets/img/logo.png">
+	<meta property="og:url" content="http://vernj47t2vz4qiobsrcaj6eqhaquqe5qsaejga2glol4b2snhcfa.b32.i2p/">
+	<meta property="og:description" content="Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.">
+
+<meta property="og:site_name" content="~vern Git">
+
+	<link rel="stylesheet" href="/assets/css/index.css?v=1.21.2~0">
+
+	<link rel="stylesheet" href="/assets/css/theme-doom-one.css?v=1.21.2~0">
+
+
+	
+</head>
+<body>
+	
+	
+
+	<div class="full height">
+		<noscript>This website requires JavaScript.</noscript>
+
+		
+
+		
+			
+
+
+<nav id="navbar" aria-label="Navigation Bar">
+	<div class="navbar-left ui secondary menu">
+		
+		<a class="item" id="navbar-logo" href="/" aria-label="Home">
+			<img width="30" height="30" src="/assets/img/logo.svg" alt="Logo" aria-hidden="true">
+		</a>
+
+		
+		<div class="ui secondary menu item navbar-mobile-right">
+			
+			<button class="item gt-w-auto ui icon mini button gt-p-3 gt-m-0" id="navbar-expand-toggle"><svg viewBox="0 0 16 16" class="svg octicon-three-bars" aria-hidden="true" width="16" height="16"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg></button>
+		</div>
+
+		
+		
+			<a class="item active" href="/explore/repos">Explore</a>
+		
+
+		<a class="item" target="_blank" rel="noopener noreferrer" href="https://ci.vern.cc">WoodpeckerCI</a>
+
+
+		
+			<a class="item" target="_blank" rel="noopener noreferrer" href="https://forgejo.org/docs/latest/">Help</a>
+		
+	</div>
+
+	
+	<div class="navbar-right ui secondary menu">
+		
+			
+			<a class="item" rel="nofollow" href="/user/login?redirect_to=%2fexplore%2frepos">
+				<svg viewBox="0 0 16 16" class="svg octicon-sign-in" aria-hidden="true" width="16" height="16"><path d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm6.56 4.5h5.69a.75.75 0 0 1 0 1.5H8.56l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L6.22 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734Z"></path></svg> Sign In
+			</a>
+		
+	</div>
+</nav>
+
+		
+
+
+
+<div role="main" aria-label="Explore" class="page-content explore repositories">
+	<div class="ui secondary pointing tabular top attached borderless menu new-menu navbar">
+	<div class="new-menu-inner">
+		<a class="active item" href="/explore/repos">
+			<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="16" height="16"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg> Repositories
+		</a>
+		
+			<a class="item" href="/explore/users">
+				<svg viewBox="0 0 16 16" class="svg octicon-person" aria-hidden="true" width="16" height="16"><path d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"></path></svg> Users
+			</a>
+		
+		<a class="item" href="/explore/organizations">
+			<svg viewBox="0 0 16 16" class="svg octicon-organization" aria-hidden="true" width="16" height="16"><path d="M1.75 16A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .085-.006.168-.018.25h2.268a.25.25 0 0 0 .25-.25V8.285a.25.25 0 0 0-.111-.208l-1.055-.703a.749.749 0 1 1 .832-1.248l1.055.703c.487.325.779.871.779 1.456v5.965A1.75 1.75 0 0 1 14.25 16h-3.5a.766.766 0 0 1-.197-.026c-.099.017-.2.026-.303.026h-3a.75.75 0 0 1-.75-.75V14h-1v1.25a.75.75 0 0 1-.75.75Zm-.25-1.75c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM3.75 6h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 3.75A.75.75 0 0 1 3.75 3h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 3.75Zm4 3A.75.75 0 0 1 7.75 6h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 7 6.75ZM7.75 3h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 9.75A.75.75 0 0 1 3.75 9h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 9.75ZM7.75 9h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5Z"></path></svg> Organizations
+		</a>
+		
+	</div>
+</div>
+
+	<div class="ui container">
+		<div class="ui secondary filter menu gt-ac gt-mx-0">
+	<form class="ui form ignore-dirty gt-f1">
+		<input type="hidden" name="sort" value="recentupdate">
+		<input type="hidden" name="language" value="">
+		<div class="ui fluid action input">
+			<input type="search" spellcheck="false" name="q" maxlength="255" placeholder="Search…" autofocus="" dir="auto">
+
+			
+				<input type="hidden" name="only_show_relevant" value="false">
+			
+			<button class="ui primary button">Search</button>
+		</div>
+	</form>
+	
+	<div class="ui dropdown type jump item gt-mr-0" role="menu" aria-haspopup="" aria-controls="_aria_auto_id_0" aria-expanded="false" tabindex="0">
+		<span class="text">
+			Sort
+		</span>
+		<svg viewBox="0 0 16 16" class="dropdown icon svg octicon-triangle-down" aria-hidden="true" width="14" height="14"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path></svg>
+		<div class="menu hidden transition" id="_aria_auto_id_0" role="" tabindex="-1">
+			<a class="item" href="/explore/repos?tab=&amp;sort=newest&amp;q=&amp;language=" id="_aria_auto_id_1" role="menuitem" tabindex="-1">Newest</a>
+			<a class="item" href="/explore/repos?tab=&amp;sort=oldest&amp;q=&amp;language=" id="_aria_auto_id_2" role="menuitem" tabindex="-1">Oldest</a>
+			<a class="item" href="/explore/repos?tab=&amp;sort=alphabetically&amp;q=&amp;language=" id="_aria_auto_id_3" role="menuitem" tabindex="-1">Alphabetically</a>
+			<a class="item" href="/explore/repos?tab=&amp;sort=reversealphabetically&amp;q=&amp;language=" id="_aria_auto_id_4" role="menuitem" tabindex="-1">Reverse alphabetically</a>
+			<a class="active item" href="/explore/repos?tab=&amp;sort=recentupdate&amp;q=&amp;language=" id="_aria_auto_id_5" role="menuitem" tabindex="-1">Recently updated</a>
+			<a class="item" href="/explore/repos?tab=&amp;sort=leastupdate&amp;q=&amp;language=" id="_aria_auto_id_6" role="menuitem" tabindex="-1">Least recently updated</a>
+			
+				<a class="item" href="/explore/repos?tab=&amp;sort=moststars&amp;q=&amp;language=" id="_aria_auto_id_7" role="menuitem" tabindex="-1">Most stars</a>
+				<a class="item" href="/explore/repos?tab=&amp;sort=feweststars&amp;q=&amp;language=" id="_aria_auto_id_8" role="menuitem" tabindex="-1">Fewest stars</a>
+			
+			<a class="item" href="/explore/repos?tab=&amp;sort=mostforks&amp;q=&amp;language=" id="_aria_auto_id_9" role="menuitem" tabindex="-1">Most forks</a>
+			<a class="item" href="/explore/repos?tab=&amp;sort=fewestforks&amp;q=&amp;language=" id="_aria_auto_id_10" role="menuitem" tabindex="-1">Fewest forks</a>
+		</div>
+	</div>
+</div>
+
+<div class="divider"></div>
+
+		<div class="flex-list">
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/masscollabs/massCON2024">
+							masscollabs / massCON2024
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+						
+							<a class="text grey flex-text-inline" href="/masscollabs/massCON2024/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/masscollabs/massCON2024/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-04-07T22:07:43Z" data-tooltip-content="" data-tooltip-interactive="true" title="Apr 7, 2024, 10:07 PM UTC">2024-04-07 22:07:43 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-mirror" aria-hidden="true" width="32" height="32"><path d="M15.547 3.061A.75.75 0 0 1 16 3.75v8.5a.751.751 0 0 1-1.265.545l-4.5-4.25a.75.75 0 0 1 0-1.09l4.5-4.25a.75.75 0 0 1 .812-.144ZM0 12.25v-8.5a.751.751 0 0 1 1.265-.545l4.5 4.25a.75.75 0 0 1 0 1.09l-4.5 4.25A.75.75 0 0 1 0 12.25Zm1.5-6.76v5.02L4.158 8ZM11.842 8l2.658 2.51V5.49ZM8 4a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0v-.5A.75.75 0 0 1 8 4Zm.75-2.25v.5a.75.75 0 0 1-1.5 0v-.5a.75.75 0 0 1 1.5 0Zm0 6v.5a.75.75 0 0 1-1.5 0v-.5a.75.75 0 0 1 1.5 0ZM8 10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0v-.5A.75.75 0 0 1 8 10Zm0 3a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0v-.5A.75.75 0 0 1 8 13Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/shruub/no-js.club">
+							shruub / no-js.club
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=HTML">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #e34c26"></i>HTML</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/shruub/no-js.club/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/shruub/no-js.club/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">Mirror of <a href="https://git.habedieeh.re/shruub/no-js.club" target="_blank" rel="noopener noreferrer">https://git.habedieeh.re/shruub/no-js.club</a> | Add your site at <a href="https://todo.sr.ht/~shruub/no-JS.club" target="_blank" rel="noopener noreferrer">https://todo.sr.ht/~shruub/no-JS.club</a></div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-04-04T18:33:26Z" data-tooltip-content="" data-tooltip-interactive="true" title="Apr 4, 2024, 6:33 PM UTC">2024-04-04 18:33:26 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/chloe/website">
+							chloe / website
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=JavaScript">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #f1e05a"></i>JavaScript</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/chloe/website/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/chloe/website/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">My website on <a href="https://chloe.vern.cc" target="_blank" rel="noopener noreferrer">https://chloe.vern.cc</a></div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-04-01T13:15:30Z" data-tooltip-content="" data-tooltip-interactive="true" title="Apr 1, 2024, 1:15 PM UTC">2024-04-01 13:15:30 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/heehee/mastodon-bot">
+							heehee / mastodon-bot
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Python">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #3572A5"></i>Python</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/heehee/mastodon-bot/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/heehee/mastodon-bot/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">A Mastodon Bot that posts dog images and quotes!</div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-30T01:59:54Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 30, 2024, 1:59 AM UTC">2024-03-30 01:59:54 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/heehee/website">
+							heehee / website
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=HTML">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #e34c26"></i>HTML</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/heehee/website/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/heehee/website/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-30T01:43:42Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 30, 2024, 1:43 AM UTC">2024-03-30 01:43:42 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/gg/WeatherNews.jl">
+							gg / WeatherNews.jl
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Perl">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #0298c3"></i>Perl</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/gg/WeatherNews.jl/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>2</a>
+						
+						<a class="text grey flex-text-inline" href="/gg/WeatherNews.jl/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">Play with data for weather waifus.</div>
+				
+				
+					<div class="label-list">
+					
+						<a class="ui label" href="/explore/repos?q=julia&amp;topic=1">julia</a>
+					
+						<a class="ui label" href="/explore/repos?q=perl&amp;topic=1">perl</a>
+					
+						<a class="ui label" href="/explore/repos?q=weathernews&amp;topic=1">weathernews</a>
+					
+					</div>
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-29T20:51:25Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 29, 2024, 8:51 PM UTC">2024-03-29 20:51:25 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/gnawmon/website">
+							gnawmon / website
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=HTML">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #e34c26"></i>HTML</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/gnawmon/website/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>1</a>
+						
+						<a class="text grey flex-text-inline" href="/gnawmon/website/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">my epic website</div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-23T14:01:52Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 23, 2024, 2:01 PM UTC">2024-03-23 14:01:52 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/procyberian/emacs-multi-ssh-client">
+							procyberian / emacs-multi-ssh-client
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+						
+							<a class="text grey flex-text-inline" href="/procyberian/emacs-multi-ssh-client/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/procyberian/emacs-multi-ssh-client/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-21T20:46:59Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 21, 2024, 8:46 PM UTC">2024-03-21 20:46:59 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/masscollaborationlabs/gokursu">
+							masscollaborationlabs / gokursu
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Go">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #00ADD8"></i>Go</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/masscollaborationlabs/gokursu/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/masscollaborationlabs/gokursu/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-21T12:18:04Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 21, 2024, 12:18 PM UTC">2024-03-21 12:18:04 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/acikag/acik-veri-portali">
+							acikag / acik-veri-portali
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+						
+							<a class="text grey flex-text-inline" href="/acikag/acik-veri-portali/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/acikag/acik-veri-portali/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-20T10:47:57Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 20, 2024, 10:47 AM UTC">2024-03-20 10:47:57 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/vern/blog">
+							vern / blog
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Shell">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #89e051"></i>Shell</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/vern/blog/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/vern/blog/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">The ~vern blog</div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-19T17:27:19Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 19, 2024, 5:27 PM UTC">2024-03-19 17:27:19 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/masscollaborationlabs/mia">
+							masscollaborationlabs / mia
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+						
+							<a class="text grey flex-text-inline" href="/masscollaborationlabs/mia/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/masscollaborationlabs/mia/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-17T16:52:03Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 17, 2024, 4:52 PM UTC">2024-03-17 16:52:03 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/BSDTurkiyeToplulugu/belgeler">
+							BSDTurkiyeToplulugu / belgeler
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Markdown">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #083fa1"></i>Markdown</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/BSDTurkiyeToplulugu/belgeler/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/BSDTurkiyeToplulugu/belgeler/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-17T13:51:51Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 17, 2024, 1:51 PM UTC">2024-03-17 13:51:51 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/qbnetworks/alliance">
+							qbnetworks / alliance
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Markdown">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #083fa1"></i>Markdown</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/qbnetworks/alliance/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/qbnetworks/alliance/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-17T12:07:24Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 17, 2024, 12:07 PM UTC">2024-03-17 12:07:24 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/masscollaborationlabs/sakura">
+							masscollaborationlabs / sakura
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+						
+							<a class="text grey flex-text-inline" href="/masscollaborationlabs/sakura/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/masscollaborationlabs/sakura/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">sakura for all hackers</div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-16T15:41:02Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 16, 2024, 3:41 PM UTC">2024-03-16 15:41:02 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/unixmeow/minetest-unix-mod-colored-nodes">
+							unixmeow / minetest-unix-mod-colored-nodes
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Lua">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #000080"></i>Lua</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/unixmeow/minetest-unix-mod-colored-nodes/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/unixmeow/minetest-unix-mod-colored-nodes/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">a test for minetest modding in minetest</div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-12T14:43:33Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 12, 2024, 2:43 PM UTC">2024-03-12 14:43:33 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/mertoalex/hyfetch">
+							mertoalex / hyfetch
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Shell">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #89e051"></i>Shell</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/mertoalex/hyfetch/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/mertoalex/hyfetch/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">FORKED FROM <a href="https://github.com/hykilpikonna/hyfetch" target="_blank" rel="noopener noreferrer">https://github.com/hykilpikonna/hyfetch</a></div>
+				
+				
+					<div class="label-list">
+					
+						<a class="ui label" href="/explore/repos?q=hyfetch&amp;topic=1">hyfetch</a>
+					
+						<a class="ui label" href="/explore/repos?q=neofetch&amp;topic=1">neofetch</a>
+					
+						<a class="ui label" href="/explore/repos?q=neowofetch&amp;topic=1">neowofetch</a>
+					
+						<a class="ui label" href="/explore/repos?q=screenfetch&amp;topic=1">screenfetch</a>
+					
+					</div>
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-10T21:20:38Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 10, 2024, 9:20 PM UTC">2024-03-10 21:20:38 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/pta/mpv_conf">
+							pta / mpv_conf
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Lua">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #000080"></i>Lua</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/pta/mpv_conf/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>1</a>
+						
+						<a class="text grey flex-text-inline" href="/pta/mpv_conf/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">mpv config mainly for webm making</div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-10T05:47:06Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 10, 2024, 5:47 AM UTC">2024-03-10 05:47:06 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/techn0path/website">
+							techn0path / website
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Awk">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #c30e9b"></i>Awk</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/techn0path/website/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/techn0path/website/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>0</a>
+					</div>
+				</div>
+				
+				
+					<div class="flex-item-body">My website on <a href="https://vern.cc" target="_blank" rel="noopener noreferrer">https://vern.cc</a>.</div>
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-07T13:59:03Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 7, 2024, 1:59 PM UTC">2024-03-07 13:59:03 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+		<div class="flex-item">
+			<div class="flex-item-leading">
+				
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="32" height="32"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+
+
+			</div>
+			<div class="flex-item-main">
+				<div class="flex-item-header">
+					<div class="flex-item-title">
+						<a class="text primary name" href="/cobra/rural-dict">
+							cobra / rural-dict
+						</a>
+						<span class="label-list">
+							
+							
+								
+							
+							
+						</span>
+					</div>
+					<div class="flex-item-trailing">
+						
+							<a class="muted" href="/explore/repos?q=&amp;sort=recentupdate&amp;language=Python">
+								<span class="flex-text-inline"><i class="color-icon gt-mr-3" style="background-color: #3572A5"></i>Python</span>
+							</a>
+						
+						
+							<a class="text grey flex-text-inline" href="/cobra/rural-dict/stars"><svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>0</a>
+						
+						<a class="text grey flex-text-inline" href="/cobra/rural-dict/forks"><svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>1</a>
+					</div>
+				</div>
+				
+				
+				
+				<div class="flex-item-body">Updated <relative-time class="time-since" prefix="" tense="past" datetime="2024-03-01T21:39:41Z" data-tooltip-content="" data-tooltip-interactive="true" title="Mar 1, 2024, 9:39 PM UTC">2024-03-01 21:39:41 +00:00</relative-time></div>
+			</div>
+		</div>
+	
+</div>
+
+		
+
+	
+		<div class="center page buttons">
+			<div class="ui borderless pagination menu">
+				<a class="disabled item navigation">
+					<svg viewBox="0 0 16 16" class="gt-mr-2 svg gitea-double-chevron-left" aria-hidden="true" width="16" height="16"><g fill-rule="evenodd"><path d="M7.91 12.77a.75.75 0 0 1-1.06 0L2.61 8.52a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 1.06L4.2 8l3.72 3.72a.75.75 0 0 1 0 1.06z"></path><path d="M13.39 12.77a.75.75 0 0 1-1.06 0L8.08 8.52a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 1.06L9.67 8l3.72 3.72a.75.75 0 0 1 0 1.06z"></path></g></svg>
+					<span class="navigation_label">First</span>
+				</a>
+				<a class="disabled item navigation">
+					<svg viewBox="0 0 16 16" class="gt-mr-2 svg octicon-chevron-left" aria-hidden="true" width="16" height="16"><path d="M9.78 12.78a.75.75 0 0 1-1.06 0L4.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L6.06 8l3.72 3.72a.75.75 0 0 1 0 1.06Z"></path></svg>
+					<span class="navigation_label">Previous</span>
+				</a>
+				
+					
+						<a class="active item gt-content-center">1</a>
+					
+				
+					
+						<a class="item gt-content-center" href="/explore/repos?page=2&amp;sort=recentupdate&amp;q=&amp;topic=false&amp;language=&amp;only_show_relevant=false">2</a>
+					
+				
+					
+						<a class="item gt-content-center" href="/explore/repos?page=3&amp;sort=recentupdate&amp;q=&amp;topic=false&amp;language=&amp;only_show_relevant=false">3</a>
+					
+				
+					
+						<a class="item gt-content-center" href="/explore/repos?page=4&amp;sort=recentupdate&amp;q=&amp;topic=false&amp;language=&amp;only_show_relevant=false">4</a>
+					
+				
+					
+						<a class="item gt-content-center" href="/explore/repos?page=5&amp;sort=recentupdate&amp;q=&amp;topic=false&amp;language=&amp;only_show_relevant=false">5</a>
+					
+				
+					
+						<a class="disabled item">...</a>
+					
+				
+				<a class=" item navigation" href="/explore/repos?page=2&amp;sort=recentupdate&amp;q=&amp;topic=false&amp;language=&amp;only_show_relevant=false">
+					<span class="navigation_label">Next</span>
+					<svg viewBox="0 0 16 16" class="gt-ml-2 svg octicon-chevron-right" aria-hidden="true" width="16" height="16"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"></path></svg>
+				</a>
+				<a class=" item navigation" href="/explore/repos?page=10&amp;sort=recentupdate&amp;q=&amp;topic=false&amp;language=&amp;only_show_relevant=false">
+					<span class="navigation_label">Last</span>
+					<svg viewBox="0 0 16 16" class="gt-ml-2 svg gitea-double-chevron-right" aria-hidden="true" width="16" height="16"><g fill-rule="evenodd"><path d="M8.09 3.23a.75.75 0 0 1 1.06 0l4.24 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.8 8 8.08 4.28a.75.75 0 0 1 0-1.06z"></path><path d="M2.61 3.23a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L6.33 8 2.61 4.28a.75.75 0 0 1 0-1.06z"></path></g></svg>
+				</a>
+			</div>
+		</div>
+	
+
+
+	</div>
+</div>
+
+
+	
+
+	</div>
+
+	
+
+	<footer class="page-footer" role="group" aria-label="Footer">
+	<div class="left-links" role="contentinfo" aria-label="About Software">
+		<a target="_blank" rel="noopener noreferrer" href="https://forgejo.org">Powered by Forgejo</a>
+		
+			Version:
+			
+				1.21.2+0
+			
+		
+		
+			Page: <strong>25ms</strong>
+			Template: <strong>13ms</strong>
+		
+	</div>
+	<div class="right-links" role="group" aria-label="Links">
+		<div class="ui dropdown upward language" tabindex="0" role="menu" aria-haspopup="" aria-controls="_aria_auto_id_11" aria-expanded="false">
+			<span class="flex-text-inline"><svg viewBox="0 0 16 16" class="svg octicon-globe" aria-hidden="true" width="14" height="14"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"></path></svg> English</span>
+			<div class="menu language-menu" tabindex="-1" id="_aria_auto_id_11" role="">
+				
+					<a lang="id-ID" data-url="/?lang=id-ID" class="item " id="_aria_auto_id_12" role="menuitem" tabindex="-1">Bahasa Indonesia</a>
+				
+					<a lang="de-DE" data-url="/?lang=de-DE" class="item " id="_aria_auto_id_13" role="menuitem" tabindex="-1">Deutsch</a>
+				
+					<a lang="en-US" data-url="/?lang=en-US" class="item active selected" id="_aria_auto_id_14" role="menuitem" tabindex="-1">English</a>
+				
+					<a lang="es-ES" data-url="/?lang=es-ES" class="item " id="_aria_auto_id_15" role="menuitem" tabindex="-1">Español</a>
+				
+					<a lang="fr-FR" data-url="/?lang=fr-FR" class="item " id="_aria_auto_id_16" role="menuitem" tabindex="-1">Français</a>
+				
+					<a lang="it-IT" data-url="/?lang=it-IT" class="item " id="_aria_auto_id_17" role="menuitem" tabindex="-1">Italiano</a>
+				
+					<a lang="lv-LV" data-url="/?lang=lv-LV" class="item " id="_aria_auto_id_18" role="menuitem" tabindex="-1">Latviešu</a>
+				
+					<a lang="hu-HU" data-url="/?lang=hu-HU" class="item " id="_aria_auto_id_19" role="menuitem" tabindex="-1">Magyar nyelv</a>
+				
+					<a lang="nl-NL" data-url="/?lang=nl-NL" class="item " id="_aria_auto_id_20" role="menuitem" tabindex="-1">Nederlands</a>
+				
+					<a lang="pl-PL" data-url="/?lang=pl-PL" class="item " id="_aria_auto_id_21" role="menuitem" tabindex="-1">Polski</a>
+				
+					<a lang="pt-PT" data-url="/?lang=pt-PT" class="item " id="_aria_auto_id_22" role="menuitem" tabindex="-1">Português de Portugal</a>
+				
+					<a lang="pt-BR" data-url="/?lang=pt-BR" class="item " id="_aria_auto_id_23" role="menuitem" tabindex="-1">Português do Brasil</a>
+				
+					<a lang="fi-FI" data-url="/?lang=fi-FI" class="item " id="_aria_auto_id_24" role="menuitem" tabindex="-1">Suomi</a>
+				
+					<a lang="sv-SE" data-url="/?lang=sv-SE" class="item " id="_aria_auto_id_25" role="menuitem" tabindex="-1">Svenska</a>
+				
+					<a lang="tr-TR" data-url="/?lang=tr-TR" class="item " id="_aria_auto_id_26" role="menuitem" tabindex="-1">Türkçe</a>
+				
+					<a lang="cs-CZ" data-url="/?lang=cs-CZ" class="item " id="_aria_auto_id_27" role="menuitem" tabindex="-1">Čeština</a>
+				
+					<a lang="el-GR" data-url="/?lang=el-GR" class="item " id="_aria_auto_id_28" role="menuitem" tabindex="-1">Ελληνικά</a>
+				
+					<a lang="bg-BG" data-url="/?lang=bg-BG" class="item " id="_aria_auto_id_29" role="menuitem" tabindex="-1">Български</a>
+				
+					<a lang="ru-RU" data-url="/?lang=ru-RU" class="item " id="_aria_auto_id_30" role="menuitem" tabindex="-1">Русский</a>
+				
+					<a lang="uk-UA" data-url="/?lang=uk-UA" class="item " id="_aria_auto_id_31" role="menuitem" tabindex="-1">Українська</a>
+				
+					<a lang="fa-IR" data-url="/?lang=fa-IR" class="item " id="_aria_auto_id_32" role="menuitem" tabindex="-1">فارسی</a>
+				
+					<a lang="ml-IN" data-url="/?lang=ml-IN" class="item " id="_aria_auto_id_33" role="menuitem" tabindex="-1">മലയാളം</a>
+				
+					<a lang="ja-JP" data-url="/?lang=ja-JP" class="item " id="_aria_auto_id_34" role="menuitem" tabindex="-1">日本語</a>
+				
+					<a lang="zh-CN" data-url="/?lang=zh-CN" class="item " id="_aria_auto_id_35" role="menuitem" tabindex="-1">简体中文</a>
+				
+					<a lang="zh-TW" data-url="/?lang=zh-TW" class="item " id="_aria_auto_id_36" role="menuitem" tabindex="-1">繁體中文（台灣）</a>
+				
+					<a lang="zh-HK" data-url="/?lang=zh-HK" class="item " id="_aria_auto_id_37" role="menuitem" tabindex="-1">繁體中文（香港）</a>
+				
+					<a lang="ko-KR" data-url="/?lang=ko-KR" class="item " id="_aria_auto_id_38" role="menuitem" tabindex="-1">한국어</a>
+				
+			</div>
+		</div>
+		<a href="/assets/licenses.txt">Licenses</a>
+		<a href="/api/swagger">API</a>
+		
+	</div>
+</footer>
+
+
+
+
+	<script src="/assets/js/index.js?v=1.21.2~0" onerror="alert('Failed to load asset files from ' + this.src + '. Please make sure the asset files can be accessed.')"></script>
+
+	
+	
+
+
+
+</body></html>

@@ -1,0 +1,194 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!-- git web interface version 2.7.4.GIT, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke --><!-- git core binaries version 2.7.4.GIT --><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="generator" content="gitweb/2.7.4.GIT git/2.7.4.GIT">
+<meta name="robots" content="index, nofollow">
+<title>Pseudonymous Git Hosting</title>
+<script type="text/javascript">/* <![CDATA[ */
+function fixBlameLinks() {
+	var allLinks = document.getElementsByTagName("a");
+	for (var i = 0; i < allLinks.length; i++) {
+		var link = allLinks.item(i);
+		if (link.className == 'blamelink')
+			link.href = link.href.replace("/blame/", "/blame_incremental/");
+	}
+}
+/* ]]> */</script>
+<link rel="stylesheet" type="text/css" href="/gitweb.css">
+<link rel="alternate" title="Pseudonymous Git Hosting projects list" href="/w?a=project_index" type="text/plain; charset=utf-8">
+<link rel="alternate" title="Pseudonymous Git Hosting projects feeds" href="/w?a=opml" type="text/x-opml">
+<link rel="shortcut icon" href="/git-favicon.png" type="image/png">
+</head>
+<body><span class="body">
+<div class="page_header">
+<span class="logo-container"><span class="logo-default"><a class="logo-link" href="http://git-scm.com/" title="git homepage"><img alt="git" class="logo" height="27" src="/git-logo.png" width="72"></a></span></span><span class="banner-container"><a href="/w/">git.repo.i2p</a> / </span></div>
+<div class="index_include">
+<p><strong>git.repo.i2p</strong> is a public, pseudonymous <a href="http://git-scm.com/">Git</a>
+hosting site. Pseudonymous in that, while you still require an identity to push to a repository,
+that identity is not tied to yourself - your connection through I2P means that your push identity
+is not linked to your real IP address. The server supports pulling via both the Git and HTTP
+protocols, and pushing over SSH with public key authentication. Alternatively, other repositories
+can be mirrored here. <a href="/h/about.html">(read more, terms of use)</a></p>
+
+<p>The service is hosted and maintained by
+<a href="http://str4d.i2p/?i2paddresshelper=76jw0zcIw9PuxUX~tYf4EefSxOAb8rfGC2PXO8Mfj~WMvN-jrW-0cs6CcGDot0a8wQ0YCHqino5pHfRip84QL2d59HsAGQX1o0~zFb-y~B-Ii0C0UaQXXZmKf38nfZncl8nOmoeyAbb-hkFLlvcTBDcrNLjcPFNvjSNMLrgPqa4i8hRvrKI8gBhaA5ZzOY4uAEU-0qMCHtWm5655BkMaDGtKfbM5VwxHfRmndKdlUtBKgk8DwChm1cjk3fAOwzPJriNzqwDmMrROC8iZ465rv4hjnI03MUu5wpEXA~Jh3wkC66cKYGvrCxlNm~tP5DtfVZ-hA2Ks0zigmQcKieXfcyKZqXShHbyLOhmU2YKuwUxnhLZo-4SeHxVNZ8iPH6l1MeevrRNyf5JfMcE6MKT4F8eZwlVhRWTpo-T2~EQwNqcEzA2F8kpT3D15s1xR40Q-iFO6p-l6C6BUm74s2j7uOGV1tWtEqLTWqs0RKz~ELuPlgMgjlYiIjGzSacr40cq4AAAA">str4d</a>,
+please contact <a href="mailto:str4d@mail.i2p">str4d@mail.i2p</a> with any requests, proposals,
+issues or patches. Also, if you like this service, Bitcoin donations to
+<code>1Lj7Q9aEzZzra1eR5LfpCVo2pA44qAHf8p</code>
+are welcome!</p>
+
+<p align="center"><a href="/cgi-bin/regproj.cgi">Register project</a> |
+<a href="/cgi-bin/reguser.cgi">Register user</a> |
+<a href="/cgi-bin/edituser.cgi">Update user email/SSH keys</a></p>
+
+<div class="forkinfo">
+How to grab a project? If Git is set up for I2P, simply
+<code>git clone git://pull.git.repo.i2p/project.git</code>.<br>
+Then, repeat <code>git pull</code> to update to the latest version of the project.<br>
+See <a href="/h/guide/index.html">this guide</a> for help with setting up Git for I2P.<br>
+See the <a href="http://git-scm.com/">The Git Homepage</a>
+for more details about Git and its usage.
+</div>
+</div>
+<div class="projsearch">
+<form method="get" action="/w" enctype="multipart/form-data"><input type="hidden" name="a" value="project_list">
+<input type="text" name="s" size="60" title="Search project by name and description">
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1">re</label></span>
+<input type="submit" name="btnS" value="Search">
+</form>
+<span class="projectlist_link"><a href="/w?a=project_list">List all projects</a></span><br>
+</div>
+<div class="stale_info">Cached version (477s old)</div>
+<style type="text/css">
+
+#htmltagcloud {
+  text-align:  center;
+  line-height: 1;
+}
+span.tagcloud0 {font-size: 12px;}
+span.tagcloud0 a {text-decoration: none;}
+span.tagcloud1 {font-size: 13px;}
+span.tagcloud1 a {text-decoration: none;}
+span.tagcloud2 {font-size: 14px;}
+span.tagcloud2 a {text-decoration: none;}
+span.tagcloud3 {font-size: 15px;}
+span.tagcloud3 a {text-decoration: none;}
+span.tagcloud4 {font-size: 16px;}
+span.tagcloud4 a {text-decoration: none;}
+span.tagcloud5 {font-size: 17px;}
+span.tagcloud5 a {text-decoration: none;}
+span.tagcloud6 {font-size: 18px;}
+span.tagcloud6 a {text-decoration: none;}
+span.tagcloud7 {font-size: 19px;}
+span.tagcloud7 a {text-decoration: none;}
+span.tagcloud8 {font-size: 20px;}
+span.tagcloud8 a {text-decoration: none;}
+span.tagcloud9 {font-size: 21px;}
+span.tagcloud9 a {text-decoration: none;}
+span.tagcloud10 {font-size: 22px;}
+span.tagcloud10 a {text-decoration: none;}
+span.tagcloud11 {font-size: 23px;}
+span.tagcloud11 a {text-decoration: none;}
+span.tagcloud12 {font-size: 24px;}
+span.tagcloud12 a {text-decoration: none;}
+span.tagcloud13 {font-size: 25px;}
+span.tagcloud13 a {text-decoration: none;}
+span.tagcloud14 {font-size: 26px;}
+span.tagcloud14 a {text-decoration: none;}
+span.tagcloud15 {font-size: 27px;}
+span.tagcloud15 a {text-decoration: none;}
+span.tagcloud16 {font-size: 28px;}
+span.tagcloud16 a {text-decoration: none;}
+span.tagcloud17 {font-size: 29px;}
+span.tagcloud17 a {text-decoration: none;}
+span.tagcloud18 {font-size: 30px;}
+span.tagcloud18 a {text-decoration: none;}
+span.tagcloud19 {font-size: 31px;}
+span.tagcloud19 a {text-decoration: none;}
+span.tagcloud20 {font-size: 32px;}
+span.tagcloud20 a {text-decoration: none;}
+span.tagcloud21 {font-size: 33px;}
+span.tagcloud21 a {text-decoration: none;}
+span.tagcloud22 {font-size: 34px;}
+span.tagcloud22 a {text-decoration: none;}
+span.tagcloud23 {font-size: 35px;}
+span.tagcloud23 a {text-decoration: none;}
+span.tagcloud24 {font-size: 36px;}
+span.tagcloud24 a {text-decoration: none;}
+</style><div id="htmltagcloud">
+<span class="tagcloud5"><a href="/w?a=project_list;t=abscond">&nbsp;Abscond&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=aktie">&nbsp;Aktie&nbsp;</a></span>
+<span class="tagcloud10"><a href="/w?a=project_list;t=c">&nbsp;C&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=foic">&nbsp;FOIC&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=nobody">&nbsp;Nobody&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=privacysolutions">&nbsp;PrivacySolutions&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=rfc">&nbsp;RFC&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=rfc-4648">&nbsp;RFC-4648&nbsp;</a></span>
+<span class="tagcloud8"><a href="/w?a=project_list;t=tahoe-lafs">&nbsp;Tahoe-LAFS&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=amule">&nbsp;aMule&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=angular">&nbsp;angular&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=anonymous">&nbsp;anonymous&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=base32">&nbsp;base32&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=bitcoin">&nbsp;bitcoin&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=bot">&nbsp;bot&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=browser">&nbsp;browser&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=c%2B%2B">&nbsp;c++&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=catchchallenger">&nbsp;catchchallenger&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=censored">&nbsp;censored&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=client">&nbsp;client&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=dark">&nbsp;dark&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=developers">&nbsp;developers&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=distributed">&nbsp;distributed&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=download">&nbsp;download&nbsp;</a></span>
+<span class="tagcloud12"><a href="/w?a=project_list;t=eepsite">&nbsp;eepsite&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=falco">&nbsp;falco&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=faq">&nbsp;faq&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=file">&nbsp;file&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=forums">&nbsp;forums&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=fridge">&nbsp;fridge&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=fun">&nbsp;fun&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=girl">&nbsp;girl&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=golang">&nbsp;golang&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=help">&nbsp;help&nbsp;</a></span>
+<span class="tagcloud8"><a href="/w?a=project_list;t=i2cp">&nbsp;i2cp&nbsp;</a></span>
+<span class="tagcloud21"><a href="/w?a=project_list;t=i2p">&nbsp;i2p&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=i2p-messenger">&nbsp;i2p-messenger&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=i2psnark">&nbsp;i2psnark&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=imule">&nbsp;iMule&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=im">&nbsp;im&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=image">&nbsp;image&nbsp;</a></span>
+<span class="tagcloud8"><a href="/w?a=project_list;t=irc">&nbsp;irc&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=ircd">&nbsp;ircd&nbsp;</a></span>
+<span class="tagcloud10"><a href="/w?a=project_list;t=java">&nbsp;java&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=library">&nbsp;library&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=magnet">&nbsp;magnet&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=market">&nbsp;market&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=media">&nbsp;media&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=messaging">&nbsp;messaging&nbsp;</a></span>
+<span class="tagcloud8"><a href="/w?a=project_list;t=p2p">&nbsp;p2p&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=php">&nbsp;php&nbsp;</a></span>
+<span class="tagcloud10"><a href="/w?a=project_list;t=plugin">&nbsp;plugin&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=pokemon">&nbsp;pokemon&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=port">&nbsp;port&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=proxy">&nbsp;proxy&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=pseudonymous">&nbsp;pseudonymous&nbsp;</a></span>
+<span class="tagcloud24"><a href="/w?a=project_list;t=python">&nbsp;python&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=qt">&nbsp;qt&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=raspberrypi">&nbsp;raspberrypi&nbsp;</a></span>
+<span class="tagcloud0"><a href="/w?a=project_list;t=router">&nbsp;router&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=sam">&nbsp;sam&nbsp;</a></span>
+<span class="tagcloud12"><a href="/w?a=project_list;t=tor">&nbsp;tor&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=torrent">&nbsp;torrent&nbsp;</a></span>
+<span class="tagcloud5"><a href="/w?a=project_list;t=website">&nbsp;website&nbsp;</a></span>
+</div><div class="page_footer">
+<a class="rss_logo" href="/w?a=opml">OPML</a> <a class="rss_logo" href="/w?a=project_index">TXT</a>
+</div>
+<script type="text/javascript" src="/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	fixBlameLinks();
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</span>
+</body></html>

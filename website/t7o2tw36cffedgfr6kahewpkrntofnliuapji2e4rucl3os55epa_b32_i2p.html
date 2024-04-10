@@ -1,0 +1,618 @@
+<html lang="en"><head>
+	<title>Archaic Binary; A Modern Bulletin Board System</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="archaic binary bbs telnet bulletin board system door games old school services">
+	<link rel="stylesheet" href="./style/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="./ftelnet/ftelnet.css">	
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link id="fTelnetCss" rel="stylesheet" type="text/css" href="http://t7o2tw36cffedgfr6kahewpkrntofnliuapji2e4rucl3os55epa.b32.i2p/ftelnet/ftelnet.css?v=1"><link id="fTelnetKeyboardCss" rel="stylesheet" type="text/css" href="http://t7o2tw36cffedgfr6kahewpkrntofnliuapji2e4rucl3os55epa.b32.i2p/ftelnet/keyboard/keyboard-640.min.css?v=1"></head>
+	<body>
+		<div class="container">
+			<div class="bs-docs-section">
+				<div class="row" style="margin-bottom: 10px;">
+					<div class="col-lg-7" style="margin-top: 20px;">
+						<div class="bs-component">
+							<div class="btn-group" role="group">
+								<a href="#"><button type="button" class="btn btn-success" style="margin-right: 5px;" onclick="Client.Connect()">Connect</button></a><a href="#"><button type="button" class="btn btn-secondary" style="margin-right: 5px;" onclick="Client.FullScreenToggle()">Fullscreen</button></a><a href="#"><button type="button" class="btn btn-secondary" style="margin-right: 5px;" onclick="Client.Download()">Download File</button></a><a href="?terminal=vtxclient"><button type="button" class="btn btn-secondary" style="margin-right: 5px;">VTX Client</button></a><a href="./mobile.php"><button type="button" class="btn btn-secondary">Mobile</button></a>							</div>
+						</div>
+					</div>
+					<div class="col-lg-5" style="margin-top: 20px; text-align: right;">
+						<div class="bs-component">
+							<div class="btn-group" role="group">
+								<a href="#doors"><button type="button" class="btn btn-secondary" style="margin-right: 5px;">Doors</button></a>
+								<a href="https://blog.archaicbinary.net/"><button type="button" class="btn btn-primary" style="margin-right: 5px;">Blog</button></a>
+								<a href="https://www.ipingthereforeiam.com/bbs/?step=detail&amp;id=6312" rel="nofollow"><button type="button" class="btn btn-primary" style="margin-right: 5px;">Vote</button></a>
+								<a href="#social"><button type="button" class="btn btn-primary" style="margin-right: -1px;">Social</button></a>
+								<button id="socialDropdown" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+								<div class="dropdown-menu" aria-labelledby="socialDropdown">
+									<a class="dropdown-item" href="https://twitter.com/abinarybbs" target="_blank">Twitter</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="bs-component">
+							<div class="alert alert-secondary" style="height: 800px;">
+								<div id="fTelnetContainer" style="margin-top: 106px;"><div class="fTelnetInitMessage" style="display: none;">Initializing fTelnet...</div><div class="fTelnetClientContainer"><canvas class="fTelnetCrtCanvas" width="640" height="400" style="z-index: 50;">Your browser does not support the HTML5 Canvas element!<br>The latest version of every major web browser supports this element, so please consider upgrading now:<ul><li><a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a></li><li><a href="http://www.google.com/chrome">Google Chrome</a></li><li><a href="http://www.apple.com/safari/">Apple Safari</a></li><li><a href="http://www.opera.com/">Opera</a></li><li><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home">MS Internet Explorer</a></li></ul></canvas></div><div class="fTelnetFocusWarning" style="display: none; width: 630px;">*** CLICK HERE TO ENABLE KEYBOARD INPUT ***</div><div class="fTelnetScrollback" style="display: none; width: 630px;"><span>SCROLLBACK:</span><a href="#">Line Up</a><a href="#">Line Down</a><a href="#">Page Up</a><a href="#">Page Down</a><a href="#">Exit</a></div><div class="fTelnetStatusBar" style="width: 630px;"><a class="fTelnetMenuButton" href="#">Menu</a><a class="fTelnetConnectButton" href="#">Connect</a><span class="fTelnetStatusBarLabel">Not connected</span></div><div class="fTelnetMenuButtons" style="display: none; z-index: 150;"><table><tr><td><a href="#">Connect</a></td><td><a href="#">Disconnect</a></td></tr><tr><td><a href="#">Copy</a></td><td><a href="#">Paste</a></td></tr><tr><td><a href="#">Upload</a></td><td><a href="#">Download</a></td></tr><tr><td><a href="#">Keyboard</a></td><td><a href="#">Full&nbsp;Screen</a></td></tr><tr><td colspan="2"><a href="#">View Scrollback Buffer</a></td></tr></table></div><div class="fTelnetKeyboardWrapper" style="display: none;"><div class="fTelnetKeyboard"><div class="fTelnetKeyboardRow fTelnetKeyboardRowFunction"><div class="fTelnetKeyboardKey fTelnetKeyboardKeyEscape" data-keycode="27">Esc</div><div class="fTelnetKeyboardKey" data-keycode="112">F1</div><div class="fTelnetKeyboardKey" data-keycode="113">F2</div><div class="fTelnetKeyboardKey" data-keycode="114">F3</div><div class="fTelnetKeyboardKey" data-keycode="115">F4</div><div class="fTelnetKeyboardKey" data-keycode="116">F5</div><div class="fTelnetKeyboardKey" data-keycode="117">F6</div><div class="fTelnetKeyboardKey" data-keycode="118">F7</div><div class="fTelnetKeyboardKey" data-keycode="119">F8</div><div class="fTelnetKeyboardKey" data-keycode="120">F9</div><div class="fTelnetKeyboardKey" data-keycode="121">F10</div><div class="fTelnetKeyboardKey" data-keycode="122">F11</div><div class="fTelnetKeyboardKey" data-keycode="123">F12</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyHomeEndInsertDelete" data-keycode="36">Home</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyHomeEndInsertDelete" data-keycode="35">End</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyHomeEndInsertDelete" data-keycode="45">Ins</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyHomeEndInsertDelete" data-keycode="46">Del</div></div><div class="fTelnetKeyboardRow"><div class="fTelnetKeyboardKey" data-keycode="192">~<br>`</div><div class="fTelnetKeyboardKey" data-keycode="49">!<br>1</div><div class="fTelnetKeyboardKey" data-keycode="50">@<br>2</div><div class="fTelnetKeyboardKey" data-keycode="51">#<br>3</div><div class="fTelnetKeyboardKey" data-keycode="52">$<br>4</div><div class="fTelnetKeyboardKey" data-keycode="53">%<br>5</div><div class="fTelnetKeyboardKey" data-keycode="54">^<br>6</div><div class="fTelnetKeyboardKey" data-keycode="55">&amp;<br>7</div><div class="fTelnetKeyboardKey" data-keycode="56">*<br>8</div><div class="fTelnetKeyboardKey" data-keycode="57">(<br>9</div><div class="fTelnetKeyboardKey" data-keycode="48">)<br>0</div><div class="fTelnetKeyboardKey" data-keycode="173">_<br>-</div><div class="fTelnetKeyboardKey" data-keycode="61">+<br>=</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyBackspace" data-keycode="8">Backspace</div></div><div class="fTelnetKeyboardRow"><div class="fTelnetKeyboardKey fTelnetKeyboardKeyTab" data-keycode="9">Tab</div><div class="fTelnetKeyboardKey" data-keycode="81">Q</div><div class="fTelnetKeyboardKey" data-keycode="87">W</div><div class="fTelnetKeyboardKey" data-keycode="69">E</div><div class="fTelnetKeyboardKey" data-keycode="82">R</div><div class="fTelnetKeyboardKey" data-keycode="84">T</div><div class="fTelnetKeyboardKey" data-keycode="89">Y</div><div class="fTelnetKeyboardKey" data-keycode="85">U</div><div class="fTelnetKeyboardKey" data-keycode="73">I</div><div class="fTelnetKeyboardKey" data-keycode="79">O</div><div class="fTelnetKeyboardKey" data-keycode="80">P</div><div class="fTelnetKeyboardKey" data-keycode="219">{<br>[</div><div class="fTelnetKeyboardKey" data-keycode="221">}<br>]</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyBackslash" data-keycode="220">|<br>\</div></div><div class="fTelnetKeyboardRow"><div class="fTelnetKeyboardKey fTelnetKeyboardKeyCapsLock" data-keycode="20">Caps Lock</div><div class="fTelnetKeyboardKey" data-keycode="65">A</div><div class="fTelnetKeyboardKey" data-keycode="83">S</div><div class="fTelnetKeyboardKey" data-keycode="68">D</div><div class="fTelnetKeyboardKey" data-keycode="70">F</div><div class="fTelnetKeyboardKey" data-keycode="71">G</div><div class="fTelnetKeyboardKey" data-keycode="72">H</div><div class="fTelnetKeyboardKey" data-keycode="74">J</div><div class="fTelnetKeyboardKey" data-keycode="75">K</div><div class="fTelnetKeyboardKey" data-keycode="76">L</div><div class="fTelnetKeyboardKey" data-keycode="59">:<br>;</div><div class="fTelnetKeyboardKey" data-keycode="222">"<br>'</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyEnter" data-keycode="13">Enter</div></div><div class="fTelnetKeyboardRow"><div class="fTelnetKeyboardKey fTelnetKeyboardKeyShiftLeft" data-keycode="1004">Shift</div><div class="fTelnetKeyboardKey" data-keycode="90">Z</div><div class="fTelnetKeyboardKey" data-keycode="88">X</div><div class="fTelnetKeyboardKey" data-keycode="67">C</div><div class="fTelnetKeyboardKey" data-keycode="86">V</div><div class="fTelnetKeyboardKey" data-keycode="66">B</div><div class="fTelnetKeyboardKey" data-keycode="78">N</div><div class="fTelnetKeyboardKey" data-keycode="77">M</div><div class="fTelnetKeyboardKey" data-keycode="188">&lt;<br>,</div><div class="fTelnetKeyboardKey" data-keycode="190">&gt;<br>.</div><div class="fTelnetKeyboardKey" data-keycode="191">?<br>/</div><div class="fTelnetKeyboardKey" data-keycode="33">Page<br>Up</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyArrowUp" data-keycode="38"></div><div class="fTelnetKeyboardKey" data-keycode="34">Page<br>Down</div></div><div class="fTelnetKeyboardRow"><div class="fTelnetKeyboardKey fTelnetKeyboardKeyCtrl" data-keycode="17">Ctrl</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyAlt" data-keycode="18">Alt</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeySpacebar" data-keycode="32">&nbsp;</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyAlt" data-keycode="18">Alt</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyCtrl" data-keycode="17">Ctrl</div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyArrowLeft" data-keycode="37"></div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyArrowDown" data-keycode="40"></div><div class="fTelnetKeyboardKey fTelnetKeyboardKeyArrowRight" data-keycode="39"></div></div></div></div><input type="file" class="fTelnetUpload" style="display: none;"></div>							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="bs-component">
+							<div class="card text-white bg-dark mb-3">
+								<div class="card-header">Features</div>
+								<div class="card-body">
+									<ul class="list-group">
+										<li class="list-group-item d-flex justify-content-between align-items-center">2FA + Strict Privacy</li>
+										<li class="list-group-item d-flex justify-content-between align-items-center">Easy File Transfer Protocols</li>
+										<li class="list-group-item d-flex justify-content-between align-items-center">SSH, TOR, I2P Enabled</li>
+										<li class="list-group-item d-flex justify-content-between align-items-center">BBSLink, Door Party, CombatNET, More...</li>
+										<li class="list-group-item d-flex justify-content-between align-items-center">Agoranet, Araknet, Micronet, Spooknet, Others...</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="bs-component">
+							<div class="card text-white bg-dark mb-3">
+								<div class="card-header">Connection Methods</div>
+								<div class="card-body">
+									<ul class="list-group">
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="telnet://xatmpzhhth6kjkseekrq5u6puthip5fthhvzwjbk3wleyum5gysa.b32.i2p">Telnet</a> (bbs.archaicbinary.net) [23]</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="ssh://abhtfejs3cs2wp724x4ajmfv3zs5unxrsyfafsdgre3idvlc3ckq.b32.i2p">SSH</a> (bbs.archaicbinary.net) [22] (SyncTERM)</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="http://2rwwci63bq33gupmks3x2lboqld3x2ody3sowksxhl4ymrey7wlddoyd.onion/" target="_blank">TOR</a> (old: nrzinzk43rx5v4mg.onion)</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="http://archaicbinarybbs.i2p/" target="_blank">I2P</a> (archaicbinarybbs.i2p)</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="http://127.0.0.1:43110/1MBBxk6taC6gTyXGDn5xxEgWau6aAGxs2p/" target="_blank">ZeroNET</a> (hash link)</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="bs-component">
+							<div class="card text-white bg-dark mb-3">
+								<div class="card-header">Telnet Clients</div>
+								<div class="card-body">
+									<ul class="list-group">
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="http://syncterm.bbsdev.net/" target="_blank">SyncTERM</a> Supports SSH and Telnet</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center disabled"><a href="https://magickabbs.com/index.php/magiterm/" target="_blank">MagiTERM</a> Supports SSH (Hmm 404)</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="http://mysticbbs.com/downloads.html" target="_blank">NetRUNNER</a> Telnet only</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="http://mt32.bbses.info/" target="_blank">mTelnet</a> Supports Telnet</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center"><a href="http://qodem.sourceforge.net/downloads.html" target="_blank">Qodem</a> Supports Telnet</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="page-header" style="margin-top: 30px; margin-bottom: 40px;">
+							<h1 id="archaicnet">About</h1>
+						</div>
+
+						<div class="bs-component">
+							<p>
+							Archaic Binary is a (mostly) command line interpreted bulletin board system providing a legacy interface for some useful APIs, Utilities, Files, Message Bases (FTN Style) and access to ANSI/Text Door Games.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="page-header" style="margin-top: 30px; margin-bottom: 40px;">
+							<h1 id="doors">Doors (Games and More)</h1>
+						</div>
+
+						<div class="bs-component">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col">Name</th>
+										<th scope="col">Category</th>
+										<th scope="col">Information</th>
+										<th scope="col">Location</th>
+										<th scope="col">Info</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Ambroshia</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Analog Clock</th>
+										<td class="align-middle">Utility</td>
+										<td class="align-middle">Random project looks ugly but works!</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Arrow Bridge</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">ANSI RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Arrow Bridge II</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">ANSI RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Ashrella</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">BBS Crash</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Bordello</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Chicago Crime Statistics</th>
+										<td class="align-middle">Information</td>
+										<td class="align-middle">Chicago crime statistics and metrics</td>
+										<td class="align-middle">Local/API</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Clans, The</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Crypto Prices</th>
+										<td class="align-middle">Utility</td>
+										<td class="align-middle">Shows tabular information about crypto-currency</td>
+										<td class="align-middle">Local/API</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Darkness</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">ANSI/Text RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Darkness is a competitive multi-player action role-playing BBS 'door' game based on the Legend of the Red Dragon style of game play, featuring a post apocalyptic cyberpunk setting." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Dodgeball</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Dog World ][</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">ANSI/Text RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">DoorMUD</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">Text RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Dungeon Master</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">ANSI RPG</td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Eclectic Avenue</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Exitilus</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">ANSI/Text RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Falcons Honor</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">ANSI/Text RPG</td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Food Fite</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">Text Action Game</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Global War</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Global War: Backgammon</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Gold Rush</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Jezebel</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Knowledge Base</th>
+										<td class="align-middle">Information</td>
+										<td class="align-middle">Practice tests, download testing material, more...</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="The knowledgebase contains all sorts of valuable information such as fixes to issues, and other IT content." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Local Files</th>
+										<td class="align-middle">Files</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Local files available to be downloaded from the BBS. Allows using ZModem/XModem-G/HTTPS links." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">LORD; Legend of the Red Dragon</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">Text RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="LORD is a simplified text based RPG. It is a classic retro multi-player role playing game, created during the BBS era by a popular fellow named Seth Robinson. LORD takes the whole story line of a typical MUD, and breaks it down into a text based menu driven game where you can play your turn within several minutes. You can play every day, or once every other week, and still maintain an active role in the game." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Lunatix</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Mega Slots</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Metal Prices</th>
+										<td class="align-middle">Utility</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Local/API</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Uses a public API to query pricing for various metals." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">MoMUD</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">Text RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">MRC (Chat Network)</th>
+										<td class="align-middle">Chat</td>
+										<td class="align-middle">Mystic Relay Chat (Multiple BBSes)</td>
+										<td class="align-middle">Local/Network</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Network chat room/server/service with multiple connected BBSes participating." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Notepad</th>
+										<td class="align-middle">Utility</td>
+										<td class="align-middle">Private (+Public Strong URL/HTTPS) notepad for anything; aka pastebins</td>
+										<td class="align-middle">Local/Network</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Small notepad you can save notes, text, etc. Allows sharing via unique https url." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Oneliners (Graffiti Wall)</th>
+										<td class="align-middle">Chat</td>
+										<td class="align-middle">Multi-BBS oneliner wall</td>
+										<td class="align-middle">Local/Network</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">OpenVAERS Covid Data</th>
+										<td class="align-middle">Information</td>
+										<td class="align-middle">VAERS COVID Vaccine Adverse Event Reports</td>
+										<td class="align-middle">Local/API</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Currently broken door that scrapes the OpenVAERS website." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Operation Overkill II</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">Text RPG</td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Pimp Wars</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">Text RPG</td>
+										<td class="align-middle">Game Server</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Pit, The</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle"></td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Practice Tests</th>
+										<td class="align-middle">Information</td>
+										<td class="align-middle">A+, Net+, Security+, Others practice tests multiple choice/flash cards</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Custom built testing door allowing the user to practice for various industry standard tests to get certified in multiple areas of the IT field." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">SpotCrime; Local Crime Stats</th>
+										<td class="align-middle">Information</td>
+										<td class="align-middle">Crime stats for your local area (asks for city/state)</td>
+										<td class="align-middle">Local/API</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Queries the SpotCrime API databases for local crime information." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Torrent Browser</th>
+										<td class="align-middle">Files</td>
+										<td class="align-middle">API query door to list and link torrents</td>
+										<td class="align-middle">Local/API</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="An API door browsing public Torrent databases." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">Usurper</th>
+										<td class="align-middle">Games</td>
+										<td class="align-middle">Text RPG</td>
+										<td class="align-middle">Local</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Nothing here yet..." data-bs-original-title="About">?</button></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">Zomato</th>
+										<td class="align-middle">Utility</td>
+										<td class="align-middle">API that queries restaurant databases</td>
+										<td class="align-middle">Local/API</td>
+										<td class="align-middle"><button type="button" class="btn btn-secondary btn-sm" title="" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Zomato is a public API allowing users to query restaurant information." data-bs-original-title="About">?</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="page-header" style="margin-top: 30px; margin-bottom: 40px;">
+							<h1 id="docs">BBS Documents</h1>
+						</div>
+
+						<div class="bs-component">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col">File / Title</th>
+										<th scope="col">Modified</th>
+										<th scope="col">Type</th>
+										<th scope="col">Size</th>
+									</tr>
+								</thead>
+								<tbody>
+																			<tr class="table-dark">
+																					<th scope="row" class="align-middle"><a href="docs/Arrow Bridge - Quest for the Orb.txt" target="_blank">Arrow Bridge - Quest for the Orb.txt</a></th>
+											<td class="align-middle">April 13 2022</td>
+											<td class="align-middle">text/plain</td>
+											<td class="align-middle">16920 Bytes</td>
+										</tr>
+									  											<tr>
+																					<th scope="row" class="align-middle"><a href="docs/Arrow Bridge II - Guardians of Darkness.txt" target="_blank">Arrow Bridge II - Guardians of Darkness.txt</a></th>
+											<td class="align-middle">April 13 2022</td>
+											<td class="align-middle">text/plain</td>
+											<td class="align-middle">48950 Bytes</td>
+										</tr>
+									  										<tr class="table-dark">
+																					<th scope="row" class="align-middle"><a href="docs/Darkness.txt" target="_blank">Darkness.txt</a></th>
+											<td class="align-middle">April 13 2022</td>
+											<td class="align-middle">text/plain</td>
+											<td class="align-middle">26775 Bytes</td>
+										</tr>
+									  											<tr>
+																					<th scope="row" class="align-middle"><a href="docs/LORD Tips and Tricks.txt" target="_blank">LORD Tips and Tricks.txt</a></th>
+											<td class="align-middle">April 13 2022</td>
+											<td class="align-middle">text/plain</td>
+											<td class="align-middle">11057 Bytes</td>
+										</tr>
+									  										<tr class="table-dark">
+																					<th scope="row" class="align-middle"><a href="docs/The Pit Tips and Tricks.txt" target="_blank">The Pit Tips and Tricks.txt</a></th>
+											<td class="align-middle">April 13 2022</td>
+											<td class="align-middle">text/plain</td>
+											<td class="align-middle">3504 Bytes</td>
+										</tr>
+									  											<tr>
+																					<th scope="row" class="align-middle"><a href="docs/Usurper.txt" target="_blank">Usurper.txt</a></th>
+											<td class="align-middle">April 13 2022</td>
+											<td class="align-middle">text/plain</td>
+											<td class="align-middle">18234 Bytes</td>
+										</tr>
+									  								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="bs-component">
+							<ul class="pagination">
+								<li class="page-item disabled">
+								<a class="page-link" href="#">≈</a>
+								</li>
+								<li class="page-item active">
+								<a class="page-link" href="#">Current</a>
+								</li>
+								<li class="page-item">
+								<a class="page-link" href="#">Older Posts (All)</a>
+								</li>
+								<li class="page-item disabled">
+								<a class="page-link" href="#" target="_blank">≈</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="page-header" style="margin-top: 30px; margin-bottom: 40px;">
+							<h1 id="doors">Partner BBSes and Resources</h1>
+						</div>
+
+						<div class="bs-component">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col">Name</th>
+										<th scope="col">Information</th>
+										<th scope="col">Info</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle">IPTIA</th>
+										<td class="align-middle">BBS resources, BBS listings and more.</td>
+										<td class="align-middle"><a href="http://www.ipingthereforeiam.com/bbs" target="_blank"><button type="button" class="btn btn-secondary btn-sm" title="Link">W</button></a></td>
+									</tr>
+									<tr>
+										<th scope="row" class="align-middle">The Quantum Wormhole</th>
+										<td class="align-middle">TQW BBS Runs the tqwRadio station and other resources along with tqwNet FTN.</td>
+										<td class="align-middle"><a href="https://www.erb.pw/" target="_blank"><button type="button" class="btn btn-secondary btn-sm" title="Link">W</button></a> <a href="telnet://bbs.erb.pw/"><button type="button" class="btn btn-secondary btn-sm" title="Link">T</button></a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="page-header" style="margin-top: 30px; margin-bottom: 40px;">
+							<h1 id="social">Social Media</h1>
+						</div>
+
+						<div class="bs-component">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col" width="20%">Service</th>
+										<th scope="col" width="80%">Notes</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="table-dark">
+										<th scope="row" class="align-middle"><a href="https://twitter.com/abinarybbs" target="_blank">Twitter</a> &lt;#abinarybbs&gt;</th>
+										<td class="align-middle">Automatic posts when a user plays a door game.</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th scope="row" class="align-middle" colspan="2" style="text-align: center;">We do not monitor social media, we have no use for it. You can contact the Sysop using the BBS and will get a quick reply.</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12" style="margin-top: 30px; margin-bottom: 20px; text-align: center;">
+						<div class="bs-component">
+							<a href="telnet://bbs.archaicbinary.net"><button type="button" class="btn btn-primary">Telnet</button></a>
+							<a href="ssh://bbs.archaicbinary.net"><button type="button" class="btn btn-primary">SSH (SyncTERM)</button></a>
+							<a href="https://phroxy.net/gopher://bbs.archaicbinary.net/"><button type="button" class="btn btn-primary">Gopherspace</button></a>
+							<a href="gemini://bbs.archaicbinary.net/"><button type="button" class="btn btn-primary">Gemini Capsule</button></a>
+							<a href="mailto:sysop[@]archaicbinary.net"><button type="button" class="btn btn-secondary">Contact</button></a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12" style="margin-top: 30px; margin-bottom: 5px; text-align: center;">
+						<div class="bs-component">
+						    Hotline Webring
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12" style="margin-top: 5px; margin-bottom: 20px; text-align: center;">
+						<div class="bs-component">
+							<a href="https://hotlinewebring.club/abinarybbs/previous"><button type="button" class="btn btn-primary" style="width: 200px;">&lt; Previous</button></a>
+							<a href="https://hotlinewebring.club/abinarybbs/next"><button type="button" class="btn btn-primary" style="width: 200px;">Next &gt;</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer id="footer">
+			<div class="row">
+				<div class="col-lg-12">
+
+				</div>
+			</div>
+		</footer>
+
+		<script src="style/jquery.min.js"></script>
+		<script src="style/bootstrap.bundle.min.js"></script>
+		<script src="style/custom.js"></script>
+		
+			<script src="./ftelnet/ftelnet.norip.xfer.min.js" id="fTelnetScript"></script><script>var Options = new fTelnetOptions(); Options.Hostname = "dh3qvup3vddeoyf5ayci6ncrlh3d7cin4cnrpg6orn2l2jiwc3fq.b32.i2p"; Options.Port = 11236; Options.ConnectionType = 'rlogin'; Options.RLoginClientUsername = '     '; Options.RLoginServerUsername = '     '; Options.RLoginTerminalType = '     '; Options.Emulation = 'ansi-bbs'; Options.BitsPerSecond = 115200; Options.StatusBarVisible = false; Options.VirtualKeyboardVisible = false; Options.AllowModernScrollback = false; Options.SplashScreen = "G1s/N2gbWzQwbRtbMkobWzQwbQ0KDQoNCg0KDQoNCg0KDQoNChtbMDsxbRtbMzBDG1szMG1bIBtbMzdtQXJjaGFpYyAbWzA7MzJtQhtbMTszN21pbmFyeSAbWzMwbV0NChtbMjRDG1swbWh0dHBzOi8vd3d3LmFyY2hhaWNiaW5hcnkubmV0DQoNCg0KDQoNCg0KDQoNCg0KDQobWzBtG1syNTVE"; var Client = new fTelnetClient('fTelnetContainer', Options);</script>	
+</body></html>

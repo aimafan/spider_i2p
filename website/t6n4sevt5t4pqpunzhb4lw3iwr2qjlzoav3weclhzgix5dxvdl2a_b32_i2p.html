@@ -1,0 +1,84 @@
+<html><head>
+		<meta charset="UTF-8">
+		<title>AnteBeot</title>
+		<link rel="stylesheet" href="css/antebeot.css">
+	</head>
+<body>
+	<nav id="navigation-bar">
+		<ul>
+			<li><a href="#">Главная</a></li>
+			<li><a href="//antebeot.world/restapi/">API WEBSITE</a></li>
+			<li><a href="/forumbb/">FORUM</a></li>
+			<li><a href="/xmpp/reg.php">XMPP</a></li>
+			<li><a href="/blog">blog</a></li>
+			<li><a href="http://antebeot.world:8073">owrx</a></li>
+		</ul>
+	</nav>
+
+	<div id="content" class="sr">
+		<h1>Добро пожаловать на сайт <span class="specialButton">A</span>nte<span class="specialButton">B</span>eot проекта</h1>
+		<h2><a href="https://github.com/AntebeotProject/VapsePool">Анте<span class="specialButton">Б</span>еот</a> - он же VapsePool. Это любительская система, позволяющая создавать свои обменники/веб-криптокошельки на основе имеющегося <a href="http://antebeot.world/restapi/ru/ApiReference.html">API</a>.</h2>
+		<h3>Данный проект задумывался как "криптопул" (система для майнинга) для госткойн, и именно тестнет-сети. Была сделана поддержка старого типа - "Long polling". Но в последствие было принято и решено сместить фокус внимания на другое...</h3>
+		<p>Вы автоматически соглашаетесь продолжая использование с данными соглашениями: <a href="/agreement.html" style="font-size:1em">https://antebeot.world/agreement.html</a>.</p>
+		<p><a href="https://github.com/startyourday60/AntebeotCliFX/releases/tag/start" style="font-size:1em">Бета-доступ к клиенту</a></p>
+	</div>
+	<div id="history" class="sr">
+<!-- Для того что бы посмотреть графики можете перейти по <a style="font-size:1em" href="/cgi/getAllGraphs.php">данной ссылке</a> на 10.02.2023 они из тестнетовских торгов. В будующем их может "переписать" настоящими.-->
+<h1 id="история">История</h1>
+<p>Зарождение подобного проекта, был проект
+<a href="https://github.com/wipedlifepotato/Bacteria-Framework">“Bacteria”</a>…
+Из-за нужды зарабатывать деньги, в последствии, который был заброшен
+из-за существования Системы BisQ.</p>
+<p>Теперь это публичный шаблон-фреймворк, lua+C связки. И заготовкой для
+криптошельков, но делание на Си с нуля, подобного это хоть и забавно, в
+настоящее время существует множество библиотек и намного упрощенных
+систем…</p>
+<p>В момент, когда я изучал kotlin, я решил сделать что-то ради веселья.
+Мне было предложено создать пул для тестнета, на телефоне, криптовалюты
+госткойн.</p>
+<p>Я начал создавать его на kotlin, но немного не понял как собираются
+блоки…
+<a href="https://github.com/AntebeotProject/VapsePool/blob/main/src/main/kotlin/BlockWorker.kt#L11">Вот
+тут…</a>. Произошло это, потому-что имеющийся выложенный исходный код
+пула - нерабочий. Не смотря на это, была реализованна система API.</p>
+<h1 id="feautres">Feautres:</h1>
+<ul>
+<li><p>Поддержка RCP от криптовалют: monero, bitcoin подобных (старый
+RPC от обычного биткоина, dashcore,dogecoin,gostcoin), electrum. А
+именно пополнение и вывод. Монеро есть баг, который можно чинить в
+ручную пополнением баланса или убрав возможность смены подадреса для
+монеро… В общем, чинится это, остальном незамечаны недоработки.</p></li>
+<li><p>Обмен криптовалют в телеграмм -
+<a href="https://t.me/AntebeotBot">Telegram</a>; Бот можно добавлять
+любые языки, в jar файле можно добавлять</p></li>
+<li><p>Система API, позволяющая делать свои обменники и криптокошельки.
+Пример подобного IRC-бота: <a href="https://github.com/AntebeotProject/AntebeotIRCBot">
+Antebeot-IRC-Bot</a></p></li>
+<li><p>http-longpool для госткойн, не выгоден из-за повышенной
+сложности… Для массового пула, например дома у себя, с видеокартами
+может подойти. В тестнет работает хорошо с телефонов и есть существующее
+http://antebeot.world/restapi/dashboard/ и существующий майнер для
+госткойн -
+https://github.com/AntebeotProject/VapsePool/blob/main/HTTPServer/android.apk.</p></li>
+</ul>
+<h4 id="проект-полузаброшен-и-является-общественным-достоянием-на-открытых-правах-при-договоренности-неиспользовать-данный-код-в-злых-помыслах-а-именно-file">Проект
+полузаброшен и является общественным достоянием на открытых правах, при
+договоренности неиспользовать данный код в злых помыслах</h4>
+<hr>
+<!--<a href='https://telegra.ph/Pro-ehtot-akkaunt-03-19-2'>_____</a> -->
+	</div>
+	<footer>
+		<a href="https://t.me/AntebeotBot"><span class="ico telegram-ico"></span></a>
+		<br><br>
+		<p style="color:white;float: right">contactus@antebeot.world</p>
+		<br><br>
+		<p style="color:white;"> JID: support@antebeot.world (https://antebeot.world/xmpp/reg.php)</p>
+		<br><br>
+		<!--<p  style="color:white;"><a href="http://antebeot.world:8073">OpenWebRX</a></p> -->
+		<!-- https://github.com/AntebeotProject/VapsePool -->
+		<!-- , wzjyu2qp4dhhugtllab3g33ad3fmg2623zh3ak6c6b2gmt2thmjwdvad.onion:8073, http://[201:dd3c:da29:1b9c:6eeb:b72d:6fba:b3ef]:8073/, 7ypaafo7hxdoi76bxhzzybekub6s46glrh6b6fsy2pulrbmnlxrq.b32.i2p:8073 -->
+	</footer>
+
+
+
+</body></html>

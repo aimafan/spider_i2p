@@ -1,0 +1,10 @@
+.venv
+__pycache__/
+*.pyc
+.vscode
+build
+logs/*
+!logs/.gitkeep
+test
+data/*
+!/data/.gitkeep

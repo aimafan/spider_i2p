@@ -1,0 +1,92 @@
+<html><head>
+	<title>Linx | 🦨</title>
+	<meta charset="utf-8" content="text/html" http-equiv="content-type">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<link href="/static/css/linx.css?v=1" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/static/css/hint.css" rel="stylesheet" type="text/css">
+	<link href="/static/images/favicon.gif" rel="icon" type="image/gif">
+	
+<link href="/static/css/dropzone.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+	<div id="container_container">
+		<div id="container">
+			<div id="header">
+				<div id="navigation" class="right">
+					
+					<a href="/">Upload</a> |
+					<a href="/paste/">Paste</a> |
+					
+					<a href="/API/">API</a>
+					
+				</div>
+				<h2><a href="/" title="Linx | 🦨">Linx | 🦨</a></h2>
+			</div>
+
+			
+<div id="fileupload">
+    <form action="/upload" class="dropzone dz-clickable" id="dropzone" method="POST" enctype="multipart/form-data" data-maxsize="4294967296" data-auth="none">
+        
+
+        <div id="dzone" class="dz-default dz-message" style="display: block;">
+            <span>Click or Drop file(s) or Paste image</span>
+        </div>
+
+        <div id="choices">
+            <span class="hint--top hint--bounce" data-hint="Replace the filename with random characters. The file extension is retained">
+                <label><input name="randomize" id="randomize" type="checkbox" checked=""> Randomize filename</label>
+            </span>
+
+            <div id="expiry">
+                <label>File expiry:
+                    <select name="expires" id="expires">
+                        
+                        <option value="60">
+                            1 minute </option>
+                        
+                        <option value="300">
+                            5 minutes </option>
+                        
+                        <option value="3600">
+                            1 hour </option>
+                        
+                        <option value="86400">
+                            1 day </option>
+                        
+                        <option value="604800" selected="">
+                            1 week </option>
+                        
+                    </select>
+                </label>
+            </div>
+            <div id="access_key">
+                <span class="hint--top hint--bounce" data-hint="Require password to access (this does not encrypt the file but only limits access)">
+                    <label>
+                        <input type="checkbox" id="access_key_checkbox">
+                        <span id="access_key_text">Require access password</span>
+                    </label>
+                    <input id="access_key_input" name="access_key" type="text" placeholder="Access password">
+                </span>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </form>
+    <div id="uploads"></div>
+    <div class="clear"></div>
+</div>
+
+<script src="/static/js/dropzone.js"></script>
+<script src="/static/js/upload.js"></script>
+
+
+			<div id="footer">
+				<a href="https://github.com/andreimarcu/linx-server">linx-server</a>
+			</div>
+
+		</div>
+	</div>
+
+
+<input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;"></body></html>

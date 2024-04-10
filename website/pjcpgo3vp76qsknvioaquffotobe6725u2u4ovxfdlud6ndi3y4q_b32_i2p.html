@@ -1,0 +1,621 @@
+<html lang="en"><head>
+	<meta name="generator" content="Hugo 0.124.1">
+	<title>Based Cooking</title>
+	<link rel="canonical" href="/">
+	<link rel="alternate" type="application/rss+xml" title="Based Cooking RSS" href="/index.xml">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<link rel="icon" href="/favicon.svg">
+	<meta name="description" content="The fast-loading recipe site with cooking only and no ads.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index, follow">
+	<meta charset="utf-8">
+</head>
+<body>
+<main>
+<header><h1 id="tag_🍲 Based Cooking 🍳">
+🍲 Based Cooking 🍳
+</h1></header>
+<article>
+
+<h2 id="what-do-you-want-to-cook">What do you want to cook?</h2>
+<div class="search">
+  <input type="text" id="search" placeholder="Search ALL Recipes...">
+  <button id="clear-search">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Backspace</title><path d="M135.19 390.14a28.79 28.79 0 0021.68 9.86h246.26A29 29 0 00432 371.13V140.87A29 29 0 00403.13 112H156.87a28.84 28.84 0 00-21.67 9.84v0L46.33 256l88.86 134.11z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33M336.67 192.33L206.66 322.34M336.67 322.34L206.66 192.33"></path></svg>
+  </button>
+</div>
+<script>
+// @license magnet:?xt=urn:btih:5ac446d35272cc2e4e85e4325b146d0b7ca8f50c&dn=unlicense.txt Unlicense
+
+document.addEventListener("DOMContentLoaded", () => {
+  for (e of document.getElementsByClassName("js-only")) {
+    e.classList.remove("js-only");
+  }
+
+  const recipes = document.querySelectorAll("#artlist li");
+  const search = document.getElementById("search");
+  const oldheading = document.getElementById("newest-recipes");
+  const clearSearch = document.getElementById("clear-search");
+  const artlist = document.getElementById("artlist");
+
+  search.addEventListener("input", () => {
+    // grab search input value
+    const searchText = search.value.toLowerCase().trim().normalize('NFD').replace(/\p{Diacritic}/gu, "");
+    const searchTerms = searchText.split(" ");
+    const hasFilter = searchText.length > 0;
+
+    artlist.classList.toggle("list-searched", hasFilter);
+    oldheading.classList.toggle("hidden", hasFilter);
+
+    // for each recipe hide all but matched
+    recipes.forEach(recipe => {
+      const searchString = `${recipe.textContent} ${recipe.dataset.tags}`.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "");
+      const isMatch = searchTerms.every(term => searchString.includes(term));
+
+      recipe.hidden = !isMatch;
+      recipe.classList.toggle("matched-recipe", hasFilter && isMatch);
+    })
+  })
+
+  clearSearch.addEventListener("click", () => {
+    search.value = "";
+    recipes.forEach(recipe => {
+      recipe.hidden = false;
+      recipe.classList.remove("matched-recipe");
+    })
+
+    artlist.classList.remove("list-searched");
+    oldheading.classList.remove("hidden");
+  })
+})
+// @license-end
+</script>
+<h2 id="newest-recipes">Newest Recipes</h2>
+<ul id="artlist">
+<li data-tags="[beef cream swiss quick]"><a href="/zurich-sytle-meat-saute/">Zurich-Style Meat Saute</a></li>
+<li data-tags="[drink sweet]"><a href="/kombucha/">Kombucha</a></li>
+<li data-tags="[chicken stew brazilian]"><a href="/galinha-caipira/">Galinha Caipira</a></li>
+<li data-tags="[fish soup japanese]"><a href="/grilled-mackerel-with-miso-soup-and-squash/">Grilled Mackerel with Miso Soup and Squash</a></li>
+<li data-tags="[bread coconut baked keto bariatric]"><a href="/coconut-flour-bread/">Keto Coconut Bread</a></li>
+<li data-tags="[danish christmas]"><a href="/risengroed/">Risengrød</a></li>
+<li data-tags="[apple pancake german breakfast]"><a href="/spiced-apple-pancakes/">Spiced Apple Pancakes</a></li>
+<li data-tags="[Russian Fruit Drink]"><a href="/strawberry-compote/">Strawberry Compote</a></li>
+<li data-tags="[tunisian Eggs]"><a href="/tajine/">Tajine Maadnous</a></li>
+<li data-tags="[breakfast]"><a href="/granola/">Granola</a></li>
+<li data-tags="[palestinian lebanese mediterranean middle eastern spice]"><a href="/zaatar/">Zaatar</a></li>
+<li data-tags="[Fry Italian Brazilian]"><a href="/grostoli/">Grostoli</a></li>
+<li data-tags="[chicken]"><a href="/exotic-ginger-cumin-chicken/">Exotic Ginger Cumin Chicken</a></li>
+<li data-tags="[beef rice asian]"><a href="/hakka-style-meatballs/">Hakka-Style Meatballs</a></li>
+<li data-tags="[chicken pasta italian]"><a href="/one-pot-chicken-tetrazzini/">One-Pot Chicken Tetrazzini</a></li>
+<li data-tags="[fish pasta]"><a href="/smoked-salmon-pasta-primavera/">Smoked Salmon Pasta Primavera</a></li>
+<li data-tags="[chicken rice asian]"><a href="/spicy-kung-pao-style-chicken/">Spicy Kung Pao-Style Chicken</a></li>
+<li data-tags="[salad american fasting quick]"><a href="/bean-salad/">Three Bean Salad</a></li>
+<li data-tags="[chicken mediterranean turkish]"><a href="/zaatar-chicken-bulgur-bowls/">Za'atar Chicken Bulghur Bowls</a></li>
+<li data-tags="[beef asian rice]"><a href="/beef-and-broccoli/">Beef and Broccoli</a></li>
+<li data-tags="[rice pasta]"><a href="/egyptian-lentils/">Egyptian Lentils</a></li>
+<li data-tags="[beef chicken southwest]"><a href="/fajitas/">Fajitas</a></li>
+<li data-tags="[irish traybake]"><a href="/irish-potato-casserole/">Irish Potato Casserole</a></li>
+<li data-tags="[beef traybake mexican southwest american]"><a href="/mexican-meat-loaf/">Mexican Meat Loaf</a></li>
+<li data-tags="[fish eggs french]"><a href="/smoked-salmon-quiche/">Smoked Salmon Quiche</a></li>
+<li data-tags="[salad mediterranean]"><a href="/tabouleh/">Tabouleh</a></li>
+<li data-tags="[tofu asian]"><a href="/tofu-and-cashew-chow-mein/">Tofu and Cashew Chow Mein</a></li>
+<li data-tags="[brazilian cake traditional]"><a href="/cuca-italiana/">Cuca "Italiana"</a></li>
+<li data-tags="[beef asian noodles]"><a href="/teriyaki-beef/">Teriyaki Beef Wok</a></li>
+<li data-tags="[chicken]"><a href="/cheddar-crusted-chicken/">Cheddar-Crusted Chicken</a></li>
+<li data-tags="[cheesefare potato irish]"><a href="/colcannon-bake/">Colcannon Bake</a></li>
+<li data-tags="[chicken quick easy]"><a href="/easy-chicken-and-rice-casserole/">Easy Chicken and Rice Casserole</a></li>
+<li data-tags="[fasting curry]"><a href="/fall-vegetable-and-chickpea-curry/">Fall Vegetable and Chickpea Curry</a></li>
+<li data-tags="[pork soup easy]"><a href="/ham-and-lentil-soup/">Ham and Lentil Soup</a></li>
+<li data-tags="[fish soup seafood]"><a href="/newfoundland-cod-chowder/">Newfoundland Cod Chowder</a></li>
+<li data-tags="[beef curry thai]"><a href="/panang-style-beef-curry/">Panang-Style Beef Curry</a></li>
+<li data-tags="[potato salad american]"><a href="/perfect-potato-salad/">Perfect Potato Salad</a></li>
+<li data-tags="[lentil soup turkish]"><a href="/turkish-red-lentil-soup/">Turkish Red Lentil Soup</a></li>
+<li data-tags="[chicken turkish]"><a href="/turkish-style-spiced-chicken/">Turkish-Style Spiced Chicken</a></li>
+<li data-tags="[bread turkish]"><a href="/turmeric-flatbread/">Turmeric Flatbread</a></li>
+<li data-tags="[mushrooms rice italian]"><a href="/winter-risotto/">Winter Risotto</a></li>
+<li data-tags="[vegetables soup]"><a href="/autumn-soup/">Autumn Soup</a></li>
+<li data-tags="[salad greek mediterranean tomato]"><a href="/greek-salad/">Greek Salad</a></li>
+<li data-tags="[soup fasting tomato]"><a href="/gypsy-soup/">Gypsy Soup</a></li>
+<li data-tags="[soup french tomato]"><a href="/ratatouille/">Ratatouille</a></li>
+<li data-tags="[indian curry tomato vegetables]"><a href="/red-lentil-dahl/">Red Lentil Dahl</a></li>
+<li data-tags="[shrimp chicken cajun tomato]"><a href="/shrimp-and-chicken-jambalaya/">Shrimp and Chicken Jambalaya</a></li>
+<li data-tags="[spinach rice]"><a href="/spinach-rice-casserole/">Spinach-Rice Casserole</a></li>
+<li data-tags="[beef oven italian]"><a href="/chipolata-in-balsamic-vinegar/">Chipolata Sausage in Balsamic Vinegar</a></li>
+<li data-tags="[tunisian]"><a href="/couscous/">Tunisian Couscous</a></li>
+<li data-tags="[basic spread quick russian soup]" class="older-article"><a href="/okroshka/">Russian Okroshka</a></li>
+<li data-tags="[italian pasta quick seafood shrimp garlic]" class="older-article"><a href="/seafood-pasta/">Garlic Butter Seafood Pasta</a></li>
+<li data-tags="[beef stew english]" class="older-article"><a href="/scouse/">Scouse</a></li>
+<li data-tags="[swedish quick sausage]" class="older-article"><a href="/korv-stroganoff/">Korv Stroganoff</a></li>
+<li data-tags="[pizza sauce italian]" class="older-article"><a href="/easy-pizza-sauce/">Easy Pizza Sauce</a></li>
+<li data-tags="[wholemeal pizza italian]" class="older-article"><a href="/wholemeal-pizza/">Wholemeal Pizza</a></li>
+<li data-tags="[Argentinian Milk Slowcooked Traditional]" class="older-article"><a href="/dulce-de-leche/">Dulce de Leche</a></li>
+<li data-tags="[fish spanish]" class="older-article"><a href="/pulpo-gallega/">Pulpo a la gallega</a></li>
+<li data-tags="[wholemeal pizza dough italian]" class="older-article"><a href="/wholemeal-wheat-flour-pizza-dough/">Wholemeal Wheat Flour Pizza Dough</a></li>
+<li data-tags="[snack quick dessert]" class="older-article"><a href="/banana-oatmeal-cookies/">Banana and oatmeal cookies</a></li>
+<li data-tags="[spanish chicken oven apple]" class="older-article"><a href="/apple-chicken/">Apple Chicken</a></li>
+<li data-tags="[romanian peppers oven meat]" class="older-article"><a href="/ardei-umpluti/">Ardei umpluti with meat</a></li>
+<li data-tags="[french tomato oven]" class="older-article"><a href="/farci-tomatoes/">Farcies tomatoes</a></li>
+<li data-tags="[chicken thai asian]" class="older-article"><a href="/chicken-satay/">Chicken Satay with Peanut Sauce</a></li>
+<li data-tags="[spanish almond cake galician]" class="older-article"><a href="/tarta-de-santiago/">Tarta de Santiago</a></li>
+<li data-tags="[snack sweet quick]" class="older-article"><a href="/kettlecorn/">Kettle Corn</a></li>
+<li data-tags="[soup vegetables beans]" class="older-article"><a href="/fennel-beans-and-kale-soup/">Fennel White Bean and Kale Soup</a></li>
+<li data-tags="[snack side dough]" class="older-article"><a href="/butter-based-biscuit/">Butter-based biscuit and cookies</a></li>
+<li data-tags="[snack quick potato]" class="older-article"><a href="/kettle-chips/">Kettle Chips</a></li>
+<li data-tags="[pasta italian shrimp]" class="older-article"><a href="/shrimp-fettuccine-alfredo/">Shrimp Fettuccine Alfredo</a></li>
+<li data-tags="[dessert side snack cheesefare eggs dough]" class="older-article"><a href="/tahini-short-bread/">Tahini short bread</a></li>
+<li data-tags="[quebec dessert]" class="older-article"><a href="/grands-peres/">Grands-pères au sirop d'érable (Maple Dumplings)</a></li>
+<li data-tags="[quick cheese french]" class="older-article"><a href="/croque-monsieur/">Croque-monsieur bites</a></li>
+<li data-tags="[dough cheesefare pastry]" class="older-article"><a href="/puff-pastry/">Puff Pastry</a></li>
+<li data-tags="[argentinian fry bread]" class="older-article"><a href="/torta-frita-criolla/">Torta Frita Criolla (Argentinian frybread)</a></li>
+<li data-tags="[pasta quick italian]" class="older-article"><a href="/pasta-arrabbiata/">Pasta Arrabbiata</a></li>
+<li data-tags="[stew chicken hungarian]" class="older-article"><a href="/chicken-paprikash/">Chicken Paprikash</a></li>
+<li data-tags="[greek mediterranean pasta supper]" class="older-article"><a href="/pastitsio/">Pastítsio</a></li>
+<li data-tags="[fasting vegetables]" class="older-article"><a href="/peat-carrot-salad/">Ray Peat's Carrot Salad</a></li>
+<li data-tags="[chinese snack breakfast]" class="older-article"><a href="/dou-sha-bao/">Red Bean Buns (豆沙包)</a></li>
+<li data-tags="[italian sausage pork pasta cream spicy]" class="older-article"><a href="/spicy-sausage-pasta/">Spicy Sausage Pasta</a></li>
+<li data-tags="[beef raw quick]" class="older-article"><a href="/steak-tartare/">Steak Tartare</a></li>
+<li data-tags="[potato milk soup]" class="older-article"><a href="/potato-soup/">Potato Soup</a></li>
+<li data-tags="[chocolate dessert quick]" class="older-article"><a href="/lavacake/">Lavacake</a></li>
+<li data-tags="[cheese french ham]" class="older-article"><a href="/quiche/">Quiche Lorraine - Lothringer Käsetorte</a></li>
+<li data-tags="[seafood peruvian]" class="older-article"><a href="/ceviche/">Ceviche</a></li>
+<li data-tags="[basic cheesefare]" class="older-article"><a href="/cheese/">Cheese</a></li>
+<li data-tags="[chicken slowcooked indian]" class="older-article"><a href="/chicken-tikka-masala/">Chicken Tikka Masala</a></li>
+<li data-tags="[basic cheesefare]" class="older-article"><a href="/cream-cheese/">Cream Cheese</a></li>
+<li data-tags="[beans mexican yucatecan pork]" class="older-article"><a href="/frijol-con-puerco/">Frijol con puerco</a></li>
+<li data-tags="[basic cheesefare]" class="older-article"><a href="/greek-yogurt/">Greek Yogurt</a></li>
+<li data-tags="[chicken spicy]" class="older-article"><a href="/honey-sriracha-chicken-thighs/">Honey Sriracha Chicken Thighs</a></li>
+<li data-tags="[basic italian cheesefare]" class="older-article"><a href="/ricotta/">Ricotta</a></li>
+<li data-tags="[quick basic mexican tomato]" class="older-article"><a href="/salsa/">Salsa</a></li>
+<li data-tags="[seafood fish american spicy]" class="older-article"><a href="/sardine-cakes/">Sardine Cakes</a></li>
+<li data-tags="[lamb roast lemons mediterranean]" class="older-article"><a href="/slow-cooked-lamb-with-lemon/">Slow-cooked Lamb with Lemon</a></li>
+<li data-tags="[basic snack spread traditional]" class="older-article"><a href="/tzatziki/">Tzatziki</a></li>
+<li data-tags="[pork american supper southern]" class="older-article"><a href="/baby-back-ribs/">Baby Back Ribs</a></li>
+<li data-tags="[english beef]" class="older-article"><a href="/beef-wellington/">Beef Wellington</a></li>
+<li data-tags="[english breakfast]" class="older-article"><a href="/full-english-breakfast/">Full English Breakfast</a></li>
+<li data-tags="[beef soup roast]" class="older-article"><a href="/medieval-beef-soup/">Medieval Beef Soup</a></li>
+<li data-tags="[basic snack australian pork]" class="older-article"><a href="/aussie-snags/">Aussie Snags (sausage sizzle)</a></li>
+<li data-tags="[beef]" class="older-article"><a href="/beef-kidney/">Beef Kidney</a></li>
+<li data-tags="[dessert pie sweet apple]" class="older-article"><a href="/apple-pie/">Apple Pie</a></li>
+<li data-tags="[dessert cookies sweet chocolate]" class="older-article"><a href="/chocolate-chip-cookies/">Chocolate Chip Cookies </a></li>
+<li data-tags="[alcohol wine liquor drink]" class="older-article"><a href="/italian-mulled-wine/">Italian Mulled Wine</a></li>
+<li data-tags="[alcohol lemons digestivo liquor]" class="older-article"><a href="/limoncello/">Limoncello</a></li>
+<li data-tags="[chinese pork tofu]" class="older-article"><a href="/mapo-tofu/">Mapo Tofu (麻婆豆腐)</a></li>
+<li data-tags="[russian pasta mushrooms]" class="older-article"><a href="/mushroom-stragonov/">Mushroom Stroganov</a></li>
+<li data-tags="[tomato sauce italian pork veal]" class="older-article"><a href="/ragu-napoletano/">Ragu Napoletano</a></li>
+<li data-tags="[pasta italian]" class="older-article"><a href="/ravioli/">Ravioli</a></li>
+<li data-tags="[snack german eggs pub]" class="older-article"><a href="/soleier/">Soleier (pickled eggs)</a></li>
+<li data-tags="[chicken fry]" class="older-article"><a href="/chicken-tenders-airfried/">Chicken Tenders Airfried</a></li>
+<li data-tags="[pork soup spanish quick]" class="older-article"><a href="/chorizo-and-chickpea-soup/">Chorizo &amp; Chickpea Soup</a></li>
+<li data-tags="[side cabbage southern salad]" class="older-article"><a href="/coleslaw/">Coleslaw</a></li>
+<li data-tags="[sauce indian curry]" class="older-article"><a href="/curry-sauce/">Curry sauce</a></li>
+<li data-tags="[chicken broccoli rice quick]" class="older-article"><a href="/honey-garlic-chicken/">Honey Garlic Chicken with Broccoli and Brown Rice</a></li>
+<li data-tags="[salad mexican southwest]" class="older-article"><a href="/diannes-southwest-salad/">Dianne's Southwestern Cornbread Salad</a></li>
+<li data-tags="[drink milk quick]" class="older-article"><a href="/tanzania-tea-with-milk/">Tanzanian Tea w/ Milk</a></li>
+<li data-tags="[english side]" class="older-article"><a href="/yorkshire-puddings/">Yorkshire Puddings</a></li>
+<li data-tags="[italian pasta broccoli cheesefare]" class="older-article"><a href="/baked-pasta-with-broccoli/">Baked pasta with broccoli, boiled eggs and scamorza cheese</a></li>
+<li data-tags="[israeli bread]" class="older-article"><a href="/challah-bread/">Challah Bread</a></li>
+<li data-tags="[breakfast sweet dessert pancake]" class="older-article"><a href="/oatmeal-pancakes/">Oatmeal Pancakes</a></li>
+<li data-tags="[german fry sweet cheesefare]" class="older-article"><a href="/quarkbaellchen/">Quarkbällchen – Fried curd balls</a></li>
+<li data-tags="[noodles asian chinese spicy]" class="older-article"><a href="/yibin-burning-noodles/">Yibin Burning Noodles</a></li>
+<li data-tags="[sauce basic dressing]" class="older-article"><a href="/burger-dressing/">Hamburger dressing</a></li>
+<li data-tags="[bread italian fasting]" class="older-article"><a href="/italian-bread/">Italian Bread</a></li>
+<li data-tags="[spicy curry lentil fasting]" class="older-article"><a href="/lenten-lentil-curry/">Lenten Lentil Curry</a></li>
+<li data-tags="[sauce basic]" class="older-article"><a href="/mayonnaise-or-aioli/">Mayonnaise or aioli</a></li>
+<li data-tags="[polish easter dessert]" class="older-article"><a href="/mazurek/">Mazurek</a></li>
+<li data-tags="[quick japanese]" class="older-article"><a href="/okonomiyaki/">Okonomiyaki</a></li>
+<li data-tags="[jam fruit sweet spread]" class="older-article"><a href="/orange-jam/">Orange jam</a></li>
+<li data-tags="[ukrainian dumpling potato]" class="older-article"><a href="/ukrainian-vareniki/">Ukrainian Vareniki</a></li>
+<li data-tags="[indian lunch spicy]" class="older-article"><a href="/coriander-chicken/">Coriander Chicken</a></li>
+<li data-tags="[indian spice]" class="older-article"><a href="/garam-masala/">Garam Masala</a></li>
+<li data-tags="[chinese pork spicy sweet]" class="older-article"><a href="/hoisin-pork-belly/">Hoisin Pork Belly</a></li>
+<li data-tags="[ukrainian soup beetroot russian]" class="older-article"><a href="/ukrainian-borscht/">Ukrainian Borscht</a></li>
+<li data-tags="[soup mediterranean lebanese]" class="older-article"><a href="/lebanese-lentil-soup/">Lebanese Lentil Soup</a></li>
+<li data-tags="[english lamb pie]" class="older-article"><a href="/shepherds-pie/">Shepherd's Pie</a></li>
+<li data-tags="[basic american turkey]" class="older-article"><a href="/turkey-smoked/">Smoked Turkey</a></li>
+<li data-tags="[basic sauce japanese]" class="older-article"><a href="/spicy-mayo/">Spicy Mayo</a></li>
+<li data-tags="[spanish dessert quick easter]" class="older-article"><a href="/torrijas/">Torrijas</a></li>
+<li data-tags="[vegetables side duck]" class="older-article"><a href="/collard-greens-with-smoked-duck-and-parnips/">Collard Greens with Smoked Duck and Parsnips</a></li>
+<li data-tags="[sauce basic french]" class="older-article"><a href="/demi-glace/">Demi-glace</a></li>
+<li data-tags="[breakfast quick]" class="older-article"><a href="/hearty-breakfast-oatmeal/">Hearty Breakfast Oatmeal </a></li>
+<li data-tags="[breakfast quick]" class="older-article"><a href="/shakshouka/">Shakshouka</a></li>
+<li data-tags="[basic italian beef pork]" class="older-article"><a href="/basic-meatballs/">Basic Meatballs</a></li>
+<li data-tags="[swiss cheese]" class="older-article"><a href="/fondue/">Fondue</a></li>
+<li data-tags="[basic italian cheese]" class="older-article"><a href="/ricotta-lasagna-filling/">Ricotta lasagna filling</a></li>
+<li data-tags="[italian pasta]" class="older-article"><a href="/spaghetti-all-amatriciana/">Spaghetti all'amatriciana</a></li>
+<li data-tags="[turkish rice soup]" class="older-article"><a href="/turkish-yogurt-soup/">Turkish Yogurt Soup</a></li>
+<li data-tags="[asian chicken]" class="older-article"><a href="/asian-style-chicken-sticky-sauce/">Asian Style Chicken with Sticky Sauce</a></li>
+<li data-tags="[bread portuguese]" class="older-article"><a href="/bolo-do-caco/">Bolo do Caco (Caco Bread)</a></li>
+<li data-tags="[sauce italian pasta]" class="older-article"><a href="/bolognese-sauce/">Bolognese Sauce</a></li>
+<li data-tags="[sauce]" class="older-article"><a href="/brown-sauce/">Brown Sauce</a></li>
+<li data-tags="[sauce mexican]" class="older-article"><a href="/corn-salsa/">Corn Salsa</a></li>
+<li data-tags="[breakfast english]" class="older-article"><a href="/country-crisp-cereals/">Country Crisp Cereals</a></li>
+<li data-tags="[quick asian cabbage]" class="older-article"><a href="/eggroll-in-a-bowl/">Egg Roll in a Bowl</a></li>
+<li data-tags="[dutch soup vegetables]" class="older-article"><a href="/erwtensoep/">Erwtensoep (Dutch pea soup)</a></li>
+<li data-tags="[french soup]" class="older-article"><a href="/french-onion-soup/">French Onion Soup</a></li>
+<li data-tags="[basic bread quick side]" class="older-article"><a href="/garlic-toast/">Garlic Toast</a></li>
+<li data-tags="[mediterranean chicken traybake]" class="older-article"><a href="/lemon-and-oregano-chicken-traybake/">Lemon and oregano chicken traybake</a></li>
+<li data-tags="[french seafood soup]" class="older-article"><a href="/lobster-bisque/">Lobster bisque</a></li>
+<li data-tags="[beef american supper]" class="older-article"><a href="/meatloaf/">Meatloaf</a></li>
+<li data-tags="[japanese soup]" class="older-article"><a href="/miso-soup/">Miso-soup</a></li>
+<li data-tags="[indian lunch spicy]" class="older-article"><a href="/paneer-tikka-masala/">Paneer Tikka Masala</a></li>
+<li data-tags="[sauce steak]" class="older-article"><a href="/pepper-sauce/">Pepper Sauce</a></li>
+<li data-tags="[vietnamese beef]" class="older-article"><a href="/pho-soup/">Pho Soup</a></li>
+<li data-tags="[sourdough bread potato]" class="older-article"><a href="/sourdough-potato-bread/">Potato sourdough bread</a></li>
+<li data-tags="[basic quick sauce pasta]" class="older-article"><a href="/simple-pasta-cream-sauce/">Simple Creamy Pasta Sauce</a></li>
+<li data-tags="[sourdough bread]" class="older-article"><a href="/sourdough-bread-with-seeds-and-grains/">Sourdough bread with seeds and grains</a></li>
+<li data-tags="[bread sourdough basic]" class="older-article"><a href="/sourdough-starter/">Sourdough starter</a></li>
+<li data-tags="[american southern]" class="older-article"><a href="/southern-biscuits/">Southern Biscuits</a></li>
+<li data-tags="[tofu fasting]" class="older-article"><a href="/tofu-stir-fry/">Tofu Stir Fry</a></li>
+<li data-tags="[lamb stew]" class="older-article"><a href="/tuhu/">Tuh'u</a></li>
+<li data-tags="[dessert breakfast]" class="older-article"><a href="/apple-strudel/">Apple strudel</a></li>
+<li data-tags="[salad russian]" class="older-article"><a href="/crab-salad/">Crab salad</a></li>
+<li data-tags="[italian pasta fasting]" class="older-article"><a href="/pasta-alla-norma/">Pasta Alla Norma</a></li>
+<li data-tags="[quebec beef pie potato]" class="older-article"><a href="/pate-chinois/">Pâté Chinois (Quebec Style Shepherd’s Pie)</a></li>
+<li data-tags="[pork pastry]" class="older-article"><a href="/sausage-rolls/">Sausage Rolls</a></li>
+<li data-tags="[spanish mediterranean side quick]" class="older-article"><a href="/zarangollo/">Zarangollo</a></li>
+<li data-tags="[drink quick]" class="older-article"><a href="/assam-tea/">Assam Tea</a></li>
+<li data-tags="[greek feta pasta supper]" class="older-article"><a href="/babas-feta-pasta/">Baba's Feta Pasta</a></li>
+<li data-tags="[pasta italian]" class="older-article"><a href="/baked-mostaccioli/">Baked Mostaccioli</a></li>
+<li data-tags="[syrup fruit belgian]" class="older-article"><a href="/belgian-pear-syrup/">Belgian pear syrup</a></li>
+<li data-tags="[breakfast quick basic eggs]" class="older-article"><a href="/breakfast-wrap/">Breakfast Wrap</a></li>
+<li data-tags="[bacon cheese italian pasta]" class="older-article"><a href="/cheesy-pasta-bake/">Cheesy Pasta Bake</a></li>
+<li data-tags="[american cheese potato]" class="older-article"><a href="/cheesy-potatoe-bake/">Cheesy Potato Bake</a></li>
+<li data-tags="[basic sauce french italian]" class="older-article"><a href="/classic-bechamel-sauce/">Classic béchamel sauce</a></li>
+<li data-tags="[portuguese beef]" class="older-article"><a href="/francesinha/">Francesinha</a></li>
+<li data-tags="[breakfast french]" class="older-article"><a href="/french-toast/">French Toast</a></li>
+<li data-tags="[dessert cookies snack greek easter]" class="older-article"><a href="/greek-easter-cookies/">Greek Easter Cookies</a></li>
+<li data-tags="[filipino chicken]" class="older-article"><a href="/kalderetang-manok/">Kalderetang Manok</a></li>
+<li data-tags="[drink bread]" class="older-article"><a href="/kvass/">Kvass</a></li>
+<li data-tags="[lamb mutton indian]" class="older-article"><a href="/lamb-biriyani/">Lamb Biriyani</a></li>
+<li data-tags="[italian pasta]" class="older-article"><a href="/lasagna/">Lasagna</a></li>
+<li data-tags="[rice southwest]" class="older-article"><a href="/loaded-mexican-rice/">Loaded Mexican Rice</a></li>
+<li data-tags="[italian mushrooms wine rice]" class="older-article"><a href="/mushroom-risotto/">Mushroom risotto</a></li>
+<li data-tags="[chicken spicy]" class="older-article"><a href="/nashville-chicken/">Nashville Chicken Sandwich</a></li>
+<li data-tags="[bread dough]" class="older-article"><a href="/no-knead-bread/">No-knead Bread</a></li>
+<li data-tags="[basic pizza dough]" class="older-article"><a href="/no-knead-pizza-dough/">No-knead pizza dough</a></li>
+<li data-tags="[quick sauce indian]" class="older-article"><a href="/onion-raitha/">Onion Raitha (Indian Tzatziki)</a></li>
+<li data-tags="[basic pizza]" class="older-article"><a href="/pan-pizza/">Pan pizza</a></li>
+<li data-tags="[basic pizza sauce]" class="older-article"><a href="/pizza-sauce/">Pizza sauce</a></li>
+<li data-tags="[american side fruit]" class="older-article"><a href="/savory-squash/">Savory Squash</a></li>
+<li data-tags="[austrian ham noodles]" class="older-article"><a href="/schinkenfleckerl-gratinated/">Schinkenfleckerl überbacken, Viennese Mac'n'Cheese</a></li>
+<li data-tags="[chicken curry stew]" class="older-article"><a href="/simple-chicken-curry/">Simple Chicken Curry</a></li>
+<li data-tags="[pork slowcooked mexican]" class="older-article"><a href="/pork-carnitas/">Slow-cooked Pork Carnitas</a></li>
+<li data-tags="[spanish]" class="older-article"><a href="/lentejas/">Sopa de Lentejas</a></li>
+<li data-tags="[bread sourdough]" class="older-article"><a href="/sourdough-loaf/">Sourdough Table Loaf</a></li>
+<li data-tags="[italian pasta]" class="older-article"><a href="/aglio-e-olio/">Spaghetti aglio e olio</a></li>
+<li data-tags="[italian pasta]" class="older-article"><a href="/spaghetti-alla-puttanesca/">Spaghetti alla puttanesca</a></li>
+<li data-tags="[spanish potato eggs tortilla]" class="older-article"><a href="/spanish-tortilla/">Spanish Tortilla</a></li>
+<li data-tags="[belgian potato]" class="older-article"><a href="/stoemp/">Stoemp</a></li>
+<li data-tags="[beef stew belgian]" class="older-article"><a href="/stoofvlees/">Stoofvlees</a></li>
+<li data-tags="[breakfast swedish pancake]" class="older-article"><a href="/swedish-pancakes/">Swedish Pancakes</a></li>
+<li data-tags="[mexican pork]" class="older-article"><a href="/chicharrones/">Chicharrones</a></li>
+<li data-tags="[drink sweet breakfast]" class="older-article"><a href="/bloody-mary-mix/">Bloody Mary Mix</a></li>
+<li data-tags="[mexican beef basic]" class="older-article"><a href="/chimichanga/">Chimichanga</a></li>
+<li data-tags="[italian pasta quick]" class="older-article"><a href="/cinque-pi/">Cinque Pi</a></li>
+<li data-tags="[drink quick swiss german french]" class="older-article"><a href="/gluehwein/">Glühwein - mulled wine</a></li>
+<li data-tags="[american quick beef basic]" class="older-article"><a href="/hamburger-patties-all-beef/">Hamburger Patties</a></li>
+<li data-tags="[drink sweet breakfast]" class="older-article"><a href="/irish-coffee/">Irish Coffee</a></li>
+<li data-tags="[drink sweet breakfast]" class="older-article"><a href="/orange-glorious/">Orange Glorious</a></li>
+<li data-tags="[russian chicken]" class="older-article"><a href="/pozharskiye-cutlets/">Pozharskiye Cutlets</a></li>
+<li data-tags="[basic spread quick russian sauce]" class="older-article"><a href="/russian-1000-islands-sauce/">Russian 1000 Islands Sauce</a></li>
+<li data-tags="[mexican sauce]" class="older-article"><a href="/salsa-verde/">Salsa Verde</a></li>
+<li data-tags="[quick breakfast sweet pancake cheesefare]" class="older-article"><a href="/danish-pancake/">Danish Pancake</a></li>
+<li data-tags="[fasting]" class="older-article"><a href="/lenten-chili/">Lenten Chili</a></li>
+<li data-tags="[potato soup vegetables cheesefare]" class="older-article"><a href="/potato-leek-soup/">Potato Leek Soup</a></li>
+<li data-tags="[austrian beef]" class="older-article"><a href="/schnitzel/">Schnitzel</a></li>
+<li data-tags="[american fish breakfast]" class="older-article"><a href="/shrimp-and-grits/">Shrimp and Grits</a></li>
+<li data-tags="[basic fish]" class="older-article"><a href="/baked-salmon/">Baked Salmon</a></li>
+<li data-tags="[beans italian salad]" class="older-article"><a href="/cannellini-bean-salad/">Cannellini Bean Salad</a></li>
+<li data-tags="[basic beans fasting]" class="older-article"><a href="/cooked-chickpeas/">Cooked Chickpeas</a></li>
+<li data-tags="[pasta supper dominican cheesefare]" class="older-article"><a href="/dominican-spaghetti/">Dominican Spaghetti</a></li>
+<li data-tags="[basic mexican fasting]" class="older-article"><a href="/fajita-seasoning/">Fajita Seasoning</a></li>
+<li data-tags="[uzbek rice lamb]" class="older-article"><a href="/pilaf/">Pilaf</a></li>
+<li data-tags="[fish soup mediterranean]" class="older-article"><a href="/aljotta/">Aljotta</a></li>
+<li data-tags="[peruvian chinese rice]" class="older-article"><a href="/arroz-chaufa/">Arroz Chaufa</a></li>
+<li data-tags="[portuguese quick sweet dessert cheesefare]" class="older-article"><a href="/bolinhos-de-coco/">Bolinhos de Coco</a></li>
+<li data-tags="[dessert quick brazilian cheesefare]" class="older-article"><a href="/brigadeiro/">Brigadeiro</a></li>
+<li data-tags="[chicken french wine]" class="older-article"><a href="/chicken-in-red-wine-vinegar-sauce/">Chicken in Red Wine Vinegar Sauce</a></li>
+<li data-tags="[chicken soup]" class="older-article"><a href="/chicken-soup/">Chicken Soup</a></li>
+<li data-tags="[drink sweet breakfast]" class="older-article"><a href="/coconut-oil-coffee/">Coconut Oil Coffee</a></li>
+<li data-tags="[salad basic fasting]" class="older-article"><a href="/lemon-juice-salad-dressing/">Lemon juice salad dressing</a></li>
+<li data-tags="[drink sweet breakfast]" class="older-article"><a href="/party-mimosa/">Party Mimosa</a></li>
+<li data-tags="[quick side basic]" class="older-article"><a href="/pickled-onions/">Pickled Red Onions</a></li>
+<li data-tags="[italian sauce]" class="older-article"><a href="/red-sauce/">Red Sauce (Ragu all'Italiana)</a></li>
+<li data-tags="[asian chicken]" class="older-article"><a href="/stir-fried-chicken-with-an-orange-sauce/">Stir Fried Chicken with an Orange Sauce</a></li>
+<li data-tags="[side quick asian fasting]" class="older-article"><a href="/ginger-garlic-broccoli/">Broccoli with Ginger and Garlic Sauce</a></li>
+<li data-tags="[indian curry chicken]" class="older-article"><a href="/butter-chicken-masala/">Butter Chicken Masala Curry</a></li>
+<li data-tags="[thai fish]" class="older-article"><a href="/fish-curry/">Fish Curry</a></li>
+<li data-tags="[eggs italian cheesefare]" class="older-article"><a href="/frittata/">Frittata</a></li>
+<li data-tags="[indian bread fasting]" class="older-article"><a href="/naan-bread/">Naan Bread</a></li>
+<li data-tags="[american fish rice]" class="older-article"><a href="/gumbo-shrimp-and-sausage/">Shrimp&nbsp;and&nbsp;Sausage&nbsp;Gumbo</a></li>
+<li data-tags="[quick basic tuna fish]" class="older-article"><a href="/tuna-salad/">Simple Tuna Salad</a></li>
+<li data-tags="[basic bread chicken]" class="older-article"><a href="/spatchcock-chicken/">Spatchcock Chicken</a></li>
+<li data-tags="[soup cheesefare]" class="older-article"><a href="/tomato-and-grilled-paprika-soup/">Tomato and Grilled Bell Pepper soup</a></li>
+<li data-tags="[swiss bread cheesefare]" class="older-article"><a href="/zopf/">Zopf</a></li>
+<li data-tags="[french cheesefare]" class="older-article"><a href="/breton-crepes/">Breton Crêpes (Breton Galettes)</a></li>
+<li data-tags="[french dessert breakfast cheesefare]" class="older-article"><a href="/french-crepes/">French Crêpes</a></li>
+<li data-tags="[beef pasta supper]" class="older-article"><a href="/tomato-flavored-hamburger-macaroni/">Tomato Flavored Hamburger and Macaroni</a></li>
+<li data-tags="[breakfast quick sweet pancake cheesefare]" class="older-article"><a href="/banana-pancakes/">Banana Pancakes</a></li>
+<li data-tags="[filipino squash]" class="older-article"><a href="/ginataang-kalabasa/">Ginataang Kalabasa</a></li>
+<li data-tags="[american quick beef sandwich]" class="older-article"><a href="/hamburger-patties/">Hamburger Patties</a></li>
+<li data-tags="[beef quick]" class="older-article"><a href="/hellfire-steak/">Hellfire Steak</a></li>
+<li data-tags="[basic snack spread fasting]" class="older-article"><a href="/hummus/">Hummus</a></li>
+<li data-tags="[breakfast quick sweet pancake cheesefare]" class="older-article"><a href="/oaty-pancakes/">Oaty Pancakes</a></li>
+<li data-tags="[spread snack basic fasting]" class="older-article"><a href="/peanut-butter/">Peanut Butter</a></li>
+<li data-tags="[breakfast pasta]" class="older-article"><a href="/quickbreakfastspaghetti/">Quick Breakfast Spaghetti</a></li>
+<li data-tags="[basic quick sauce cheesefare]" class="older-article"><a href="/simple-sauce/">Simple sauce</a></li>
+<li data-tags="[italian pasta beef pork cheesefare]" class="older-article"><a href="/spaghetti-and-meatballs/">Spaghetti and Meatballs</a></li>
+<li data-tags="[supper rice vegetables cheesefare fasting]" class="older-article"><a href="/stuffed-round-squash/">Stuffed Round Squash</a></li>
+<li data-tags="[dessert sweet snack cake fasting]" class="older-article"><a href="/banana-muffins-with-chocolate/">Banana Muffins with Chocolate</a></li>
+<li data-tags="[potato snack side fasting]" class="older-article"><a href="/sweet-potato-fries/">Basic Sweet Potato Fries Recipe</a></li>
+<li data-tags="[beef stew]" class="older-article"><a href="/beef-goulash/">Beef Goulash</a></li>
+<li data-tags="[beef cheese]" class="older-article"><a href="/cheesy-meatballs/">Cheesy Meatballs with Tomato Sauce</a></li>
+<li data-tags="[chicken italian pasta]" class="older-article"><a href="/chicken-pasta-casserole/">Chicken Pasta Casserole</a></li>
+<li data-tags="[mexican beans pork]" class="older-article"><a href="/pork-based-chili-con-carne/">Chilli con Carne</a></li>
+<li data-tags="[american breakfast pork]" class="older-article"><a href="/country-skillet/">Country Breakfast Skillet</a></li>
+<li data-tags="[potato side cheesefare]" class="older-article"><a href="/creamy-mashed-potatoes/">Creamy Mashed Potatoes</a></li>
+<li data-tags="[mexican spread snack fasting]" class="older-article"><a href="/guacamole/">Fresh Guacamole</a></li>
+<li data-tags="[fish seafood]" class="older-article"><a href="/fried-anglerfish-fillet/">Fried Anglerfish fillet</a></li>
+<li data-tags="[potato quick side fasting]" class="older-article"><a href="/fried-potatoes/">Fried Potatoes</a></li>
+<li data-tags="[eggs snack quick cheesefare]" class="older-article"><a href="/hangover-eggs/">Hangover Eggs</a></li>
+<li data-tags="[japanese chicken soup]" class="older-article"><a href="/japanese-noodle-soup/">Japanese Noodle Soup</a></li>
+<li data-tags="[basic sauce fasting]" class="older-article"><a href="/ketchup/">Ketchup</a></li>
+<li data-tags="[american corn fasting]" class="older-article"><a href="/maque-choux/">Maque Choux</a></li>
+<li data-tags="[russian pork]" class="older-article"><a href="/merchants-buckwheat/">Merchant's Buckwheat</a></li>
+<li data-tags="[eggs quick cheesefare]" class="older-article"><a href="/omelet/">Omelet</a></li>
+<li data-tags="[chicken fry]" class="older-article"><a href="/pan-seared-chicken/">Pan-seared Chicken Fillet</a></li>
+<li data-tags="[potato side]" class="older-article"><a href="/parmesan-potatoes/">Parmesan potatoes</a></li>
+<li data-tags="[russian pasta beef]" class="older-article"><a href="/pasta-navy-style/">Pasta Navy Style</a></li>
+<li data-tags="[mexican quick cheesefare]" class="older-article"><a href="/quesadilla/">Quesadilla</a></li>
+<li data-tags="[mexican beans fasting]" class="older-article"><a href="/refried-beans/">Refried Beans</a></li>
+<li data-tags="[chicken roast]" class="older-article"><a href="/roasted-chicken-breast/">Roasted chicken breast</a></li>
+<li data-tags="[swiss potato side cheesefare]" class="older-article"><a href="/roesti/">Rösti</a></li>
+<li data-tags="[sweet dessert cake cheesefare]" class="older-article"><a href="/scandinavian-coffee-cake/">Scandinavian Coffee Cake</a></li>
+<li data-tags="[japanese pork soup]" class="older-article"><a href="/sticky-porkchops/">Sticky Porkchops</a></li>
+<li data-tags="[sweet breakfast drink cheesefare]" class="older-article"><a href="/sunday-milkshake/">Sunday Morning Milkshake</a></li>
+<li data-tags="[mexican beef]" class="older-article"><a href="/taco-meat/">Taco Meat</a></li>
+<li data-tags="[italian pasta quick cheesefare]" class="older-article"><a href="/tortellini/">Tortellini</a></li>
+<li data-tags="[fish sandwich quick cheesefare]" class="older-article"><a href="/tuna-sub/">Tuna Sub</a></li>
+<li data-tags="[basic breakfast cheesefare]" class="older-article"><a href="/yogurt/">Yogurt</a></li>
+<li data-tags="[swiss pork potato pasta]" class="older-article"><a href="/aelplermagronen/">Älplermagronen (Alpine macaroni)</a></li>
+<li data-tags="[bread dessert sweet fasting]" class="older-article"><a href="/banana-bread/">Banana Bread</a></li>
+<li data-tags="[beef snack]" class="older-article"><a href="/beef-jerky/">Beef Jerky</a></li>
+<li data-tags="[american beef potato]" class="older-article"><a href="/beef-tips/">Beef Tips in Gravy on Sour Cream Mashed Potatoes</a></li>
+<li data-tags="[italian quick pasta cheesefare]" class="older-article"><a href="/cacio-e-pepe/">Cacio e Pepe</a></li>
+<li data-tags="[italian salad cheesefare]" class="older-article"><a href="/caesar-salad/">Caesar Salad</a></li>
+<li data-tags="[italian pasta quick cheesefare]" class="older-article"><a href="/carbonara/">Carbonara</a></li>
+<li data-tags="[chicken milk]" class="older-article"><a href="/chicken-biscuit-potpie/">Chicken Biscuit Potpie Recipe</a></li>
+<li data-tags="[mexican beef beans]" class="older-article"><a href="/chili-con-carne/">Chili Con Carne</a></li>
+<li data-tags="[basic french salad fasting]" class="older-article"><a href="/croutons/">Croutons</a></li>
+<li data-tags="[bread quick snack spread fasting]" class="older-article"><a href="/dried-tomato-plum-spread/">Dried tomato &amp; plum bread spread</a></li>
+<li data-tags="[beans stew]" class="older-article"><a href="/drunken-beans/">Drunken beans (Pintos Borrachos)</a></li>
+<li data-tags="[french pork quick]" class="older-article"><a href="/flammkuchen/">Flammkuchen</a></li>
+<li data-tags="[thai quick soup cheesefare]" class="older-article"><a href="/instant-tom-yam-kung-noodle-soup/">Instant Tom Yam Kung noodle soup</a></li>
+<li data-tags="[pate liver]" class="older-article"><a href="/liverpate/">Liver Pate</a></li>
+<li data-tags="[pork steak]" class="older-article"><a href="/marinated-pork-steaks/">Marinated pork steaks </a></li>
+<li data-tags="[snack cookies sweet dessert cheesefare]" class="older-article"><a href="/matcha-cookies/">Matcha Cookies</a></li>
+<li data-tags="[japanese pork]" class="older-article"><a href="/miso-ginger-pork/">Miso Ginger Pork</a></li>
+<li data-tags="[quick breakfast sweet pancake cheesefare]" class="older-article"><a href="/pancake/">Pancake</a></li>
+<li data-tags="[basic pizza dough]" class="older-article"><a href="/pizza-dough/">Pizza Dough</a></li>
+<li data-tags="[indian curry potato fasting]" class="older-article"><a href="/potato-and-eggplant-curry/">Potato and Eggplant (Aubergine) Curry</a></li>
+<li data-tags="[italian pasta cheesefare fasting]" class="older-article"><a href="/ragu/">Ragù</a></li>
+<li data-tags="[german cabbage side fasting]" class="older-article"><a href="/sauerkraut/">Sauerkraut</a></li>
+<li data-tags="[portuguese soup pork]" class="older-article"><a href="/almeirim-stone-soup/">Almeirim Stone Soup</a></li>
+<li data-tags="[american beef]" class="older-article"><a href="/stroganoff/">Beef Stroganoff</a></li>
+<li data-tags="[portuguese beef]" class="older-article"><a href="/portuguese-steak-with-beer-sauce/">Bitoque - Portuguese Steak with Beer Sauce</a></li>
+<li data-tags="[basic bread fasting]" class="older-article"><a href="/bread/">Bread</a></li>
+<li data-tags="[fish cheesefare]" class="older-article"><a href="/broiled-trevally/">Broiled Trevally</a></li>
+<li data-tags="[stew beef]" class="older-article"><a href="/carbonade/">Carbonade Flamande (Traditional Flemish beef stew)</a></li>
+<li data-tags="[italian chicken]" class="older-article"><a href="/chicken-parmesan/">Chicken Parmesan</a></li>
+<li data-tags="[chicken stock basic]" class="older-article"><a href="/chicken-stock-bone-broth/">Chicken Stock or Bone Broth</a></li>
+<li data-tags="[chicken american]" class="older-article"><a href="/chicken-wings/">Chicken Wings</a></li>
+<li data-tags="[curry chicken]" class="older-article"><a href="/chicken-tomato-spinach-curry/">Chicken, Tomato and Spinach Curry</a></li>
+<li data-tags="[eggs basic cheesefare]" class="older-article"><a href="/eggs/">Eggs</a></li>
+<li data-tags="[french pork quick]" class="older-article"><a href="/french-mustard-sauce-porkchops/">French mustard sauce porkchops (Côtes de porc charcutières)</a></li>
+<li data-tags="[italian potato side fasting]" class="older-article"><a href="/gnocchi/">Gnocchi</a></li>
+<li data-tags="[sweet breakfast quick fasting]" class="older-article"><a href="/oats/">Oats</a></li>
+<li data-tags="[italian pasta quick basic fasting]" class="older-article"><a href="/pasta/">Pasta (store bought)</a></li>
+<li data-tags="[italian basic sauce fasting]" class="older-article"><a href="/pasta-sauce/">Pasta sauce</a></li>
+<li data-tags="[basic rice side fasting]" class="older-article"><a href="/rice/">Rice</a></li>
+<li data-tags="[mexican chicken slowcooked]" class="older-article"><a href="/chicken-tacos/">Slow-cooked Chicken Tacos</a></li>
+<li data-tags="[irish stew lamb beef]" class="older-article"><a href="/beef-stew/">Traditional beef or lamb stew</a></li>
+<li data-tags="[italian pork roast]" class="older-article"><a href="/tuscan-style-pork-roast/">Tuscan Style Pork Roast</a></li>
+<li data-tags="[austrian bacon potato]" class="older-article"><a href="/tiroler-groestl/">Tiroler Gröstl</a></li>
+</ul>
+
+<h2 id="or-browse-by-category">Or Browse by Category…</h2>
+   <ul id="tagcloud">
+    <li><a href="/tags/alcohol" id="tag_alcohol">Alcohol</a></li>
+    <li><a href="/tags/almond" id="tag_almond">Almond</a></li>
+    <li><a href="/tags/american" id="tag_american">American</a></li>
+    <li><a href="/tags/apple" id="tag_apple">Apple</a></li>
+    <li><a href="/tags/argentinian" id="tag_argentinian">Argentinian</a></li>
+    <li><a href="/tags/asian" id="tag_asian">Asian</a></li>
+    <li><a href="/tags/australian" id="tag_australian">Australian</a></li>
+    <li><a href="/tags/austrian" id="tag_austrian">Austrian</a></li>
+    <li><a href="/tags/bacon" id="tag_bacon">Bacon</a></li>
+    <li><a href="/tags/baked" id="tag_baked">Baked</a></li>
+    <li><a href="/tags/bariatric" id="tag_bariatric">Bariatric</a></li>
+    <li><a href="/tags/basic" id="tag_basic">Basic</a></li>
+    <li><a href="/tags/beans" id="tag_beans">Beans</a></li>
+    <li><a href="/tags/beef" id="tag_beef">Beef</a></li>
+    <li><a href="/tags/beetroot" id="tag_beetroot">Beetroot</a></li>
+    <li><a href="/tags/belgian" id="tag_belgian">Belgian</a></li>
+    <li><a href="/tags/brazilian" id="tag_brazilian">Brazilian</a></li>
+    <li><a href="/tags/bread" id="tag_bread">Bread</a></li>
+    <li><a href="/tags/breakfast" id="tag_breakfast">Breakfast</a></li>
+    <li><a href="/tags/broccoli" id="tag_broccoli">Broccoli</a></li>
+    <li><a href="/tags/cabbage" id="tag_cabbage">Cabbage</a></li>
+    <li><a href="/tags/cajun" id="tag_cajun">Cajun</a></li>
+    <li><a href="/tags/cake" id="tag_cake">Cake</a></li>
+    <li><a href="/tags/cheese" id="tag_cheese">Cheese</a></li>
+    <li><a href="/tags/cheesefare" id="tag_cheesefare">Cheesefare</a></li>
+    <li><a href="/tags/chicken" id="tag_chicken">Chicken</a></li>
+    <li><a href="/tags/chinese" id="tag_chinese">Chinese</a></li>
+    <li><a href="/tags/chocolate" id="tag_chocolate">Chocolate</a></li>
+    <li><a href="/tags/christmas" id="tag_christmas">Christmas</a></li>
+    <li><a href="/tags/coconut" id="tag_coconut">Coconut</a></li>
+    <li><a href="/tags/cookies" id="tag_cookies">Cookies</a></li>
+    <li><a href="/tags/corn" id="tag_corn">Corn</a></li>
+    <li><a href="/tags/cream" id="tag_cream">Cream</a></li>
+    <li><a href="/tags/curry" id="tag_curry">Curry</a></li>
+    <li><a href="/tags/danish" id="tag_danish">Danish</a></li>
+    <li><a href="/tags/dessert" id="tag_dessert">Dessert</a></li>
+    <li><a href="/tags/digestivo" id="tag_digestivo">Digestivo</a></li>
+    <li><a href="/tags/dominican" id="tag_dominican">Dominican</a></li>
+    <li><a href="/tags/dough" id="tag_dough">Dough</a></li>
+    <li><a href="/tags/dressing" id="tag_dressing">Dressing</a></li>
+    <li><a href="/tags/drink" id="tag_drink">Drink</a></li>
+    <li><a href="/tags/duck" id="tag_duck">Duck</a></li>
+    <li><a href="/tags/dumpling" id="tag_dumpling">Dumpling</a></li>
+    <li><a href="/tags/dutch" id="tag_dutch">Dutch</a></li>
+    <li><a href="/tags/easter" id="tag_easter">Easter</a></li>
+    <li><a href="/tags/easy" id="tag_easy">Easy</a></li>
+    <li><a href="/tags/eggs" id="tag_eggs">Eggs</a></li>
+    <li><a href="/tags/english" id="tag_english">English</a></li>
+    <li><a href="/tags/fasting" id="tag_fasting">Fasting</a></li>
+    <li><a href="/tags/feta" id="tag_feta">Feta</a></li>
+    <li><a href="/tags/filipino" id="tag_filipino">Filipino</a></li>
+    <li><a href="/tags/fish" id="tag_fish">Fish</a></li>
+    <li><a href="/tags/french" id="tag_french">French</a></li>
+    <li><a href="/tags/fruit" id="tag_fruit">Fruit</a></li>
+    <li><a href="/tags/fry" id="tag_fry">Fry</a></li>
+    <li><a href="/tags/galician" id="tag_galician">Galician</a></li>
+    <li><a href="/tags/garlic" id="tag_garlic">Garlic</a></li>
+    <li><a href="/tags/german" id="tag_german">German</a></li>
+    <li><a href="/tags/greek" id="tag_greek">Greek</a></li>
+    <li><a href="/tags/ham" id="tag_ham">Ham</a></li>
+    <li><a href="/tags/hungarian" id="tag_hungarian">Hungarian</a></li>
+    <li><a href="/tags/indian" id="tag_indian">Indian</a></li>
+    <li><a href="/tags/irish" id="tag_irish">Irish</a></li>
+    <li><a href="/tags/israeli" id="tag_israeli">Israeli</a></li>
+    <li><a href="/tags/italian" id="tag_italian">Italian</a></li>
+    <li><a href="/tags/jam" id="tag_jam">Jam</a></li>
+    <li><a href="/tags/japanese" id="tag_japanese">Japanese</a></li>
+    <li><a href="/tags/keto" id="tag_keto">Keto</a></li>
+    <li><a href="/tags/lamb" id="tag_lamb">Lamb</a></li>
+    <li><a href="/tags/lebanese" id="tag_lebanese">Lebanese</a></li>
+    <li><a href="/tags/lemons" id="tag_lemons">Lemons</a></li>
+    <li><a href="/tags/lentil" id="tag_lentil">Lentil</a></li>
+    <li><a href="/tags/liquor" id="tag_liquor">Liquor</a></li>
+    <li><a href="/tags/liver" id="tag_liver">Liver</a></li>
+    <li><a href="/tags/lunch" id="tag_lunch">Lunch</a></li>
+    <li><a href="/tags/meat" id="tag_meat">Meat</a></li>
+    <li><a href="/tags/mediterranean" id="tag_mediterranean">Mediterranean</a></li>
+    <li><a href="/tags/mexican" id="tag_mexican">Mexican</a></li>
+    <li><a href="/tags/middle-eastern" id="tag_middle eastern">Middle Eastern</a></li>
+    <li><a href="/tags/milk" id="tag_milk">Milk</a></li>
+    <li><a href="/tags/mushrooms" id="tag_mushrooms">Mushrooms</a></li>
+    <li><a href="/tags/mutton" id="tag_mutton">Mutton</a></li>
+    <li><a href="/tags/noodles" id="tag_noodles">Noodles</a></li>
+    <li><a href="/tags/oven" id="tag_oven">Oven</a></li>
+    <li><a href="/tags/palestinian" id="tag_palestinian">Palestinian</a></li>
+    <li><a href="/tags/pancake" id="tag_pancake">Pancake</a></li>
+    <li><a href="/tags/pasta" id="tag_pasta">Pasta</a></li>
+    <li><a href="/tags/pastry" id="tag_pastry">Pastry</a></li>
+    <li><a href="/tags/pate" id="tag_pate">Pate</a></li>
+    <li><a href="/tags/peppers" id="tag_peppers">Peppers</a></li>
+    <li><a href="/tags/peruvian" id="tag_peruvian">Peruvian</a></li>
+    <li><a href="/tags/pie" id="tag_pie">Pie</a></li>
+    <li><a href="/tags/pizza" id="tag_pizza">Pizza</a></li>
+    <li><a href="/tags/polish" id="tag_polish">Polish</a></li>
+    <li><a href="/tags/pork" id="tag_pork">Pork</a></li>
+    <li><a href="/tags/portuguese" id="tag_portuguese">Portuguese</a></li>
+    <li><a href="/tags/potato" id="tag_potato">Potato</a></li>
+    <li><a href="/tags/pub" id="tag_pub">Pub</a></li>
+    <li><a href="/tags/quebec" id="tag_quebec">Quebec</a></li>
+    <li><a href="/tags/quick" id="tag_quick">Quick</a></li>
+    <li><a href="/tags/raw" id="tag_raw">Raw</a></li>
+    <li><a href="/tags/rice" id="tag_rice">Rice</a></li>
+    <li><a href="/tags/roast" id="tag_roast">Roast</a></li>
+    <li><a href="/tags/romanian" id="tag_romanian">Romanian</a></li>
+    <li><a href="/tags/russian" id="tag_russian">Russian</a></li>
+    <li><a href="/tags/salad" id="tag_salad">Salad</a></li>
+    <li><a href="/tags/sandwich" id="tag_sandwich">Sandwich</a></li>
+    <li><a href="/tags/sauce" id="tag_sauce">Sauce</a></li>
+    <li><a href="/tags/sausage" id="tag_sausage">Sausage</a></li>
+    <li><a href="/tags/seafood" id="tag_seafood">Seafood</a></li>
+    <li><a href="/tags/shrimp" id="tag_shrimp">Shrimp</a></li>
+    <li><a href="/tags/side" id="tag_side">Side</a></li>
+    <li><a href="/tags/slowcooked" id="tag_slowcooked">Slowcooked</a></li>
+    <li><a href="/tags/snack" id="tag_snack">Snack</a></li>
+    <li><a href="/tags/soup" id="tag_soup">Soup</a></li>
+    <li><a href="/tags/sourdough" id="tag_sourdough">Sourdough</a></li>
+    <li><a href="/tags/southern" id="tag_southern">Southern</a></li>
+    <li><a href="/tags/southwest" id="tag_southwest">Southwest</a></li>
+    <li><a href="/tags/spanish" id="tag_spanish">Spanish</a></li>
+    <li><a href="/tags/spice" id="tag_spice">Spice</a></li>
+    <li><a href="/tags/spicy" id="tag_spicy">Spicy</a></li>
+    <li><a href="/tags/spinach" id="tag_spinach">Spinach</a></li>
+    <li><a href="/tags/spread" id="tag_spread">Spread</a></li>
+    <li><a href="/tags/squash" id="tag_squash">Squash</a></li>
+    <li><a href="/tags/steak" id="tag_steak">Steak</a></li>
+    <li><a href="/tags/stew" id="tag_stew">Stew</a></li>
+    <li><a href="/tags/stock" id="tag_stock">Stock</a></li>
+    <li><a href="/tags/supper" id="tag_supper">Supper</a></li>
+    <li><a href="/tags/swedish" id="tag_swedish">Swedish</a></li>
+    <li><a href="/tags/sweet" id="tag_sweet">Sweet</a></li>
+    <li><a href="/tags/swiss" id="tag_swiss">Swiss</a></li>
+    <li><a href="/tags/syrup" id="tag_syrup">Syrup</a></li>
+    <li><a href="/tags/thai" id="tag_thai">Thai</a></li>
+    <li><a href="/tags/tofu" id="tag_tofu">Tofu</a></li>
+    <li><a href="/tags/tomato" id="tag_tomato">Tomato</a></li>
+    <li><a href="/tags/tortilla" id="tag_tortilla">Tortilla</a></li>
+    <li><a href="/tags/traditional" id="tag_traditional">Traditional</a></li>
+    <li><a href="/tags/traybake" id="tag_traybake">Traybake</a></li>
+    <li><a href="/tags/tuna" id="tag_tuna">Tuna</a></li>
+    <li><a href="/tags/tunisian" id="tag_tunisian">Tunisian</a></li>
+    <li><a href="/tags/turkey" id="tag_turkey">Turkey</a></li>
+    <li><a href="/tags/turkish" id="tag_turkish">Turkish</a></li>
+    <li><a href="/tags/ukrainian" id="tag_ukrainian">Ukrainian</a></li>
+    <li><a href="/tags/uzbek" id="tag_uzbek">Uzbek</a></li>
+    <li><a href="/tags/veal" id="tag_veal">Veal</a></li>
+    <li><a href="/tags/vegetables" id="tag_vegetables">Vegetables</a></li>
+    <li><a href="/tags/vietnamese" id="tag_vietnamese">Vietnamese</a></li>
+    <li><a href="/tags/wholemeal" id="tag_wholemeal">Wholemeal</a></li>
+    <li><a href="/tags/wine" id="tag_wine">Wine</a></li>
+    <li><a href="/tags/yucatecan" id="tag_yucatecan">Yucatecan</a></li>
+    </ul>
+
+<h2 id="about-this-site">About this site</h2>
+<p>Founded to provide a simple online cookbook without ads and obese web design.
+See the story of this site unfold in three videos:</p>
+<ul>
+<li><a href="https://odysee.com/@Luke:7/a-demonstration-of-modern-web-bloat:f">A Demonstration of Modern Web Bloat</a></li>
+<li><a href="https://odysee.com/@Luke:7/the-war-against-web-bloat-continues...:a">The War Against Web Bloat Continues…</a></li>
+<li><a href="https://odysee.com/@Luke:7/soydevs-destroyed-epic-style-by-based:6">SoyDevs DESTROYED Epic Style by Based Cooking!</a></li>
+</ul>
+<h2 id="its-easy-to-contribute">It’s easy to contribute!</h2>
+<p>New recipes can be submitted <a href="https://github.com/lukesmithxyz/based.cooking">on Github</a>.
+We are funded by you only, not 20MB of ads or privacy-violating trackers per page.</p>
+<div class="cryptocontainer">
+<div class="cryptoinfo">
+<div class="cryptotext">
+<img alt="" style="max-height:1em;max-width:1em;display:inline" src="/pix/xmr.svg"> Monero <br>
+<code style="font-size:xx-small;overflow-wrap:break-word;">84N9N3DMWhQ9cstHwGEjo8hEvm9bjeYgjV5fLrGK6TmA9iVPjnU7NMUT7gyAc22UgGAVTCUgReQ1J67znhWP3L52Usfw6jg</code><br>
+</div>
+<a href="/pix/monero-based-cooking.png"><img alt="Monero QR Code" class="qr" src="/pix/monero-based-cooking.png"></a>
+</div>
+<div class="cryptoinfo">
+<div class="cryptotext">
+<img alt="" style="max-height:1em;max-width:1em;display:inline" src="/pix/btc.svg"> Bitcoin <br>
+<code style="font-size:small;overflow-wrap:break-word;">bc1q763s4ud0hgfa66ce64gyh6tsss49vyk5cqcm6w</code><br>
+</div>
+<a href="/pix/bitcoin-based-cooking.png"><img alt="Bitcoin QR Code" class="qr" src="/pix/bitcoin-based-cooking.png"></a>
+</div>
+</div>
+
+
+
+
+
+</article>
+</main>
+
+<footer>
+	<a href="/">/</a><br><br><a href="/index.xml"><img src="/rss.svg" style="max-height:1.5em" alt="RSS Feed" title="Subscribe via RSS for updates."></a>
+</footer>
+
+
+
+</body></html>

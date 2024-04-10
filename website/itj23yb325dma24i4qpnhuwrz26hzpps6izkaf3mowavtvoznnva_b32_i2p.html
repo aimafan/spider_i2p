@@ -1,0 +1,396 @@
+<html lang="en"><head>
+	
+	<script language="javascript">
+		var main_canvas;
+
+		var wa_memory;
+		var wa_memory_size;
+		var wa_memu8, wa_memu16, wa_memu32;
+		var wa_object;
+
+		var fb_pointer;
+		var fb_image_data;
+		var dirty_rects;
+		var dirty_rect_count;
+
+		var raf_id;
+		var timer_id;
+
+		function js_alert(val)
+		{
+			alert(val);
+			throw 'AppAlert';
+		}
+
+		function js_app_terminate()
+		{
+			parent = main_canvas.parentElement;
+			main_canvas.remove();
+			throw 'AppTerminate';
+		}
+
+		function js_app_launch(wa)
+		{
+			wa_object = wa;
+			wa_memu8 = new Uint8Array(wa_memory.buffer);
+			wa_memu16 = new Uint16Array(wa_memory.buffer);
+			wa_memu32 = new Uint32Array(wa_memory.buffer);
+			
+			var to = wa_object.instance.exports.ml_web_main_entry();
+			if (to < 0)
+				js_app_terminate();
+
+			raf_id = requestAnimationFrame(frame_func);
+			timer_id = setTimeout(one_time_slice, to);
+		}
+
+		function js_app_error(err)
+		{
+			alert('zhoppa: ' + err);
+		}
+
+		function js_get_memory_size()
+		{
+			return wa_memory_size;
+		}
+
+		function frame_func(t)
+		{
+			var i;
+			var r;
+			
+			if (dirty_rect_count > 0)
+			{
+				var cvs = main_canvas;
+				var ctx = cvs.getContext('2d');
+				for (i = 0; i < dirty_rect_count; i++)
+				{
+					r = dirty_rects[i];
+					ctx.putImageData(fb_image_data, 0, 0, r[0], r[1], r[2], r[3]);
+				}
+				dirty_rect_count = 0;
+			}
+			
+			raf_id = requestAnimationFrame(frame_func);
+		}
+
+		function js_fb_update_rect(x, y, w, h)
+		{
+			if (dirty_rects.length > dirty_rect_count)
+			{
+				var r = dirty_rects[dirty_rect_count];
+				r[0] = x;
+				r[1] = y;
+				r[2] = w;
+				r[3] = h;
+			}
+			else
+				dirty_rects.push([x, y, w, h]);
+			dirty_rect_count++;
+		}
+
+		function reset_framebuffer()
+		{
+			if (!fb_pointer)
+				return;
+			w = main_canvas.width;
+			h = main_canvas.height;
+			length = w * h * 4;
+			buf = new Uint8ClampedArray(wa_memory.buffer, fb_pointer, length)
+			fb_image_data = new ImageData(buf, w, h);
+		}
+
+		function js_grow_memory(incr)
+		{
+			rv = wa_memory.grow(incr);
+			wa_memu8 = new Uint8Array(wa_memory.buffer);
+			wa_memu16 = new Uint16Array(wa_memory.buffer);
+			wa_memu32 = new Uint32Array(wa_memory.buffer);
+			reset_framebuffer();
+			wa_memory_size += incr;
+			return rv;
+		}
+
+		function js_window_size(pw, ph)
+		{
+			var body = (document.getElementsByTagName('body'))[0];
+			wa_memu32[pw >> 2] = body.clientWidth;
+			wa_memu32[ph >> 2] = body.clientHeight;
+		}
+
+		function js_fb_get_info(ptr)
+		{
+			idx = ptr >> 2;
+			wa_memu32[idx] = main_canvas.width;
+			wa_memu32[idx + 1] = main_canvas.height;
+		}
+
+		function js_fb_set_info(ptr)
+		{
+			var idx = ptr >> 2;
+			var body = (document.getElementsByTagName('body'))[0];
+			var w = wa_memu32[idx];
+			var h = wa_memu32[idx + 1];
+			var flags = wa_memu32[idx + 2];
+
+			main_canvas = document.createElement('canvas');
+			main_canvas.setAttribute('width', w);
+			main_canvas.setAttribute('height', h);
+			if (flags & 1)
+				main_canvas.style.cursor = 'none'
+			body.appendChild(main_canvas);
+			dirty_rects = [];
+			dirty_rect_count = 0;
+
+			window.addEventListener('keydown', keydown_event, true);
+			window.addEventListener('keyup', keyup_event, true);
+			main_canvas.addEventListener('mousedown', mousedown_event, true);
+			main_canvas.addEventListener('mouseup', mouseup_event, true);
+			main_canvas.addEventListener('mousemove', mousemove_event, true);
+			main_canvas.addEventListener('mouseenter', mouseenter_event, true);
+			main_canvas.addEventListener('mouseleave', mouseleave_event, true);
+			main_canvas.addEventListener('contextmenu', contextmenu_event, true);
+
+			fb_pointer = wa_memu32[idx + 3];
+			reset_framebuffer();
+		}
+
+		function js_get_time(lo, hi)
+		{
+			var t = Date.now();
+			wa_memu32[lo >> 2] = t & 0xFFFFFFFF;
+			wa_memu32[hi >> 2] = (t / 0x100000000);
+		}
+
+		function one_time_slice()
+		{
+			var timo = wa_object.instance.exports.ml_web_app_tic();
+			timer_id = setTimeout(one_time_slice, timo);
+		}
+
+		function js_app_cleanup()
+		{
+			if (raf_id)
+			{
+				cancelAnimationFrame(raf_id);
+				raf_id = null;
+			}
+			if (timer_id)
+			{
+				clearTimeout(timer_id);
+				timer_id = null;
+			}
+		}
+
+		function js_key_to_ukc(key)
+		{
+			if ((key >= 48) && (key <= 57))
+				return key;
+
+			if ((key >= 65) && (key <= 90))
+				return key + 32;
+
+			if ((key >= 112) && (key <= 123))
+				return key + 89;
+
+			if ((key >= 96) && (key <= 105))
+				return key + 58;
+
+			switch (key)
+			{
+				case 8:			// Backspace
+					return 148;
+				case 9:			// Tab
+					return 149;
+				case 12:		// KP 5
+					return 159;
+				case 13:		// Enter
+					return 151;
+				case 16:		// LShift
+					return 128;
+				case 17:		// LCtrl
+					return 130;
+				case 18:		// LAlt
+					return 132;
+				case 20:		// CapsLock
+					return 134;
+				case 27:		// Escape
+					return 152;
+				case 32:		// Spacebar
+					return 153;
+
+				case 33:		// PgUp
+					return 220;
+				case 34:		// PgDn
+					return 221;
+				case 35:		// End
+					return 223;
+				case 36:		// Home
+					return 222;
+
+				case 37:		// Left
+					return 219;
+				case 38:		// Up
+					return 216;
+				case 39:		// Right
+					return 218;
+				case 40:		// Down
+					return 217;
+
+				case 42:		// SysRq
+					return 180;
+				case 145:		// ScrollLock
+					return 136
+				case 19:		// Break
+					return 226;
+
+
+				case 45:		// Ins
+					return 224;
+				case 46:		// Del
+					return 225;
+
+				case 59:		// ;
+					return 143;
+
+				case 91:		// LMETA1
+					return 227;
+				case 93:		// Menu
+					return 181;
+
+				case 173:		// -
+				case 189:
+					return 138;
+				case 61:		// =
+				case 187:
+					return 139;
+
+				case 106:		// KP *
+					return 167;
+				case 107:		// KP +
+					return 165;
+				case 109:		// KP -
+					return 166;
+				case 110:		// KP .
+					return 164;
+				case 111:		// KP /
+					return 168;
+
+				case 144:		// NumLock
+					return 135;
+
+				case 188:		// ,
+					return 145;
+				case 190:		// .
+					return 146;
+				case 191:		// /
+					return 147;
+				case 192:		// `
+					return 137;
+
+				case 219:		// [
+					return 140;
+				case 220:		// Backslash
+					return 142;
+				case 221:		// ]
+					return 141;
+				case 222:		// '
+					return 144;
+			}
+			return 0;
+		}
+
+		function keydown_event(ev)
+		{
+			ev.stopImmediatePropagation();
+			ev.preventDefault();
+			wa_object.instance.exports.ml_web_key_event(ev.keyCode, 1);
+			return false;
+		}
+
+		function keyup_event(ev)
+		{
+			ev.stopImmediatePropagation();
+			ev.preventDefault();
+			wa_object.instance.exports.ml_web_key_event(ev.keyCode, 0);
+			return false;
+		}
+
+		function mousedown_event(ev)
+		{
+			ev.stopImmediatePropagation();
+			ev.preventDefault();
+			wa_object.instance.exports.ml_web_mouse_event(0, ev.offsetX, ev.offsetY, ev.button, ev.buttons);
+			return false;
+		}
+
+		function mouseup_event(ev)
+		{
+			ev.stopImmediatePropagation();
+			ev.preventDefault();
+			wa_object.instance.exports.ml_web_mouse_event(1, ev.offsetX, ev.offsetY, ev.button, ev.buttons);
+			return false;
+		}
+
+		function mousemove_event(ev)
+		{
+			ev.stopImmediatePropagation();
+			ev.preventDefault();
+			wa_object.instance.exports.ml_web_mouse_event(2, ev.offsetX, ev.offsetY, 0, ev.buttons);
+			return false;
+		}
+
+		function mouseenter_event(ev)
+		{
+			ev.stopImmediatePropagation();
+			ev.preventDefault();
+			wa_object.instance.exports.ml_web_mouse_event(3, ev.offsetX, ev.offsetY, 0, ev.buttons);
+			return false;			
+		}
+
+		function mouseleave_event(ev)
+		{
+			ev.stopImmediatePropagation();
+			ev.preventDefault();
+			wa_object.instance.exports.ml_web_mouse_event(4, ev.offsetX, ev.offsetY, 0, ev.buttons);
+			return false;
+		}
+
+		function contextmenu_event(ev)
+		{
+			ev.preventDefault(ev);
+			return false;
+		}
+
+		function startup()
+		{
+			wa_memory_size = 64;
+			wa_memory = new WebAssembly.Memory({ initial: wa_memory_size });
+			var import_obj = {
+				env: { memory: wa_memory },
+				imports: { 
+					js_get_memory_size: js_get_memory_size,
+					js_grow_memory: js_grow_memory,
+					js_app_terminate: js_app_terminate,
+					js_window_size: js_window_size,
+					js_fb_get_info: js_fb_get_info,
+					js_fb_set_info: js_fb_set_info,
+					js_fb_update_rect: js_fb_update_rect,
+					js_key_to_ukc: js_key_to_ukc,
+					js_app_cleanup: js_app_cleanup,
+					js_get_time: js_get_time,
+					js_alert: js_alert
+				}
+			};
+			var code = get_wa_code();
+			(document.getElementsByTagName('script'))[0].remove();
+			wasm = WebAssembly.instantiate(code, import_obj);
+			code = null;
+			wasm.then(js_app_launch, js_app_error);
+		}
+	</script>
+</head>
+<body onload="startup()">
+
+
+<canvas width="320" height="480"></canvas></body></html>

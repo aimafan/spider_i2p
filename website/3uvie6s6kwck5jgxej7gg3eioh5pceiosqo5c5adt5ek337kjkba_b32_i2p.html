@@ -1,0 +1,147 @@
+<html lang="en" style="filter: invert(1);"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Story archive</title>
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<style>
+	.btn-circle {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 2em;
+  border-radius: 35px;
+	line-height: 33px;
+	margin-top: 20px;
+  margin-left: 12px;
+	display: inherit;
+	line-height: 35px;
+}
+img{filter: invert(1);} .alert{filter: invert(1);} .form-control{border: 1px solid #8b8b8b} .input-group-text{border: 1px solid #8b8b8b} .card{border: 1px solid #8b8b8b}</style>
+
+<header class="row justify-content-between py-3 my-4" style="width: 95%; margin-left: 2.5%;">
+		<div class="col-md-auto d-flex align-items-center">
+			<a href="./index.php" style="color: black; text-decoration: none;"><img src="./img/Logo_Stories_w.png" alt="Archive" height="137.8"></a>
+		</div>
+		<div class="col-auto">
+		<a href="?dark=true" type="button" class="btn-circle" style="background-color: #000085;"><img src="./img/sun.png" alt="Light" height="23"></a>		</div>
+</header>						
+<main class="short">
+<div style="height: 100%">
+<div class="row justify-content-center px-4">
+	<div class="col-md-auto col-lg-7 col-xl-5">
+				This page is for the permanent archiving of all kinds of texts. (e.g. stories, novels, chat logs, codes...)<br>
+		Texts declared public are visible to everyone. Non-public texts are not publicly visible.<br><br>
+		If you have any suggestions for improvement, please contact archivesi@i2pmail.org <a target="_blank" href="./archive-public-key.asc">(PGP Public Key)</a><br>
+		Spam will be deleted.
+		<br><br>
+		<form method="post" enctype="multipart/form-data" onsubmit="upload_load()">
+			<div class="card">
+				<div class="card-body ">
+					<div class="row justify-content-between">
+						<div class="col-auto">
+							Only .txt, .md (Multi uplode max 10 files)
+						</div>
+						<div class="col-auto">
+							<div class="form-check">
+								<label class="form-check-label" for="public">
+									Public
+								</label>
+								<input class="form-check-input" type="checkbox" value="1" id="public" name="public" style="border: var(--bs-border-width) solid #000;" checked="">
+							</div>
+						</div>
+					</div>
+					<div class="input-group mb-3">
+						<input type="file" class="form-control" id="data" name="data[]" accept=".txt, .md" multiple="" required="">
+						<label class="input-group-text" for="data">Upload</label>
+					</div>
+
+					<div class="row justify-content-between">
+						<div class="col-auto">
+							<a href="./overview.php" type="button" class="btn btn-outline-secondary">Public list</a>  
+						</div>
+						<div class="col-auto">
+							<input type="submit" class="btn btn-outline-secondary" id="submit" name="submit" value="Submit">
+							<button id="loading" style="display: none;" class="btn btn-outline-secondary" type="button" disabled="">
+								<span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+								<span class="visually-hidden" role="status">Loading...</span>
+							</button>
+
+							<button type="button" class="btn btn-outline-secondary" id="showb" onclick="show()">Show</button>
+						</div>
+					</div>
+			
+					<div id="show" class="mt-3" style="display: none;">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" placeholder="" id="title" name="title">
+							<label for="title">Title</label>
+						</div>
+						<div class="form-floating mb-3">
+							<textarea class="form-control" placeholder="" id="text" name="text" style="height: 100px"></textarea>
+							<label for="text">Description</label>
+						</div>
+						<select class="form-select form-control" name="category" aria-label=".form-select">
+							<option disabled="" selected="">Category</option>
+							<option value="18">Chat log</option><option value="13">Code</option><option value="19">Image</option><option value="15">Novel</option><option value="14">Other</option><option value="16">Sex story</option><option value="17">Short story</option>						</select>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+</div>
+
+</main>
+<script>
+	document.getElementById("show").style.display = "none";
+
+	function show() 
+	{
+		if(document.getElementById("show").style.display == "none")
+		{
+			document.getElementById("show").style.display = "block";
+			document.getElementById("showb").innerText = "Hide";
+		}
+		else
+		{
+			document.getElementById("show").style.display = "none";
+			document.getElementById("showb").innerText = "Show";
+		}
+	}
+	function upload_load() 
+	{
+		document.getElementById("loading").style.display = "inline";
+		document.getElementById("submit").style.display = "none";
+	}
+</script>
+
+	<footer class="row justify-content-between py-3 my-4 border-top md-foot-auto" style="width: 95%; bottom: 0; margin-left: 2.5%;">
+		<div class="col-auto">
+			<a href="./index.php" class="nav-link px-2 text-body-secondary">Home</a>
+		</div>
+		<div class="col-auto" style="text-align: center;">
+			<span class="px-2">
+				<a href="http://sarchive.i2p" class="nav-link px-2 text-body-secondary">I2P: sarchive.i2p</a>
+				<a href="http://lzzps23ymchpmdab5cvok4wyzwho6kyxrpw2kdwz2gpqidlm2xjq57qd.onion" class="nav-link px-2 text-body-secondary">Tor: lzzps23ymchpmdab5cvok4wyzwho6kyxrpw2kdwz2gpqidlm2xjq57qd.onion</a>
+			</span>
+					</div>
+		<div class="col-auto">
+			<a href="./donate.php" class="nav-link px-2 text-body-secondary">Donate</a>
+		</div>
+	</footer>
+		
+
+
+<style>
+	@media (min-height: 1000px) 
+	{
+		.md-foot-auto
+		{
+			position: absolute;
+		}
+	}
+</style></body></html>

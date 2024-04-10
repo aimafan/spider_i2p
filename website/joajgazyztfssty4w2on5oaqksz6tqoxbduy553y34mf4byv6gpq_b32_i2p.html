@@ -1,0 +1,77 @@
+<html><head>
+        <title>
+            
+            I2P Name Registry
+            
+        </title>
+        
+        
+        <link rel="stylesheet" type="text/css" href="/static/base.css">
+    </head>
+    <body>
+        <div class="search_host">
+            <form action="/search/">
+                <input class="input" name="q" maxlength="67" type="text" value="Search host" onblur="if (value == '') {value = 'Search host'}" onfocus="if (value == 'Search host')
+                {value =''}">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+
+        
+        <div class="menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/subscription/">Subscription</a></li>
+                <li><a href="/faq/">FAQ</a></li>
+                <li><a href="/latest/">Browse latest hosts</a></li>
+                <li><a href="/browse/">Browse alive hosts</a></li>
+                <li><a href="/postkey/">Register a domain</a></li>
+                <li><a href="/contacts/">Contacts</a></li>
+            </ul>
+        </div>
+
+        <form action="/i18n/setlang/" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="506yTiSPBNBF2xGrne6ST5IjgWo4aWhtwPjdFa9cd9EF2UUjQCV6SP5guTM9kZZz">
+            
+                <input type="radio" value="en" name="language">
+                <img src="/static/en.png" width="16" height="11" alt="en">
+            
+                <input type="radio" value="ru" name="language">
+                <img src="/static/ru.png" width="16" height="11" alt="ru">
+            
+            <input type="submit" value="Set">
+        </form>
+
+        
+
+        <div class="main">
+        
+        
+
+        
+    <h1>WTF</h1>
+<p>This is the place where you can register a friendly name for your domain like <strong>yourdomain.i2p</strong></p>
+<h2>Latest News</h2>
+<h3>2022-07</h3>
+<p>As for now, this service is not been actively maintained. We have discovered that i2p router was a bit unstable, and host checking procedure has been failing on the middle. To mitigate the issue, the router version has been upgraded. Hope this will help. </p>
+<h2>Donations</h2>
+<p>To help maintain this service please send a little crypto:</p>
+<ul>
+<li><a href="http://gostcoin.i2p/">GOST</a>: GKgRkc5VUp1MaW61f1sZ6yS1WtnQA3EW2z</li>
+<li>BTC: 1AZ17LbFXDoYA84xWrUcctGQJ9G32SxKRB</li>
+<li>LTC: LdKKRYjEhFrvpD1qpNDJHJLneNe8BEmNaT</li>
+</ul>
+
+        </div>
+
+        
+        <hr>
+        <div class="footer">
+            
+            
+            powered-by: <a href="https://github.com/i2phosts/py-i2phosts">py-i2phosts</a>
+        </div>
+        
+    
+
+</body></html>

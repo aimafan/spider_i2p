@@ -1,0 +1,46 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="expires" content="Mon, 01 Jan 1990 00:00:00 GMT">
+<title>Ilita search</title>
+<link href="design.css" rel="stylesheet" type="text/css"></head>
+ 
+<body>
+
+<h1>Ilita search</h1>
+
+<a href="http://[200:206d:1340:e78d:f444:6ab8:fe59:7f70]">Ygg mirror search</a>
+
+
+<form action="/search" method="get"><p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="linecolor"><img width="1" height="1" alt=""></td></tr></tbody></table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="panelcolor"><tbody><tr><td>
+  <table border="0">
+    <tbody><tr>
+      <td align="right"><font class="panelcolor">&nbsp;<b>Введите запрос:</b></font>&nbsp;</td>
+      <td><input type="text" name="q" size="50"></td>
+      <td><input type="submit" value="Найти"></td>
+    </tr>
+    <tr>
+      <td align="right" valign="top"><font class="panelcolor">&nbsp;Область поиска:</font>&nbsp;</td>
+      <td><select name="z"><option value="0" selected="">Искать во всех областях</option><option value="1">Мой компьютер : C:\ilita_irc_chat\dev\</option><option value="2">Мой компьютер : C:\ilita_irc_chat\ru\</option></select></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="panelcolor" align="right" valign="top">&nbsp;Сортировка:&nbsp;</td>
+      <td><select name="sort"><option value="rate" selected="">Вес</option><option value="date">Дата</option><option value="size">Размер</option><option value="name">Имя файла</option><option value="ext">Расширение</option><option value="path">Полный путь</option><option value="number">№</option></select>&nbsp;<select name="sortdir"><option value="asc" selected="">По возрастанию</option><option value="desc">По убыванию</option></select></td>
+      <td></td>
+    </tr>
+  </tbody></table>
+</td></tr></tbody></table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="linecolor"><img width="1" height="1" alt=""></td></tr></tbody></table>
+</p></form>
+
+<a>В строку поиска можно просто написать жопа или использовать расширенный синтаксис запроса:</a>
+
+<p>Пример запроса:</p><p>+"новости спорта" -погода -политика ~"спортивные новости"</p><p>Этот запрос означает, что документы должны содержать фразу "новости спорта" (потому что указан знак "+") и по возможности фразу "спортивные новости" (потому что указан знак "~"), но не должны содержать ни слова "погода", ни слова "политика" (потому что они записаны со знаком "-").</p>
+
+<a>Дополнительно поиск по маске позволяет искать слова по их фрагментам. Звёздочка означает наличие любого количества символов. Например, на запрос генерат* будут найдены все слова, которые начинаются со слова "генерат" и могут иметь любое окончание. Звёздочку можно указать в любой части слова, в том числе и несколько раз.</a>
+
+
+
+</body></html>

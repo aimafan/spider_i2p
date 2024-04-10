@@ -1,0 +1,63 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #fff;
+    }
+
+    .container {
+      max-width: 50%;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>[ profile ]</h1>
+    <h2>Personalized web hosting based on your <a style="text-decoration: none" href="http://git.community.i2p">git</a> repository</h2>
+    <form action="/@login" method="POST">
+      <input type="text" name="user" placeholder="Login" required="">
+      <input type="password" name="password" placeholder="Password" required="">
+      <button type="submit">Authorize via git</button>
+    </form>
+    <p style="color: grey">community.i2p project</p>
+  </div>
+
+
+</body></html>

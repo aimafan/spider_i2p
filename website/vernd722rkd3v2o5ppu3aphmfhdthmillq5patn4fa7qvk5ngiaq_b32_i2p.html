@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+		<meta charset="UTF-8">
+		<title>ZNC - Web Frontend</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="/pub/_default_.css">
+		<link rel="stylesheet" type="text/css" href="/skinfiles/_default_/global.css">
+		<link rel="stylesheet" type="text/css" href="/pub/jquery-ui-sortable.1.11.4.min.css">
+		<link rel="stylesheet" type="text/css" href="/pub/selectize-0.12.1.css">
+
+		<script type="text/javascript" src="/pub/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="/pub/jquery-ui-sortable.1.11.4.min.js"></script>
+		<script type="text/javascript" src="/pub/selectize-standalone-0.12.1.min.js"></script>
+
+<style>
+a.external {
+	background: url(/skinfiles/_default_/External.png) center right no-repeat;
+	padding-right: 13px;
+}
+</style>	</head>
+
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Banner -->
+<div id="banner_top"><h1><a href="/">ZNC</a></h1></div>			<!-- !Banner -->
+
+			<!-- MessageBar -->
+
+			<!-- !MessageBar -->
+
+			<!-- InfoBar -->
+<div id="infobar">
+	<span id="infobar_ident">
+			<span id="logged_in_no">Not logged in</span>
+	</span>
+				<form action="/login" method="post">
+					<div class="loginbox">
+						<input type="hidden" name="submitted" value="1">
+						<label for="user">User:</label><input id="user" type="text" name="user">
+						<label for="pass">Pass:</label><input id="pass" type="password" name="pass">
+						<input type="submit" class="submit" value="Login">
+					</div>
+				</form>
+</div>
+			<!-- !InfoBar -->
+
+			<!-- Main -->
+			<div id="main">
+				<!-- Menu -->
+<div id="menu">
+	<ul class="nav">
+		<li class="topitem active"><a href="/">Home</a></li>
+
+
+
+	</ul>
+</div>
+				<!-- !Menu -->
+
+				<!-- Content -->
+				<div id="content">
+
+					<!-- BreadCrumbs -->
+					<div id="breadcrumb">
+						<a href="/">ZNC</a>
+					</div>
+					<!-- !BreadCrumbs -->
+
+					<div id="subpage">
+
+
+<div class="textsection">
+
+	<p>Welcome to ZNC's web interface!</p>
+
+
+</div>
+
+					</div>
+					<!-- !SubPage -->
+				</div>
+				<!-- !Content -->
+			</div>
+			<!-- !Main -->
+
+			<!-- FooterBar -->
+			<div id="footerbar">
+			</div>
+			<!-- !FooterBar -->
+		</div>
+		<!-- !Wrapper -->
+
+		<!-- LowerBanner -->
+			<div id="tag"><p>ZNC 1.8.2 - <a href="https://znc.in">https://znc.in</a></p></div>
+		<!-- !LowerBanner -->
+	
+
+</body></html>

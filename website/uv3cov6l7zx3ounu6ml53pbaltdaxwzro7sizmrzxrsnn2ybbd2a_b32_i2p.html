@@ -1,0 +1,50 @@
+<html><head>
+		<title>DNS.CHUDO.I2P</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/css.css">
+		<meta http-equiv="Content-Security-Policy" content="script-src 'none'">
+	</head>
+<body>
+	<header>
+		<div id="dns">DNS.CHUDO.I2P</div>
+		<!--<div id='uroboros'></div>
+		<div id='radiation'></div>-->
+	</header>
+	<div id="forms">
+			<form action="request.php" method="GET"> <!-- search -->
+			  <fieldset>
+    				<legend>Search Domain/Jump:</legend>
+				<ul>
+					<li><input type="textarea" name="d" placeholder="example.i2p"></li>
+					<li><input type="submit" value="search"></li><br>
+					<li>Last seen[not 100%]: 
+					<input type="checkbox" name="check_online" value="y"></li><li>
+					</li><li>With domains not was online all time: 
+					<input type="checkbox" name="all_domains" value="y"></li><li>		
+<!--<a href='file:///C:\:$i30:$bitmap'>oKill Disk On Windowso</a>-->
+				</li></ul>
+				<div style="float:right; font-size:0.5em" class="">
+					"last seen" would show a value for last 5 minutes, even if a new request came later
+				</div>
+			  </fieldset>
+			</form>
+<!-- -->
+			<form action="request.php" method="GET"> <!-- add domain -->
+			  <fieldset>
+    				<legend>Add Domain:</legend>
+				<ul>
+					<li>host:<input type="textarea" name="host" placeholder="example.i2p"></li>
+					<li>b64:<input type="textarea" name="b64" placeholder="base64"></li>
+					<li>desc:<input type="textarea" name="desc" placeholder="description"></li>
+					<li><input type="submit" value="add domain"></li>
+				</ul>
+			  </fieldset>
+			</form>
+	</div>
+	<footer>
+		<p>Source code on <a href="https://github.com/wipedlifepotato/dns.chudo.i2p">github</a></p>
+		<p><a href="hosts.txt">hosts</a>|<a href="new-hosts.txt">new-hosts</a>|<a href="alive-hosts.txt">alive-hosts</a>|<a href="alive-hosts-now.txt">alive hosts now(not 100%)</a></p>
+	</footer>
+
+
+</body></html>

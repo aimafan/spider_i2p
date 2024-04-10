@@ -1,0 +1,131 @@
+<html lang="EN"><head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/static/favicon.ico" type="image/png">
+<title>SchemeBBS</title>
+<style type="text/css">
+body {
+    width: 98%;
+}
+img {
+max-width: 25%;
+}
+del {
+  text-decoration: none;
+  background-color: black;
+}
+del:hover {
+  background-color: transparent;
+}
+th { text-align: left; font-weight: normal; text-decoration: underline; padding-bottom: 1em;}
+td { padding: 0.2em 2em 0.2em 0}
+pre { background-color: #ddd; padding: 0.4em}
+blockquote { color: #666; border-left: 2px solid #999; padding-left: 0.5em; margin-left: 0}
+</style>
+</head>
+<body>
+<h1>SchemeBBS</h1>
+<hr>
+<p>An anonymous BBS (textboard) written in R<sup>5</sup>RS Scheme</p>
+<h2>News</h2>
+<ul>
+<li><a href="https://bbs.jp.net/mona">/mona/</a> is back!</li>
+<li>CSS dark mode added and style switcher fixed</li>
+</ul>
+<p><i>Sat Sep  9 10:23:06 UTC 2023</i></p>
+<ul>
+<li>Hardware and OS upgrade (FreeBSD 12.2 -&gt; 13.0)</li>
+</ul>
+<p><i>Thu Dec 30 15:36:50 UTC 2021</i></p> 
+<ul>
+<li><a href="https://fossil.textboard.org/sbbs/">Emacs mode</a> for serious <del>/prog/</del>riders</li>
+<li><a href="https://github.com/TeamWau/docker-schemebbs">Docker Image</a></li>
+<li><a href="https://fossil.textboard.org">fossil repositories</a> for user-contributed code</li>
+<li>A <a href="https://archive.textboard.org">local archive</a> for the ashes of our deceased forefathers, and miscellanea</li>
+<li>A <a href="https://paste.textboard.org">pastebin service</a> for longer text files (&lt;1 MB)</li>
+</ul>
+<p><i>Sat Jun  6 11:14:44 UTC 2020</i></p> 
+<h2>Demo board</h2>
+<p>If you just want to try SchemeBBS, please do so in <a href="/sandbox/">/sandbox/</a></p>
+
+<h2>Boards</h2>
+<ul>
+<li><a href="/prog/">/prog/</a> - <b>Programming</b> (CS and textboard engineering discussions)</li>
+<li><a href="/sol/">/sol/</a> - <b>Solipsisms</b> (whatever that means, everything goes)</li>
+<li><a href="https://bbs.jp.net/mona">https://bbs.jp.net/mona/</a> - <b>Japanese Culture</b> (clearnet)</li>
+</ul>
+<h2>Features</h2>
+<p><code>bbs.scm</code> is a <a href="https://en.wikipedia.org/wiki/2channel">2ch</a>
+clone with the following features:</p>
+<ul>
+<li>No registration required, anonymous posting</li>
+<li>No cookies</li>
+<li>No Javascript</li>
+<li>No Images</li>
+<li>Lightweight Markup</li>
+<li>Serves web pages to browsers, <a href="/sexp">S-expressions</a> to LISP clients</li>
+<li>Stylesheet switcher</li>
+<li>Multi-boards</li>
+<li>Runs well on "el cheapo" VPS</li>
+<li>Optimized for text-based browsers such as Links or w3m</li>
+<li>Entirely written in Scheme</li>
+<li>Open Source</li>
+</ul>
+<h2>Formatting</h2>
+
+<p>One newline is a line break (&lt;BR&gt;), two or more newlines will start a new paragraph.</p>
+<table id="toggled-element" summary="Formatting help">
+<thead><tr><th>input</th><th>output</th></tr></thead>
+<tbody><tr><td><samp>**bold**</samp></td><td><b>bold</b></td></tr>
+<tr><td><samp>__italic__</samp></td><td><i>italic</i></td></tr>
+<tr><td><samp>==monospaced==</samp></td><td><code>monospaced</code></td></tr>
+<tr><td><samp>~~spoiler~~</samp></td><td><del>spoiler</del></td></tr>
+<tr><td><samp>http://c2.com</samp></td><td><a href="http://c2.com">http://c2.com</a></td></tr>
+<tr><td><samp>link to post &gt;&gt;7</samp></td><td>link to post <a href="#">&gt;&gt;7</a></td></tr>
+<tr><td><samp>&gt;quoted text</samp></td><td><blockquote><p>quoted text</p></blockquote></td></tr>
+<tr><td><kbd>```<br>;;;This is a block of code<br>(lambda (h)<br>&nbsp;&nbsp;((lambda (f) (f f))<br>&nbsp;&nbsp;&nbsp;(lambda (f) (h (lambda (x) ((f f) x))))))<br>```</kbd></td>
+<td><pre>;;;This is a block of code
+(lambda (h)
+  ((lambda (f) (f f))
+   (lambda (f) (h (lambda (x) ((f f) x))))))</pre></td></tr></tbody></table>
+<h2>Alternate Access</h2>
+<p>This site is also accessible via i2p: 
+<a href="http://7ubwrcixdcemzqwqzh2vaakjsnochj2biuzpo6dc2n4f7wqj4pua.b32.i2p">bbs.i2p</a></p>
+<h2>Source Code</h2>
+<p>You can clone SchemeBBS source code repo at <a href="https://gitlab.com/naughtybits/schemebbs">gitlab</a></p>
+<h2>A Bit of History</h2>
+<p><del>/prog/</del> was a <a href="https://en.wikipedia.org/wiki/Textboard">textboard</a> about ``programming'', hosted at world4ch.org and later dis.4chan.org. It was an odd and fascinating place that went mostly unmoderated for years.  Unfortunately the owners were made to remember its existence thanks to imbecilic spammers. Without consideration for the small community that inhabited the place, the plug was finally pulled on a sad day of July 2014.  </p><p> If you weren't lucky enough to have been a part of it, an archive of all the posts is available at <a href="https://archive.org/details/prog-20140418.db">archive.org</a>.  There's a <a href="http://world4search.readsicp.org/">search engine</a> for this archive which has also been entirely restored as web pages at <a href="https://archive.tinychan.net/prog/">archive.tinychan.net</a>.</p>
+<p>Back then, a somewhat recurrent joke was that the BBS script, <code>Shiichan</code>, should be rewritten in Scheme. I'm not aware this task was ever completed.  Well, it is, now. For the sake of it. Another motivation was to write some real world software in Scheme: beside implementations you won't find a lot of Scheme code in the wild. This is especially true for MIT Scheme. So, however trivial this program is, its merits are its mere existence and the fact it's been deployed.</p>
+
+<h2>More History</h2>
+<p>If you're interested in the history of textboards as a whole, here are a few interesting reads: </p>
+<ul>
+<li><a href="https://wakaba.c3.cx/shii/shiichan">Shii's blurb</a></li>
+<li><a href="http://tanasinn.info/wiki/Main_Page">Tanasinn wiki</a></li>
+<li><a href="https://github.com/bibanon/bibanon/wiki/2channel">bibanon</a></li>
+</ul>
+
+<h2>Other Textboard Scripts</h2>
+<p>There's a huge list of textboard softwares at <a href="https://overscript.net">Overscript</a>.</p>
+<ul>
+<li><a href="https://github.com/j416dy/2ch">bbs.cgi</a> - The original <a href="https://5ch.net/">2ch</a> Perl script</li>
+<li><a href="https://wakaba.c3.cx/shii/shiichan3960.zip">Shiichan</a> - The PHP script that was used at world4ch</li>
+<li><a href="http://wakaba.c3.cx/s/web/wakaba_kareha">Kareha</a> - Popular Perl script used by <a href="http://4-ch.net/4ch">4-ch.net</a> among others</li>
+<li><a href="http://tanami.org/pub/software/TrueScript/Tablecat.zip">Tablecat</a> - Tablecat's Perl script (the site is currently offline)</li>
+<li><a href="https://github.com/z411/weabot">Weabot</a> - Python script used by the most active western textboard: <a href="https://bienvenidoainternet.org/bai">Bienvenido a Internet</a></li>
+</ul>
+
+<h2>Software Stack</h2>
+<p>SchemeBBS is written in MIT/GNU Scheme, Nginx is used as a reverse proxy and the whole system runs on FreeBSD. There's no database, messages are stored as Scheme objects in plain files. This stack is lovely. Nice icons too.</p>
+<p><a href="https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html"><img src="/static/img/mit-scheme.png" alt="MIT Scheme logo"></a><a href="https://www.gnu.org/software/mit-scheme/"><img src="/static/img/gnu.png" alt="GNU logo"></a><a href="http://nginx.com"><img src="/static/img/nginx.png" alt="Nginx logo"></a><a href="http://freebsd.org"><img src="/static/img/freebsd.png" alt="FreeBSD logo"></a></p>
+<h2>Bonus Track</h2>
+<p>Listening to this tune will make you enjoy writing Scheme code.</p>
+<p><a href="/static/img/abelson-stole-the-precious-course-mit-version.webm"><img src="/static/img/snake.png" alt="The SICP snake"></a></p>
+<hr>
+<p>
+<a href="https://validator.w3.org/check?uri=referer"><img src="/static/img/valid-html.png" alt="Valid ISO/IEC 15445:2000"></a>
+<a href="https://www.eff.org/deeplinks/2013/12/nsa-turns-cookies-and-more-surveillance-beacons"><img src="/static/img/nocookie.png" alt="This site doesn't use cookies" title="No Cookies!"></a>
+<a href="https://www.gnu.org/philosophy/javascript-trap.en.html"><img src="/static/img/nojs.png" alt="This site doesn't use Javascript" title="No Javascript!"></a></p>
+
+
+</body></html>

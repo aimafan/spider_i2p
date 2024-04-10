@@ -1,0 +1,69 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>How to stream for free in .i2p network</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div id="header">
+  <h1><b><u>How to stream for free in i2p network</u></b></h1>
+  </div>
+<div id="ditch">
+    <p>
+1. Download the following software from their official pages.<br>
+-i2p/i2pd software for connecting the i2p network<br>
+ Install and modify the settings as you prefer<br>
+-MediaMTX simple media server<br>
+-FFmpeg for converting/feeding the stream for the media server<br>
+<br>
+MediaMTX and FFmpeg are binaries only and don't need installation<br>
+<br><br><br>
+2. Modify MediaMTX ports the way you want (it creates the conf file on first boot)<br>
+   Make notions of the port you are going to feed the stream in, since you need it for FFMpeg.<br>
+   Also make notion of the HLS port, that one is needed later for i2p.<br>
+   In my example MediaMTX RTSP port is 8367 and HLS port 8568.<br>
+   OPTIONAL: You can disable WebRTC if you fear IP leaks and all other features unwanted.<br>
+<br><br><br>
+3. Configure FFMpeg to feed the stream for MediaMTX server, in my example we are using RTSP stream<br>
+   Any other software, that is capable of streaming audio/video to server will do just fine as well.<br>
+	<br>
+	ffmpeg -re -rtsp_transport tcp -i "rtsp://admin:@192.168.1.112" -fps_mode passthrough -vcodec copy -acodec copy -f rtsp "rtsp://localhost:8367/mystream"<br>
+	<br>
+	With this line it re-streams rtsp stream from rtsp source, that has username, but no password.<br>
+	Video, audio and FPS are passed through without encoding, in this example.<br>
+	The output is the MediaMTX localhost address, where you need to add the port you used for RTSP.<br>
+	In my example I keep the stream the same as source.<br>
+	The /mystream is important in the end of the line, it is the identifier for the stream you need for the browser as well.<br>
+	You can chose whatever word you want, but in this example it's /mystream<br>
+<br><br><br>
+4. Configure i2p to use HLS protocol/port through http server.<br>
+- Open hidden services manager in i2p configuration<br>
+- Choose New hidden service -&gt; HTTP and press create<br><br><br>
+</p><center><img src="i2p.jpg" alt="The Wall" width="1024" height="768"></center>
+<span style="color:white;font-size:14px">(open the image in new tab, if you want to see it in full-size)</span><br><br><br>
+- Enter name and description as you wish<br>
+- OPTIONAL: If you keep the stream always on, you can tick 'Automatically start tunnel when router starts'<br>
+- The port number is the one you chose for HLS in MediaMTX, which is 8568 in my example.<br>
+- Choose Tunnel Performance Options -&gt; and select interactive connection from drop-down menu.<br>
+- Otherwise the default settings will work already.<br>
+- You can modify the connection settings later,<br>
+  if your stream gets more popular and you need to allow more connections.<br><br>
+- After everything is correct click save from the bottom of the page.<br>
+- Start the server we just created and copy the hostname.<br>
+<br><br><br>
+5. Copy the hostname to the browser address line and add the /mystream to the end of the address.<br>
+   Press enter and in a moment your stream should open, if you have done everything accordingly.<br>
+<br><br><br>
+Proof of work can be seen in action (Online 16-20h/Day):<br>
+<a href="http://xpzivkoot2ydzldg66heibbither7337wbxmlyajwebvcwsf6qhq.b32.i2p/mystream/">http://xpzivkoot2ydzldg66heibbither7337wbxmlyajwebvcwsf6qhq.b32.i2p/mystream/</a><!--<br-->
+If you want to comment stream or say something, visit:<br>
+<a href="http://thhg5j7xoswuf7dlikfx5h477jr5222faeanlmgmlwgc4wnd674hinyd.onion">http://thhg5j7xoswuf7dlikfx5h477jr5222faeanlmgmlwgc4wnd674hinyd.onion</a><!--<br-->
+<br><br><br>
+These instructions are made with Windows software, but it should be just as easy in Linux, when just picking<br>
+correct tools for the job.<br><br><br>
+PS. With the forementioned method, it would be most likely possible to livestream from smart phones as well,
+    if someone just puts up an app with all needed pieces inside.<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<span style="color:lime;font-size:8px;align:center">Information provided by ©DigitalFreedomOutlet
+<p></p></span></div>
+
+
+</body></html>

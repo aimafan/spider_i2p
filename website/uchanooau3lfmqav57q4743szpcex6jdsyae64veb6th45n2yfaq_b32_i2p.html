@@ -1,0 +1,513 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+UCHAN
+</title>
+    <style>
+        textarea,
+        input,
+        button,
+        select {
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .base {
+            background-color: rgb(35, 35, 37);
+            color: gainsboro;
+            font-family: sans-serif;
+            font-size: large;
+        }
+
+        .postRect {
+            background-color: rgb(45, 45, 50);
+            text-align: left;
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 15px;
+            padding-bottom: 0.1em;
+            padding-top: 0.1em;
+            padding-left: 0.5em;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+        }
+
+        .threadRect {
+            background-color: rgb(50, 50, 55);
+            text-align: left;
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 15px;
+            padding-bottom: 0.1em;
+            padding-top: 0.1em;
+            padding-left: 0.5em;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+        }
+
+        .descriptionRect {
+            background-color: rgb(70, 70, 75);
+            text-align: left;
+            width: 40%;
+            margin-top: 15px;
+            margin-left: 30%;
+            padding-bottom: 0.1em;
+            padding-top: 0.1em;
+            padding-left: 0.5em;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+        }
+
+        @media screen and (max-width: 1920px) {
+            .postRect {
+                margin-left: 17%;
+                width: 66%;
+            }
+
+            .threadRect {
+                margin-left: 10%;
+                width: 80%;
+            }
+
+            .descriptionRect {
+                margin-left: 23.5%;
+                width: 53%;
+            }
+        }
+
+        @media screen and (max-width: 1280px) {
+            .postRect {
+                margin-left: 7.5%;
+                width: 85%;
+            }
+
+            .threadRect {
+                margin-left: 2.5%;
+                width: 95%;
+            }
+
+            .descriptionRect {
+                margin-left: 15%;
+                width: 70%;
+            }
+        }
+
+        .pre {
+            max-height: 50em;
+            overflow: auto;
+            white-space: pre-wrap;
+            font-size: large;
+            font-family: sans-serif;
+        }
+
+        .pre_short {
+            white-space: pre-wrap;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: large;
+            font-family: sans-serif;
+        }
+
+        .textareaResizeOff {
+            resize: none;
+        }
+
+        .textareaFont {
+            font-size: medium;
+        }
+
+        .inputTextFontCaptcha {
+            font-size: medium;
+            text-align: center;
+        }
+
+        .inputTextFont {
+            font-size: medium;
+        }
+
+        .alignCenter {
+            text-align: center;
+        }
+
+        .listCenter {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .spoiler {
+            color: black;
+            background-color: black;
+        }
+
+        .spoiler:hover {
+            color: gainsboro;
+            background-color: rgb(45, 45, 50);
+        }
+
+        .quoteColor {
+            color: YellowGreen;
+        }
+
+        .captchaBlock {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .mono {
+            font-family: monospace;
+        }
+
+        .buttonDelete {
+            background-color: #cf362b;
+            border-color: #cf362b;
+            padding: 2px 10px;
+        }
+
+        .buttonCreate {
+            background-color: peru;
+            border-color: peru;
+            padding: 2px 10px;
+        }
+
+        .tagColor {
+            color: rgb(221, 131, 58);
+        }
+    </style>
+</head>
+
+<body class="base" link="Peru" alink="cyan" vlink="Peru">
+    
+    
+        <h1 class="alignCenter">UCHAN</h1>
+    
+
+    <div class="alignCenter">
+        <a href="/create_board">Create board</a>
+        <span>|</span>
+        <a href="/rules">Rules</a>
+        <span>|</span>
+        <a href="/help">Help</a>
+    </div>
+    <h3 class="alignCenter">Boards:</h3>
+    
+        <table cellpadding="3" align="center">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>last activity</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=4&amp;page=0">/b/</a></td>
+                        <td class="alignCenter">08/04/2024 09:49</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=10&amp;page=0">/i2p/</a></td>
+                        <td class="alignCenter">05/04/2024 13:44</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=1&amp;page=0">/crystalway</a></td>
+                        <td class="alignCenter">21/11/2023 23:14</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=12&amp;page=0">/meta</a></td>
+                        <td class="alignCenter">18/11/2023 19:42</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=9&amp;page=0">/g/</a></td>
+                        <td class="alignCenter">08/11/2023 13:28</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=22&amp;page=0">/c</a></td>
+                        <td class="alignCenter">08/11/2023 12:30</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=19&amp;page=0">/спокойствие</a></td>
+                        <td class="alignCenter">07/11/2023 10:09</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=20&amp;page=0">/cybersec</a></td>
+                        <td class="alignCenter">07/11/2023 10:02</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=25&amp;page=0">/uchanbugreport</a></td>
+                        <td class="alignCenter">29/10/2023 16:47</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a href="view_board?board_id=23&amp;page=0">/asm</a></td>
+                        <td class="alignCenter">21/09/2023 23:20</td>
+                    </tr>
+                
+                <tr>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td><a href="/see_all">See all</a></td>
+                </tr>
+            </tbody>
+        </table>
+    
+
+    <h3 class="alignCenter">Latest threads:</h3>
+    
+        
+            
+    <div class="threadRect">
+    <span>25/07/2023 17:33</span>
+    <a href="/view_board?board_id=4&amp;page=0">/b/</a> 
+    <span>Thread №9</span>
+    <span>Posts: 22</span>
+    <a href="/view_thread?thread_id=9&amp;page=0&amp;last_page=true">[Open thread]</a>
+    <p></p><h3>Богачи - нам не друзья.</h3><p></p>
+    <pre class="pre_short">Богачи - нам не друзья. А сволочи, несправедливо получающие все удобства в жизни. Кто согласен?</pre>
+    </div>
+
+        
+            
+    <div class="threadRect">
+    <span>04/04/2024 22:25</span>
+    <a href="/view_board?board_id=10&amp;page=0">/i2p/</a> 
+    <span>Thread №71</span>
+    <span>Posts: 1</span>
+    <a href="/view_thread?thread_id=71&amp;page=0&amp;last_page=true">[Open thread]</a>
+    <p></p><h3>Вы пользуетесь ш2зд</h3><p></p>
+    <pre class="pre_short">Помоему хуйня ваще не понятная мне как абычнаму пользоватилю (((</pre>
+    </div>
+
+        
+            
+    <div class="threadRect">
+    <span>04/04/2024 15:49</span>
+    <a href="/view_board?board_id=4&amp;page=0">/b/</a> 
+    <span>Thread №70</span>
+    <span>Posts: 0</span>
+    <a href="/view_thread?thread_id=70&amp;page=0&amp;last_page=true">[Open thread]</a>
+    <p></p><h3>post post</h3><p></p>
+    <pre class="pre_short">post post</pre>
+    </div>
+
+        
+            
+    <div class="threadRect">
+    <span>21/03/2024 02:15</span>
+    <a href="/view_board?board_id=10&amp;page=0">/i2p/</a> 
+    <span>Thread №69</span>
+    <span>Posts: 1</span>
+    <a href="/view_thread?thread_id=69&amp;page=0&amp;last_page=true">[Open thread]</a>
+    <p></p><h3>i2p headless</h3><p></p>
+    <pre class="pre_short">Is i2p usable on a cmd-line only OS ? (e.g. centOS)
+I wanna monitor and control it with a text browser like Lynx or w3m. 
+Will it work ?</pre>
+    </div>
+
+        
+            
+    <div class="threadRect">
+    <span>07/03/2024 18:41</span>
+    <a href="/view_board?board_id=4&amp;page=0">/b/</a> 
+    <span>Thread №67</span>
+    <span>Posts: 1</span>
+    <a href="/view_thread?thread_id=67&amp;page=0&amp;last_page=true">[Open thread]</a>
+    <p></p><h3>СВИНОРЕЗ</h3><p></p>
+    <pre class="pre_short">Как же хорошо что русский националист Зеленский не идёт на переговоры с украинским патриотом Путиным.
+
+Уже &gt; полмиллиона забитых свиней, а с учётом оригинальной тактики боя "ЗАКИДАЕМ СВИНИНОЙ", к концу этого года будет под миллион.
+
+Всё идёт лучше чем в моих самых тайных мечтах. ДО ПОСЛЕДНЕЙ СВИНЬИ!</pre>
+    </div>
+
+        
+    
+
+    <h3 class="alignCenter">Latest posts:</h3>
+    
+        
+            <div class="postRect">
+                <span>08/04/2024 09:49</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №387</span> 
+                <a href="/view_thread?thread_id=9&amp;page=0#387">[Open in thread]</a>
+                <pre class="pre"><a href="/view_thread?thread_id=9&amp;page=0#385">&gt;&gt;385</a>
+"Я могу отчитаться за каждый заработанный мною миллион, кроме первого".</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>05/04/2024 13:44</span>
+                <a href="/view_board?board_id=10&amp;page=0">/i2p/</a>
+                <span>Post №386</span> 
+                <a href="/view_thread?thread_id=71&amp;page=0#386">[Open in thread]</a>
+                <pre class="pre">Нахуй оно вообще надо ваше ш2з. Медленная залупа.</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>28/03/2024 06:07</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №385</span> 
+                <a href="/view_thread?thread_id=9&amp;page=0#385">[Open in thread]</a>
+                <pre class="pre">Буржуи не просто так буржуи, они чего то сделали, что б ими стать и поддерживать этот статус, при том для поддержания постоянно делают.
+А плебс, нихуя не может без пинка. Так что тут скорее автор треда овоз и не может оторвать жопу от дивана что бы чего то сделать</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>25/03/2024 18:58</span>
+                <a href="/view_board?board_id=10&amp;page=0">/i2p/</a>
+                <span>Post №384</span> 
+                <a href="/view_thread?thread_id=69&amp;page=0#384">[Open in thread]</a>
+                <pre class="pre">I have done that in the past with i2pd docker and it works ok.</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>17/03/2024 03:56</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №383</span> 
+                <a href="/view_thread?thread_id=67&amp;page=0#383">[Open in thread]</a>
+                <pre class="pre">Это скорее бараны - их на убой загоняют, а они только и могут, что блеять. Хуже то, что этим баранам в копыта оружие дают, и они, вполне неиллюзорно хуярят по тем, кто свой дом от оккупации защищает.</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>13/03/2024 11:54</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №382</span> 
+                <a href="/view_thread?thread_id=68&amp;page=0#382">[Open in thread]</a>
+                <pre class="pre">Повторил два раза.
+Штаны пока чистые.</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>12/03/2024 19:55</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №381</span> 
+                <a href="/view_thread?thread_id=68&amp;page=0#381">[Open in thread]</a>
+                <pre class="pre">Осторожно пёрнул.</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>07/03/2024 09:56</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №380</span> 
+                <a href="/view_thread?thread_id=63&amp;page=0#380">[Open in thread]</a>
+                <pre class="pre">Put a fucking blade in your ass zoophile scum</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>07/03/2024 09:55</span>
+                <a href="/view_board?board_id=10&amp;page=0">/i2p/</a>
+                <span>Post №379</span> 
+                <a href="/view_thread?thread_id=64&amp;page=0#379">[Open in thread]</a>
+                <pre class="pre">No, it just blacklisted on some websites</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>29/02/2024 18:05</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №378</span> 
+                <a href="/view_thread?thread_id=9&amp;page=0#378">[Open in thread]</a>
+                <pre class="pre"><a href="/view_thread?thread_id=9&amp;page=0#376">&gt;&gt;376</a>
+<font class="quoteColor">&gt;Потому что при коммунизме не будет классов и государства.</font>
+Почему при этом должны отменится законы?</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>29/02/2024 11:28</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №377</span> 
+                <a href="/view_thread?thread_id=9&amp;page=0#377">[Open in thread]</a>
+                <pre class="pre"><a href="/view_thread?thread_id=9&amp;page=0#375">&gt;&gt;375</a>
+<font class="quoteColor">&gt;Не раньше, чем сходишь туда ты - педоборствующее чмо с глюками и говном вместо мозга.</font>
+«Говно вместо мозга» – это как раз про педофилов, и тех малолетних дегенератов, что их защищают. Кто из них ты?
+
+<a href="/view_thread?thread_id=9&amp;page=0#376">&gt;&gt;376</a>
+<font class="quoteColor">&gt;Моего друга зовут Мишей, и задается вопросом именно он, а не я.</font>
+Diru min, kiu estas via amiko, kaj mi diros vin, kiu estas vi.
+
+<font class="quoteColor">&gt;Потому что при коммунизме не будет классов и государства.</font>
+Кто тебе сказал, что классы и государство – это одно и то же? Путаешь коммунизм с анархией?</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>28/02/2024 18:59</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №376</span> 
+                <a href="/view_thread?thread_id=9&amp;page=0#376">[Open in thread]</a>
+                <pre class="pre"><a href="/view_thread?thread_id=9&amp;page=0#374">&gt;&gt;374</a>
+Моего друга зовут Мишей, и задается вопросом именно он, а не я.
+<a href="/view_thread?thread_id=9&amp;page=0#375">&gt;&gt;375</a>
+<font class="quoteColor">&gt;Почему ты решил, что при коммунизме не будет законов?</font>
+Потому что при коммунизме не будет классов и государства.</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>28/02/2024 17:52</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №375</span> 
+                <a href="/view_thread?thread_id=9&amp;page=0#375">[Open in thread]</a>
+                <pre class="pre"><a href="/view_thread?thread_id=9&amp;page=0#373">&gt;&gt;373</a>
+<font class="quoteColor">&gt;Если при коммунизме не будет государства, то и возраста согласия не будет?</font>
+Почему ты решил, что при коммунизме не будет законов?
+
+<a href="/view_thread?thread_id=9&amp;page=0#374">&gt;&gt;374</a>
+<font class="quoteColor">&gt;В любом случае – оба идите на хуй.</font>
+Не раньше, чем сходишь туда ты - педоборствующее чмо с глюками и говном вместо мозга.</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>28/02/2024 13:15</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №374</span> 
+                <a href="/view_thread?thread_id=9&amp;page=0#374">[Open in thread]</a>
+                <pre class="pre"><a href="/view_thread?thread_id=9&amp;page=0#373">&gt;&gt;373</a>
+<font class="quoteColor">&gt;Если при коммунизме не будет государства, то и возраста согласия не будет? Интересуюсь для друга.</font>
+Ĉu via amiko estas Romeo? Aŭ ĉu vi estas Romeo?
+В любом случае – оба идите на хуй.</pre>
+            </div>
+ 
+        
+            <div class="postRect">
+                <span>28/02/2024 01:51</span>
+                <a href="/view_board?board_id=4&amp;page=0">/b/</a>
+                <span>Post №373</span> 
+                <a href="/view_thread?thread_id=9&amp;page=0#373">[Open in thread]</a>
+                <pre class="pre">Вопрос к коммунистам. Если при коммунизме не будет государства, то и возраста согласия не будет? Интересуюсь для друга.</pre>
+            </div>
+ 
+        
+    
+
+    <footer>
+        <div class="alignCenter">
+            <p>Created by CrystalWay<br>2023 - 2024</p>
+        </div>
+    </footer>
+
+
+
+
+</body></html>

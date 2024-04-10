@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>co.i2p and in.i2p - domain bases</title>
+
+<link rel="stylesheet" href="style.css" type="text/css">
+
+<link rel="stylesheet" href="local.css" type="text/css">
+
+
+
+
+
+</head>
+<body>
+
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">
+
+</span>
+<span class="title">
+co.i2p and in.i2p - domain bases
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+<div id="pagebody">
+
+<div id="content">
+<p>As is the nature of an alternative network, a lot domain names for common clearnet sites
+have already been registered by other people. So I have taken the time to register the domain
+names co.i2p and in.i2p, so that if a legitimate clearnet website wishes to establish a presence in I2P
+but finds example.i2p is taken, they can obtain example.co.i2p through me. This is because
+in order to register a 3LD or 4LD with any of the existing nameservices, you require control
+of the corresponding 2LD or 3LD; by already registering co.i2p, the clearnet website is almost
+guaranteed that example.co.i2p is no already taken.</p>
+
+<p>There are two ways this could work:</p>
+
+<ul>
+<li>The clearnet website contacts me and asks for example.co.i2p. I create a tunnel to get a
+destination hash and corresponding private key, and then register example.co.i2p with that
+destination hash. Finally, I send the clearnet website the private key to enable them to use
+the example.co.i2p URL.
+<ul>
+<li>This has the downside that if I somehow were feeling malicious, I could keep a copy of the
+private key and partly hijack the URL (via multihoming). Or more likely, the key could be taken
+in transit to the clearnet website.</li>
+</ul></li>
+<li>The clearnet website creates a tunnel to obtain a destination hash, and then attempts to register
+example.co.i2p with that destination hash. They are informed by the nameservice that they need
+to create a verification file on the 2LD (co.i2p). They inform me of who they are, why they
+desire an I2P URL and what the verification file is. I create the verification file on co.i2p
+enabling them to complete registration of example.co.i2p and then remove it afterwards.
+<ul>
+<li>This method ensures that the clearnet website receives and maintains sole control of the
+example.co.i2p URL. However, it requires some sort of confirmation of identity, as they provide
+the verification code rather than me sending the private key to a known contact address of the
+website, and there is the possibility of the website being impersonated in order to get the
+URL registered.</li>
+</ul></li>
+</ul>
+
+<p>This domain is registered and maintained by <a href="http://str4d.i2p">str4d</a>; contact
+him to request a *.co.i2p or *.in.i2p subdomain.</p>
+
+</div>
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="date">in the wee hours of Saturday night, April  8th, 2012</span>
+<!-- Created <span class="date">at midnight, April  8th, 2012</span> -->
+</div>
+
+</div>
+
+
+<!-- from co.i2p -->
+</div>
+
+</div>
+
+
+
+</body></html>

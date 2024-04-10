@@ -1,0 +1,64 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search - Snusbase Beta</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/sbex.png">
+    <link rel="stylesheet" type="text/css" href="/static/app.css">
+</head>
+<body>
+<a href="/patch-notes"><div class="snus-title">Snusbase Beta v2.2.7</div></a>
+<header>
+<a class="active" href="/">Search</a>
+<a href="/history">History</a>
+<a href="/account">Account</a>
+</header>
+<form method="post" target="">
+<div class="card" id="top-of-page">
+    <div class="top">Database Search Engine</div>
+    <div class="body">
+        <input type="text" name="term" id="term" placeholder="Search now.." value="">
+        <input type="hidden" name="code" id="code" value="">
+        <div class="types">
+            <input type="radio" name="type" value="email" id="email" checked="&quot;&quot;">
+            <label for="email">Email</label>
+        
+            <input type="radio" name="type" value="username" id="username">
+            <label for="username">Username</label>
+        
+            <input type="radio" name="type" value="lastip" id="lastip">
+            <label for="lastip">Lastip</label>
+        
+            <input type="radio" name="type" value="name" id="name">
+            <label for="name">Name</label>
+        
+            <input type="radio" name="type" value="password" id="password">
+            <label for="password">Password</label>
+        
+            <input type="radio" name="type" value="hash" id="hash">
+            <label for="hash">Hash</label>
+        </div>
+        <div class="options">
+            <div class="ttc">
+                <input type="checkbox" id="wildcard" name="wildcard">
+                <label for="wildcard">Enable Wildcard</label>
+                <div class="tt"></div>
+            </div>
+        
+            <div class="ttc">
+                <input type="checkbox" id="multiple" name="multiple">
+                <label for="multiple">Multiple Terms</label>
+                <div class="tt"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <input type="submit" value="Search">
+    </div>
+</div>
+</form>
+
+
+
+<script src="/static/app.js"></script>
+
+</body></html>

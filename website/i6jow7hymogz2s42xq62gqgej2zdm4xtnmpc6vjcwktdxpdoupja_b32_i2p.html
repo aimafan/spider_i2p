@@ -1,0 +1,82 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <title>Telegram over I2P</title>
+        <style>
+                html, body { font-family: monospace; font-size: 18px; }
+                .blocks { font-size: 0; }
+                .block { display: inline-block; min-width: 200px; padding-right: 30px; font-size: 18px; vertical-align: top; }
+                small { color: grey; }
+        </style>
+</head>
+<body>
+
+<h1>Telegram MTProxy list</h1>
+<small>Shorthand addresses, e.g. mtproxy-1.telegram.i2p, can be resolved by i2pd only</small>
+<br>
+<pre><h2>MTProxy #1:</h2>
+<b>Address</b>
+mtproxy-1.telegram.i2p                  vxxfipsygx6jpz57pmb3d3mjgsk5ls2idxeo2bffs3yp62muyq7q.b32.i2p
+
+<b>Secret key</b>
+d676d59cd211bfe0031e4db3debc6a1b
+
+<h2>MTProxy #2:</h2>
+<b>Address</b>
+mtproxy-2.telegram.i2p                  vp3vans4ra3vpo24orm5seaxvod4x4lwiqajrfazb62hfwb45ddq.b32.i2p
+
+<b>Secret key</b>
+1b3e58008e4a2838505ea99838db21df
+</pre>
+
+<h1>Example i2pd tunnels config file</h1>
+<small>That example shows one-for-all configuration. For more information about used settings please refer to <a href="https://i2pd.readthedocs.io/en/latest/user-guide/tunnels/" target="_blank">i2pd documentation</a></small>
+<div class="blocks">
+<div class="block"><pre>[TG-MTPROXY-1]
+type = client
+address = 127.0.0.1
+port = 8440
+destination = vxxfipsygx6jpz57pmb3d3mjgsk5ls2idxeo2bffs3yp62muyq7q.b32.i2p
+signaturetype = 7
+inbound.length = 1
+outbound.length = 1
+inbound.quantity = 5
+outbound.quantity = 5
+i2cp.leaseSetType = 3
+i2cp.leaseSetEncType = 0,4
+i2p.streaming.initialAckDelay = 20
+keys = transient-tg-mtproxy
+
+[TG-MTPROXY-2]
+type = client
+address = 127.0.0.1
+port = 8441
+destination = vp3vans4ra3vpo24orm5seaxvod4x4lwiqajrfazb62hfwb45ddq.b32.i2p
+keys = transient-tg-mtproxy
+</pre></div>
+</div>
+
+<h1>Telegram Web</h1>
+<p>You can use <i>Telegram Web</i>, based on "Web K" client and patched for usage in I2P: <a href="https://web.telegram.i2p/">Telegram Web I2P</a></p>
+
+<p>All requests to Telegram's servers proxifyed with nginx. All data transfered via nginx is encrypted
+with MTProto cryptographic protocol, and can't be decrypted by our service.</p>
+
+<p>Configuration and changes to original client can be found <a href="http://git.i2pd.i2p/r4sas/tweb-i2p">here</a>.</p>
+
+<h1>Downloads</h1>
+<p>Ready for use configuration file for i2pd: <a href="/tg-mtproxy.conf" download="">Download</a><br>
+Place it in <i>tunnels.d</i> directory and reload tunnels configuration</p>
+
+<p>Preconfigured for I2P Telegram:<br>
+Windows 64-bit: <a href="https://repo.i2pd.xyz/soft/telegram/Telegram-3.6.0-x64-mtproxy-i2p-windows.zip">Clearnet</a>, <a href="http://repo.r4sas.i2p/soft/telegram/Telegram-3.6.0-x64-mtproxy-i2p-windows.zip">I2P</a><br>
+Windows 32-bit: <a href="https://repo.i2pd.xyz/soft/telegram/Telegram-3.6.0-mtproxy-i2p-windows.zip">Clearnet</a>, <a href="http://repo.r4sas.i2p/soft/telegram/Telegram-3.6.0-mtproxy-i2p-windows.zip">I2P</a><br>
+Linux 64-bit: <a href="https://repo.i2pd.xyz/soft/telegram/Telegram-3.6.0-mtproxy-i2p-linux64.tar.xz">Clearnet</a>, <a href="http://repo.r4sas.i2p/soft/telegram/Telegram-3.6.0-mtproxy-i2p-linux64.tar.xz">I2P</a><br>
+<br>
+
+</p><h1>Community</h1>
+<p>chat: <a href="https://t.me/i2p_telegram" target="_blank">@i2p_telegram</a><br>
+IRC: join #en or #ru on <a href="irc://irc.ilita.i2p">Ilita</a><a> (</a><a href="http://irc.r4sas.i2p/?channels=en,ru" target="_blank">web</a><a>)</a></p><a>
+
+
+
+</a></body></html>

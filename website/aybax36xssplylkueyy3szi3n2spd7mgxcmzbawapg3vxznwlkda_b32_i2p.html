@@ -1,0 +1,158 @@
+<html><head>
+	<meta name="description" content="true random number generator">
+	<meta name="keywords" content="trng, entropy, random, number, apophis, fips, neumann, galactic, noise, pseudorandom, encryption, cryptography, antenna, sdr, turnstile, password">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apophis Generator</title>
+    </head>
+    <body>
+        <style>
+            /* Smartphones (portrait and landscape) ----------- */
+            @media (max-width: 600px) {
+            /* Styles */
+                
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                }
+            }
+
+
+            @media (min-width: 601px) {
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1.5fr;
+                }
+            }
+        
+            .apophis {
+                width: 100%;
+            }
+        
+            .cell {
+                border-width: 10px;
+                border-color: #8d7907ff;
+                border-style: solid;
+                border-radius: 50px;
+                background-color: #ffdd86ff;
+                margin: 0.5em 0.25em;
+            }
+        
+            .cell, .cell *, a {
+                color: #000066ff;
+            }
+            
+            .cell-api {
+                border-width: 5px;
+                border-radius: 25px;
+		background-color: #ffeb99ff;
+                margin: 0.5em 1.0em;
+            }
+        
+            .cell, .cell-api *, a {
+                color: #8d7907ff;
+            }
+            
+            body {
+                background-color: #ffeb99ff;
+                font-family: Helvetica;
+                
+            }
+            
+        </style>
+        <div class="grid-wrapper">
+            <div class="col">
+            <div class="cell">
+                <img class="apophis" src="./apophis-gen.svg">
+            </div>
+            <div class="cell">
+                
+        
+        
+        
+        
+        
+		    <p style="margin-left:5%; margin-top: 1em"><b>Apophis</b> [<b>TRNG|HRNG</b>]
+	is a true random number generator that feeds off Galactic as well
+        as atmospheric backround RF noise.<br><br>
+	Signal processing flow consists of <b>noise</b>
+	sampling,  <span style="white-space:nowrap"><b>Von-Neumann</b></span> debiasing and <span style="white-space:nowrap"><b>FIPS 140-2</b></span> test runs.
+	Only data that have passed <span style="white-space:nowrap"><b>FIPS 140-2</b></span> tests are written to FIFO pipe.
+	Computational services access this FIFO pipe in real-time and no data
+	are being stored or kept back.</p>
+        
+            </div>
+            </div>
+            <div class="col">
+            <div class="cell cell-api">
+            
+        
+        <p style="margin-left:9%; margin-top: 1em;">
+        <b>SYNOPSIS</b></p>
+        <p style="margin-left:18%;">[URL]/<b>hexdump</b>[?<b><i>size</i></b>={number of bytes}]</p>
+        
+        
+        <p style="margin-left:9%; margin-top: 1em"><b>DESCRIPTION</b></p>
+        
+        <p style="margin-left:18%; margin-top: 1em">Service provides random
+        number stream in hexdump-C format.<br>If <b><i>size</i></b> field is not given,
+        service returns 32KB stream.<br>
+        Acceptable values for <b><i>size</i></b> are {0:64000}.</p>
+        
+        <p style="margin-left:9%; margin-top: 1em"><b>USAGE</b></p>
+        
+        <p style="margin-left:18%; margin-top: 1em">http://services.apophis.i2p/<b>hexdump</b>?size=512</p>
+        
+        </div>
+        
+        
+        <div class="cell cell-api">
+        
+        <p style="margin-left:9%; margin-top: 1em;">
+        <b>SYNOPSIS</b></p>
+        <p style="margin-left:18%;">[URL]/<b>imagedump</b>[?<b><i>dim</i></b>={image width in pixels}]</p>
+        
+        
+        <p style="margin-left:9%; margin-top: 1em"><b>DESCRIPTION</b></p>
+        
+        <p style="margin-left:18%; margin-top: 1em">Service provides visual representation of entropy received.<br>If <b><i>dim</i></b> field is not given,
+        service returns 340x340 image.<br>
+        Acceptable values for <b><i>dim</i></b> are {100:600}.</p>
+        
+        <p style="margin-left:9%; margin-top: 1em"><b>USAGE</b></p>
+        
+        <p style="margin-left:18%; margin-top: 1em">http://services.apophis.i2p/<b>imagedump</b>?dim=500</p>
+        
+        </div>
+        
+        
+        <div class="cell cell-api">
+        
+        <p style="margin-left:9%; margin-top: 1em;">
+        <b>SYNOPSIS</b></p>
+        <p style="margin-left:18%;">[URL]/<b>bindump</b>[?<b><i>size</i></b>={number of bytes}]</p>
+        
+        
+        <p style="margin-left:9%; margin-top: 1em"><b>DESCRIPTION</b></p>
+        
+        <p style="margin-left:18%; margin-top: 1em">Service provides downloadable random
+        number binary file.<br>If <b><i>size</i></b> field is not given,
+        service returns 32KB file.<br>
+        Acceptable values for <b><i>size</i></b> are {0:64000}.</p>
+        
+        <p style="margin-left:9%; margin-top: 1em"><b>USAGE</b></p>
+        
+        <p style="margin-left:18%; margin-top: 1em">http://services.apophis.i2p/<b>bindump</b>?size=18000</p>
+        
+        <p style="margin-left:9%; margin-top: 1em"><b>EXAMPLES</b></p>
+        
+        <p style="margin-left:18%; margin-top: 1em">Generation of 80bit entropy passwords from binary file:</p>
+        
+        <p style="margin-left:23%; margin-top: 1em">$<b> strings ./apophis.bin | grep -o '[a-hjkmnp-z2-9.]' |<br>&nbsp;&nbsp; head -n 16 | tr -d  '\n'; echo</b></p>
+        
+        
+        </div>
+            </div>
+        
+    
+
+</div></body></html>

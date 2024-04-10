@@ -1,0 +1,61 @@
+<html><head></head><body><pre>    <title>THE FULL POINTER</title>
+THE FULL POINTER
+================
+
+HTTP POST files here:
+    curl --proxy 127.0.0.1:4444 -F'file=@yourfile.png' http://0xff.i2p
+
+Verbose HTTP POST:
+    curl --proxy 127.0.0.1:4444 -F v=1 -F'file=@yourfile.png' http://0xff.i2p
+
+Upload command output:
+    command | curl -T - --proxy 127.0.0.1:4444 http://0xff.i2p
+
+Upload command output with stderr:
+    command 2&gt;&amp;1 | curl -T - --proxy 127.0.0.1:4444 http://0xff.i2p
+
+Or you can shorten URLs:
+    curl --proxy 127.0.0.1:4444 -F'shorten=http://example.com/some/long/url' http://0xff.i2p
+
+* When uploading large files, the I2P tunnel may freeze.
+
+File URLs are valid for at least 15 days and up to a 200 days (see below).
+Shortened URLs do not expire.
+
+Maximum file size: 32.0 MiB
+Not allowed: Nothing
+
+
+FILE RETENTION PERIOD
+---------------------
+
+retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
+
+   days
+    200 |  \\
+        |   \\
+        |    \\
+        |     \\
+        |      \\
+        |       \\
+        |        ..
+        |          \\
+  100.0 | ----------..-------------------------------------------
+        |             ..
+        |               \\
+        |                ..
+        |                  ...
+        |                     ..
+        |                       ...
+        |                          ....
+        |                              ......
+     15 |                                    ....................
+          0                       16.0                       32.0
+                                                              MiB
+
+DID YOU FIND A BUG?
+-------------------
+
+Contact me:
+IRC: irc.ilita.i2p | Nick: HidUser0
+</pre></body></html>

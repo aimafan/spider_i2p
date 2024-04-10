@@ -1,0 +1,137 @@
+<html><head>
+	<title>Nullnyan</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="icon" href="/static/img/favicon.gif" type="image/icon type">
+	<link rel="icon" href="/static/img/favicon.ico" type="image/icon type">
+	<link rel="stylesheet" href="/static/css/main.css">
+	<link rel="stylesheet" href="/static/css/nyanon.css">
+	<link rel="stylesheet" href="/static/css/pygments.css">
+	<script src="/static/js/main.js"></script>
+	
+<style>
+    .content-wrapper {
+        text-align: center;
+    }
+    .main {
+        margin-bottom: 48px;
+    }
+    @media all and (min-width:800px) {
+        .content-wrapper {
+            margin: 32px 0 0;
+        }
+    }
+    .home__logo {
+        width: 100%;
+        min-height: 240px;
+        max-height: 50vh;
+        margin-bottom: 44px;
+        object-fit: cover;
+    }
+    @media all and (min-width:800px) {
+        .home__logo {
+            width: auto;
+        }
+    }
+    .home__site-name {
+        margin: 0 0 12px;
+        padding: 0;
+        font: 24px/32px 'Zen Dots', monospace;
+        font-weight: 400;
+        letter-spacing: .5em;
+        text-indent: .5em;
+        text-transform: uppercase;
+        color: var(--primary);
+    }
+    @media all and (min-width:800px) {
+        .home__site-name {
+            font-size: 48px;
+            line-height: 56px;
+            letter-spacing: 1em;
+            text-indent: 1em;
+        }
+    }
+    .home__music {
+        width: 400px;
+        max-width: 100%;
+        margin: 0 auto 48px;
+    }
+    .home__trigger-container {
+        display: inline-block;
+    }
+    .home__music-trigger {
+        margin: 0 8px;
+        font-style: italic;
+        text-transform: lowercase;
+        color: var(--secondary);
+        text-decoration-style: dashed !important;
+    }
+    .home__audio {
+        height: 40px;
+        width: 100%;
+    }
+    .home__enter {
+        --corner-size: 24px;
+        position: relative;
+        width: 224px;
+        line-height: 48px;
+        margin: 0 auto;
+    }
+</style>
+<script>
+    const music = {
+        toggle : (trigger) => this.audio.paused ? music.play(trigger) : music.stop(trigger),
+        play : (trigger) => { this.audio.play();  trigger.innerHTML = 'Выключить музыку'; },
+        stop : (trigger) => { this.audio.pause(); trigger.innerHTML = 'Включить музыку'; },
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const trigger = getById('musicTrigger');
+        const audio = getById('audio');
+        toggleHidden([getById('musicTriggerContainer'), audio]);
+        audio.volume = 0.7;
+        trigger.onclick = () => { music.toggle(trigger) };
+        audio.onended = () => {
+            audio.currentTime = 0;
+            music.stop(trigger);
+        };
+    });
+</script>
+
+</head>
+
+<body class="home">
+	
+	<div class="content-wrapper">
+		
+		<main class="main">
+			
+<div class="home__logo-wrapper">
+    <img class="home__logo" src="/static/img/home__logo.jpg">
+    <h1 class="home__site-name">Nullnyan</h1>
+    <div class="home__music">
+        <span id="musicTriggerContainer" class="home__trigger-container">
+            [<a href="#" id="musicTrigger" class="home__music-trigger">Включить музыку</a>]
+        </span>
+        <audio type="audio/ogg" id="audio" class="home__audio" controls="" preload="none" hidden="">
+            <source src="/static/music/Hroniki_Harona-Vodyanoi_kamikadze.ogg" type="audio/ogg">
+            <source src="/static/music/Hroniki_Harona-Vodyanoi_kamikadze.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+<a href="/all/" class="home__enter button button_action" tabindex="1">Войти</a>
+
+		</main>
+		<footer class="footer">
+    <span class="footer__container"><a href="/" class="footer__link">Главная</a></span>
+    <span class="footer__container"><a href="/faq" class="footer__link">FAQ</a></span>
+    <span class="footer__container"><a href="/nyangine" class="footer__link">Nyangine</a></span>
+    <span class="footer__container"><a href="/admin" class="footer__link">Админка</a></span>
+    
+</footer>
+
+	</div>
+
+
+</body></html>

@@ -1,0 +1,490 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+  <base>
+  <title>Connect - ILITA Web IRC</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/highresicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/qui-c3d5467287d131d55c6112c7c5b8731dd80675fb.css" type="text/css"><script type="text/javascript">QWEBIRC_DEBUG=false;</script>
+  <script type="text/javascript" src="js/qui-c3d5467287d131d55c6112c7c5b8731dd80675fb.js"></script>
+  <script type="text/javascript">
+    var ui = new qwebirc.ui.Interface("ircui", qwebirc.ui.QUI, {"appTitle":"ILITA Web IRC","dynamicBaseURL":"","dynamicConfiguration":false,"baseURL":"http://irc.r4sas.i2p/","validateNickname":false,"customMenuItems":[],"networkServices":["Q!TheQBot@CServe.quakenet.org"],"staticBaseURL":"","loginRegex":"^You are now logged in as [^ ]+\\.$","networkName":"ILITA"});
+  </script>
+<style type="text/css" media="all">
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Verdana, sans-serif;
+}
+
+html {
+  overflow: hidden;
+}
+
+#ircui {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.qwebirc-qui .dynamicpanel {
+  position: absolute;
+}
+.qwebirc-qui .leftboundpanel {
+  left: 0px;
+  width: 150px;
+  height: 100%;
+}
+.qwebirc-qui .topboundpanel {
+  top: 0px;
+  width: 100%;
+}
+.qwebirc-qui .topicboundpanel {
+  width: 100%;
+}
+.qwebirc-qui .rightboundpanel {
+  right: 0px;
+  width: 140px;
+}
+.qwebirc-qui .bottomboundpanel {
+  bottom: 0px;
+  right: 0px;
+}
+
+.qwebirc-qui .lines {
+  color: rgb(0,0,0);
+  overflow: auto;
+  background: rgb(240,247,255);
+  font-size: 0.8em;
+}
+
+.qwebirc-qui .lines .timestamp {
+  display: inline;
+}
+
+.qwebirc-qui .ircwindow div {
+  font-family: Consolas, "Lucida Console", monospace;
+  text-indent: -7px;
+  padding-left: 7px;
+  word-wrap: break-word;
+}
+
+.qwebirc-qui .tab-invisible {
+  display: none;
+}
+
+.qwebirc-qui .input input.keyboard-input {
+  border: 0px;
+  margin: 0px 0px 0px 0px;
+  font-size: 1.2em;
+  padding-left: 4px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 99%;
+}
+
+.qwebirc-qui .input-flash {
+  background: #bbffbb;
+}
+
+.qwebirc-qui .input input.mobile-input {
+  border: 0px;
+  margin: 2px 0px 0px 0px;
+}
+
+.qwebirc-qui .input input.mobile-button {
+  position: absolute;
+  top: 0px;
+}
+
+.qwebirc-qui form {
+  margin: 0px;
+  padding: 0px;
+}
+
+.qwebirc-qui .topic {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  background-color: rgb(240,247,255);
+  border-bottom: 1px dashed rgb(200,209,219);
+/*  overflow: hidden;*/
+  text-overflow: ellipsis;
+/*  white-space: nowrap;*/
+}
+
+.qwebirc-qui .topic .emptytopic {
+  color: gray;
+}
+
+.qwebirc-qui .topic {
+  color: gray;
+  padding-left: 5px;
+  padding-bottom: 3px;
+  font-size: 1.1em;
+  cursor: default;
+}
+
+.qwebirc-qui .outertabbar {
+  background: rgb(227,239,250);
+}
+
+.qwebirc-qui .outertabbar_top .dropdown-tab {
+  padding: 4px 3px 0 3px;
+}
+
+.qwebirc-qui .outertabbar_left .dropdown-tab {
+  padding: 3px 3px 0 3px;
+  margin-right: 2px;
+}
+
+.qwebirc-qui .outertabbar_left {
+  border-right: 1px solid rgb(195,210,224);
+  overflow: auto;
+}
+
+.qwebirc-qui .outertabbar_left .tab {
+  display: block;
+  margin-right: 3px;
+  margin-top: 1px;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 15px;
+}
+
+.qwebirc-qui .outertabbar_left .tabclose {
+  float: right;
+  padding-left: 5px;
+  margin-left: 0px;
+  margin-top: -2px;
+  position: relative;
+}
+
+.qwebirc-qui .outertabbar_left .tabbar {
+  margin-left: 2px;
+}
+
+.qwebirc-qui .outertabbar_top {
+  border-bottom: 1px solid rgb(195,210,224);
+}
+
+.qwebirc-qui .tabbar {
+  font-size: 0.8em;
+  color: rgb(0,0,0);
+  margin-left: 25px;
+  line-height: 24px;
+}
+
+.qwebirc-qui a.tab {
+  border: 1px solid rgb(200,209,219);
+  padding: 2px;
+  cursor: default;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-right: -2px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: rgb(0,0,0);
+}
+
+.qwebirc-qui .tab:hover {
+  background: rgb(255,255,254);
+  border: 1px solid #c8d2dc;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.qwebirc-qui .tab-selected {
+  background: rgb(255,255,254);
+  border: 1px solid rgb(200,209,219);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: rgb(51,51,51);
+}
+
+.qwebirc-qui div.input {
+  border-top: 1px solid rgb(195,210,224);
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.qwebirc-qui .tabclose {
+  margin-left: 5px;
+  line-height: 150%;
+  vertical-align: top;
+  padding-left: 3px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-weight: normal;
+  color: rgb(0,0,0);
+}
+
+.qwebirc-qui a.tab-hilight-activity {
+  color: #22bb22;
+  font-weight: bold;
+}
+
+.qwebirc-qui a.tab-hilight-speech {
+  color: #2222bb;
+  font-weight: bold;
+}
+
+.qwebirc-qui a.tab-hilight-us {
+  color: #bb4444;
+  font-weight: bold;
+}
+
+.qwebirc-qui .nicklist {
+  border-left: 1px solid rgb(200,209,219);
+  overflow: auto;
+  background: rgb(240,247,255);
+  color: rgb(0,0,0);
+  font-size: 0.7em;
+}
+
+.qwebirc-qui .nicklist a {
+  display: block;
+  color: rgb(0,0,0);
+  text-decoration: none;
+  cursor: default;
+  border-top: 1px solid rgb(240,247,255);
+  border-bottom: 1px solid rgb(240,247,255);
+  padding-left: 1px;
+}
+
+.qwebirc-qui .nicklist a.selected {
+  display: block;
+  color: rgb(0,0,0);
+  background: rgb(255,255,254);
+  text-decoration: none;
+  border-bottom: rgb(200,209,219) 1px solid;
+  cursor: default;
+}
+
+.qwebirc-qui .nicklist a.selected-middle {
+  border-top: rgb(200,209,219) 1px solid;
+}
+
+div#noscript {
+  text-align: center;
+  font-weight: bold;
+}
+
+.qwebirc-qui .nicklist div.menu {
+  margin: 0px 0px 0px 5px;
+}
+
+.qwebirc-qui .nicklist div.menu a {
+  border-bottom: 0;
+  border-top: 0;
+}
+
+.qwebirc-qui .hyperlink-whois, .hyperlink-qwhois, .hyperlink-channel {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.qwebirc-qui .hyperlink-whois:hover, .hyperlink-qwhois:hover, .hyperlink-channel:hover {
+  text-decoration: underline;
+}
+
+.qwebirc-qui .outertabbar .dropdown-tab {
+  cursor: pointer;
+  cursor: hand;
+  float: left;
+  width: 17px;
+}
+
+.qwebirc-qui .dropdownmenu {
+  z-index: 100;
+  border: 1px solid rgb(200,209,219);
+  position: relative;
+  top: 10px;
+  left: 10px;
+  background: rgb(240,247,255);
+}
+
+.qwebirc-qui .dropdownmenu a {
+  display: block;
+  font-size: 0.8em;
+  color: rgb(0,0,0);
+  cursor: pointer;
+  cursor: hand;  
+  padding-top: 1px;
+  padding-left: 3px;
+  padding-bottom: 1px;
+  padding-right: 3px;
+}
+
+.qwebirc-qui .dropdownmenu a:hover {
+  background: rgb(255,255,254); /* IE is rubbish and doesn't like #FFFFFF or white */
+}
+
+.qwebirc-qui .dropdownhint {
+  position: relative;
+  left: -500px;
+  z-index: 10;
+  white-space: nowrap;
+  font-size: 0.7em;
+}
+
+.qwebirc-qui hr.lastpos {
+  border: none;
+  border-top: 1px solid rgb(200,209,219);
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+iframe {
+  border: none;
+}
+
+.qwebirc-qui .spinner {
+  background: url(http://hodhusp73gltozgrnianlbploon3rrvhrzfn5mf2g46o7aaau5la.b32.i2p/css/../images/spinner.png) no-repeat rgb(240,247,255);
+  background-position: top 5px right 5px;
+}
+
+@media screen and (max-device-width:1024px) {
+  .qwebirc-qui .lines {
+    font-size: 1.2em;
+  }
+
+  .qwebirc-qui .ircwindow div {
+    font-size: 0.8em;
+  }
+
+  .qwebirc-qui .tabbar {
+    line-height: 35px;
+  }
+
+  .qwebirc-qui .tabbar, .qwebirc-qui .nicklist {
+    font-size: 1.3em;
+  }
+
+  .qwebirc-qui .topic, .qwebirc-qui .dropdownmenu a, .qwebirc-qui .dropdownhint {
+    font-size: 1.4em;
+  }
+
+  .qwebirc-qui .input input.keyboard-input {
+    font-size: 1.6em;
+  }
+
+  .qwebirc-qui input {
+    font-size: 1.6em;
+  }
+
+  .qwebirc-qui .tabclose {
+    color: maroon;
+  }
+
+  .qwebirc-qui .tabclose:before {
+    content: "(";
+  }
+  .qwebirc-qui .tabclose:after {
+    content: ")";
+  }
+
+  .qwebirc-qui .dropdown-tab img {
+    width: 160%;
+  }
+
+  .qwebirc-qui .outertabbar_top .dropdown-tab {
+    padding-right: 13px;
+  }
+
+  .qwebirc-qui .outertabbar_left .dropdown-tab {
+    padding-right: 13px;
+  }
+
+  .qwebirc-qui input[type="checkbox"], input[type="radio"] {
+    transform: scale(1.5);
+  }
+
+  .qwebirc-qui .qwebirc-optionspane div.hue-slider {
+    height: 14px;
+  }
+
+  .qwebirc-qui .qwebirc-optionspane div.hue-slider .knob {
+    height: 24px;
+    width: 12px;
+  }
+}
+</style></head>
+<body>
+  <div id="ircui" class="qwebirc qwebirc-qui">
+    <noscript>
+      <div id="noscript">Javascript is required to use IRC.</div>
+    </noscript>
+  <div class="dynamicpanel qwebirc-qui topboundpanel outertabbar outertabbar_top"><div><div class="dropdown-tab" style="visibility: visible; zoom: 1; opacity: 1;"><img src="images/icon.png" title="menu" alt="menu"></div><div class="tabbar"><a class="tab tab-selected">Connect</a> </div></div></div><div class="dynamicpanel qwebirc-qui leftboundpanel outertabbar outertabbar_left" style="top: 36px; display: none;"></div><div class="dynamicpanel qwebirc-qui topicboundpanel topic" style="top: 36px; left: 0px; width: 800px; display: none;"></div><div class="dynamicpanel qwebirc-qui middleboundpanel lines qwebirc-connectpane" style="top: 36px; left: 0px; height: 564px; width: 800px;"><table class="qwebirc-centrebox collapse">
+  <tbody><tr>
+    <td class="collapse">
+      <table class="qwebirc-loginbox collapse" name="connectroot">
+        <tbody><tr class="collapse qwebirc-loginbox" name="loginheader" style="display: none">
+          <td class="collapse tr3">
+            <div class="bar"></div>
+            <div class="bar-background">
+              <div class="bar-logo"></div>
+            </div>
+            <div class="bar"></div>
+            <div class="bar-spacer"></div>
+          </td>
+        </tr>
+        <tr class="tr1" name="nologologinheader" style="">
+          <td><h1>Connect to <span name="networkname">ILITA</span> IRC</h1></td>
+        </tr>
+        <tr class="tr2" name="loginbox" style="">
+          <td>
+            <form>
+              <table>
+                <tbody><tr>
+                  <td><label for="loginnickname">Nickname:</label></td>
+                  <td><input type="text" name="nickname" id="loginnickname"></td>
+                </tr>
+                <tr>
+                  <td><label for="loginchannels">Channels:</label></td>
+                  <td><input type="text" name="channels" id="loginchannels"></td>
+                </tr>
+                <tr name="connectbutton" style="">
+                  <td></td>
+                  <td>
+                    <input type="submit" value="Join chat" name="connect">
+                  </td>
+                </tr>
+              </tbody></table>
+            </form>
+          </td>
+        </tr>
+        <tr class="tr2" name="confirmbox" style="display: none">
+          <td>
+            <table class="qwebirc-loginbox tr1">
+              <tbody><tr>
+                <td>
+                  To connect to <span name="networkname">ILITA</span> IRC and join <span name="prettychannels">channel <b></b></span><span name="nickselected" style="display: none"> as <b name="nickname"></b></span> click 'Join chat'.
+                </td>
+              </tr>
+              <tr class="tr2" name="connectbutton" style="">
+                <td><input type="submit" value="Join chat" name="connect"></td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+</div><div class="dynamicpanel qwebirc-qui rightboundpanel nicklist" style="height: 564px; top: 36px; display: none;"></div><div class="dynamicpanel qwebirc-qui bottomboundpanel input" style="left: 0px; display: none;"><form class="input"><input maxlength="470" class="keyboard-input"></form></div><span class="dropdownmenu" style="display: none;"><a>Options</a><a>Add webchat to your site</a><a>About qwebirc</a></span></div>
+
+
+</body></html>

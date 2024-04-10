@@ -1,0 +1,87 @@
+<html lang="en" xml:lang="en" class=""><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0f0f0"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f1f1f">		<link rel="stylesheet" href="../themes/base-theme/frss.css?1700369533">
+<link rel="stylesheet" href="../themes/Origine/origine.css?1700369533">
+		
+		<script src="../scripts/main.js?1700369533" defer="defer" async="async"></script>
+<script src="../scripts/extra.js?1700369533" defer="defer" async="async"></script>
+<script src="../scripts/bcrypt.min.js?1700369533" defer="defer" async="async"></script>
+		<link rel="manifest" href="../themes/manifest.json">
+		<link rel="shortcut icon" id="favicon" type="image/x-icon" sizes="16x16 64x64" href="../favicon.ico">
+		<link rel="icon msapplication-TileImage apple-touch-icon" type="image/png" sizes="256x256" href="../themes/icons/favicon-256.png">
+		<link rel="apple-touch-icon" href="../themes/icons/apple-touch-icon.png">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="~vern FreshRSS">
+		<meta name="msapplication-TileColor" content="#FFF">
+		<meta name="theme-color" content="#FFF">
+		<meta name="referrer" content="never">
+		<title>Login · ~vern FreshRSS</title>
+		<meta name="robots" content="noindex,nofollow">
+	</head>
+	<body class="formLogin">
+<header class="header">
+	<div class="item title">
+		<a href="./">
+							<img class="logo" src="../themes/icons/FreshRSS-logo.svg" alt="FreshRSS" loading="lazy">
+					</a>
+	</div>
+
+	<div class="item search">
+			</div>
+
+		<div class="item configure">
+		<a class="signin" href="./?c=auth&amp;a=login"><img class="icon" src="../themes/icons/login.svg" loading="lazy" alt="🔒">Login</a>
+	</div>
+	</header>
+
+<div id="global">
+	<main class="prompt">
+	<h1>Login</h1>
+
+	
+	<form id="crypto-form" method="post" action="./?c=auth&amp;a=login">
+		<input type="hidden" name="_csrf" value="9c4a1b44e61f180508098cea028dbaad42d579bb">
+		<input type="hidden" name="original_request" value="eyJjIjoiaW5kZXgiLCJhIjoiaW5kZXgiLCJwYXJhbXMiOnsicmlkIjoiNjYxNGQyYWE2MDQ2YiJ9fQ==">
+
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" id="username" name="username" autocomplete="username" size="16" required="required" pattern="([0-9a-zA-Z_][0-9a-zA-Z_.@-]{1,38}|[0-9a-zA-Z])" autofocus="autofocus" autocapitalize="off">
+		</div>
+
+		<div class="form-group">
+			<label for="passwordPlain">Password</label>
+			<div class="stick">
+				<input type="password" id="passwordPlain" required="required">
+				<button type="button" class="btn toggle-password" data-toggle="passwordPlain"><img class="icon" src="../themes/icons/key.svg" loading="lazy" alt="🔑"></button>
+			</div>
+			<input type="hidden" id="challenge" name="challenge">
+			<noscript><strong>JavaScript must be enabled</strong></noscript>
+		</div>
+
+		<div class="form-group">
+			<label class="checkbox" for="keep_logged_in">
+				<input type="checkbox" name="keep_logged_in" id="keep_logged_in" value="1">
+				Keep me logged in <small>(90&nbsp;days)</small>			</label>
+		</div>
+
+		<div class="form-group form-group-actions">
+			<button id="loginButton" type="submit" class="btn btn-important">
+				Login			</button>
+		</div>
+	</form>
+</main>
+
+<footer class="main-footer">
+	<a href="./?a=about">About FreshRSS</a>
+	</footer>
+</div>
+
+<div id="notification" class="notification closed">
+	<span class="msg"></span>
+	<a class="close" href=""><img class="icon" src="../themes/icons/close.svg" loading="lazy" alt="❌"></a>
+</div>
+	
+
+</body></html>

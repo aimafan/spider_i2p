@@ -1,0 +1,3138 @@
+<html dir="ltr"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="./templates/default/css/main.css?v=1" type="text/css">
+<!-- Report -->
+<link rel="stylesheet" type="text/css" href="./templates/default/css/report_hack.css">
+<!-- Report [END] -->
+<link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+
+<script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" src="./misc/js/jquery.pack.js?v=1"></script>
+
+<script type="text/javascript" src="./misc/js/main.js?v=1"></script>
+
+
+<script type="text/javascript">
+var BB_ROOT       = "./";
+var cookieDomain  = "";
+var cookiePath    = "/";
+var cookieSecure  = 0;
+var cookiePrefix  = "bb_";
+var LOGGED_IN     = 0;
+var InfoWinParams = 'HEIGHT=510,resizable=yes,WIDTH=780';
+
+var user = {
+	opt_js: {},
+
+	set: function(opt, val, days, reload) {
+		this.opt_js[opt] = val;
+		setCookie('opt_js', $.toJSON(this.opt_js), days);
+		if (reload) {
+			window.location.reload();
+		}
+	}
+}
+
+
+
+var ajax = new Ajax('./ajax.php', 'POST', 'json');
+</script>
+
+<!--[if IE]><style type="text/css">
+.code-copy { display: block; }
+.post-hr   { margin: 2px auto; }
+</style><![endif]-->
+
+
+<style type="text/css">
+.menu-sub, #ajax-loading, #ajax-error, var.ajax-params { display: none; }
+
+/* temp */
+
+
+/* temp end */
+</style>
+
+<title>Главная :: Православный торрент-трекер</title>
+
+</head>
+
+<body>
+
+
+<div id="ajax-loading"><b>Loading...</b></div>
+<div id="ajax-error"><b>Error</b></div>
+
+<div id="body_container">
+
+<!--************************************************************************-->
+<!--========================================================================-->
+
+<!--page_container-->
+<div id="page_container">
+<a name="top"></a>
+
+<!--page_header-->
+<div id="page_header">
+
+<!--main_nav-->
+<div id="main-nav" style="height: 17px;">
+	<table width="100%" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="nowrap">
+			<a href="./index.php"><b>Главная</b></a>·
+
+			<a href="tracker.php"><b>Трекер</b></a>·
+			<a href="search.php"><b>Поиск</b></a>·
+			<a href="viewtopic.php?t=8"><b>Правила</b></a>·
+			<a href="faq.php"><b style="color: #993300;">FAQ</b></a>·
+			<a href="privmsg.php?folder=inbox"><b>Личные сообщения</b></a>·
+			<a href="groupcp.php"><b>Группы</b></a>·
+			<a href="memberlist.php"><b>Пользователи</b></a>
+		</td>
+	</tr>
+	</tbody></table>
+</div>
+<!--/main_nav-->
+
+<!--logo-->
+<div id="logo">
+<!--	<h1>Православный торрент-трекер</h1>
+ -->
+	<a href="/"><img src="/images/pravtor_beta1.png" title="Православный торрент-трекер" border="0" alt="Православный торрент-трекер" vspace="1"></a>
+	<h6></h6>
+<!--
+	<a href="./index.php"><img src="images/logo/logo.jpg" alt="" /></a>
+-->
+</div>
+<!--/logo-->
+
+<div style="position: absolute; top: 1px; right: 16px;">
+	<form id="quick-search" action="" method="post" onsubmit="
+		$(this).attr('action', $('#search-action').val());
+		var txt=$('#search-text').val(); return !(txt=='поиск...' || !txt);
+	">
+		<input type="hidden" name="max" value="1">
+		<input type="hidden" name="to" value="1">
+		<input id="search-text" type="text" name="nm" onfocus="if(this.value=='поиск...') this.value='';" onblur="if(this.value=='') this.value='поиск...';" value="поиск..." class="hint" style="width: 120px;">
+		<select id="search-action">
+			<option value="tracker.php#results" selected="selected">&nbsp;по трекеру&nbsp;</option>
+			<option value="search.php">&nbsp;по форуму&nbsp;</option>
+					</select>
+		<input type="submit" class="med bold" value="»" style="width: 30px;">
+	</form>
+</div>
+
+
+<!--login form-->
+<div class="topmenu">
+   <table width="100%" cellpadding="0" cellspacing="0">
+   <tbody><tr>
+      
+            <td class="tCenter pad_2">
+         <a href="profile.php?mode=register" id="register_link"><b>Регистрация</b></a>
+         &nbsp;·&nbsp;
+         <form action="./login.php" method="post">
+            Логин (имя на сайте): <input type="text" name="login_username" size="12" tabindex="1" accesskey="l">
+            Пароль: <input type="password" name="login_password" size="12" tabindex="2">
+            <label title="Автоматически входить при каждом посещении"><input type="checkbox" name="autologin" value="1" tabindex="3"> Запомнить</label>&nbsp;
+            <input type="submit" name="login" value="Вход" tabindex="4">
+         </form>
+         &nbsp;·&nbsp;
+         <a href="profile.php?mode=sendpassword">Забыли пароль?</a>
+      </td>
+         </tr>
+   </tbody></table>
+</div>
+
+<!--/login form-->
+
+
+<!--breadcrumb-->
+<!--<div id="breadcrumb"></div>-->
+<!--/breadcrumb-->
+
+
+</div>
+<!--/page_header-->
+
+<!--menus-->
+
+<!--/only-new-options-->
+
+<!--/menus-->
+
+
+
+<!--page_content-->
+<div id="page_content">
+<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;"><tbody><tr>
+
+	<!--sidebar1-->
+	<td id="sidebar1">
+	<div id="sidebar1-wrap">
+
+
+
+
+<br>
+
+<div>
+<p>
+</p><center><a href="http://www.predanie.ru/" target="_blank"><img src="../../logo_predanie.jpg" width="133" height="77" border="0" title="Православный медиа-портал «Предание»"></a>
+<p></p>
+
+<!--begin of www.hristianstvo.ru-->
+<a href="http://www.hristianstvo.ru/?from=7618"><img src="/misc/pics/ru-88x31-darkgreen1.gif" title="Православное христианство" width="88" height="31" border="0"></a>
+<!--end of www.hristianstvo.ru-->
+
+<p>
+<a href="http://rusk.ru/" target="_blank">
+<img src="//rusk.ru/ims/rl88x31.gif" title="Православное информационное агентство «Русская линия»" width="88" height="31" border="0"></a>
+</p>
+
+<p>
+<!--begin of azbyka.ru--><a href="http://azbyka.ru">
+<img src="//azbyka.ru/design/banner/azbyka-88x31_2008.jpg" title="Православная энциклопедия АЗБУКА ВЕРЫ" width="88" height="31" border="0"></a><!--end of azbyka.ru-->
+</p>
+
+<p>
+<a href="http://bogoglasnik.ucoz.ru"><img src="/misc/pics/bogoglasnik_88_31.jpg" title="Православное песнопение" width="88" height="31" border="0"></a>
+</p>
+
+<p>
+<a href="http://soulibre.ru" target="blank"><img src="//soulibre.ru/images/1/17/Soulibre-banner.jpg" width="88" height="31" border="0" title="SouLibre - православная антология (стихи)"></a>
+</p>
+
+<p>
+<a href="http://dusha-orthodox.ru" target="blank"><img src="//dusha-orthodox.ru/pic/88x31.gif" width="88" height="31" border="0" title="Русская православная психология"></a>
+</p>
+<!--
+<p>
+<a href= "http://ksenia-peterb.com/" ><img src= "http://ksenia-peterb.com/images/banners/banner_7.jpg" title= "Храм святой блаженной Ксении Петербуржской"  width=88 height=31 border=0></a>
+</p>
+-->
+
+
+</center>
+</div>
+
+<br>
+
+
+		<img width="210" class="spacer" src="./images/spacer.gif" alt="">
+
+<h3></h3>
+<div class="spacer">&nbsp;</div>
+<table cellpadding="3" cellspacing="0" border="0" class="attachtable">
+<tbody><tr class="cat_title"><td><b>Новые торренты</b></td></tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=20801" style="font-size:11px">Игумен Аристарх (Лоханов) - Что надо знать о православном церковном этикете [2006, PDF, DjVu, Русский]</a></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>; 2024-04-07 00:33</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=129">Православная литература</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=20799" style="font-size:11px">Общество памяти игумении Таисии [2003, PDF, DjVu, Русский]</a></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>; 2024-03-31 23:20</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=129">Православная литература</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=20803" style="font-size:11px">(духовные песнопения) Детско-юношеский хор Св. Иоанна Дамаскина — Пасха верных. Песнопения византийской традиции - 2004, FLAC (tracks), lossless</a></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=4">Виталий Липатов</a>; 2024-03-28 21:32</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=15">Церковная музыка и церковные хоры</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=20800" style="font-size:11px">Протоиерей Вячеслав Тулупов - Светоч земли Русской. Преподобный Сергий Радонежский вчера, сегодня, завтра [2014, PDF, DjVu, Русский]</a></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>; 2024-03-27 01:57</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=28">Святоотеческие тексты и жития святых</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=20802" style="font-size:11px">Плюснин А. И. (ред.) - 103 акафиста издательства «Благовест» [православие, 2014-2022, PDF/FB2/EPUB/MOBI/TXT, Русский]</a></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=214726">Евгений3</a>; 2024-03-25 11:40</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=182">Акафисты</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=20798" style="font-size:11px">Что нужно знать о Таинстве Соборования [2009, PDF, DjVu, Русский]</a></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>; 2024-03-25 01:25</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=129">Православная литература</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=20797" style="font-size:11px">Епифанов А., Некрасов Е. - Возвращённые лики. Из истории русской иконописи [1996, PDF, DjVu, Русский]</a></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>; 2024-03-24 16:23</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=129">Православная литература</a></div>
+</td>
+</tr>
+</tbody></table>
+
+<h3></h3>
+<div class="spacer">&nbsp;</div>
+<table cellpadding="3" cellspacing="0" border="0" class="attachtable">
+<tbody><tr class="cat_title"><td><b>Самые скачиваемые</b></td></tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=730" style="font-size:11px">... за имя Мое (реж. Мария Можар, 2005г)</a></div>
+<div style="font-size:10px">Скачан: <b>7105 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=186">Илья</a>; 2008-12-22 23:34</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=119">Художественные фильмы (DVD)</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=12270" style="font-size:11px">Твой Крест (Станислав Подивилов) [2010 г., мультфильм, короткометражка, детский, семейный, DVDRip]</a></div>
+<div style="font-size:10px">Скачан: <b>6689 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=102661">донор</a>; 2013-03-11 22:36</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=133">Детские фильмы и мультфильмы</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=653" style="font-size:11px">Моя любовь (мульт) - серия "Лучший христианский фильм года" - лауреат 2007 года</a></div>
+<div style="font-size:10px">Скачан: <b>6529 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=636">kumar</a>; 2016-03-07 13:10</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=133">Детские фильмы и мультфильмы</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=36" style="font-size:11px">Попы - (Валерий Залотуха и Людмила Уланова) [1999 г., художественно-публицистический, DVDRip]</a></div>
+<div style="font-size:10px">Скачан: <b>6013 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=42">Александр А</a>; 2010-02-13 21:39</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=34">Жизнеописания</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=15" style="font-size:11px">Юродивые (TVRip)</a></div>
+<div style="font-size:10px">Скачан: <b>6000 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=4">Виталий Липатов</a>; 2008-09-13 20:43</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=32">Исторические и документальные фильмы</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=8196" style="font-size:11px">«Притчи» (Виталий Любецкий) [2010 год, художественный , DVDRip]</a></div>
+<div style="font-size:10px">Скачан: <b>5244 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=6165">andrejpushkaryov</a>; 2011-02-15 16:28</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=131">Отечественные художественные фильмы</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=403" style="font-size:11px">Колокольные звоны русского Севера. Колоколотерапия</a></div>
+<div style="font-size:10px">Скачан: <b>5196 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=734">NataSolnce</a>; 2008-12-15 10:59</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=91">Колокольные звоны</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=215" style="font-size:11px">Великий Покаянный канон прп. Андрея Критского (читает патриарх Пимен)</a></div>
+<div style="font-size:10px">Скачан: <b>4909 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=4">Виталий Липатов</a>; 2008-12-07 23:05</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=136">Церковная музыка и церковные хоры (mp3 и другие lossy-форматы)</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=5405" style="font-size:11px">Псково-печерская обитель (съёмки 1986 г., расширенная версия) (архимандрит Тихон (Шевкунов)) [2007 г., документальный, DVD5]</a></div>
+<div style="font-size:10px">Скачан: <b>4861 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=23694">Hekmap</a>; 2010-02-04 22:34</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=115">О монастырях и святынях (DVD)</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=795" style="font-size:11px">Псалтирь (Хор братии Валаамского монастыря)</a></div>
+<div style="font-size:10px">Скачан: <b>4740 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=808">Нат_Из</a>; 2008-12-30 15:31</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=20">Священное Писание</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=27" style="font-size:11px">Люди и демоны (образы искушения современного человека падшими духами) VHSRip</a></div>
+<div style="font-size:10px">Скачан: <b>4713 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=4">Виталий Липатов</a>; 2008-11-05 03:10</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=145">Видео-раздачи с низким разрешением и качеством</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=10423" style="font-size:11px">Притчи 2 (Виталий Любецкий) [2011 год , художественный , DVDRip]</a></div>
+<div style="font-size:10px">Скачан: <b>4524 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=6165">andrejpushkaryov</a>; 2011-12-29 06:21</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=131">Отечественные художественные фильмы</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=4262" style="font-size:11px">Про Василия Блаженного (Наталья Березовая) [2008 г., мультфильм, DVDRip] (Наталья Березовая) [2008 г., мульфильм, DVDRip]</a></div>
+<div style="font-size:10px">Скачан: <b>4440 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=-1">Anonymous</a>; 2009-10-30 10:59</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=133">Детские фильмы и мультфильмы</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=7900" style="font-size:11px">Третье небо (Эльер Ишмухамедов) [2008 год, драма, духовный, добрый, DVDRip]</a></div>
+<div style="font-size:10px">Скачан: <b>4325 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=36611">ruzamazitovna</a>; 2014-02-22 15:22</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=131">Отечественные художественные фильмы</a></div>
+</td>
+</tr>
+<tr>
+<td class="f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div><a href="viewtopic.php?t=5187" style="font-size:11px">Сказание о Петре и Февронии (Надежда Михайлова) [2008 год., мультфильм, DVDRip]</a></div>
+<div style="font-size:10px">Скачан: <b>4024 раз</b></div>
+<div style="font-size:10px">Автор: <a href="profile.php?mode=viewprofile&amp;u=6165">andrejpushkaryov</a>; 2010-01-11 11:17</div><div style="font-size:10px"> Форум: <a href="viewforum.php?f=133">Детские фильмы и мультфильмы</a></div>
+</td>
+</tr>
+</tbody></table>
+
+<h3></h3>
+<div class="spacer" style="height:5px">&nbsp;</div>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="attachtable">
+<tbody><tr class="cat_title"><th colspan="2" scope="col"><b>Топ 10 сидеров</b></th></tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=18762">Странник1:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">801,41&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=4">Виталий Липатов:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">230,795&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=6165">andrejpushkaryov:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">137,275&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=154677">Алексей ВД:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">94,494&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=3394">Александр Ляшенко:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">71,924&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=15632">Борис:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">56,535&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=2803">СЕРГУЛЕТ:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">40,607&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=2488">Мiхаилъ:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">38,171&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=18545">Damian:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">37,289&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=20946">Shumoffon:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="seedmed">36,223&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+</tbody></table>
+
+<h3></h3>
+<div class="spacer" style="height:5px">&nbsp;</div>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="attachtable">
+<tbody><tr class="cat_title"><th colspan="2" scope="col"><b>Топ 10 личеров</b></th></tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=133492">gektar:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">27,972&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=136571">Bugaichuk:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">10,354&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=154677">Алексей ВД:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">9,553&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=2488">Мiхаилъ:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">6,061&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=189181">NeVata:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">5,16&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=18762">Странник1:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">4,197&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=18545">Damian:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">3,678&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=20946">Shumoffon:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">3,272&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=143784">kostik201:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">3,244&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+<tr>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px" align="right"><b><a href="profile.php?mode=viewprofile&amp;u=3645">alviko:</a><b></b></b></div><b><b>
+</b></b></td>
+<td class="row1 f_titles" style="border-bottom: 1px solid #C3CBD1;">
+<div style="font-size:11px"><b><span class="leechmed">3,04&nbsp;TB</span></b>    </div>
+</td>
+</tr>
+</tbody></table>
+
+
+
+	</div><!--/sidebar1-wrap-->
+	</td><!--/sidebar1-->
+
+
+<!--main_content--> 
+<td id="main_content"> 
+<div id="main_content_wrap"> 
+ 
+<!--latest_news--> 
+<div id="latest_news" style="float:left; margin-right:30px;"> 
+<table cellspacing="0" cellpadding="0"> 
+<tbody><tr> 
+<td width="70%"> 
+<!--
+<h3>Последние новости</h3> 
+<table cellpadding="0"> 
+ 
+<tr> 
+<td><div class="news_date">06-Янв</div></td> 
+<td width="100%"><div class="news_title"><a href="./viewtopic.php?t=15813">С Рождеством Христовым!</a></div></td> 
+</tr> 
+ 
+<tr> 
+<td><div class="news_date">11-Апр</div></td> 
+<td width="100%"><div class="news_title"><a href="./viewtopic.php?t=14421">С наступающим праздником Светлого Христова Воскресения!</a></div></td> 
+</tr> 
+ 
+<tr> 
+<td><div class="news_date">07-Янв</div></td> 
+<td width="100%"><div class="news_title"><a href="./viewtopic.php?t=14170">С Рождеством Христовым!</a></div></td> 
+</tr> 
+ 
+<tr> 
+<td><div class="news_date">01-Янв</div></td> 
+<td width="100%"><div class="news_title"><a href="./viewtopic.php?t=14157">С Новым годом!</a></div></td> 
+</tr> 
+ 
+<tr> 
+<td><div class="news_date">19-Окт</div></td> 
+<td width="100%"><div class="news_title"><a href="./viewtopic.php?t=13957">Восстановление некоторых битых торрент-файлов</a></div></td> 
+</tr> 
+</table></table>
+-->
+<!--/latest_news-->
+
+<!-- OUR banner -->
+<div id="our_banner" style="float:left; margin-bottom:10px;">
+
+<!--
+<div style="float:left; margin-right:20px; margin-bottom:20px;">
+<a href="https://khram78.ru"><img src="/images/recs/khram78.jpg" style="height:400px; padding-top: 5px;"></a><br>
+</div>
+-->
+
+<!--
+<div style="float:left; margin-right:20px; margin-bottom:20px;">
+<a href="http://pravtor.ru/viewtopic.php?t=13740"><img src="/images/recs/nadeu.jpg" style="padding-top: 5px;"></a><br>
+<b>«Надеющиеся на Тя, да не погибнем»</b>,<br>документальный, 1991
+</div>
+
+<div style="float:left; margin-right:20px; margin-bottom:20px;">
+<a href="http://pravtor.ru/viewtopic.php?t=13213"><img src="/images/recs/kronsch.jpg" style="padding-top: 5px;"></a><br>
+<b>«Отец (Св. пр. Иоанн Кронштадтский)»</b>,<br>документальный, 1991
+</div>
+
+<div style="float:left; margin-right:20px; margin-bottom:20px;">
+<a href="http://pravtor.ru/viewtopic.php?t=13753"><img src="/images/recs/velser.jpg" style="padding-top: 5px;"></a><br>
+<b>«Великое чудо прп. Серафима Саровского»</b>,<br>документальный, 2014
+</div>
+-->
+
+<!--
+<div style="float:left; margin-right:20px;">
+<h2>Рекомендуем</h2>
+<a href="http://pravtor.ru/viewtopic.php?t=13240"><img src="/images/recs/daryvolh.jpg" style="padding-top: 5px;"></a><br>
+<b>«Дары волхвов»</b>,<br>документальный, 2014
+</div>
+
+<div style="float:left; margin-right:20px;">
+<h2>Рекомендуем</h2>
+<a href="http://pravtor.ru/viewtopic.php?t=13248"><img src="/images/recs/daryvolhput.jpg" style="padding-top: 5px;"></a><br>
+<b>«Дары волхвов. Путь в Россию»</b>,<br>документальный, 2014
+</div>
+-->
+
+<!--
+
+<div style="float:left; margin-right:20px;">
+<h2>Рекомендуем</h2>
+<a href="http://pravtor.ru/viewtopic.php?t=8852"><img src="/images/recs/ac1.jpg" style="padding-top: 0px;"></a><br>
+<br>
+<b>Документальный фильм о Пасхе</b<br></div>
+
+<br>
+-->
+<!--
+<div style="float:left; margin-right:20px;">
+<h2>Рекомендуем</h2>
+<a href="http://pravtor.ru/viewtopic.php?t=15196"><img src="/images/recs/blagog2012.jpg" style="padding-top: 0px;"></a><br>
+<b>Схождение Благодатного Огня 2017</b><br>
+</div>
+
+<div style="float:left; margin-right:20px;">
+<h2>Рекомендуем</h2>
+<a href="https://pravtor.ru/viewtopic.php?t=15624"><img src="/images/recs/monabes.jpg" style="padding-top: 0px;"></a><br>
+<b>Монах и бес (Николай Досталь)</b><br>
+</div>
+-->
+
+<!-- Pasha-->
+
+
+<div style="float:left; margin-right:20px;">
+<h2>Рекомендуем</h2>
+<a href="http://pravtor.ru/viewtopic.php?t=215"><img src="/images/recs/velpok-pimen.jpg" style="padding-top: 5px;"></a><br>
+Великий покаянный канон<br>
+прп. Андрея Критского.<br>
+Хор Свято-Троицкой Сергиевой Лавры<br>
+под управлением арх. Матфея (Мормыля).<br>
+Читает патриарх Пимен.
+</div>
+
+<div style="float:left; margin-right:20px;">
+<h2>Рекомендуем</h2>
+<a href="http://pravtor.ru/viewtopic.php?t=4703"><img src="/images/recs/velpok-ionin.jpg" style="padding-top: 5px;"></a><br>
+Великий покаянный канон<br>
+прп. Андрея Критского.<br>
+Хор Свято-Троицкого Ионинского монастыря.<br>
+Киево-Печерский распев.
+</div>
+
+
+<div style="float:left; margin-right:20px;">
+<h2>Рекомендуем</h2>
+<a href="http://pravtor.ru/viewtopic.php?t=10925"><img src="/images/recs/velpok-filaret.jpg" style="padding-top: 5px;"></a><br>
+Великий покаянный канон<br>
+прп. Андрея Критского.<br>
+Богослужение совершает<br>
+митр. Минский и Слуцкий Филарет.
+</div>
+
+
+<!--<li style="padding-top: 5px;"><a href="http://pravtor.ru/viewtopic.php?t=2325">Поэма «Русский Крест» (Николай Мельников)</a>-->
+
+
+</div>
+<!-- END of OUR BANNER -->
+
+
+
+<!--========================================================================-->
+<!--************************************************************************-->
+
+
+
+<!-- page_header.tpl END -->
+<!-- module_xx.tpl START -->
+
+<div id="forums_list_wrap">
+
+<div id="forums_top_nav">
+	<h1 class="pagetitle"><a href="./index.php">Список форумов Православный торрент-трекер</a></h1>
+</div><!--/forums_top_nav-->
+
+
+<img width="540" class="spacer" src="./images/spacer.gif" alt="">
+
+<div id="forums_wrap">
+
+
+<div class="category">
+	<h3 class="cat_title"><a href="index.php?c=1">Форумы</a></h3>
+	<div class="f_tbl_wrap">
+
+		<table class="forums">
+		<thead>
+		<tr class="row3">
+			<th class="f_icon">&nbsp;</th>
+			<th class="f_titles">Форум</th>
+			<th class="f_topics">Тем</th>
+			<th class="f_posts">Сообщ.</th>
+			<th class="f_last_post last_td">Посл. сообщение</th>
+		</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=4&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=4">О ПРОЕКТЕ</a></h4>
+
+								<p class="forum_desc">Обязательно читать для начала! Всё что связано с работой сайта. Инструкции, проблемы, баги, недоделки, пожелания по доработке...</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=63&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=63">Новости трекера</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=194&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=194">Как раздавать</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=193&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=193">Как скачать</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">73</td>
+			<td class="row2 f_posts">1,155</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=45&amp;view=newest#newest" title="КАК РАЗДАВАТЬ? (в процессе написания)">КАК РАЗДАВАТЬ? (в процессе...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">29-Мар-24 18:13</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=113731">arch_Elijah</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 73</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 1,155</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=3&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=3">Обсуждения</a></h4>
+
+								<p class="forum_desc">Здесь обсуждаем опубликованные материалы, а также технические и функциональные возможности трекера.</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=106&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=106">Работа трекера</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=201&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=201">Развитие нашего трекера</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=105&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=105">Опубликованные материалы</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=198&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=198">События и личности</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=195&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=195">Наболевшее</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=197&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=197">Просьбы о помощи</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=196&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=196">Реклама</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">125</td>
+			<td class="row2 f_posts">3,515</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=11996&amp;view=newest#newest" title="Цикл фильмов &quot;Притчи&quot;">Цикл фильмов "Притчи.<wbr>..</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">06-Мар-23 18:35</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=194729">aleksplt</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 125</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 3,515</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=6&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=6">Заказ и предложение раздач</a></h4>
+
+								<p class="forum_desc">Если Вы ищете какой-либо фильм, аудио запись или ещё что-то, в этом разделе можно оставить заявку.
+Если Вы хотите чем-то поделиться, предлагайте.</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=72&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=72">Предложение раздач</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=192&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=192">Ищу фильм, запись</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">196</td>
+			<td class="row2 f_posts">633</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=19639&amp;view=newest#newest" title="Ищу книгу">Ищу книгу</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">16-Мар-24 10:58</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=228721">SergeyNG</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 196</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 633</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				</tbody>
+		</table>
+	</div><!--/f_tbl_wrap-->
+</div><!--/category-->
+<div class="cat_footer"></div>
+<div class="cat_separator"></div>
+<div class="category">
+	<h3 class="cat_title"><a href="index.php?c=4">Видеоматериалы</a></h3>
+	<div class="f_tbl_wrap">
+
+		<table class="forums">
+		<thead>
+		<tr class="row3">
+			<th class="f_icon">&nbsp;</th>
+			<th class="f_titles">Форум</th>
+			<th class="f_topics">Тем</th>
+			<th class="f_posts">Сообщ.</th>
+			<th class="f_last_post last_td">Посл. сообщение</th>
+		</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=74&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=74">FAQ и помощь по разделу Видео</a></h4>
+
+								<p class="forum_desc">Правила, основные инструкции и FAQ</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">14</td>
+			<td class="row2 f_posts">91</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=552&amp;view=newest#newest" title="Требования к раздачам в формате DVD-video">Требования к раздачам в...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">23-Дек-23 23:45</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=228087">Благовест</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 14</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 91</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=31&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=31">Беседы, лекции, проповеди, семинары</a></h4>
+
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=112&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=112">Беседы, лекции, проповеди, семинары (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=80&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=80">Семья и воспитание детей</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=79&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=79">Здоровье и медицина</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">549</td>
+			<td class="row2 f_posts">4,947</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20639&amp;view=newest#newest" title="Апокалипсис с о. Андреем Ткачевым [2022 г., Документальный, HDTVRip]">Апокалипсис с о. Андреем...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">25-Фев-24 17:14</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=175279">royalstag</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 549</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 4,947</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=32&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=32">Исторические и документальные фильмы</a></h4>
+
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=115&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=115">О монастырях и святынях (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=114&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=114">Документальные фильмы (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=113&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=113">Исторические фильмы (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=143&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=143">Записи и трансляции церковных богослужений, слайдшоу на церковные песнопения (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=52&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=52">Монастыри и святыни</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=144&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=144">Записи и трансляции церковных богослужений, слайдшоу на церковные песнопения</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=51&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=51">Россия</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=54&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=54">Украина</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">1,306</td>
+			<td class="row2 f_posts">10,961</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=6968&amp;view=newest#newest" title="&quot;Дорогая сердцу обитель...&quot;. Фильм посвящен памяти Святейшего Патриарха Алексия II. (Россия. Спасо-Преображенский Валаамский монастырь &amp; Православная студия Петербурга.) [2010 г., О монастырях и святынях (DVD)., DVD5]">"Дорогая<wbr> сердцу обитель...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">10-Мар-24 23:43</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=175279">royalstag</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 1,306</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 10,961</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=34&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=34">Жизнеописания</a></h4>
+
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=59&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=59">Святые</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=121&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=121">Жизнеописания и фильмы о святых (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=116&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=116">Жизнеописания (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=55&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=55">Царская династия</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=122&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=122">Царская династия (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=45&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=45">Патриарх Алексий II</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">416</td>
+			<td class="row2 f_posts">4,296</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=1732&amp;view=newest#newest" title="Паломничество в Вечный город (2005) (Владимир Хотиненко) DVD9">Паломничеств<wbr>о в Вечный...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">13-Мар-24 20:20</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=205848">Arrrtemiy</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 416</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 4,296</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=47&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=47">Патриотические фильмы</a></h4>
+
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=117&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=117">Патриотические фильмы (DVD)</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">49</td>
+			<td class="row2 f_posts">453</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=6333&amp;view=newest#newest" title="Воины Духа (Андрей Сычев) [2004 г., Музыкальный спектакль, DVD5]">Воины Духа (Андрей Сычев)...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">13-Мар-24 22:06</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=170304">mixa230689</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 49</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 453</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=61&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=61">Песни авторов и исполнителей</a></h4>
+
+								<p class="forum_desc">Авторские концерты, видеозаписи выступления.</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">46</td>
+			<td class="row2 f_posts">389</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=15643&amp;view=newest#newest" title="Игорь Тальков. Видео (10 DVD дисков) [История. Патриотизм. Лирика, DVD5]">Игорь Тальков. Видео (10...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">05-Мар-22 22:14</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 46</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 389</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=130&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=130">Художественные и классические фильмы</a></h4>
+
+								<p class="forum_desc">Художественные и классические фильмы</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=119&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=119">Художественные фильмы (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=120&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=120">Зарубежные художественные фильмы (DVD)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=131&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=131">Отечественные художественные фильмы</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=132&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=132">Зарубежные художественные фильмы</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">319</td>
+			<td class="row2 f_posts">3,779</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=15828&amp;view=newest#newest" title="Спасайся, брат! / 4 серии из 4 (Антон Сиверс) [2015 г., Драма, боевик, HDTVRip AVC]">Спасайся, брат! / 4 серии...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">08-Апр-24 12:09</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=225679">businka21june17</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 319</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 3,779</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=191&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=191">Детские фильмы</a></h4>
+
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=133&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=133">Детские фильмы и мультфильмы</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=118&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=118">Детские фильмы и мультфильмы (DVD)</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">238</td>
+			<td class="row2 f_posts">2,025</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=19936&amp;view=newest#newest" title="Суворов: Великое путешествие (Борис Чертков) [2022 г., Мультфильм, приключения, история, SATRip]">Суворов: Великое путешествие.<wbr>..</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">10-Мар-24 04:47</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=4">Виталий Липатов</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 238</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 2,025</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=157&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=157">Фильмы без русскоязычного перевода с русскими субтитрами</a></h4>
+
+								<p class="forum_desc">Фильмы, не имеющие русскоязычной звуковой дорожки, но имеющие русские субтитры.</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">16</td>
+			<td class="row2 f_posts">192</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=8280&amp;view=newest#newest" title="Старец Паисий Святогорец [2010 г., Документальный, DVDRip]">Старец Паисий Святогорец..<wbr>.</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">03-Апр-24 21:42</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=231791">sergy54</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 16</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 192</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=158&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=158">Фильмы без русскоязычного перевода</a></h4>
+
+								<p class="forum_desc">Фильмы, не имеющие русскоязычной звуковой дорожки</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">12</td>
+			<td class="row2 f_posts">74</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=11002&amp;view=newest#newest" title="&quot;Средневековая Сербия&quot;. &quot;Srednjevekovna Srbija&quot;. (Сербия. Миодраг Мика Милошевич; Ратомир Ивкович.) [2011 г., О монастырях и святынях (DVD), DVD5]">"Среднев<wbr>ековая Сербия...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">10-Авг-22 12:14</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=155591">mangealic</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 12</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 74</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				</tbody>
+		</table>
+	</div><!--/f_tbl_wrap-->
+</div><!--/category-->
+<div class="cat_footer"></div>
+<div class="cat_separator"></div>
+<div class="category">
+	<h3 class="cat_title"><a href="index.php?c=5">Аудиоматериалы</a></h3>
+	<div class="f_tbl_wrap">
+
+		<table class="forums">
+		<thead>
+		<tr class="row3">
+			<th class="f_icon">&nbsp;</th>
+			<th class="f_titles">Форум</th>
+			<th class="f_topics">Тем</th>
+			<th class="f_posts">Сообщ.</th>
+			<th class="f_last_post last_td">Посл. сообщение</th>
+		</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=73&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=73">FAQ и помощь по разделу Аудио</a></h4>
+
+								<p class="forum_desc">Правила, основные инструкции и FAQ</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">5</td>
+			<td class="row2 f_posts">78</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=15088&amp;view=newest#newest" title="Создание треклиста">Создание треклиста</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">23-Мар-16 03:06</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=183207">Kemchuk</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 5</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 78</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=15&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=15">Церковная музыка и церковные хоры</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">853</td>
+			<td class="row2 f_posts">6,472</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=215&amp;view=newest#newest" title="Великий Покаянный канон прп. Андрея Критского (читает патриарх Пимен)">Великий Покаянный канон...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">05-Апр-24 18:22</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=135386">keeper 78</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 853</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 6,472</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=17&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=17">Лекции и проповеди</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">328</td>
+			<td class="row2 f_posts">2,487</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=15371&amp;view=newest#newest" title="(Аудиолекции) Протоиерей Артемий Владимиров. Собрание лекций, бесед и поучений. - 2000-2012, MP3, 64-320 kbps">(Аудиолекции) Протоиерей..<wbr>.</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">25-Янв-24 07:42</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=220259">jazz313avp</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 328</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 2,487</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=19&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=19">Радиопередачи</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">55</td>
+			<td class="row2 f_posts">369</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=8824&amp;view=newest#newest" title="Литургика (радио &quot;Восскресение&quot;, Школа Православия, 2009-2011г , MP3 64kbps) Раздача обновлена 30.05.2011">Литургика (радио ...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">05-Апр-24 18:55</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=135386">keeper 78</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 55</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 369</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=16&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=16">Песни авторов и исполнителей</a></h4>
+
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=140&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=140">Песни авторов и исполнителей (lossless)</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=141&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=141">Песни авторов и исполнителей (mp3 и другие lossy-форматы)</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">237</td>
+			<td class="row2 f_posts">2,624</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=9814&amp;view=newest#newest" title="(Духовная музыка) Дивна Любоевич (Сербия) – Лучшее - 2010, MP3, 320 kbps">(Духовная музыка) Дивна...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">28-Янв-24 00:01</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=181529">Gala277</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 237</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 2,624</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=38&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=38">Детская музыка</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">42</td>
+			<td class="row2 f_posts">418</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=1686&amp;view=newest#newest" title="(Детские песни с фонограммами) Сборник детских рождественских песен &quot;Рождество&quot; №1, 2 (2008), MP3, 192 kbps">(Детские песни с фонограммам.<wbr>..</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">09-Дек-23 16:08</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=230970">igklenkov273@g...</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 42</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 418</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=87&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=87">Музыка других жанров</a></h4>
+
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=88&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=88">Классическая музыка</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=89&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=89">Современная музыка</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=90&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=90">Остальная музыка</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">67</td>
+			<td class="row2 f_posts">583</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=6315&amp;view=newest#newest" title="(Классика) Tchaikovsky: The Great Ballets (6CD) - 2010, FLAC (tracks), lossless">(Классика) Tchaikovsky:<wbr> The...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">29-Мар-23 01:44</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=229106">NikoZag</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 67</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 583</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				</tbody>
+		</table>
+	</div><!--/f_tbl_wrap-->
+</div><!--/category-->
+<div class="cat_footer"></div>
+<div class="cat_separator"></div>
+<div class="category">
+	<h3 class="cat_title"><a href="index.php?c=6">Звуковые книги</a></h3>
+	<div class="f_tbl_wrap">
+
+		<table class="forums">
+		<thead>
+		<tr class="row3">
+			<th class="f_icon">&nbsp;</th>
+			<th class="f_titles">Форум</th>
+			<th class="f_topics">Тем</th>
+			<th class="f_posts">Сообщ.</th>
+			<th class="f_last_post last_td">Посл. сообщение</th>
+		</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=20&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=20">Священное Писание</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">109</td>
+			<td class="row2 f_posts">1,138</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=18394&amp;view=newest#newest" title="Аудио Библия на церковнославянскомъ языке [2020]">Аудио Библия на церковнослав<wbr>...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">01-Мар-24 09:16</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=162452">Владимитрий</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 109</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 1,138</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=21&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=21">Лекции и проповеди</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">61</td>
+			<td class="row2 f_posts">677</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=12147&amp;view=newest#newest" title="Глеб Запальский - История Русской Церкви в синодальный период [Глеб Запальский, 2012, MP3, 64 kbps]">Глеб Запальский - История...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">05-Апр-24 16:17</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=228565">roman-iferov</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 61</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 677</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=22&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=22">Святоотеческие тексты</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">156</td>
+			<td class="row2 f_posts">2,046</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=7613&amp;view=newest#newest" title="Преподобный Иоанн Кассиан Римлянин - Писания [Денис Гаврилов, 2010]">Преподобный Иоанн Кассиан...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">07-Апр-24 13:12</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=116801">сочнева555</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 156</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 2,046</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=26&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=26">Жизнеописания</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">113</td>
+			<td class="row2 f_posts">879</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=4930&amp;view=newest#newest" title="Блаженная Матрона Московская _ Житие. Воспоминания современников. Чудеса [Белорусский Экзархат , 320 kbps , 2008 год]">Блаженная Матрона Московская..<wbr>.</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">06-Янв-24 01:13</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=135386">keeper 78</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 113</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 879</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=137&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=137">Аудиокниги на православные материалы</a></h4>
+
+								<p class="forum_desc">Аудиокниги, не вошедшие в остальные разделы</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">366</td>
+			<td class="row2 f_posts">3,519</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=11337&amp;view=newest#newest" title="Анищенков Владимир - Чудотворные иконы Пресвятой Богородицы [Ольга Анищенкова, Анастасия Анищенкова, 2011]">Анищенков Владимир - Чудотво...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">07-Фев-24 23:42</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=181529">Gala277</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 366</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 3,519</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=40&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=40">Поэзия</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">11</td>
+			<td class="row2 f_posts">66</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=12219&amp;view=newest#newest" title="Анна Ахматова. Стихотворения и поэмы [А.Ахматова, И.Чурикова, А.Покровская, Н.Дробышева, М.Терехова, А.Демидова, 2006]">Анна Ахматова. Стихотворени<wbr>я...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">17-Мар-18 19:24</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=6910">Игорь I</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 11</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 66</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=46&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=46">Историческая книга</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">78</td>
+			<td class="row2 f_posts">484</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=8287&amp;view=newest#newest" title="Блаженный святитель Шанхайский и Западно-Европейский Иоанн (Максимович) - Краткая история Русской Православной Церкви Заграницей [исполнитель Вячеслав Марченко, 2008 год ,  MP3 320 kbps]">Блаженный святитель Шанхайск...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">05-Апр-24 16:14</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=228565">roman-iferov</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 78</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 484</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=23&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=23">Детские книги</a></h4>
+
+								<p class="forum_desc">Детские книги и сказки</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">232</td>
+			<td class="row2 f_posts">1,151</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=12953&amp;view=newest#newest" title="Джон Рональд Ройл Толкин - Хоббит, или Туда и обратно [Олег Исаев, 2008, MP3, 128 kbps]">Джон Рональд Ройл Толкин -...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">16-Фев-24 14:51</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=231485">d.v.key</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 232</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 1,151</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=24&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=24">Художественная литература</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a>, <a href="groupcp.php?g=2480">Общие модераторы аудио</a></p>
+				
+			</td>
+			<td class="row2 f_topics">238</td>
+			<td class="row2 f_posts">1,470</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=6144&amp;view=newest#newest" title="Ф. М. Достоевский. - &quot;Идиот&quot;. (аудиокнига MP3 на 4 CD). [исполнитель Вячеслав Герасимов., 2003 год ,  MP3 160 kbps]">Ф. М. Достоевский.<wbr> - ...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">05-Янв-24 10:51</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=231194">Orlglazzz</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 238</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 1,470</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				</tbody>
+		</table>
+	</div><!--/f_tbl_wrap-->
+</div><!--/category-->
+<div class="cat_footer"></div>
+<div class="cat_separator"></div>
+<div class="category">
+	<h3 class="cat_title"><a href="index.php?c=8">Тексты</a></h3>
+	<div class="f_tbl_wrap">
+
+		<table class="forums">
+		<thead>
+		<tr class="row3">
+			<th class="f_icon">&nbsp;</th>
+			<th class="f_titles">Форум</th>
+			<th class="f_topics">Тем</th>
+			<th class="f_posts">Сообщ.</th>
+			<th class="f_last_post last_td">Посл. сообщение</th>
+		</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=27&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=27">Священное Писание</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">145</td>
+			<td class="row2 f_posts">752</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20787&amp;view=newest#newest" title="Священникъ Александръ Колесниковъ - Тайновидецъ будущаго. Откровеніе св. Іоанна Богослова и путь къ его пониманію (Тайновидец будущего. Откровение св. Иоанна Богослова и путь к его пониманию) [1998, PDF, DjVu, Русскiй дореформенный]">Священникъ Александръ..<wbr>.</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">19-Мар-24 00:27</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 145</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 752</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=28&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=28">Святоотеческие тексты и жития святых</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">1,564</td>
+			<td class="row2 f_posts">5,617</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20800&amp;view=newest#newest" title="Протоиерей Вячеслав Тулупов - Светоч земли Русской. Преподобный Сергий Радонежский вчера, сегодня, завтра [2014, PDF, DjVu, Русский]">Протоиерей Вячеслав Тулупов...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">09-Апр-24 10:22</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=16428">Nathan</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 1,564</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 5,617</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=188&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=188">Молитвословия</a></h4>
+
+								<p class="forum_desc">Богослужебные тексты, акафисты, каноны, молитвы.</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=153&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=153">Богослужебные тексты</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=184&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=184">Молитвы</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=183&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=183">Каноны</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=182&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=182">Акафисты</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">442</td>
+			<td class="row2 f_posts">1,441</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=16283&amp;view=newest#newest" title="Под благодатным покровом молитвы. Редкие и древние молитвы [2011, PDF/DjVu, Русский]">Под благодатным покровом...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">05-Апр-24 14:38</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 442</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 1,441</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=94&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=94">Ноты и нотные сборники</a></h4>
+
+								<p class="forum_desc">Ноты, нотные сборники для церковных хоров и богослужебные тексты</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=99&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=99">Всенощное бдение</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=100&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=100">Божественная Литургия</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=101&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=101">Триодь постная</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=102&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=102">Триодь Цветная</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=103&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=103">Другие нотные сборники</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">51</td>
+			<td class="row2 f_posts">378</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=7397&amp;view=newest#newest" title="Нотный сборник &quot;Обиход церковного пения&quot; издания Московского Сретенского монастрыря, 1997 г., в формате PDF">Нотный сборник "Обиход.<wbr>..</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">10-Май-23 00:36</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=135386">keeper 78</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 51</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 378</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=129&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=129">Православная литература</a></h4>
+
+								<p class="forum_desc">Книги, написанные священниками, богословами и остальные, не подходящие по тематике к другим разделам.</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">1,857</td>
+			<td class="row2 f_posts">7,193</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20805&amp;view=newest#newest" title="Раздача">Раздача</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">07-Апр-24 13:57</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 1,857</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 7,193</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=78&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=78">Православная поэзия</a></h4>
+
+								<p class="forum_desc">Просьба выкладывать только православную поэзию, относящуюся к этой тематике, поскольку «просто хорошие стихи» нетрудно найти и в интернете. Старайтесь указывать автора и год создания.</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">68</td>
+			<td class="row2 f_posts">251</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20637&amp;view=newest#newest" title="Кушнир Т. - С молитвой о России. Сборник духовной поэзии [2015, PDF, DjVu, Русский]">Кушнир Т. - С молитвой о...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">31-Окт-23 04:17</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 68</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 251</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=29&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=29">Художественная литература</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">135</td>
+			<td class="row2 f_posts">383</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20788&amp;view=newest#newest" title="Ирина Богданова - Дом, где тебя ждут [2023, PDF, FB2, EPUB, Русский]">Ирина Богданова - Дом, где...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">15-Мар-24 13:41</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 135</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 383</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=30&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=30">Детские книги</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">153</td>
+			<td class="row2 f_posts">420</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20747&amp;view=newest#newest" title="Нина Орлова - Азбука для православных детей [2018, PDF, DjVu, Русский]">Нина Орлова - Азбука для...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">28-Янв-24 15:57</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 153</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 420</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=180&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=180">Библиотеки (собрания книг)</a></h4>
+
+								<p class="forum_desc">Раздел посвящён различным библиотеках (коллекциям книг), сформированным по различным критериям.</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">37</td>
+			<td class="row2 f_posts">725</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=12643&amp;view=newest#newest" title="Православная библиотека. [6122 книги] [1778-2014]">Православная<wbr> библиотека..<wbr>..</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">17-Янв-24 22:41</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=230060">konkin</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 37</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 725</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=202&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=202">Журналы и периодические издания</a></h4>
+
+								<p class="forum_desc">Журналы и периодические издания</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">22</td>
+			<td class="row2 f_posts">60</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20698&amp;view=newest#newest" title="Вера молодых (73 вып.) [2008-2023, PDF, RUS]">Вера молодых (73 вып.)...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">11-Дек-23 18:52</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=219714">Иванов.И.И.</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 22</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 60</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=39&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=39">Исторические материалы</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">272</td>
+			<td class="row2 f_posts">1,074</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20776&amp;view=newest#newest" title="Архиепископ Василий (Кривошеин) - Спасённый Богом. Воспоминания. Письма родным [2019, PDF, RUS]">Архиепископ Василий (Кривоше...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">21-Фев-24 18:43</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=219714">Иванов.И.И.</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 272</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 1,074</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=176&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=176">Иностранные языки и материалы</a></h4>
+
+								<p class="forum_desc">Иностранные языки и материалы</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">22</td>
+			<td class="row2 f_posts">184</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=12646&amp;view=newest#newest" title="Греческий язык Нового Завета. Звонская-Денисюк">Греческий язык Нового...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">01-Мар-23 11:21</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=223294">svAntonij</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 22</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 184</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=178&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=178">Педагогика и психология</a></h4>
+
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">80</td>
+			<td class="row2 f_posts">308</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=14339&amp;view=newest#newest" title="Детский православный журнал &quot;Колыбель&quot;">Детский православный<wbr> журнал...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">10-Дек-23 21:11</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=231017">0n_e9</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 80</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 308</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=179&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=179">Церковнославянский язык</a></h4>
+
+								<p class="forum_desc">Книги по церковнославянскому языку</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">13</td>
+			<td class="row2 f_posts">139</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20359&amp;view=newest#newest" title="Олейникова Т.С. - Краткий церковнославянский словарь [2004, PDF, DjVu, Русский + Церковнославянский]">Олейникова Т.С. - Краткий...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">22-Май-23 23:28</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 13</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 139</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=185&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=185">Энциклопедии и словари</a></h4>
+
+								<p class="forum_desc">Энциклопедии, словари, справочники, реестры.</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">25</td>
+			<td class="row2 f_posts">70</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=20278&amp;view=newest#newest" title="Мир Православия - Тимофеев М. (авт.-сост.) - Богородица. Полная энциклопедия жизни и чудес [2010, PDF, DjVu, Русский]">Мир Православия - Тимофеев...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">08-Сен-23 09:33</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=36941">Р.Б.А</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 25</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 70</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				</tbody>
+		</table>
+	</div><!--/f_tbl_wrap-->
+</div><!--/category-->
+<div class="cat_footer"></div>
+<div class="cat_separator"></div>
+<div class="category">
+	<h3 class="cat_title"><a href="index.php?c=14">Изображения</a></h3>
+	<div class="f_tbl_wrap">
+
+		<table class="forums">
+		<thead>
+		<tr class="row3">
+			<th class="f_icon">&nbsp;</th>
+			<th class="f_titles">Форум</th>
+			<th class="f_topics">Тем</th>
+			<th class="f_posts">Сообщ.</th>
+			<th class="f_last_post last_td">Посл. сообщение</th>
+		</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=81&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=81">Фотография, репродукция, дизайн</a></h4>
+
+								<p class="forum_desc">Фотографии храмов, репродукции икон, векторные и растровые клипарты на православную и церковную тематику, шрифты.</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=124&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=124">Иконы</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=82&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=82">Фотографии православных храмов</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=84&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=84">Растровые клипарты</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=83&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=83">Векторные клипарты</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=104&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=104">Живопись</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=85&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=85">Шрифты</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">93</td>
+			<td class="row2 f_posts">981</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=2207&amp;view=newest#newest" title="Чудотворные иконы Пресвятой Богородицы">Чудотворные иконы Пресвятой...<wbr></a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">07-Фев-24 23:39</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=181529">Gala277</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 93</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 981</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=189&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=189">Фотоальбомы</a></h4>
+
+								<p class="forum_desc">Фотоальбомы и открытки</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">26</td>
+			<td class="row2 f_posts">81</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=18095&amp;view=newest#newest" title="Фотоальбомы Царской семьи [1192x2048 - 18050х13189, 4440]">Фотоальбомы Царской семьи...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">07-Июл-23 03:48</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=229908">Tsarrrrrr</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 26</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 81</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				</tbody>
+		</table>
+	</div><!--/f_tbl_wrap-->
+</div><!--/category-->
+<div class="cat_footer"></div>
+<div class="cat_separator"></div>
+<div class="category">
+	<h3 class="cat_title"><a href="index.php?c=15">Программы</a></h3>
+	<div class="f_tbl_wrap">
+
+		<table class="forums">
+		<thead>
+		<tr class="row3">
+			<th class="f_icon">&nbsp;</th>
+			<th class="f_titles">Форум</th>
+			<th class="f_topics">Тем</th>
+			<th class="f_posts">Сообщ.</th>
+			<th class="f_last_post last_td">Посл. сообщение</th>
+		</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=7&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=7">Программное обеспечение</a></h4>
+
+								<p class="forum_desc">Обсуждение и распространение программного обеспечения</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=57&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=57">Бесплатное ПО</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=56&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=56">Свободное ПО</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">61</td>
+			<td class="row2 f_posts">622</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=19315&amp;view=newest#newest" title="Radio Base - интернет-радио плеер">Radio Base - интернет-рад<wbr>ио...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">08-Мар-24 21:46</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=157556">mmikl</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 61</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 622</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=190&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=190">Электронные энциклопедии</a></h4>
+
+								<p class="forum_desc">Электронные энциклопедии:
+программы на CD/DVD, заключающие в себе обзор мест, книг, словарей и пр.</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a></p>
+				
+			</td>
+			<td class="row2 f_topics">20</td>
+			<td class="row2 f_posts">147</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=9341&amp;view=newest#newest" title="DVD-ROM. &quot;Святая Земля&quot;. Журнал Русской Духовной Миссии в Иерусалиме. 1934-1940 г. г.">DVD-ROM. "Святая.<wbr>..</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">14-Ноя-23 00:25</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=230841">dmaev</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 20</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 147</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				</tbody>
+		</table>
+	</div><!--/f_tbl_wrap-->
+</div><!--/category-->
+<div class="cat_footer"></div>
+<div class="cat_separator"></div>
+<div class="category">
+	<h3 class="cat_title"><a href="index.php?c=9">Недораздачи</a></h3>
+	<div class="f_tbl_wrap">
+
+		<table class="forums">
+		<thead>
+		<tr class="row3">
+			<th class="f_icon">&nbsp;</th>
+			<th class="f_titles">Форум</th>
+			<th class="f_topics">Тем</th>
+			<th class="f_posts">Сообщ.</th>
+			<th class="f_last_post last_td">Посл. сообщение</th>
+		</tr>
+		</thead>
+
+		<tbody>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=107&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=107">Раздачи неизвестного происхождения</a></h4>
+
+								<p class="forum_desc">Здесь можно выкладывать материалы, выкачанные из пиринговых сетей, преимущественно, аудио, к которым нет ни обложки, неизвестно, когда и кем выпущено, кто исполняет и т.д., однако материал хороший. Здесь также можно выкладывать когда-то и кем-то собранные сборники песнопений и прочего, происхождение которых теперь неизвестно и обложки не сохранились.</p>
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=110&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=110">Видео-раздачи</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=108&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=108">Аудио-раздачи</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">13</td>
+			<td class="row2 f_posts">150</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=18166&amp;view=newest#newest" title="Психотронные вышки/изотопное начертание [2018 г., Документальный, HDTVRip]">Психотронные<wbr> вышки/изотоп<wbr>ное...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">01-Дек-19 08:12</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=-746">bot</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 13</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 150</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=174&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=174">Сомнительные раздачи</a></h4>
+
+								<p class="forum_desc">Раздачи, которые поставлены под сомнение ввиду характеристик или содержания</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">8</td>
+			<td class="row2 f_posts">121</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=13282&amp;view=newest#newest" title="Православный Пушкин (Сергей Андрюшкин) [2013 г., Документальный, биография, история, DVD5]">Православный<wbr> Пушкин (Сергей...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">06-Авг-23 22:39</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=175279">royalstag</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 8</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 121</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=125&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=125">Недооформленные раздачи</a></h4>
+
+				
+								<p class="subforums">
+					<em>Подфорумы:</em>
+										<span class="sf_title"><a href="search.php?f=126&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=126">Недооформленные видео-раздачи</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=127&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=127">Недооформленные аудио-раздачи</a></span><span class="sf_separator">, </span>
+										<span class="sf_title"><a href="search.php?f=128&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="icon1 sf_icon" src="./templates/default/images/icon_minipost.gif" alt=""></a><a href="./viewforum.php?f=128">Другие недооформленные раздачи</a></span><span class="sf_separator"> </span>
+									</p>
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">18</td>
+			<td class="row2 f_posts">151</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=13429&amp;view=newest#newest" title="А.И.Осипов - Лекции А.И.Осипова [А.И.Осипов, 2014]">А.И.Осипов - Лекции А.И.Осип...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">15-Окт-22 15:46</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=183195">Samuray</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 18</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 151</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				<tr>
+			<td class="row1 f_icon">
+			<a href="search.php?f=65&amp;new=1&amp;dm=1&amp;s=0&amp;o=1"><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></a>
+			</td>
+			<td class="row1 f_titles">
+
+				<h4 class="forumlink"><a href="./viewforum.php?f=65">Архив раздач</a></h4>
+
+								<p class="forum_desc">В этот раздел будут переноситься те раздачи, где торрент-файл был либо дерегистрирован трекером ввиду неактивности, либо сам раздающий удалил торрент-файл с трекера. То есть здесь будут мертвые раздачи.</p>
+				
+				
+								<p class="moderators"><em>Модераторы:</em> <a href="profile.php?mode=viewprofile&amp;u=65137">CEPBEP4</a>, <a href="groupcp.php?g=2475">Модераторы</a></p>
+				
+			</td>
+			<td class="row2 f_topics">1,114</td>
+			<td class="row2 f_posts">5,827</td>
+			<td class="row2 f_last_post last_td">
+
+																	<h6 class="last_topic">
+						<a href="./viewtopic.php?t=14911&amp;view=newest#newest" title="Братья Карамазовы / Karamazovi (Петр Зеленка / Petr Zelenka) [2008 г., драма, экранизация романа, DVD9] 6,15GB">Братья Карамазовы / Karamazo...</a>
+					</h6>
+					
+					<p class="last_post_time">
+						<span class="last_time">07-Янв-24 19:43</span>
+						<span class="last_author">by
+														<a href="./profile.php?mode=viewprofile&amp;u=175279">royalstag</a>
+													</span>
+					</p>
+				
+				<p class="f_stat_inline">
+					<span class="f_stat_topics"><em>Тем:</em> 1,114</span>
+					<span class="f_stat_posts"><em>Сообщ.:</em> 5,827</span>
+				</p>
+
+			
+			</td>
+		</tr>
+				</tbody>
+		</table>
+	</div><!--/f_tbl_wrap-->
+</div><!--/category-->
+<div class="cat_footer"></div>
+<div class="cat_separator"></div>
+
+
+</div><!--/forums_wrap-->
+
+<div id="forums_footer"></div>
+
+
+<div id="board_stats">
+	<h3 class="cat_title"><a href="viewonline.php">Кто сейчас на форуме</a></h3>
+	<div id="board_stats_wrap">
+
+	<table class="forums">
+	<tbody><tr>
+		<td class="row1 f_icon"><img class="forum_icon" src="./templates/default/images/whosonline.gif" alt=""></td>
+		<td class="row1 small last_td">
+			<p>Наши пользователи оставили сообщений: <b>89832</b></p>
+			<p>Всего зарегистрированных пользователей: <b>101200</b></p>
+			<p>Последний зарегистрированный пользователь: <b><a href="profile.php?mode=viewprofile&amp;u=231821">arEntropic</a></b></p>
+
+			<div class="hr1" style="margin: 5px 0 4px;"></div>
+
+			<p></p>
+			<p>Больше всего посетителей (<b>862</b>) здесь было 2010-03-12 22:49</p>
+
+					</td>
+	</tr>
+	</tbody></table>
+	</div><!--/board_stats_wrap-->
+</div><!--/board_stats-->
+<div class="cat_footer"></div>
+
+<div class="spacer_4"></div>
+
+<!--bottom_info-->
+<div class="bottom_info">
+
+	<div id="timezone">
+		<p></p>
+		<p>Текущее время: <span class="tz_time">09-Апр 15:30</span></p>
+		<p>Часовой пояс: <span class="tz_time">GMT + 4</span></p>
+	</div>
+	<div class="clear"></div>
+
+	<table class="bCenter med" id="f_icons_legend">
+	<tbody><tr>
+		<td><img class="forum_icon" src="./templates/default/images/folder_new_big.gif" alt="new"></td>
+		<td>Новые сообщения</td>
+		<td><img class="forum_icon" src="./templates/default/images/folder_big.gif" alt="old"></td>
+		<td>Нет новых сообщений</td>
+		<td><img class="forum_icon" src="./templates/default/images/folder_locked_big.gif" alt="locked"></td>
+		<td>Форум закрыт</td>
+	</tr>
+	</tbody></table>
+
+</div><!--/bottom_info-->
+
+</div><!--/forums_list_wrap-->
+
+
+	<!--/main_content_wrap-->
+	</td><!--/main_content-->
+
+	
+	</tr></tbody></table>
+	</div>
+	<!--/page_content-->
+
+	<!--page_footer-->
+	<div id="page_footer">
+
+					
+		
+		<div class="clear"></div>
+
+		<br><br>
+
+				<div class="med bold tCenter">
+			<a href="misc.php?do=info&amp;show=user_agreement" onclick="window.open(this.href, '', InfoWinParams); return false;">Пользовательское Соглашение</a>
+						<span class="normal">&nbsp;|&nbsp;</span>
+			<a href="misc.php?do=info&amp;show=copyright_holders" onclick="window.open(this.href, '', InfoWinParams); return false;">Для правообладателей</a> | 
+			<a href="mailto:info@pravtor.ru">info@pravtor.ru</a>
+						
+		</div>
+
+		<br>
+		
+
+		
+		<table width="99%" cellpadding="0" cellspacing="0" class="bCenter">
+		<tbody><tr>
+
+			<td width="50%" class="vBottom">
+				<div class="copyright">
+					&nbsp;
+				</div>
+			</td>
+			<td class="vBottom">
+			<table class="bCenter" cellspacing="0" cellpadding="2" border="0">
+			<tbody><tr>
+				<td class="vBottom nowrap" style="padding: 0 4px;">
+					<!--LiveInternet counter-->
+						<script type="text/javascript"><!--
+						document.write("<a href='http://www.liveinternet.ru/stat/pravtor.ru' "+
+						"target=_blank><img src='//counter.yadro.ru/hit?t26.1;r"+
+						escape(document.referrer)+((typeof(screen)=="undefined")?"":
+						";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+						screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+						";"+Math.random()+
+						"' alt='' title='LiveInternet: number of visitors for today is"+
+						" shown' "+
+						"border=0 width=88 height=15><\/a>")//--></script><a href="http://www.liveinternet.ru/stat/pravtor.ru" target="_blank"><img src="//counter.yadro.ru/hit?t26.1;r;s800*600*24;uhttp%3A//2sr27o5x2v2pyqro7wl5nl6krrsbizwrzsky5y7pkohwh24gn6xq.b32.i2p/;0.9214982290410498" alt="" title="LiveInternet: number of visitors for today is shown" border="0" width="88" height="15"></a>
+					<!--/LiveInternet-->
+					
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=47218638&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47218638/1_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:80px; height:15px; border:0;" alt="РЇРЅРґРµРєСЃ.РњРµС‚СЂРёРєР°" title="РЇРЅРґРµРєСЃ.РњРµС‚СЂРёРєР°: РґР°РЅРЅС‹Рµ Р·Р° СЃРµРіРѕРґРЅСЏ (РїСЂРѕСЃРјРѕС‚СЂС‹)"></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter47218638 = new Ya.Metrika({
+                    id:47218638,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/47218638" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+				</td>
+<!--
+
+
+			</table>
+
+			</td> -->
+			<td width="50%" class="vBottom tRight">
+				<div class="copyright">
+					<p>Powered by TorrentPier © Meithar, RoadTrain, Pandora</p>
+				</div>
+			</td>
+
+		</tr>
+		</tbody></table>
+
+
+	
+
+	<div class="copyright" align="center">
+	<b style="color: rgb(204, 0, 0);">!ВНИМАНИЕ!</b><br>Сайт не предоставляет электронные версии произведений, а занимается лишь коллекционированием и каталогизацией ссылок, присылаемых и публикуемых на форуме нашими читателями. Если вы являетесь правообладателем какого-либо представленного материала и не желаете чтобы ссылка на него находилась в нашем каталоге, свяжитесь с нами и мы незамедлительно удалим её. Файлы для обмена на трекере предоставлены пользователями сайта, и администрация не несёт ответственности за их содержание. Просьба не заливать файлы, защищенные авторскими правами, а также файлы нелегального содержания!
+	</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11304481-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+	<!--/page_footer -->
+	
+	
+	<!--/page_container -->
+
+
+
+
+
+
+	<!--/body_container-->
+
+	
+	
+</td></tr></tbody></table></div></div></td></tr></tbody></table></div></div></div><div class="menu-sub" id="only-new-options">
+	<table cellspacing="1" cellpadding="4">
+	<tbody><tr>
+		<th>Опции показа</th>
+	</tr>
+	<tr>
+		<td>
+			<fieldset id="show-only">
+			<legend>Показывать только</legend>
+			<div class="pad_4">
+				<label>
+					<input id="only_new_posts" type="checkbox" onclick="
+							user.set('only_new', ( this.checked ? 1 : 0 ), 365, true);
+							$('#only_new_topics').attr('checked', 0);
+						">только новые сообщения				</label>
+				<label>
+					<input id="only_new_topics" type="checkbox" onclick="
+							user.set('only_new', ( this.checked ? 2 : 0 ), 365, true);
+							$('#only_new_posts').attr('checked', 0);
+						">только новые темы				</label>
+			</div>
+			</fieldset>
+		</td>
+	</tr>
+	</tbody></table>
+</div></body></html>
