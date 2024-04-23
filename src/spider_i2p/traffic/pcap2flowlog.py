@@ -10,11 +10,15 @@ from spider_i2p.myutils.config import config
 
 # 按照时间，将pcap转换为流日志
 def pcap2flowlog_dpkt(filename, des_dir):
+    if "TCP" in filename:
+        protocal = "TCP"
+    elif "UDP" in filename:
+        protocal = "UDP"
     os.makedirs(des_dir, exist_ok=True)
-    result = read_pcap(filename, 99999)
+    result = read_pcap(filename, 99999, protocal)
     filtered_result = [[], [], []]
     if result is None:
-        logger.warning(f"将 {filename} 转换为流日志失败，可能是因为流不完整（没有TCP握手）")
+        logger.warning(f"将 {filename} 转换为流日志失败")
         return False
     for i in range(len(result[0])):
         if result[0][i] != 0:  # 如果长度不为 0
@@ -28,15 +32,16 @@ def pcap2flowlog_dpkt(filename, des_dir):
     os.makedirs(save_path, exist_ok=True)
     read_pcap_and_write_csv(
         filtered_result,
-        save_path + "/" + filename.split("/")[-1].replace(".pcap", ".csv"))
+        save_path + "/" + filename.split("/")[-1].replace(".pcap", ".csv"),
+    )
     return True
 
 
 def read_pcap_and_write_csv(result, output_file):
     # 写入到 CSV 文件
-    with open(output_file, mode='w', newline='') as csvfile:
+    with open(output_file, mode="w", newline="") as csvfile:
         csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(['Time', 'Length'])
+        csvwriter.writerow(["Time", "Length"])
         for i in range(len(result[0])):
             if result[1][i] == 0:
                 result[0][i] = -result[0][i]
@@ -55,18 +60,19 @@ def getIP(datalink, pkt):
     return IP
 
 
-def read_pcap(file, slice):
-    # 测试TCP三次握手
-    f = open(file, 'rb')
+def read_pcap(file, slice, protocal):
+    f = open(file, "rb")
     try:
         pkts = dpkt.pcap.Reader(f)
     except ValueError:
         f.close()
-        f = open(file, 'rb')
+        f = open(file, "rb")
         pkts = dpkt.pcapng.Reader(f)
     datalink = pkts.datalink()
     # print(datalink)
-    if datalink == 228 or datalink == 229 or datalink == 101:  # 是RAW_IP包，没有Ethernet层
+    if (
+        datalink == 228 or datalink == 229 or datalink == 101
+    ):  # 是RAW_IP包，没有Ethernet层
         datalink = 0
     else:
         datalink = 1
@@ -83,42 +89,37 @@ def read_pcap(file, slice):
     srcip = config["spider"]["host"]
 
     # 通过第一个数据包的flag判断是否有三次握手
-    try:
-        first_flag = getIP(datalink, filedata[0][1]).data.flags
-    except:
-        return None
-    if first_flag != 2:
-        return None
+    if protocal == "TCP":
+        try:
+            first_flag = getIP(datalink, filedata[0][1]).data.flags
+        except:
+            return None
+        if first_flag != 2 and config["traffic"]["complate"] == "True":
+            return None
 
-
-    result = [[], [], []]  #result[0]代表长度序列，result[1]代表方向序列，result[2]代表时延序列
-    prev_seq = -1
-    prev_ack = -1
-    # 此处收集绝对时间
-    # first_time = filedata[2][0]
+    result = [
+        [],
+        [],
+        [],
+    ]  # result[0]代表长度序列，result[1]代表方向序列，result[2]代表时延序列
     for packet in filedata:
         IP = getIP(datalink, packet[1])
         ip = inet_to_str(IP.src)
-        # if len(IP.data.data) != 0:
-        seq = IP.data.seq
-        ack = IP.data.ack
-        if seq != prev_seq or ack != prev_ack:
-            if ip == srcip:
-                result[1].append(1)
-            else:
-                result[1].append(0)
-            result[0].append(len(IP.data.data))
-            nowtime = packet[0]
-            dt_object = datetime.fromtimestamp(nowtime)
-            formatted_time = dt_object.strftime('%Y-%m-%d %H:%M:%S')
-            result[2].append(formatted_time)
-            if len(IP.data.data) != 0:
-                prev_seq = seq
-                prev_ack = ack
+        if ip == srcip:
+            result[1].append(1)
+        else:
+            result[1].append(0)
+        result[0].append(len(IP.data.data))
+        nowtime = packet[0]
+        dt_object = datetime.fromtimestamp(nowtime)
+        formatted_time = dt_object.strftime("%Y-%m-%d %H:%M:%S")
+        result[2].append(formatted_time)
 
     return result
 
 
-
 if __name__ == "__main__":
-    pcap2flowlog_dpkt("../data/handled_pcaps/i2p_output_1.20.187.31_33014_142.171.227.116_27472.pcap", "./test")
+    pcap2flowlog_dpkt(
+        "../data/handled_pcaps/i2p_output_1.20.187.31_33014_142.171.227.116_27472.pcap",
+        "./test",
+    )

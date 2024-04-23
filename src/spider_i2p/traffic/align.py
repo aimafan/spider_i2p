@@ -32,7 +32,7 @@ message_types = {
     800: "Options",
     900: "Padding",
     999: "Termination",
-    -1: "收的总"
+    -1: "收的总",
 }
 
 
@@ -52,14 +52,7 @@ def align(log_file, src_dir, dst_dir):
         # break
 
 
-
 def conbine(log_list, file_path):
-    index = 0
-    for i in range(0, len(log_list)):
-        if log_list[i][2] == "第一次握手":
-            index = i
-            break
-    log_list = log_list[index:]
     flowlog = []
     with open(file_path, "r") as file:
         reader = csv.reader(file)
@@ -68,11 +61,11 @@ def conbine(log_list, file_path):
             time, length = row
             flowlog.append([time, int(length)])
     logger.info(file_path)
-    flowlog1 = handle_flowlog(log_list, flowlog)
+    flowlog1 = handle_flowlog(log_list, flowlog, file_path)
     return flowlog1
-    
 
-def handle_flowlog(log_list, flowlog):
+
+def handle_flowlog(log_list, flowlog, file_name):
     flowlog1 = []
 
     for i in range(0, len(log_list)):
@@ -81,14 +74,15 @@ def handle_flowlog(log_list, flowlog):
         if log_list[i][1] == "发" and log_list[i][2] == "Routerinfo":
             log_list[i][-1] += 18
 
+    logger_log.info(file_name)
     logger_log.info(log_list)
     logger_log.info(flowlog)
     logger_log.info("========")
     n = 0
-    while(n < len(flowlog)):
-        if(log_list == None or log_list == []):
+    while n < len(flowlog):
+        if log_list == None or log_list == []:
             break
-        if(len(flowlog[n]) >= 3):
+        if len(flowlog[n]) >= 3:
             flowlog1.append(flowlog[n])
             n += 1
             continue
@@ -96,13 +90,13 @@ def handle_flowlog(log_list, flowlog):
             if i >= 50:
                 flowlog[n].append("未知")
                 break
-            if(log_list[i][-1] == flowlog[n][-1]):
+            if log_list[i][-1] == flowlog[n][-1]:
                 log_list[i][0] = "N"
-                if(log_list[i][-2] == "收的总"):
+                if log_list[i][-2] == "收的总":
                     get_type = []
-                    for j in range(i+1, len(log_list)):
-                        log_list[j][0] = "N"
-                        if(log_list[j][-2] == "Padding"):
+                    for j in range(i + 1, len(log_list)):
+                        if log_list[j][-2] == "Padding":
+                            log_list[j][0] = "N"
                             break
                         get_type.append(log_list[j][-2])
                     packet_type = "+".join(get_type)
@@ -111,32 +105,10 @@ def handle_flowlog(log_list, flowlog):
                     flowlog[n].append(log_list[i][-2])
                 break
 
-            # # 可能是存在未知情况
-            # if(abs(log_list[i][-1]) > abs(flowlog[n][1])):
-            #     all_payload_len = 0
-            #     count = 0
-            #     js = []
-            #     # 可能有未知
-            #     while(abs(all_payload_len) < abs(log_list[i][-1]) and n+count < len(flowlog)):
-            #         if same_sign(flowlog[n+count][1], log_list[i][-1]):
-            #             all_payload_len += flowlog[n+count][1]
-            #             js.append(count)
-            #         if(abs(all_payload_len) == abs(log_list[i][-1])):
-            #             for j in js:
-            #                 flowlog[n+j].append("未知")
-            #             log_list[i][0] = "N"
-            #             if(log_list[i][-2] == "收的总"):
-            #                 for j in range(i+1, len(log_list)):
-            #                     log_list[j][0] = "N"
-            #                     if(log_list[j][-2] == "Padding"):
-            #                         break
-            #         else:
-            #             count += 1
         log_list = del_item(log_list)
         flowlog1.append(flowlog[n])
         n += 1
     return flowlog1
-
 
 
 def del_item(log_list):
@@ -156,7 +128,7 @@ def same_sign(a, b):
         return True
     else:
         return False
-    
+
 
 def save_csv(result, file_name):
     # 定义 CSV 文件路径
@@ -168,18 +140,13 @@ def save_csv(result, file_name):
     header = ["time", "length", "type"]
 
     # 将数据写入 CSV 文件
-    with open(csv_file, mode='w', newline='') as file:
+    with open(csv_file, mode="w", newline="") as file:
         writer = csv.writer(file)
 
         # 写入表头
         writer.writerow(header)
         # 写入数据行
         writer.writerows(result)
-
-
-#[['2024-04-06 08:02:41', '发', '第一次握手', 207], ['2024-04-06 08:02:41', '收', '第二次握手', 237], ['2024-04-06 08:02:41', '发', '第三次握手', 882], ['2024-04-06 08:02:41', '发', 'Garlic', 1002], ['2024-04-06 08:02:41', '收', '收的总', 1013], ['2024-04-06 08:02:41', '收', 'DatabaseStore', 939], ['2024-04-06 08:02:41', '收', 'Padding', 50]]
-
-#[['2024-04-06 16:02:41', '207'], ['2024-04-06 16:02:41', '-237', "第二次握手"], ['2024-04-06 16:02:41', '882', "第三次握手"], ['2024-04-06 16:02:41', '-1013', "第四次握手"], ['2024-04-06 16:02:41', '1002', "第五次握手"]]
 
 
 def read_log_file(log_file):
@@ -189,7 +156,9 @@ def read_log_file(log_file):
             time, direction, host, port, msgtype, size = line.split(" ; ")
             if f"{host}_{port}" not in log_dic:
                 log_dic[f"{host}_{port}"] = []
-            log_dic[f"{host}_{port}"].append([time, direction, message_types[int(msgtype)], int(size.split("\n")[0])])
+            log_dic[f"{host}_{port}"].append(
+                [time, direction, message_types[int(msgtype)], int(size.split("\n")[0])]
+            )
 
     return log_dic
 
@@ -201,11 +170,10 @@ def get_datetime_from_filename(file):
     return datetime_str
 
 
-
 def offline_align():
     # 使用glob获取目录下所有的log文件
     log_dir = config["spider"]["new_log_dir"]
-    log_files = glob.glob(os.path.join(log_dir, '*.log'))
+    log_files = glob.glob(os.path.join(log_dir, "*.log"))
     # 解析文件名中的日期时间信息
     flowlog_row = os.path.join(config["traffic"]["flow_log_dir"], "row")
     dst_dir = os.path.join(config["traffic"]["flow_log_dir"], "handled")
@@ -213,12 +181,13 @@ def offline_align():
     all_items = os.listdir(flowlog_row)
 
     # 筛选出是目录的项目
-    directories = [item for item in all_items if os.path.isdir(os.path.join(flowlog_row, item))]
+    directories = [
+        item for item in all_items if os.path.isdir(os.path.join(flowlog_row, item))
+    ]
     for director in directories:
         for log_file in log_files:
-            if director ==os.path.basename(log_file)[:-4]:
+            if director == os.path.basename(log_file)[:-4]:
                 align(log_file, os.path.join(flowlog_row, director), dst_dir)
-
 
     # print(log_files)
 
@@ -226,4 +195,3 @@ def offline_align():
 if __name__ == "__main__":
     # align("/home/aimafan/Documents/mycode/spider_i2p/data/test/aimafan.log", "/home/aimafan/Documents/mycode/spider_i2p/data/flowlog/row", "/home/aimafan/Documents/mycode/spider_i2p/data/flowlog/handled")
     offline_align()
-    
