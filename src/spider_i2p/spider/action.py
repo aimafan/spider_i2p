@@ -52,7 +52,7 @@ def always_action():
         traffic_thread.start()
 
         # 开i2p结点
-        subprocess.Popen([i2pd_path])
+        subprocess.Popen([i2pd_path], stdout=subprocess.PIPE)
         time.sleep(1)
 
         # 浏览网页
@@ -95,7 +95,7 @@ def one_action():
 
             # 开i2p结点
             i2pd_path = os.path.join(config["spider"]["i2pd_path"], "build", "i2pd")
-            process = subprocess.Popen([i2pd_path])
+            process = subprocess.Popen([i2pd_path], stdout=subprocess.PIPE)
             time.sleep(1)
 
             # 浏览网页

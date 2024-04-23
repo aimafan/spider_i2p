@@ -1,0 +1,35 @@
+version: '3'
+networks:
+  i2p_spider:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.238.0/24
+
+services:
+  i2p_spider:
+    restart: always
+    image: chongrufan/i2p_spider:v1
+    hostname: i2p_spider
+    # 需要将i2p节点的port映射出来
+    ports:
+      - ":5672"
+      - "15672:15672"
+    networks:
+      i2p_spider:
+        ipv4_address: 172.16.238.2
+    tty: true
+    stdin_open: true
+    deploy:
+      mode: replicated
+      replicas: 1
+    # 将下列文件进行挂载
+    # 1. 配置文件config
+    # 2. 数据文件（流量、流日志）
+    # 3. 日志文件
+    # 4. 根目录
+    volumes:
+      - "/home/ubuntu/aimafan/newzeropeer2/data:/app/data"
+      - "/root:/root"
+    # 设置特权模式
+    privileged: true

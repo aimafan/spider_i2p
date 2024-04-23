@@ -12,7 +12,7 @@ should_stop_capture = False
 def capture(TASK_NAME, VPS_NAME, formatted_time):
     global should_stop_capture
     should_stop_capture = False
-
+    interface = config["traffic"]["interface"]
     traffic_dir = os.path.join(project_path, "data", TASK_NAME, "row_pcap")
     os.makedirs(traffic_dir, exist_ok=True)
 
@@ -22,6 +22,7 @@ def capture(TASK_NAME, VPS_NAME, formatted_time):
         # 删除文件
         os.remove(log_path)
     packets = sniff(
+        iface=interface,
         filter=f"not port 22 and not port 443 and not port 80 and host {config["spider"]["host"]}",
         stop_filter=stop_filter,
     )
