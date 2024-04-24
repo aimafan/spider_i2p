@@ -1,5 +1,6 @@
 from scapy.all import sniff, wrpcap
 from spider_i2p.myutils.config import config
+from spider_i2p.myutils.logger import logger
 import os
 from datetime import datetime
 import time
@@ -23,10 +24,11 @@ def capture(TASK_NAME, VPS_NAME, formatted_time):
         os.remove(log_path)
     packets = sniff(
         iface=interface,
-        filter=f"not port 22 and not port 443 and not port 80 and host {config["spider"]["host"]}",
+        filter=f"not port 22 and not port 443 and not port 80 and host {config['spider']['host']}",
         stop_filter=stop_filter,
     )
     wrpcap(traffic_name, packets)
+    logger.info(f"保存流量为{traffic_name}")
     return traffic_name
 
 

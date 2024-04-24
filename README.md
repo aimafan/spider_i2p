@@ -73,6 +73,8 @@ exit
 google-chrome --version
 ```
 
+version == 124.0.6367.78
+
 在 https://chromedriver.chromium.org/downloads 选择一样的版本下载，如
 ```
 https://storage.googleapis.com/chrome-for-testing-public/123.0.6312.86/linux64/chromedriver-linux64.zip
@@ -147,3 +149,9 @@ i2pd结点输出日志的格式为“时间戳 ; 发/收 ; IP地址 ; 端口 ; �
 流是否完整
 - 完整
 - 不完整
+
+
+
+## 容器使用方式
+
+进入容器之后，首先运行 `sudo ethtool -K eth0 tso off gso off gro off`

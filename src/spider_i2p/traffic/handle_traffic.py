@@ -10,9 +10,11 @@ from spider_i2p.traffic.pcap2flowlog import pcap2flowlog_dpkt
 def pcap2flowlog(filename, TASK_NAME):
     pcaps_dir = os.path.join(project_path, "data", TASK_NAME, "handled_pcap")
     flow_log_dir = os.path.join(project_path, "data", TASK_NAME, "flowlog", "row")
+    logger.info(f"将{filename}进行分流")
     pcap_list = cut(filename, pcaps_dir)
+    logger.info(f"{filename}分流结束")
     for pcap_file in pcap_list:
-        logger.info(f"开始处理{pcap_file}")
+        logger.info(f"正在将{pcap_file}转换为流日志")
         pcap2flowlog_dpkt(pcap_file, flow_log_dir)
     return flow_log_dir
 

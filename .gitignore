@@ -7,7 +7,7 @@ logs/*
 test*
 data/*
 !/data/.gitkeep
-
+chrome/
 
 
 ## i2pd

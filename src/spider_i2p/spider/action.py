@@ -26,6 +26,7 @@ def traffic(TASK_NAME, VPS_NAME):
     # 格式化输出
     formatted_time = current_time.strftime("%Y%m%d%H%M%S")
     time_name.put(formatted_time)
+    logger.info(f"流量采集开始")
     traffic_name = capture(TASK_NAME, VPS_NAME, formatted_time)
     flow_log_dir = pcap2flowlog(traffic_name, TASK_NAME)
 
@@ -33,6 +34,7 @@ def traffic(TASK_NAME, VPS_NAME):
 
     log_path = log_path_queue.get()
     if config["traffic"]["align"] == "True":
+        logger.info(f"对{flow_log_dir}中的流日志进行对齐")
         align(log_path, flow_log_dir, dst_log_dir)
 
 
@@ -45,6 +47,7 @@ def always_action():
             json_data = json_file.read()
             url_list = json.loads(json_data)
         random.shuffle(url_list)  # 洗牌url列表
+        logger.info(f"已从{url_path}中获取i2p网站列表")
         i2pd_path = os.path.join(config["spider"]["i2pd_path"], "build", "i2pd")
 
         # 开流量收集
@@ -52,8 +55,9 @@ def always_action():
         traffic_thread.start()
 
         # 开i2p结点
-        subprocess.Popen([i2pd_path], stdout=subprocess.PIPE)
+        process = subprocess.Popen([i2pd_path], stdout=subprocess.PIPE)
         time.sleep(1)
+        logger.info(f"成功开启i2pd结点 {process}")
 
         # 浏览网页
         num = 0
@@ -84,9 +88,11 @@ def one_action():
         json_data = json_file.read()
         url_list = json.loads(json_data)
     random.shuffle(url_list)  # 洗牌url列表
+    logger.info(f"已从{url_path}中获取i2p网站列表")
     while True:
         for url in url_list:
             # 开流量收集
+            logger.info(f"==============本轮收集开始============")
             traffic_thread = threading.Thread(
                 target=traffic, args=(TASK_NAME, VPS_NAME)
             )
@@ -97,14 +103,19 @@ def one_action():
             i2pd_path = os.path.join(config["spider"]["i2pd_path"], "build", "i2pd")
             process = subprocess.Popen([i2pd_path], stdout=subprocess.PIPE)
             time.sleep(1)
+            logger.info(f"成功开启i2pd结点 {process}")
 
             # 浏览网页
             consume(url)
 
             # 关i2p结点
             process.terminate()
+            logger.info(f"关闭i2pd结点")
             # 关流量收集
             formatted_time = time_name.get()
             log_path = stop_capture(formatted_time, TASK_NAME)
+            logger.info(f"关闭流量收集程序")
+
             log_path_queue.put(log_path)
             traffic_thread.join()
+            logger.info(f"==============本轮收集完成============")
