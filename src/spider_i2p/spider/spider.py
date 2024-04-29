@@ -27,12 +27,12 @@ def visit_website(url):
         while True:
             logger.info(f"正在访问 {url}")
             driver.get(url)
-            time.sleep(1)
             page = driver.page_source
             if "Proxy error: Host is down" in page:
                 logger.warn(f"无法访问网站，{str(sleep_time)}秒之后重试")
+                time.sleep(sleep_time)
                 continue
-            time.sleep(sleep_time)
+            time.sleep(1)
             logger.info(f"成功访问 {url}")
             break
         driver.quit()

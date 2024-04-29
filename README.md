@@ -77,7 +77,7 @@ version == 124.0.6367.78
 
 在 https://chromedriver.chromium.org/downloads 选择一样的版本下载，如
 ```
-https://storage.googleapis.com/chrome-for-testing-public/123.0.6312.86/linux64/chromedriver-linux64.zip
+https://storage.googleapis.com/chrome-for-testing-public/124.0.6367.78/linux64/chromedriver-linux64.zip
 ```
 
 > warning：需要翻墙
@@ -154,4 +154,33 @@ i2pd结点输出日志的格式为“时间戳 ; 发/收 ; IP地址 ; 端口 ; �
 
 ## 容器使用方式
 
-进入容器之后，首先运行 `sudo ethtool -K eth0 tso off gso off gro off`
+1. 进入容器之后，首先运行 `sudo ethtool -K eth0 tso off gso off gro off`
+
+
+> 以下是java版本i2p结点，但是貌似也不能
+
+2. 然后安装i2p程序
+
+```
+java -jar i2pinstall_2.5.0.jar -console
+```
+
+一直选下去
+
+3. 之后允许root运行i2p结点
+
+```
+vim /usr/local/i2p/i2prouter
+```
+
+4. 运行i2p结点
+
+```
+/usr/local/i2p/i2prouter start
+```
+
+5. 停止i2p结点
+
+```
+/usr/local/i2p/i2prouter stop
+```

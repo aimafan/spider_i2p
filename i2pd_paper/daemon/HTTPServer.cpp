@@ -1160,6 +1160,8 @@ namespace http {
 			}
 			if (!(host == expected_host || host == http_hostname))
 			{
+				std::cout << http_hostname << std::endl;
+				std::cout << expected_host << std::endl;
 				/* deny request as it's from a non whitelisted hostname */
 				res.code = 403;
 				content = "host mismatch";

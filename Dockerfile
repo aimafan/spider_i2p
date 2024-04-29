@@ -30,7 +30,8 @@ RUN apt-get update && apt-get install -y \
     devscripts \
     dh-apparmor \
     ethtool \
-    libpcap-dev
+    libpcap-dev \
+    openjdk-11-jdk
 
 # 将vim设为默认编辑器
 RUN update-alternatives --set editor /usr/bin/vim.basic

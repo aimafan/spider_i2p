@@ -1,23 +1,17 @@
 version: '3'
-networks:
-  i2p_spider:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.16.2.0/24
+
 
 services:
   i2p_spider:
     restart: always
-    image: i2p_spider:v2
+    image: spider_i2p:v3
     hostname: i2p_spider
     # 需要将i2p节点的port映射出来
     ports:
       - 23789:23789
-      - 7070:7070
-    networks:
-      i2p_spider:
-        ipv4_address: 172.16.2.2
+      - 7657:7657
+      - 4444:4444
+
     tty: true
     stdin_open: true
     deploy:
@@ -29,9 +23,9 @@ services:
     # 3. 日志文件
     # 4. 根目录
     volumes:
-      - "/home/ubuntu/aimafan/spider_i2p/bushu/config:/app/config"
-      - "/home/ubuntu/aimafan/spider_i2p/bushu/data:/app/data"
-      - "/home/ubuntu/aimafan/spider_i2p/bushu/logs:/app/logs"
+      - "/root/traffic_collection/spider_i2p/bushu/config:/app/config"
+      - "/root/traffic_collection/spider_i2p/bushu/data:/app/data"
+      - "/root/traffic_collection/spider_i2p/bushu/logs:/app/logs"
       - "/root:/root"
     # 设置特权模式
     privileged: true
