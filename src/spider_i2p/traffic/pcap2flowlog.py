@@ -14,6 +14,8 @@ def pcap2flowlog_dpkt(filename, des_dir):
         protocal = "TCP"
     elif "UDP" in filename:
         protocal = "UDP"
+    else:
+        protocal = "TCP"
     os.makedirs(des_dir, exist_ok=True)
     result = read_pcap(filename, 99999, protocal)
     filtered_result = [[], [], []]
@@ -21,10 +23,10 @@ def pcap2flowlog_dpkt(filename, des_dir):
         logger.warning(f"将 {filename} 转换为流日志失败")
         return False
     for i in range(len(result[0])):
-        if result[0][i] != 0:  # 如果长度不为 0
-            filtered_result[0].append(result[0][i])
-            filtered_result[1].append(result[1][i])
-            filtered_result[2].append(result[2][i])
+        # if result[0][i] != 0:  # 如果长度不为 0
+        filtered_result[0].append(result[0][i])
+        filtered_result[1].append(result[1][i])
+        filtered_result[2].append(result[2][i])
     if len(filtered_result[0]) <= 3:
         logger.warning(f"{filename} 中有负载的数据包小于等于3个，不进行转换 ")
         return False
@@ -85,8 +87,8 @@ def read_pcap(file, slice, protocal):
         readPcapNum += 1
     f.close()
     # filedata = rdpcap(file)
-    # srcip = inet_to_str(getIP(datalink, filedata[0][1]).src)
-    srcip = config["spider"]["host"]
+    srcip = inet_to_str(getIP(datalink, filedata[0][1]).src)
+    # srcip = config["spider"]["host"]
 
     # 通过第一个数据包的flag判断是否有三次握手
     if protocal == "TCP":

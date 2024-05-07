@@ -23,4 +23,7 @@ if __name__ == "__main__":
     # pcap2flowlog(
     #     "/home/aimafan/Documents/mycode/spider_i2p/data/traffic/packet_tagging_VPS2_atlkfvuwwpgvnw24dkwyyxf5psrueozxb3i6zgebymjuquuquvqq.b32.i2p_20240403164426.pcap"
     # )
-    pcap2flowlog("/home/aimafan/Documents/mycode/spider_i2p/data/output.pcap", "always")
+    pcap2flowlog(
+        "/home/aimafan/Documents/mycode/spider_i2p/data/output.pcap",
+        "always",
+    )

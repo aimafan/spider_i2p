@@ -23,9 +23,9 @@ services:
     # 3. 日志文件
     # 4. 根目录
     volumes:
-      - "/root/traffic_collection/spider_i2p/bushu/config:/app/config"
-      - "/root/traffic_collection/spider_i2p/bushu/data:/app/data"
-      - "/root/traffic_collection/spider_i2p/bushu/logs:/app/logs"
+      - "/root/traffic_collection/spider_i2p/config:/app/config"
+      - "/root/traffic_collection/spider_i2p/data:/app/data"
+      - "/root/traffic_collection/spider_i2p/logs:/app/logs"
       - "/root:/root"
     # 设置特权模式
     privileged: true
