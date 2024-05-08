@@ -4,7 +4,7 @@ version: '3'
 services:
   i2p_spider:
     restart: always
-    image: spider_i2p:v2
+    image: chongrufan/spider_i2p:v2
     hostname: i2p_spider
     # 需要将i2p节点的port映射出来
     network_mode: "host"
@@ -22,9 +22,9 @@ services:
     # 3. 日志文件
     # 4. 根目录
     volumes:
-      - "/home/aimafan/Documents/mycode/spider_i2p/config:/app/config"
-      - "/home/aimafan/Documents/mycode/spider_i2p/data:/app/data"
-      - "/home/aimafan/Documents/mycode/spider_i2p/logs:/app/logs"
+      - "/home/ubuntu/aimafan/spider_i2p/config:/app/config"
+      - "/home/ubuntu/aimafan/spider_i2p/data:/app/data"
+      - "/home/ubuntu/aimafan/spider_i2p/logs:/app/logs"
       - "/root:/root"
     # 设置特权模式
     privileged: true

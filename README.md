@@ -154,33 +154,37 @@ i2pd结点输出日志的格式为“时间戳 ; 发/收 ; IP地址 ; 端口 ; �
 
 ## 容器使用方式
 
-1. 进入容器之后，首先运行 `sudo ethtool -K eth0 tso off gso off gro off`
-
-
-> 以下是java版本i2p结点，但是貌似也不能
-
-2. 然后安装i2p程序
+1. 克隆项目
 
 ```
-java -jar i2pinstall_2.5.0.jar -console
+git clone https://github.com/aimafan/spider_i2p.git
 ```
 
-一直选下去
+2. 修改`bushu/docker-compose.yml`文件，主要修改挂载部分和image部分
 
-3. 之后允许root运行i2p结点
+3. 修改`i2pd.conf`中`host`值，并将`i2pd.conf`移动到`/root/.i2pd/`路径
 
-```
-vim /usr/local/i2p/i2prouter
-```
-
-4. 运行i2p结点
+4. 关闭网卡合并包
 
 ```
-/usr/local/i2p/i2prouter start
+sudo ethtool -K [网卡名称] tso off gso off gro off
 ```
 
-5. 停止i2p结点
+5. 修改配置文件`config/config.ini`，主要修改`host`和`web_number`的值
+
+6. 运行docker，在`bushu`路径下执行`docker-compose up -d`
+
+7. 进入容器
+
+8. 关闭网卡合并包
 
 ```
-/usr/local/i2p/i2prouter stop
+sudo ethtool -K [网卡名称] tso off gso off gro off
 ```
+
+9. 运行程序，在`src`路径下
+
+```
+python -m spider_i2p.spider.main
+```
+
