@@ -20,6 +20,16 @@ log_path_queue = queue.Queue()
 time_name = queue.Queue()
 
 
+def traffic_test(traffic_name, TASK_NAME, log_path):
+    flow_log_dir = pcap2flowlog(traffic_name, TASK_NAME)
+
+    dst_log_dir = os.path.join(project_path, "data", TASK_NAME, "flowlog", "handled")
+
+    if config["traffic"]["align"] == "True":
+        logger.info(f"对{flow_log_dir}中的流日志进行对齐")
+        align(log_path, flow_log_dir, dst_log_dir)
+
+
 def traffic(TASK_NAME, VPS_NAME, protocal):
     # 获取当前时间
     current_time = datetime.now()
@@ -29,11 +39,11 @@ def traffic(TASK_NAME, VPS_NAME, protocal):
     logger.info("流量采集开始")
 
     traffic_name = capture(TASK_NAME, VPS_NAME, formatted_time, protocal)
+    log_path = log_path_queue.get()
     flow_log_dir = pcap2flowlog(traffic_name, TASK_NAME)
 
     dst_log_dir = os.path.join(project_path, "data", TASK_NAME, "flowlog", "handled")
 
-    log_path = log_path_queue.get()
     if config["traffic"]["align"] == "True":
         logger.info(f"对{flow_log_dir}中的流日志进行对齐")
         align(log_path, flow_log_dir, dst_log_dir)
@@ -48,7 +58,6 @@ def browser_action():
         with open(url_path, "r") as json_file:
             json_data = json_file.read()
             url_list = json.loads(json_data)
-        random.shuffle(url_list)  # 洗牌url列表
         logger.info(f"已从{url_path}中获取i2p网站列表")
         i2pd_path = os.path.join(config["spider"]["i2pd_path"], "build", "i2pd")
 
@@ -57,6 +66,7 @@ def browser_action():
             target=traffic, args=(TASK_NAME, VPS_NAME, protocal)
         )
         traffic_thread.start()
+        time.sleep(1)
 
         # 开i2p结点
         process = subprocess.Popen([i2pd_path], stdout=subprocess.PIPE)
@@ -65,20 +75,40 @@ def browser_action():
 
         # 浏览网页
         num = 0
-        for url in url_list:
-            consume(url)
+        while True:
+            random.shuffle(url_list)  # 洗牌url列表
+
+            consume(url_list)
+
             num += 1
             if num >= int(config["spider"]["website_num"]):
                 num = 0
                 formatted_time = time_name.get()
+                # 关i2pd结点
+                process.kill()
+                time.sleep(0.5)
+                # 关流量收集
                 log_path = stop_capture(formatted_time, TASK_NAME)
                 log_path_queue.put(log_path)
                 traffic_thread.join()
+
+                time.sleep(1)
+
+                # 开流量收集
                 traffic_thread = threading.Thread(
                     target=traffic, args=(TASK_NAME, VPS_NAME)
                 )
                 traffic_thread.start()
-        formatted_time = time_name.get()
-        log_path = stop_capture(formatted_time, TASK_NAME)
-        log_path_queue.put(log_path)
-        traffic_thread.join()
+
+                # 开i2pd结点
+                process = subprocess.Popen([i2pd_path], stdout=subprocess.PIPE)
+                time.sleep(1)
+                logger.info(f"成功开启i2pd结点 {process}")
+
+
+if __name__ == "__main__":
+    traffic_test(
+        "/home/aimafan/Documents/mycode/spider_i2p/data/browser/row_pcap/20240508105601.pcap",
+        "browser",
+        "/home/aimafan/Documents/mycode/spider_i2p/data/browser/log_file/20240508105601.log",
+    )

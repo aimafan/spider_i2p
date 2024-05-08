@@ -24,17 +24,15 @@ def visit_website(url):
     driver.set_page_load_timeout(timeout)
     try:
         # Navigate to the URL
-        while True:
-            logger.info(f"正在访问 {url}")
-            driver.get(url)
-            page = driver.page_source
-            if "Proxy error: Host is down" in page:
-                logger.warn(f"无法访问网站，{str(sleep_time)}秒之后重试")
-                time.sleep(sleep_time)
-                continue
-            time.sleep(1)
-            logger.info(f"成功访问 {url}")
-            break
+        logger.info(f"正在访问 {url}")
+        driver.get(url)
+        page = driver.page_source
+        if "Proxy error: Host is down" in page:
+            logger.warn(f"无法访问网站，{str(sleep_time)}秒之后重试")
+            time.sleep(sleep_time)
+            return False
+        time.sleep(1)
+        logger.info(f"成功访问 {url}")
         driver.quit()
         return True
     except Exception as e:
@@ -52,8 +50,11 @@ def save_page(page, url):
         file.write(page)
 
 
-def consume(url):
-    visit_website(url)
+def consume(urls):
+    for url in urls:
+        ok = visit_website(url)
+        if ok:
+            break
 
 
 if __name__ == "__main__":

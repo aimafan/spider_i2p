@@ -53,26 +53,37 @@ def align(log_file, src_dir, dst_dir):
 
 
 def conbine(log_list, file_path):
+    index = 0
+    for i in range(0, len(log_list)):
+        if log_list[i][2] == "第一次握手":
+            index = i
+            break
+    log_list = log_list[index:]
     flowlog = []
+    invert = False
     with open(file_path, "r") as file:
         reader = csv.reader(file)
         next(reader)
+        file_name = os.path.basename(file_path)
+        src_ip = file_name.split("_")[3]
+        if src_ip != config["spider"]["host"]:
+            invert = True
         for row in reader:
             time, length = row
             flowlog.append([time, int(length)])
     logger.info(file_path)
-    flowlog1 = handle_flowlog(log_list, flowlog, file_path)
+    flowlog1 = handle_flowlog(log_list, flowlog, file_path, invert)
     return flowlog1
 
 
-def handle_flowlog(log_list, flowlog, file_name):
+def handle_flowlog(log_list, flowlog, file_name, invert):
     flowlog1 = []
 
     for i in range(0, len(log_list)):
-        if log_list[i][1] == "收":
+        if log_list[i][1] == "收" and not invert:
             log_list[i][-1] = -log_list[i][-1]
-        if log_list[i][1] == "发" and log_list[i][2] == "Routerinfo":
-            log_list[i][-1] += 18
+        elif log_list[i][1] == "发" and invert:
+            log_list[i][-1] = -log_list[i][-1]
 
     logger_log.info(file_name)
     logger_log.info(log_list)
@@ -80,15 +91,20 @@ def handle_flowlog(log_list, flowlog, file_name):
     logger_log.info("========")
     n = 0
     while n < len(flowlog):
-        if log_list == None or log_list == []:
+        if log_list is None or log_list == []:
             break
         if len(flowlog[n]) >= 3:
             flowlog1.append(flowlog[n])
             n += 1
             continue
+        if flowlog[n][1] == 0:
+            flowlog[n].append("zero")
+            flowlog1.append(flowlog[n])
+            n += 1
+            continue
         for i in range(0, len(log_list)):
             if i >= 50:
-                flowlog[n].append("未知")
+                flowlog[n].append("unknown")
                 break
             if log_list[i][-1] == flowlog[n][-1]:
                 log_list[i][0] = "N"
@@ -135,7 +151,7 @@ def save_csv(result, file_name):
     csv_file = file_name
     for i in range(len(result)):
         if len(result[i]) < 3:
-            result[i].append("未知")
+            result[i].append("unknown")
     # 定义 CSV 文件的表头
     header = ["time", "length", "type"]
 

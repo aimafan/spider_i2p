@@ -58,8 +58,8 @@ def stop_capture(formatted_time, TASK_NAME):
     dst_name = os.path.join(dst_dir, f"{formatted_time}.log")
     try:
         move_log(log_path, dst_name)
-    except:
-        pass
+    except Exception as e:
+        logger.error(f"无法将log文件{log_path}移动到指定位置：{e}")
     return dst_name
 
 
