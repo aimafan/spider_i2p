@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
     dh-apparmor \
     ethtool \
     libpcap-dev \
-    openjdk-11-jdk
+    tcpdump
 
 # 将vim设为默认编辑器
 RUN update-alternatives --set editor /usr/bin/vim.basic
@@ -70,7 +70,7 @@ RUN sudo dpkg -i bushu/chrome/google-chrome-stable_current_amd64.deb
 RUN sudo mv bushu/chrome/chromedriver-linux64/chromedriver /usr/bin
 
 
-RUN cd i2pd_paper/build; cmake .; make
+RUN cd i2pd_aimafan/build; cmake .; make -j7
 
 # 默认命令，打开vim
 CMD ["bash"]

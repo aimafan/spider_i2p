@@ -35,8 +35,8 @@ def fenbao_and_restruct(file_name, tcpstream, flags, jieduan):
         f.close()
         f = open(file_name, "rb")
         pkts = dpkt.pcapng.Reader(f)
-    except:
-        logger.error(f"打开{file_name}的过程中发生错误")
+    except Exception as e:
+        logger.error(f"打开{file_name}的过程中发生错误：{e}")
         f.close()
         return data_list
     global datalink

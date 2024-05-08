@@ -25,7 +25,7 @@ def traffic_test(traffic_name, TASK_NAME, log_path):
 
     dst_log_dir = os.path.join(project_path, "data", TASK_NAME, "flowlog", "handled")
 
-    if config["traffic"]["align"] == "True":
+    if config["traffic"]["align"] == "True" and config["traffic"]["protocal"] == "tcp":
         logger.info(f"对{flow_log_dir}中的流日志进行对齐")
         align(log_path, flow_log_dir, dst_log_dir)
 
@@ -96,7 +96,7 @@ def browser_action():
 
                 # 开流量收集
                 traffic_thread = threading.Thread(
-                    target=traffic, args=(TASK_NAME, VPS_NAME)
+                    target=traffic, args=(TASK_NAME, VPS_NAME, protocal)
                 )
                 traffic_thread.start()
 

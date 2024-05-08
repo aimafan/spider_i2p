@@ -8,6 +8,7 @@ test*
 data/*
 !/data/.gitkeep
 chrome/
+*.pcap
 
 
 ## i2pd

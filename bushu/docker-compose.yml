@@ -4,14 +4,13 @@ version: '3'
 services:
   i2p_spider:
     restart: always
-    image: spider_i2p:v3
+    image: spider_i2p:v2
     hostname: i2p_spider
     # 需要将i2p节点的port映射出来
-    ports:
-      - 23789:23789
-      - 7657:7657
-      - 4444:4444
-
+    network_mode: "host"
+    # ports:
+    #   - 7070:7070
+    #   - 21106:21106
     tty: true
     stdin_open: true
     deploy:
@@ -23,9 +22,9 @@ services:
     # 3. 日志文件
     # 4. 根目录
     volumes:
-      - "/root/traffic_collection/spider_i2p/config:/app/config"
-      - "/root/traffic_collection/spider_i2p/data:/app/data"
-      - "/root/traffic_collection/spider_i2p/logs:/app/logs"
+      - "/home/aimafan/Documents/mycode/spider_i2p/config:/app/config"
+      - "/home/aimafan/Documents/mycode/spider_i2p/data:/app/data"
+      - "/home/aimafan/Documents/mycode/spider_i2p/logs:/app/logs"
       - "/root:/root"
     # 设置特权模式
     privileged: true

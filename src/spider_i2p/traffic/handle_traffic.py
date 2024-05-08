@@ -14,6 +14,8 @@ def pcap2flowlog(filename, TASK_NAME):
     pcap_list = cut(filename, pcaps_dir)
     logger.info(f"{filename}分流结束")
     for pcap_file in pcap_list:
+        if "UDP" in pcap_file and config["spider"]["port"] not in pcap_file:
+            continue
         logger.info(f"正在将{pcap_file}转换为流日志")
         pcap2flowlog_dpkt(pcap_file, flow_log_dir)
     return flow_log_dir
